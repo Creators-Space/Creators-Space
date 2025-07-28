@@ -1,5 +1,56 @@
 @import url('https://fonts.googleapis.com/css?family=SF+Pro+Display:300,400,500,700&display=swap');
 
+:root {
+    --color-primary: #780000; /* dark red - for small elements */
+    --color-primary-dark: #c1121f; /* red - for small elements */
+    --color-secondary: #fdf0d5; /* cream - for large backgrounds */
+    --color-accent: #669bbc; /* light blue - for large elements */
+    --color-bg: #fdf0d5; /* cream background */
+    --color-surface: #ffffff; /* white */
+    --color-text: #003049; /* dark blue text */
+    --color-muted: #669bbc; /* light blue muted */
+    --color-border: #669bbc; /* light blue border */
+}
+
+html {
+    font-size: 18px;
+    line-height: 1.7;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,14 +61,24 @@
 
 body {
     width: 100vw !important;
+    background-color: var(--color-secondary);
+    color: var(--color-text);
 }
 
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: white;
+    background-color: var(--color-surface);
     padding: 10px;
+    gap: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(102, 155, 188, 0.1);
+    width: 100%;
+    max-width: none;
+    padding: 10px 20px;
 }
 
 .navbar h1 {
@@ -28,43 +89,77 @@ body {
 }
 
 .navbar a {
-    color: black;
+    color: var(--color-text);
     text-decoration: none;
     margin: 10px;
     transition: color 0.3s;
     display: flex;
 }
 
-.navbar a.btn {
-    border: 1px solid black;
-    outline: none;
-    background-color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    transition: background-color 0.3s, color 0.3s;
+.navbar a.btn, .navbar a.signup {
+    background-color: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
 }
 
-.navbar a.btn:hover {
-    background-color: black;
-    color: white;
+.navbar a.btn:hover, .navbar a.signup:hover {
+    background-color: var(--color-primary);
+    color: #fff;
 }
 
 .navbar a.signup {
-    background-color: black;
-    color: white;
+    background-color: var(--color-accent);
+    color: var(--color-surface);
 }
 
 .navbar a.signup:hover {
-    background-color: white;
-    color: black;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 .navbar .nav-links {
     display: flex;
     padding: 0 10px;
+    gap: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-links a {
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: background 0.2s, color 0.2s;
+    position: relative;
+}
+
+.navbar .nav-links a.active, .navbar .nav-links a:focus {
+    background: var(--color-accent);
+    color: var(--color-surface);
+    font-weight: 700;
+}
+
+.navbar .nav-links a:hover {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 12px 8px;
+    }
+    .navbar .nav-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .navbar .nav-links a {
+        width: 100%;
+        text-align: left;
+    }
 }
 
 /* #navbar-x-logo {} */
@@ -77,14 +172,32 @@ body {
     justify-content: center;
     flex-direction: column;
     height: 80vh;
-    background-color: white;
+    background: linear-gradient(120deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+    color: var(--color-text);
     margin-top: 20px;
 }
 
+/* Hero Section Upgrades */
 .main h1 {
-    font-size: 48px;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    color: var(--color-primary);
+    text-shadow: 0 0 16px #c1121f99, 0 2px 8px #669bbc88;
+    margin-bottom: 18px;
+    transition: text-shadow 0.3s;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--color-primary-dark);
+    opacity: 0.96;
+    margin-bottom: 28px;
+    margin-top: -6px;
     text-align: center;
-    margin-bottom: 20px;
+    max-width: 600px;
+    text-shadow: 0 0 8px #669bbc88, 0 1px 4px #c1121f55;
+    transition: text-shadow 0.3s;
 }
 
 .main .images {
@@ -151,8 +264,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #ffffff;
-    padding: 30px;
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    padding: 40px 24px;
     height: 500px;
     background-image: url('../../assets/images/webdev.png');
     background-position-x: center;
@@ -161,6 +275,7 @@ body {
     background-repeat: no-repeat;
     position: relative;
     margin-top: 20px;
+    margin-bottom: 32px;
 }
 
 .course-overlay {
@@ -182,6 +297,7 @@ body {
     font-size: 48px;
     font-weight: bold;
     margin-bottom: 10px;
+    color: var(--color-text);
 }
 
 #webdev .info p {
@@ -202,16 +318,16 @@ body {
 #webdev .info button {
     border: none;
     outline: none;
-    background-color: blue;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
 }
 
 #webdev .info button:hover {
-    background-color: white;
-    color: blue;
+    background-color: var(--color-primary-dark);
+    color: var(--color-secondary);
 }
 
 #webdev .tech {
@@ -230,33 +346,111 @@ body {
 
 /* courses */
 #courses {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap !important;
-}
-
-#courses h2 {
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-top: 32px;
+    justify-items: center;
+    align-items: stretch;
 }
 
 .course {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: white;
-    /* border-radius: 10px; */
-    gap: 20px;
-    padding: 10px;
-    border: 1px solid black;
-    /* margin: 10px; */
-    height: 500px;
-    width: 50% !important;
+    justify-content: flex-start;
+    background: var(--color-surface);
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(102, 155, 188, 0.08);
+    border: 1px solid var(--color-border);
+    padding: 36px 24px 32px 24px;
+    margin: 0;
+    min-width: 280px;
+    max-width: 370px;
+    transition: box-shadow 0.22s, transform 0.18s, border-color 0.18s;
+    position: relative;
+    z-index: 1;
+}
+
+.course-info button {
+    background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary) 100%);
+    color: var(--color-secondary);
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 12px 36px;
+    border-radius: 24px;
+    box-shadow: 0 2px 12px rgba(120,0,0,0.10);
+    border: none;
+    margin-top: 18px;
+    margin-bottom: 0;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.18s;
+    cursor: pointer;
+}
+
+.course-info button:hover, .course-info button:focus {
+    background: linear-gradient(90deg, var(--color-primary-dark) 0%, var(--color-accent) 100%);
+    color: var(--color-secondary);
+    box-shadow: 0 6px 24px rgba(120,0,0,0.16), 0 0 12px 2px var(--color-accent);
+    transform: scale(1.06);
+}
+
+.course-info h3 {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.course-info span {
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.course-info del {
+    color: var(--color-muted);
+    margin-left: 10px;
+}
+
+.course-info p {
+    margin-bottom: 8px;
+    color: var(--color-text);
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Card Layouts and Glow Effects */
+.course, .testimonial-card {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 16px rgba(102, 155, 188, 0.08);
+    border-radius: 18px;
+    padding: 32px 24px;
+    margin: 18px 0;
+    transition: box-shadow 0.22s, transform 0.18s, border-color 0.18s;
+    position: relative;
+    z-index: 1;
+}
+
+.course:hover, .testimonial-card:hover {
+    box-shadow: 0 12px 32px rgba(120,0,0,0.18), 0 0 24px 2px var(--color-accent);
+    border-color: var(--color-primary);
+    transform: translateY(-6px) scale(1.03);
+    z-index: 2;
+}
+
+.course img, .testimonial-card img {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(102, 155, 188, 0.10);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.course:hover img, .testimonial-card:hover img {
+    box-shadow: 0 6px 24px rgba(120,0,0,0.16), 0 0 12px 2px var(--color-accent);
+    transform: scale(1.04);
 }
 
 .course img {
@@ -297,8 +491,8 @@ body {
 .course-info button {
     border: none;
     outline: none;
-    background-color: blue;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
@@ -306,13 +500,13 @@ body {
 }
 
 .course-info button:hover {
-    background-color: white;
-    color: blue;
+    background-color: var(--color-primary-dark);
+    color: var(--color-secondary);
 }
 
 .course:not(.alter-course) {
-    background-color: black;
-    color: white;
+    background-color: var(--color-accent);
+    color: var(--color-text);
 }
 
 .course:nth-child(odd) .course-info button {
@@ -332,13 +526,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: black;
-    color: white;
+    background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+    color: var(--color-text);
     padding: 20px;
     border-start-start-radius: 10px;
     border-start-end-radius: 10px;
     position: relative;
-    padding-bottom: 30px !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
 }
 
 .footer h3 {
@@ -348,13 +543,13 @@ body {
 }
 
 .footer a {
-    color: white;
+    color: var(--color-primary);
     text-decoration: none;
     margin: 5px;
 }
 
 .footer a:hover {
-    color: #f0f0f0;
+    color: var(--color-primary-dark);
 }
 
 .footer .social {
@@ -410,8 +605,8 @@ body {
 .footer .form button {
     border: none;
     outline: none;
-    background-color: blue;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
     padding: 10px;
     margin: 5px;
     width: 100px;
@@ -420,8 +615,8 @@ body {
 }
 
 .footer .form button:hover {
-    background-color: white;
-    color: blue;
+    background-color: var(--color-primary-dark);
+    color: var(--color-secondary);
 }
 
 .footer .copy {
@@ -443,9 +638,10 @@ body {
       .testimonial-card {
         width: 330px;
         max-width: 700px;
-        background-color: black;
-        color: white;
-        padding: 20px;
+        background-color: var(--color-surface);
+        color: var(--color-text);
+        padding: 32px 24px;
+        margin: 18px 0;
         border-radius: 10px;
         text-align: center;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -470,3 +666,78 @@ body {
         color: #888;
         font-size: 14px;
       }
+
+.btn.hero-cta {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 18px 48px;
+    border-radius: 32px;
+    box-shadow: 0 4px 24px rgba(120,0,0,0.18);
+    margin-bottom: 36px;
+    margin-top: 8px;
+    border: none;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.18s;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    animation: ctaGlow 2.2s infinite alternate;
+}
+
+.btn.hero-cta:hover, .btn.hero-cta:focus {
+    background: var(--color-primary-dark);
+    color: var(--color-secondary);
+    box-shadow: 0 8px 32px rgba(120,0,0,0.22), 0 0 16px 2px var(--color-accent);
+    transform: scale(1.07);
+    text-decoration: none;
+}
+
+@keyframes ctaGlow {
+    0% { box-shadow: 0 4px 24px rgba(120,0,0,0.18); }
+    100% { box-shadow: 0 8px 40px rgba(120,0,0,0.22), 0 0 24px 4px var(--color-accent); }
+}
+
+.section, .main, .courses-section, .testimonials-section, .footer {
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 700px) {
+    .section, .main, .courses-section, .testimonials-section, .footer {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+.navbar {
+    background: linear-gradient(90deg, #fdf0d5 60%, #669bbc 100%);
+    box-shadow: 0 2px 16px #00304922;
+    border-radius: 0 0 18px 18px;
+    padding: 14px 32px;
+    margin-bottom: 18px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .nav-links a {
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    position: relative;
+    color: var(--color-text);
+}
+
+.navbar .nav-links a:hover, .navbar .nav-links a.active {
+    background: var(--color-accent);
+    color: #fff;
+    box-shadow: 0 2px 12px #669bbc55;
+    text-shadow: 0 0 8px #00304944;
+}
