@@ -25,6 +25,35 @@
         <h1><a href="./">Creators-Space</a></h1>
       </div>
 
+        <h1><a href="./">
+          <img width="80px" src="./assets/images/logo-nav.png" alt="logo Anurag Vishwakarma's Creators-Space">
+              <br>Creators-Space</a></h1>
+        <div class="nav-links align-items-center">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="#">Services</a>
+            <a href="#">Internship</a>
+            <a href="#">Campus Ambassador</a>
+            <a href="#">Blog</a>
+            <a href="./login.html" class="btn login">Log In</a>
+          <a href="#" class="btn signup">Sign Up</a>
+      </div>
+        <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
+            <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
+                <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
+                    stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"
+                    class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"></polyline>
+                <polyline id="globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2"
+                    stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"
+                    class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"></polyline>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navbar-x-logo" class="bi bi-x-lg d-none"
+                viewBox="0 0 16 16">
+                <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+            </svg>
+
       <!-- Navigation Links -->
       <div class="nav-links">
         <a href="#">Home</a>
@@ -101,7 +130,7 @@
         
             <!-- <h2>Our Courses</h2> -->
             <div class="course">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" alt="c programming">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png" alt="c programming">
               <div class="course-info">
                 <h3>C Programming</h3>
                 <span>₹2,999</span><del>₹12,999</del>
@@ -119,24 +148,26 @@
               </div>
             </div>
             <div class="course alter-course">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" alt="ui/ux design">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="ui/ux design">
               <div class="course-info">
-                <h3>UI/UX Design</h3>
-                <span>₹4,999</span><del>₹19,999</del>
-                <p>Duration: 3 Months</p>
-                <button>Enroll Now</button>
+              <h3>UI/UX Design</h3>
+              <span>₹4,999</span><del>₹19,999</del>
+              <p>Duration: 3 Months</p>
+              <button>Enroll Now</button>
               </div>
             </div>
             <div class="course">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" alt="graphic design">
+              <img src="https://www.netwale.com/wp-content/uploads/2023/08/graphiv-design-course.jpg" alt="graphic design">
               <div class="course-info">
-                <h3>Graphic Design</h3>
-                <span>₹7,999</span><del>₹29,999</del>
-                <p>Duration: 3 Months</p>
-                <button>Enroll Now</button>
+              <h3>Graphic Design</h3>
+              <span>₹7,999</span><del>₹29,999</del>
+              <p>Duration: 3 Months</p>
+              <button>Enroll Now</button>
               </div>
             </div>
-          </section>
+              </div>
+            </div>
+            </section>
 
     </div>
 
@@ -224,13 +255,15 @@
             <p>Copyright &copy; 2024 - 2025 Creators-Space. All rights reserved.</p>
         </div>
     </footer>
+    <button id="scrollTopBtn" title="Back to Top">↑</button>
 
 
 
     <script src="./src/js/hero-section.js"></script>
     <script src="./src/js/navbar.js"></script>
     <script src="./src/js/slider.js"></script>
+    <script src="./src/js/scrollToTop.js"></script>
     <script src="./src/js/utils.js"></script>
-   
+
 </body>
 </html>
