@@ -14,7 +14,7 @@ html, body {
 }
 
 body {
-  background-color: #0B4F56;
+  background-color: #ffffff;
   margin: 0;
   padding: 0;
 }
@@ -22,7 +22,7 @@ body {
 
 /* === Wrapper Background === */
 .navbar-wrapper {
-  background: #ECECEC;
+  background: #ffffff;
   width: 100%;
   max-width: 1320px;
   margin: 0 auto;
