@@ -1,70 +1,149 @@
 @import url('https://fonts.googleapis.com/css?family=SF+Pro+Display:300,400,500,700&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'SF Pro Display', sans-serif;
-    transition: all 0.3s linear;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
-    width: 100vw !important;
+  background-color: #0B4F56;
+  margin: 0;
+  padding: 0;
 }
 
+
+/* === Wrapper Background === */
+.navbar-wrapper {
+  background: #ECECEC;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 20px 30px;
+  border-radius: 20px;
+}
+
+
+/* === Navbar Layout === */
 .navbar {
+  background: white;
+  border: 1px solid #E9E9E9;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+/* === Logo === */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.logo h1 a {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+
+/* === Navigation Links === */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 400;
+  color: #1E1E1E;
+  text-decoration: none;
+}
+
+/* === Buttons === */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+.btn {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.signup {
+  background: #1E1E1E;
+  color: white;
+  border: none;
+}
+
+.signin {
+  background: transparent;
+  border: 2px solid #1E1E1E;
+  color: #1E1E1E;
+}
+
+.signin:hover {
+  background-color: #1E1E1E;
+  color: white;
+}
+
+/* === Toggle Button (Hamburger) === */
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+/* === Responsive Styles === */
+@media (max-width: 992px) {
+  .nav-links, .nav-buttons {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .navbar.active .nav-links,
+  .navbar.active .nav-buttons {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: white;
-    padding: 10px;
-}
+  }
 
-.navbar h1 {
-    font-size: 24px;
-    font-weight: bold;
-    color: black;
-    margin-left: 10px;
-}
+  .nav-toggle {
+    display: block;
+  }
 
-.navbar a {
-    color: black;
-    text-decoration: none;
-    margin: 10px;
-    transition: color 0.3s;
-    display: flex;
-}
-
-.navbar a.btn {
-    border: 1px solid black;
-    outline: none;
-    background-color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.navbar a.btn:hover {
-    background-color: black;
-    color: white;
-}
-
-.navbar a.signup {
-    background-color: black;
-    color: white;
-}
-
-.navbar a.signup:hover {
-    background-color: white;
-    color: black;
-}
-
-.navbar .nav-links {
-    display: flex;
-    padding: 0 10px;
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 /* #navbar-x-logo {} */
