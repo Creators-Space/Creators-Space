@@ -10,6 +10,11 @@
 
 body {
     width: 100vw !important;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    /* margin: 0;
+    padding: 20px; */
+    box-sizing: border-box;
 }
 
 .navbar {
@@ -145,15 +150,21 @@ body {
     object-fit: cover;
     margin: 10px;
 }
+.margin-top-5 h1{
+    font-size: 50px;
+}
 
 /* trending course */
 #webdev {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
     background-color: #ffffff;
-    padding: 30px;
-    height: 500px;
+    padding: 40px;
+    margin: 40px;
+    height: 550px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     background-image: url('../../assets/images/webdev.png');
     background-position-x: center;
     background-position-y: bottom;
@@ -161,6 +172,7 @@ body {
     background-repeat: no-repeat;
     position: relative;
     margin-top: 20px;
+    overflow: hidden;
 }
 
 .course-overlay {
@@ -175,7 +187,7 @@ body {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
+    margin-left: 500px;
 }
 
 #webdev .info h1 {
@@ -193,28 +205,39 @@ body {
     color: red;
     font-size: 36px;
     margin-right: 10px;
+    font-weight: 700;
 }
 
 #webdev .info del {
+    color: #888;
+    font-size: 24px;
+    text-decoration: line-through;
     margin-left: 10px;
+    font-weight: 500;
 }
 
 #webdev .info button {
     border: none;
     outline: none;
-    background-color: blue;
+    background: linear-gradient(45deg, #007bff, #0056b3);;
     color: white;
-    padding: 10px 20px;
+    padding: 15px 35px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5;
+    transition: all ease 0.5s;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 
 #webdev .info button:hover {
-    background-color: white;
-    color: blue;
+    background: linear-gradient(45deg, #0056b3, #007bff); 
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+    transform: translateY(-2px);
 }
 
-#webdev .tech {
+/* #webdev .tech {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -226,15 +249,22 @@ body {
     width: 50px;
     height: 50px;
     object-fit: cover;
-}
+} */
 
 /* courses */
 #courses {
+    /* max-width: 400px;
+    margin: 20px auto;
+    padding: 0 15px; */
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap !important;
+    justify-content: space-around; 
+    flex-wrap: wrap !important; 
+    margin: 8px;
+    padding: 50px;
+    box-sizing: border-box;
+    gap: 30px;
 }
 
 #courses h2 {
@@ -249,14 +279,18 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: white;
-    /* border-radius: 10px; */
-    gap: 20px;
+    background-color: #f0f2f5;
+    border-radius: 20px;
+    gap: 50px;
     padding: 10px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
     /* margin: 10px; */
     height: 500px;
     width: 50% !important;
+    min-width: 300px;
+    flex: 1 1 calc(50% - 10px);
+    max-width: calc(50% - 20px);
 }
 
 .course img {
@@ -275,49 +309,60 @@ body {
 }
 
 .course-info h3 {
-    font-size: 24px;
+    font-size: 40px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .course-info p {
+    font-size: 23px;
     margin-bottom: 10px;
 }
 
 .course-info span {
     color: red;
-    font-size: 24px;
+    font-size: 32px;
+    font-weight: 600;
     margin-right: 10px;
 }
 
 .course-info del {
+    font-size: 20px;
     margin-left: 10px;
+    font-weight: 200;
+    text-decoration: line-through;
 }
 
 .course-info button {
     border: none;
     outline: none;
-    background-color: blue;
+    background: linear-gradient(45deg, #007bff, #0056b3);
     color: white;
-    padding: 10px 20px;
+    padding: 15px 35px;
     cursor: pointer;
-    border-radius: 5px;
-    width: 150px;
+    border-radius: 8px;
+    width: 330px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5;
+    transition: all ease 0.5s;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 
 .course-info button:hover {
-    background-color: white;
-    color: blue;
+    background: linear-gradient(45deg, #0056b3, #007bff); 
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+    transform: translateY(-2px);
 }
 
 .course:not(.alter-course) {
-    background-color: black;
+    background-color: #100f0f;
     color: white;
 }
 
 .course:nth-child(odd) .course-info button {
     background-color: white;
-    color: black;
+    color: white;
 }
 
 .course:nth-child(odd) .course-info button:hover {
