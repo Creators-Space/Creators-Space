@@ -151,7 +151,7 @@
     <p><a href="tel:+9188xxxxxx89">+91 88xxxxxx89</a></p>
       </div>
 
-        <div class="form">
+        <!-- <div class="form">
             <h3>Get In Touch</h3>
             <input type="text" placeholder="Your name">
             <input type="email" placeholder="Your email">
@@ -160,13 +160,24 @@
         </div>
         <div class="copy">
             <p>Copyright &copy; 2024 - 2025 Creators-Space. All rights reserved.</p>
+        </div> -->
+
+        <div class="form">
+          <h3>Get In Touch</h3>
+            <input type="text" id="name" placeholder="Your name">
+            <input type="email" id="email" placeholder="Your email">
+            <textarea id="message" placeholder="Your message"></textarea>
+            <button onclick="submitForm()">Send</button>
+            <p id="responseMsg"></p> <!-- Show message here -->
         </div>
+
     </footer>
 
    <script src="./src/js/navbar.js"></script>
    <script src="./src/js/utils.js"></script>
+   <script src="./src/js/internship.js"></script>
 
-  <!-- Dark Mode JS -->
+   <!-- Dark Mode JS -->
   <script>
     const toggle = document.getElementById('dark-mode-toggle');
     const body = document.body;

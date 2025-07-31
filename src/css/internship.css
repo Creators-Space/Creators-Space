@@ -53,3 +53,59 @@ body.dark .main p {
   max-height: 250px;
   padding: 20px;
 }
+
+
+.form {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #f0f0f0;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.form button {
+  width: 100%;
+  padding: 12px;
+  background: #3498db;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form button:hover {
+  background: #2980b9;
+}
+
+#responseMsg {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
