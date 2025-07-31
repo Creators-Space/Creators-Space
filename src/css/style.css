@@ -127,6 +127,54 @@ body {
 .hero-section-imgs.hero-imgs-muted {
   animation: animate-muted-images 3s infinite;
 }
+.course-card {
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-family: Arial, sans-serif;
+}
+
+.progress-container {
+  width: 100%;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, #4caf50, #81c784);
+  border-radius: 10px 0 0 10px;
+  transition: width 0.5s ease;
+}
+
+#progress-text {
+  font-size: 14px;
+  color: #333;
+  margin-top: 5px;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #43a047;
+}
+
 
 @keyframes animate-center-image {
   50% {
