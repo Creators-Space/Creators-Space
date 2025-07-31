@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SignUP - Creators-Space</title>
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/utils.css">
+  <link rel="stylesheet" href="./src/css/responsive.css">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+  <style>
+  body {
+  background: #ffffff; /* Plain white or change to #fdfdfd for a subtle off-white */
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.signup-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1),
+              0 0 12px #6ea8fe88; /* glow */
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.signup-container:hover {
+  transform: scale(1.01);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.15),
+              0 0 20px #6ea8fecc;
+}
+
+.signup-container h2 {
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-shadow: 1px 1px 2px #ccc;
+}
+
+.signup-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.signup-container input:focus {
+  border-color: #c4d6f0;
+  box-shadow: 0 0 5px #a3b7d699;
+}
+
+.signup-container button {
+  background: linear-gradient(135deg, #000000, #434343);
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.signup-container button:hover {
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  box-shadow: 0 0 12px #000000aa;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Signup Box -->
+  <div class="signup-container">
+    <h2>Sign Up</h2>
+    <form>
+      <input type="text" placeholder="Username" required />
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+
+</body>
+</html>

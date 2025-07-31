@@ -1,0 +1,55 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px 20px;
+  background-color: white;
+  transition: background-color 0.3s ease;
+}
+
+.main h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.main p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Dark Mode */
+body.dark .main {
+  background-color: #1a1a1a;
+}
+
+body.dark .main h1 {
+  color: #ffffff;
+}
+
+body.dark .main p {
+  color: #bbb;
+}
+.syllabus {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  margin: 20px 0;
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.card.expanded .syllabus {
+  opacity: 1;
+  max-height: 250px;
+  padding: 20px;
+}
