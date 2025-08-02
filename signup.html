@@ -1,109 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SignUP - Creators-Space</title>
-  <link rel="stylesheet" href="./src/css/style.css">
-  <link rel="stylesheet" href="./src/css/utils.css">
-  <link rel="stylesheet" href="./src/css/responsive.css">
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
   <style>
-  body {
-  background: #ffffff; /* Plain white or change to #fdfdfd for a subtle off-white */
-  font-family: 'Segoe UI', sans-serif;
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.signup-container {
-  width: 100%;
-  max-width: 400px;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border-radius: 16px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1),
-              0 0 12px #6ea8fe88; /* glow */
-  text-align: center;
-  transition: all 0.3s ease-in-out;
-}
-
-.signup-container:hover {
-  transform: scale(1.01);
-  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.15),
-              0 0 20px #6ea8fecc;
-}
-
-.signup-container h2 {
-  margin-bottom: 25px;
-  font-size: 30px;
-  font-weight: 700;
-  color: #1a1a1a;
-  text-shadow: 1px 1px 2px #ccc;
-}
-
-.signup-container input{
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 14px;
-  font-family: 'Segoe UI', sans-serif;
-  outline: none;
-  transition: border-color 0.3s;
-}
-
-.signup-container input:focus {
-  border-color: #c4d6f0;
-  box-shadow: 0 0 5px #a3b7d699;
-}
-
-.signup-container button {
-  background: linear-gradient(135deg, #000000, #434343);
-  color: white;
-  padding: 12px;
-  width: 100%;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.signup-container button:hover {
-  background: linear-gradient(135deg, #000000, #1a1a1a);
-  box-shadow: 0 0 12px #000000aa;
-}
-
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background:  white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+     width: 100%;
+      max-width: 400px;
+      box-shadow: 0 8px 150px rgba(0,0,0,0.15);
+      border: 1px solid #ccc;
+      font-weight: 500;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      padding-right: 40px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .toggle-password {
+      position: absolute;
+      right: 10px;
+      top: 38px;
+      cursor: pointer;
+      color: #555;
+    }
+    .inline-feedback {
+      font-size: 0.85rem;
+      color: red;
+      margin-top: 5px;
+    }
+    .btn {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn:disabled {
+      background-color: #999;
+    }
+    .spinner {
+      display: none;
+      width: 24px;
+      height: 24px;
+      margin: 0 auto;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #007bff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-top: 1rem;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .login-page {
+      display: block;
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #007bff;
+      text-decoration: none;
+    }
+    .social-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 1rem;
+    }
+    .social-btn {
+      flex: 1;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      text-align: center;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
   </style>
 </head>
-
 <body>
-
-  <!-- Signup Box -->
-  <div class="signup-container">
+  <div class="container">
     <h2>Sign Up</h2>
-    <form>
-      <input type="text" placeholder="First Name" name="First Name" required>
-      <input type="text" placeholder="Last Name" name="Last Name" required>
-      <input type="text" placeholder="Username" required />
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
-      <input type="password" placeholder="Confirm password" name="confirm_password" required>
-        <!-- Terms and Conditions Checkbox -->
-      <label style="font-size: 14px; display: block; margin-bottom: 15px; text-align: left;">
-              <input type="checkbox" required />
-              I agree to the <a href="#">Terms and conditions</a>
-      </label>
-      <button type="submit">Sign Up</button>
-    </form>
-  </div>
+    <form id="signup-form">
+        <div class="form-group">
+        <label>Name</label>
+        <input type="text" id="name" required />
+        <div id="name" class="name"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="email" required />
+        <div id="emailFeedback" class="inline-feedback"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="password" required />
+        <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+      </div>
+
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="password" id="confirm-password" required />
+        <span class="toggle-password" onclick="togglePassword('confirm-password')">👁️</span>
+        <div id="matchFeedback" class="inline-feedback"></div>
+      </div>
+
+      <button type="submit" class="btn">Sign Up</button>
+      <div class="spinner" id="spinner"></div>
+
+      <div class="login-page">
+        <p>Already have an account? <a href="login.html">Login</a></p>
+      </div>
+
+  <script>
+    function togglePassword(id) {
+      const input = document.getElementById(id);
+      input.type = input.type === "password" ? "text" : "password";
+    }
+
+    const form = document.getElementById("signup-form");
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirm-password");
+    const email = document.getElementById("email");
+    const matchFeedback = document.getElementById("matchFeedback");
+    const emailFeedback = document.getElementById("emailFeedback");
+    const spinner = document.getElementById("spinner");
+
+    confirmPassword.addEventListener("input", () => {
+      matchFeedback.textContent = confirmPassword.value !== password.value
+        ? "Passwords do not match"
+        : "";
+    });
+
+    email.addEventListener("input", () => {
+      const regex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+      emailFeedback.textContent = regex.test(email.value)
+        ? ""
+        : "Enter a valid email address";
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      if (password.value.length < 6) {
+        alert("Password must be at least 6 characters.");
+        return;
+      }
+
+      if (password.value !== confirmPassword.value) {
+        alert("Passwords do not match.");
+        return;
+      }
+
+      spinner.style.display = "block";
+
+      setTimeout(() => {
+        spinner.style.display = "none";
+        alert("Account created successfully!");
+        form.reset();
+      }, 1500);
+    });
+  </script>
 </body>
 </html>
+
