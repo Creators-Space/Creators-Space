@@ -1,0 +1,226 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9fb;
+  margin: 0;
+  padding: 2rem;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.courses-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #222;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* .bookmark-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #e74c3c;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.bookmark-btn i {
+  pointer-events: none;
+}
+
+.no-bookmarks {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #777;
+  padding: 2rem;
+} */
+.courses-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  padding: 60px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 40px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: slideInUp 0.6s ease-out;
+}
+/* General body styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f4f8;
+  margin: 0;
+  padding: 2rem;
+  color: #333;
+}
+
+/* Page title */
+h1 {
+  text-align: center;
+  color: #222;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Course cards grid */
+.courses-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* Individual card styles */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Discount badge */
+.discount-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #ff5252;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Card image */
+.card img {
+  width: 100%;
+  max-height: 140px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+/* Card content text */
+.card h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #111;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.card .price {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* Syllabus section */
+.syllabus {
+  margin-top: 1rem;
+  background-color: #f9fafc;
+  border-top: 1px solid #ddd;
+  padding-top: 0.5rem;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.syllabus h4 {
+  margin-bottom: 0.3rem;
+  color: #444;
+}
+
+.syllabus ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.syllabus li {
+  margin-bottom: 0.4rem;
+  color: #555;
+}
+
+/* Enroll button section */
+.enroll {
+  margin-top: 1rem;
+  display: none;
+}
+
+.enroll .button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.enroll .button:hover {
+  background-color: #0056b3;
+}
+
+/* Hidden class utility */
+.hidden {
+  display: none;
+}

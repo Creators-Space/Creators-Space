@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Internships | Creators-Space</title>
- <link rel="stylesheet" href="./src/css/courses.css">
- <link rel="stylesheet" href="./src/css/style.css">
-   <link rel="stylesheet" href="./src/css/utils.css">
- <link rel="stylesheet" href="./src/css/internship.css">
- <link rel="stylesheet" href="./src/css/responsive.css">
+  <title>Blog | Creators-Space</title>
+  <link rel="stylesheet" href="./src/css/style.css" />
+  <link rel="stylesheet" href="./src/css/utils.css">
+  <link rel="stylesheet" href="./src/css/responsive.css" />
+  <link rel="stylesheet" href="./src/css/blog.css" />
 </head>
- <body id="main-body" class="overflow-x-hidden">
-    <!-- Navbar -->
+<body id="main-body" class="overflow-x-hidden">
+  <!-- Navbar -->
      <div class="navbar">
         <h1><a href="./">
           <img width="80px" src="./assets/images/logo-nav.png" alt="logo Anurag Vishwakarma's Creators-Space">
@@ -22,7 +21,7 @@
             <a href="#">Services</a>
             <a href="internship.html">Internship</a>
             <a href="#">Campus Ambassador</a>
-            <a href="blog.html">Blog</a>
+            <a href="#">Blog</a>
             <a href="./login.html" class="btn login">Log In</a>
           <a href="./signup.html" class="btn signup">Sign Up</a>
       </div>
@@ -46,8 +45,9 @@
         </div>
     </div>
 
+  
 
-  <!-- Dark Mode Toggle -->
+  <!--Dark mode switch -->
   <div class="toggle-switch">
     <label class="switch-label">
       <input type="checkbox" class="checkbox" id="dark-mode-toggle" />
@@ -55,77 +55,45 @@
     </label>
   </div>
 
-<!-- MAIN SECTION -->
-  <section class="main">
-    <h1>Exciting Internship Opportunities</h1>
-    <p>Launch your career with hands-on experience from top organizations.</p>
+
+  <div class="blog-header">
+    <h1>Explore Our Latest Blogs</h1>
+    <input type="text" id="blog-search" placeholder="Search blog titles...">
+  </div>
+
+  <section class="blog-container">
+    <div class="blog-card">
+      <img src="assets/images/blogpage/jsin30days.png" alt="Blog thumbnail" />
+      <div class="blog-content">
+        <span class="blog-category">JavaScript</span>
+        <div class="blog-title">Mastering JavaScript in 30 Days</div>
+        <div class="blog-meta">By Anurag | April 10, 2025</div>
+        <div class="blog-excerpt">Learn how to go from beginner to advanced in JavaScript with practical tips, projects, and daily challenges.</div>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="assets/images/blogpage/ui:ux.jpeg" alt="Blog thumbnail" />
+      <div class="blog-content">
+        <span class="blog-category">UI/UX</span>
+        <div class="blog-title">UI/UX Trends to Watch in 2025</div>
+        <div class="blog-meta">By Sneha | March 28, 2025</div>
+        <div class="blog-excerpt">Explore emerging UI/UX design trends shaping the future of user experience across digital platforms.</div>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="assets/images/blogpage/techstartup.jpeg" alt="Blog thumbnail" />
+      <div class="blog-content">
+        <span class="blog-category">StartUp</span>
+        <div class="blog-title">How to Launch Your Tech Startup</div>
+        <div class="blog-meta">By Raghav | March 15, 2025</div>
+        <div class="blog-excerpt">Step-by-step guide to launching your startup — from ideation to product-market fit and fundraising.</div>
+      </div>
+    </div>
   </section>
 
-  <!-- INTERNSHIP CARDS -->
-  <div class="courses-container">
-  <div class="card">
-    <div class="card-content">
-      <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" alt="Web Development" />
-      <h3>Web Development Intern</h3>
-      <p>Duration: 3 Months | Location: Remote</p>
-      <button class="button toggle-btn">View More</button>
-      <div class="syllabus">
-        <h4>Responsibilities:</h4>
-        <ul>
-          <li>Build and optimize web applications</li>
-          <li>Collaborate with frontend/backend team</li>
-          <li>Deploy scalable features</li>
-        </ul>
-      </div>
-      <div class="enroll">
-        <a href="#" class="button">Apply Now</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-content">
-      <img src="https://abctrainings.in/media/thumbnails/machine_learning.jpeg" alt="ml" />
-      <h3>Machine Learning Intern</h3>
-      <p>Duration: 6 Months | Location: Hybrid</p>
-      <button class="button toggle-btn">View More</button>
-      <div class="syllabus">
-        <h4>Responsibilities:</h4>
-        <ul>
-          <li>Work on ML model training and tuning</li>
-          <li>Analyze large data sets</li>
-          <li>Deploy predictive analytics</li>
-        </ul>
-      </div>
-      <div class="enroll">
-        <a href="#" class="button">Apply Now</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-content">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="50" height="50" alt="UI/UX Design" />
-      <h3>UI/UX Design Intern</h3>
-      <p>Duration: 2 Months | Location: Remote</p>
-      <button class="button toggle-btn">View More</button>
-      <div class="syllabus">
-        <h4>Responsibilities:</h4>
-        <ul>
-          <li>Design clean and engaging UIs in Figma</li>
-          <li>Conduct user testing</li>
-          <li>Document and prototype wireframes</li>
-        </ul>
-      </div>
-      <div class="enroll">
-        <a href="#" class="button">Apply Now</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <!-- Footer -->
-    <footer class="footer">
+  <footer class="footer">
         <div class="social">
             <h1><img width="80px" src="./assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
               <br>Creators-Space</h1>
@@ -163,10 +131,8 @@
         </div>
     </footer>
 
-   <script src="./src/js/navbar.js"></script>
-   <script src="./src/js/utils.js"></script>
-
-  <!-- Dark Mode JS -->
+  <script src="./src/js/navbar.js"></script>
+  <script src="./src/js/utils.js"></script>
   <script>
     const toggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
@@ -183,6 +149,26 @@
     });
   });
 </script>
+<!--blog search js-->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("blog-search");
+    const blogCards = document.querySelectorAll(".blog-card");
 
+    searchInput.addEventListener("input", function () {
+      const query = this.value.toLowerCase().trim();
+
+      blogCards.forEach(card => {
+        const title = card.querySelector(".blog-title").textContent.toLowerCase();
+        const category = card.querySelector(".blog-category").textContent.toLowerCase();
+        const excerpt = card.querySelector(".blog-excerpt").textContent.toLowerCase();
+
+        const matches = title.includes(query) || category.includes(query) || excerpt.includes(query);
+
+        card.style.display = matches ? "block" : "none";
+      });
+    });
+  });
+</script>
 </body>
 </html>

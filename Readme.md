@@ -17,6 +17,32 @@ We welcome and encourage contributions from participants and the entire open-sou
 
 > ⭐ If you're a GSSoC'25 contributor, check out our [CONTRIBUTING.md](./CONTRIBUTING.md) to get started!
 
+
+---
+📌 Table of Contents
+🎯 Introduction
+
+✨ Features
+
+📁 Directory Structure
+
+🛠 Tech Stack
+
+🧠 System Architecture
+
+📸 Screenshots
+
+🚀 How to Use / Run
+
+🌐 Community & Support
+
+🤝 Contributing
+
+📄 License
+
+🌟 Acknowledgment
+
+
 ---
 
 ## 📌 About
@@ -49,6 +75,79 @@ Open index.html in your preferred web browser
 **Anurag Vishwakarma**  
 🔗 [LinkedIn Profile](https://www.linkedin.com/in/anuragvishwakarma/)
 
+
+---
+
+## Directory Structure
+
+```
+Creators-Space/
+├── assets/
+│   ├── Screenshots/
+│   │   ├── course.png
+│   │   ├── internship.png
+│   │   ├── intro(dark).png
+│   │   ├── intro(light).png
+│   │   ├── login.png
+│   │   └── signup.png
+│   └── images/
+│       └── logo.png
+├── src/
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── courses.html
+├── favicon.ico
+├── index.html
+├── internship.html
+├── LICENSE
+├── login.html
+├── signup.html
+└── README.md
+```
+---
+
+## 🛠 Tech Stack
+Frontend: HTML5, CSS3, JavaScript
+
+Design: Responsive Web Design, Flexbox, CSS Grid
+
+Deployment: Netlify
+
+Version Control: Git & GitHub
+
+---
+
+## 📸 Screenshots
+
+
+1. Home Page (Light Mode)
+![Home Page(Light)](screenshots/intro(light).png)
+
+2.  Home Page (Dark Mode)
+![Home Page(Dark)](screenschots/intro(dark).png)
+
+3. Login Page
+![Login Page](screenshots/login.png)
+
+4. Sign Up Page
+![Sign Up Page](screenshots/signup.png)
+
+5. Internship Page
+![Internship Page](screenshots/internship.png)
+
+6. Course Page
+![Course Page](screenshots/course.png)
+
+---
+## 🌐 Community & Support
+💬 Join the GSSoC community discussions.
+🐛 Report bugs or request features via GitHub Issues.
+
+---
+
+## 🤝 Contributing
+We welcome contributions from the community!
+Please check out our CONTRIBUTING.md for guidelines.
 
 ---
 

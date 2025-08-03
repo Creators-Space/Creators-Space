@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bookmarked Courses</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="src/css/bookmarked.css" />
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <h1>📌 Bookmarked Courses</h1>
+  <section class="courses-container" id="bookmarked-list">
+     <div class="card" onclick="toggleSyllabus(this)">
+        <div class="discount-badge">74% OFF</div>
+        <div class="card-content">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/919/919827.png"
+            alt="Web Development"
+          />
+          <h3>Full Stack Web Development</h3>
+          <p class="price">₹12,999 <del>₹49,999</del></p>
+          <p>6 Months • Complete Bootcamp</p>
+        </div>
+        <div class="syllabus hidden">
+          <h4>What You'll Master:</h4>
+          <ul>
+            <li>HTML5, CSS3 & Modern JavaScript</li>
+            <li>React.js & Node.js Development</li>
+            <li>Database Design & Management</li>
+            <li>Cloud Deployment & DevOps</li>
+            <li>Real-world Project Portfolio</li>
+          </ul>
+        </div>
+        <div class="enroll hidden">
+          <button class="button">Enroll Now</button>
+        </div>
+       
+      </div>
+      
+      <div class="card" onclick="toggleSyllabus(this)">
+
+        <div class="discount-badge">77% OFF</div>
+        <div class="card-content">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png"
+            alt="C Programming"
+          />
+          <h3>C Programming Mastery</h3>
+          <p class="price">₹2,999 <del>₹12,999</del></p>
+          <p>3 Months • Foundation Course</p>
+        </div>
+        <div class="syllabus hidden">
+          <h4>What You'll Master:</h4>
+          <ul>
+            <li>C Language Fundamentals & Syntax</li>
+            <li>Advanced Functions & Control Flow</li>
+            <li>Pointers & Memory Management</li>
+            <li>Data Structures Implementation</li>
+            <li>System Programming Concepts</li>
+          </ul>
+        </div>
+        <div class="enroll hidden">
+          <button class="button">Enroll Now</button>
+        </div>
+        
+      </div>
+  </section>
+
+  <script src="bookmarked.js"></script>
+</body>
+</html>

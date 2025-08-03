@@ -1,4 +1,4 @@
- * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -315,9 +315,9 @@ body {
 
 .button {
   display: inline-block;
-  padding: 8px 18px;      /* smaller padding */
+  padding: 8px 18px; /* smaller padding */
   margin: 8px;
-  font-size: 18px;        /* smaller font size */
+  font-size: 18px; /* smaller font size */
   font-weight: bold;
   text-transform: uppercase;
   color: #fff;
@@ -364,11 +364,11 @@ body {
   border-right: 3px solid #fff;
 }
 
-.enroll{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
+.enroll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
 }
 
 .hidden {
@@ -675,4 +675,19 @@ body.dark .footer {
     grid-template-columns: 1fr;
     gap: 30px;
   }
+}
+
+.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark .card {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+.dark .navbar,
+.dark .footer {
+  background-color: #181818;
 }
