@@ -7,7 +7,10 @@
   <link rel="stylesheet" href="./src/css/style.css">
   <link rel="stylesheet" href="./src/css/utils.css">
   <link rel="stylesheet" href="./src/css/responsive.css">
+  <script src="./src/js/firebase.js" defer type="module"></script>
+
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
   body {
@@ -82,6 +85,63 @@
   box-shadow: 0 0 12px #000000aa;
 }
 
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0; /* spacing between login and google button */
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ccc; /* gray line */
+}
+
+.divider:not(:empty)::before {
+  margin-right: 10px;
+}
+
+.divider:not(:empty)::after {
+  margin-left: 10px;
+}
+
+.divider span {
+  color: #888;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* Google Button */
+.google-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #f7b562;
+    color: white;
+    border: 1px solid #e09e45;
+    border-radius: 10px;
+    padding: 10px 148px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    justify-content: center;
+
+}
+
+
+.google-btn:hover {
+    background-color: #e09e45;
+}
+
+.google-icon {
+    width: 10px;
+    height: 10px;
+}
+
   </style>
 </head>
 
@@ -95,6 +155,17 @@
       <input type="email" placeholder="Email" required />
       <input type="password" placeholder="Password" required />
       <button type="submit">Log In</button>
+
+      <div class="divider">
+        <span>or continue with</span>
+      </div>
+
+      <div class="input">
+        <button id="google-login-btn" class="google-btn">
+          <i class="fa-brands fa-google"></i> Sign in with Google
+        </button>
+      </div>
+    </div>
     </form>
   </div>
 
