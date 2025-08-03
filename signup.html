@@ -82,6 +82,30 @@
   box-shadow: 0 0 12px #000000aa;
 }
 
+.terms-container {
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.terms-container input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.terms-text a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.terms-text a:hover {
+  text-decoration: underline;
+}
+
   </style>
 </head>
 
@@ -95,10 +119,10 @@
       <input type="email" id="email" placeholder="Email" required />
       <input type="password" id="password" placeholder="Password" required />
       <input type="password" id="confirm-password" placeholder="Confirm Password" required />
-      <label style="font-size: 14px; display: block; margin-bottom: 15px; text-align: left;">
-              <input type="checkbox" required />
-              I agree to the <a href="#">Terms and conditions</a>
-      </label>
+      <div class="terms-container">
+        <input type="checkbox" id="terms-checkbox" required />
+        <span class="terms-text">I agree to the <a href="/tandc.html">Terms and conditions</a></span>
+      </div>
       <button type="submit">Sign Up</button>
 
   <!-- These lines will show feedback -->
