@@ -25,8 +25,23 @@
       <a href="internship.html">Internship</a>
       <a href="#">Campus Ambassador</a>
       <a href="blog.html">Blog</a>
-      <a href="./login.html" class="btn login">Log In</a>
-      <a href="./signup.html" class="btn signup">Sign Up</a>
+      <a href="bookmarked.html">BookMarks</a>
+      <!-- This is the login/signup section -->
+      <div id="authSection">
+        <a href="./login.html" class="btn login">Log In</a>
+        <a href="./signup.html" class="btn signup">Sign Up</a>
+      </div>
+
+      <!-- User profile & logout section -->
+      <div id="userSection" style="display: none; align-items: center; gap: 10px;">
+        <button id="logoutBtn" class="btn login">Logout</button>
+        <a href="profile.html" title="Your Profile">
+          <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
+            style="border-radius: 50%;" />
+        </a>
+
+
+      </div>
     </div>
     <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
       <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
@@ -161,23 +176,23 @@
 
   <!-- Loading Internship dynamically from data/internship.json -->
   <script>
-  async function loadInternships() {
-    const container = document.getElementById("internship-list");
-    try {
-      const res = await fetch("./src/data/internship.json");
-      if (!res.ok) throw new Error("Failed to fetch");
+    async function loadInternships() {
+      const container = document.getElementById("internship-list");
+      try {
+        const res = await fetch("./src/data/internship.json");
+        if (!res.ok) throw new Error("Failed to fetch");
 
-      const internships = await res.json();
-      container.innerHTML = "";
+        const internships = await res.json();
+        container.innerHTML = "";
 
-      internships.forEach((item) => {
-        const responsibilitiesHTML = item.responsibilities
-          .map(task => `<li>${task}</li>`)
-          .join("");
+        internships.forEach((item) => {
+          const responsibilitiesHTML = item.responsibilities
+            .map(task => `<li>${task}</li>`)
+            .join("");
 
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `
+          const card = document.createElement("div");
+          card.className = "card";
+          card.innerHTML = `
           <div class="card-content">
             <img src="${item.image}" alt="${item.title}" />
             <h3>${item.title}</h3>
@@ -194,24 +209,25 @@
             </div>
           </div>
         `;
-        container.appendChild(card);
-      });
-
-      document.querySelectorAll(".toggle-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const card = btn.closest(".card");
-          card.classList.toggle("expanded");
-          btn.textContent = card.classList.contains("expanded") ? "View Less" : "View More";
+          container.appendChild(card);
         });
-      });
-    } catch (err) {
-      container.innerHTML = "<p style='color:red;text-align:center;font-size:20px;'>Couldn't load the internships.</p>";
-      console.error("Error loading internships:", err);
-    }
-  }
 
-  window.addEventListener("DOMContentLoaded", loadInternships);
-</script>
+        document.querySelectorAll(".toggle-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const card = btn.closest(".card");
+            card.classList.toggle("expanded");
+            btn.textContent = card.classList.contains("expanded") ? "View Less" : "View More";
+          });
+        });
+      } catch (err) {
+        container.innerHTML = "<p style='color:red;text-align:center;font-size:20px;'>Couldn't load the internships.</p>";
+        console.error("Error loading internships:", err);
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", loadInternships);
+  </script>
+  <script src="./src/js/navbar.js"></script>
 
 
 </body>

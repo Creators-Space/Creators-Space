@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign Up</title>
   <style>
     * {
       box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
     }
+
     body {
-      background:  white;
+      background: white;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       padding: 20px;
     }
+
     .container {
       background: white;
       padding: 2rem;
       border-radius: 12px;
-     width: 100%;
+      width: 100%;
       max-width: 400px;
-      box-shadow: 0 8px 150px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 150px rgba(0, 0, 0, 0.15);
       border: 1px solid #ccc;
       font-weight: 500;
     }
+
     h2 {
       text-align: center;
       margin-bottom: 1rem;
     }
+
     .form-group {
       margin-bottom: 1rem;
       position: relative;
     }
+
     label {
       display: block;
       margin-bottom: 5px;
     }
+
     input[type="email"],
     input[type="password"],
     input[type="text"] {
@@ -48,6 +55,7 @@
       border: 1px solid #ccc;
       border-radius: 6px;
     }
+
     .toggle-password {
       position: absolute;
       right: 10px;
@@ -55,11 +63,13 @@
       cursor: pointer;
       color: #555;
     }
+
     .inline-feedback {
       font-size: 0.85rem;
       color: red;
       margin-top: 5px;
     }
+
     .btn {
       width: 100%;
       padding: 10px;
@@ -70,9 +80,11 @@
       font-weight: bold;
       cursor: pointer;
     }
+
     .btn:disabled {
       background-color: #999;
     }
+
     .spinner {
       display: none;
       width: 24px;
@@ -84,9 +96,13 @@
       animation: spin 1s linear infinite;
       margin-top: 1rem;
     }
+
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
+
     .login-page {
       display: block;
       text-align: center;
@@ -95,11 +111,13 @@
       color: black;
       text-decoration: none;
     }
+
     .social-buttons {
       display: flex;
       gap: 10px;
       margin-top: 1rem;
     }
+
     .social-btn {
       flex: 1;
       padding: 8px;
@@ -111,11 +129,12 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h2>Sign Up</h2>
     <form id="signup-form">
-        <div class="form-group">
+      <div class="form-group">
         <label>Name</label>
         <input type="text" id="name" required />
         <div id="name" class="name"></div>
@@ -147,61 +166,83 @@
         <p>Already have an account? <a href="login.html">Login</a></p>
       </div>
 
-  <script>
-    function togglePassword(id) {
-      const input = document.getElementById(id);
-      input.type = input.type === "password" ? "text" : "password";
-    }
+      <script>
+        function togglePassword(id) {
+          const input = document.getElementById(id);
+          input.type = input.type === "password" ? "text" : "password";
+        }
 
-    const form = document.getElementById("signup-form");
-    const password = document.getElementById("password");
-    const confirmPassword = document.getElementById("confirm-password");
-    const email = document.getElementById("email");
-    const matchFeedback = document.getElementById("matchFeedback");
-    const emailFeedback = document.getElementById("emailFeedback");
-    const spinner = document.getElementById("spinner");
+        const form = document.getElementById("signup-form");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirm-password");
+        const email = document.getElementById("email");
+        const matchFeedback = document.getElementById("matchFeedback");
+        const emailFeedback = document.getElementById("emailFeedback");
+        const spinner = document.getElementById("spinner");
 
-    confirmPassword.addEventListener("input", () => {
-      matchFeedback.textContent = confirmPassword.value !== password.value
-        ? "Passwords do not match"
-        : "";
-    });
+        confirmPassword.addEventListener("input", () => {
+          matchFeedback.textContent = confirmPassword.value !== password.value
+            ? "Passwords do not match"
+            : "";
+        });
 
-    email.addEventListener("input", () => {
-     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-     emailFeedback.textContent = regex.test(email.value)
-        ? ""
-        : "Enter a valid email address";
-    });
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      if (password.value.length < 6) {
-        alert("Password must be at least 6 characters.");
-        return;
-      }
-
-      if (password.value !== confirmPassword.value) {
-        alert("Passwords do not match.");
-        return;
-      }
-     localStorage.setItem("email", email.value);
-     localStorage.setItem("password", password.value);
-  
-
-      spinner.style.display = "block";
-
-      setTimeout(() => {
-        spinner.style.display = "none";
-        alert("Account created successfully!");
-        form.reset();
-      }, 1500);
-   
+        email.addEventListener("input", () => {
+          const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          emailFeedback.textContent = regex.test(email.value)
+            ? ""
+            : "Enter a valid email address";
+        });
 
 
-    });
-  </script>
+
+
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          if (password.value.length < 6) {
+            alert("Password must be at least 6 characters.");
+            return;
+          }
+
+          if (password.value !== confirmPassword.value) {
+            alert("Passwords do not match.");
+            return;
+          }
+
+          const userData = {
+            name: document.getElementById("name").value,
+            email: email.value,
+            password: password.value
+          };
+
+          // ✅ Get existing users or initialize empty array
+          let users = JSON.parse(localStorage.getItem("users")) || [];
+
+          // ✅ Check if email is already registered
+          const existingUser = users.find(user => user.email === userData.email);
+          if (existingUser) {
+            alert("Email is already registered!");
+            return;
+          }
+
+          // ✅ Add new user and save back to localStorage
+          users.push(userData);
+          localStorage.setItem("users", JSON.stringify(users));
+
+          spinner.style.display = "block";
+
+          setTimeout(() => {
+            spinner.style.display = "none";
+            alert("Account created successfully!");
+            form.reset();
+            console.log("Saved Users:", JSON.parse(localStorage.getItem("users")));
+            window.location.href = "login.html"; // optional: redirect to login
+          }, 1500);
+        });
+
+      </script>
 
 </body>
+
 </html>

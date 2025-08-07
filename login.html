@@ -26,9 +26,8 @@
       box-shadow: 0 8px 150px rgba(0,0,0,0.15);
       border: 1px solid #ccc;
       font-weight: 500;
-}
+    }
 
-    
     h2 {
       text-align: center;
       margin-bottom: 1rem;
@@ -77,13 +76,13 @@
       color: black;
       text-decoration: none;
     }
-    .signup-page{ display: block;
+    .signup-page {
+      display: block;
       text-align: center;
       margin-bottom: 1rem;
       font-size: 0.9rem;
       color: black;
       text-decoration: none;
-
     }
     .btn {
       width: 100%;
@@ -155,7 +154,7 @@
       <div class="spinner" id="spinner"></div>
 
       <div class="signup-page">
-      <p>Don't have an account? <a href="signup.html"> Sign up</a></p>
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
       </div>
 
       <div class="social-buttons">
@@ -166,52 +165,54 @@
   </div>
 
   <script>
-  function togglePassword(id) {
-    const input = document.getElementById(id);
-    input.type = input.type === "password" ? "text" : "password";
-  }
+    function togglePassword(id) {
+      const input = document.getElementById(id);
+      input.type = input.type === "password" ? "text" : "password";
+    }
 
-  const form = document.getElementById("Login-form");
-  const email = document.getElementById("email");
-  const password = document.getElementById("password");
-  const emailFeedback = document.getElementById("emailFeedback");
-  const spinner = document.getElementById("spinner");
+    const form = document.getElementById("Login-form");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const emailFeedback = document.getElementById("emailFeedback");
+    const spinner = document.getElementById("spinner");
 
-  // Validate email format live
-  email.addEventListener("input", () => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    emailFeedback.textContent = regex.test(email.value)
-      ? ""
-      : "Enter a valid email address";
-  });
+    email.addEventListener("input", () => {
+      const regex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+      emailFeedback.textContent = regex.test(email.value)
+        ? ""
+        : "Enter a valid email address";
+    });
 
-  // Login form submit
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      spinner.style.display = "block";
 
-    spinner.style.display = "block";
+      setTimeout(() => {
+        spinner.style.display = "none";
 
-    setTimeout(() => {
-      spinner.style.display = "none";
+        // Get all users from localStorage (array of users)
+        const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+        const inputEmail = email.value.trim();
+        const inputPassword = password.value.trim();
 
-      // Get stored credentials from localStorage
-      const storedEmail = localStorage.getItem("email");
-      const storedPassword = localStorage.getItem("password");
+        // Match user
+        const matchedUser = storedUsers.find(
+          user => user.email === inputEmail && user.password === inputPassword
+        );
 
-      if (
-        email.value === storedEmail &&
-        password.value === storedPassword
-      ) {
-        alert("Login successful!");
-        window.location.href = "index.html"; // Redirect
-      } else {
-        alert("Invalid email or password.");
-      }
+        if (matchedUser) {
+          // Save login state and current user
+          localStorage.setItem("isLoggedIn", "true");
+          localStorage.setItem("loggedInUser", JSON.stringify(matchedUser));
+          alert("Login successful!");
+          window.location.href = "index.html"; // Redirect to homepage
+        } else {
+          alert("Invalid email or password.");
+        }
 
-      form.reset();
-    }, 2000);
-  });
-</script>
-
+        form.reset();
+      }, 1500);
+    });
+  </script>
 </body>
 </html>
