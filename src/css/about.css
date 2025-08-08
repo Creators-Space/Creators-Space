@@ -19,6 +19,150 @@ body {
     color: #222;
 }
 
+/* Hero Section Animation - Same as courses page */
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="%23667eea" stop-opacity="0.1"/><stop offset="100%" stop-color="%23667eea" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="150" fill="url(%23a)"/><circle cx="800" cy="300" r="200" fill="url(%23a)"/><circle cx="400" cy="700" r="180" fill="url(%23a)"/></svg>')
+    center/cover;
+  pointer-events: none;
+}
+
+.main h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  animation: slideInDown 1s ease-out;
+}
+
+.main p {
+  font-size: 1.4rem;
+  color: #666;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+  animation: slideInUp 1s ease-out 0.3s both;
+}
+
+/* Animations */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.navbar {
+}
+
+.navbar h1 {
+}
+
+.navbar a {
+}
+
+.navbar .nav-links a {
+}
+
+.navbar .nav-links a:nth-child(-n + 7)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1.5px;
+  width: 0%;
+  background-color: rgba(0, 0, 0, 0.889);
+  transition: width 0.3s ease;
+}
+
+.navbar .nav-links a:nth-child(-n + 7):hover::after {
+  width: 100%;
+}
+
+.navbar .btn.login {
+  border: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+  background-color: transparent;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .btn.login:hover {
+  background-color: black;
+  color: white;
+}
+
+.navbar .btn.signup {
+  border: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+  background-color: black;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: 500;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .btn.signup:hover {
+  background-color: white;
+  color: black;
+}
+
+.navbar .nav-links {
+  /* Removed to use style.css nav-links styles */
+}
+
 .padding-inline-lg {
   padding-inline: 2rem; /* same as the toggle switch container */
 }
@@ -154,6 +298,22 @@ body {
 /* Optional: Dark toggle switch styling */
 #main-body.dark .toggle-switch .slider {
     background-color: #666;
+}
+
+/* Dark mode for main hero section */
+#main-body.dark .main {
+    background-color: #1a1a1a;
+}
+
+#main-body.dark .main h1 {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#main-body.dark .main p {
+    color: #ccc;
 }
 
 /*Mission Vision Section*/
@@ -335,9 +495,7 @@ nav {
 }
 /* Navigation Links */
 .nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
+  /* Removed to use style.css nav-links styles */
 }
 
 .nav-links li {

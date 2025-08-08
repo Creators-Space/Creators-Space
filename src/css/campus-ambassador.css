@@ -1,0 +1,317 @@
+/* Campus Ambassador Page Custom Styles */
+
+/* Hero Section Animation - Same as courses and about page */
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="%23667eea" stop-opacity="0.1"/><stop offset="100%" stop-color="%23667eea" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="150" fill="url(%23a)"/><circle cx="800" cy="300" r="200" fill="url(%23a)"/><circle cx="400" cy="700" r="180" fill="url(%23a)"/></svg>')
+    center/cover;
+  pointer-events: none;
+}
+
+.main h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  animation: slideInDown 1s ease-out;
+}
+
+.main p {
+  font-size: 1.4rem;
+  color: #666;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+  animation: slideInUp 1s ease-out 0.3s both;
+}
+
+/* Animation keyframes */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Use About Us page styling for consistency */
+.project-overview {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.section-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.overview-text {
+    font-size: 1.1em;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+/* Highlight Cards */
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.highlight-card {
+    flex: 1 1 280px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+}
+
+.highlight-card h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.highlight-card p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Main Content Section */
+.campus-ambassador-section {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro-text {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.intro-text h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  color: #5a6c7d;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.benefit-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e1e8ed;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.benefit-card h3 {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.benefit-card p {
+  color: #5a6c7d;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  background: white;
+  padding: 50px 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.cta-section h3 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  color: #5a6c7d;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 15px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(45deg, #5a6fd8, #6a42a0);
+}
+
+/* Dark Mode Support */
+/* Dark mode for main hero section */
+body.dark .main {
+  background-color: #1a1a1a;
+}
+
+body.dark .main h1 {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.dark .main p {
+  color: #ccc;
+}
+
+body.dark .campus-ambassador-section {
+  background-color: #1a1a1a;
+}
+
+body.dark .intro-text h2,
+body.dark .benefit-card h3,
+body.dark .cta-section h3 {
+  color: #ffffff;
+}
+
+body.dark .intro-text p,
+body.dark .benefit-card p,
+body.dark .cta-section p {
+  color: #cccccc;
+}
+
+body.dark .benefit-card,
+body.dark .cta-section {
+  background: #2c2c2c;
+  border-color: #444;
+}
+
+body.dark .benefit-card:hover {
+  box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .intro-text h2 {
+    font-size: 2rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .benefit-card {
+    padding: 30px 20px;
+  }
+  
+  .cta-section {
+    padding: 40px 20px;
+  }
+}

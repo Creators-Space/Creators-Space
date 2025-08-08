@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Ambassador | Creators-Space</title>
+    <link rel="stylesheet" href="./src/css/utils.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/responsive.css">
+    <link rel="stylesheet" href="./src/css/campus-ambassador.css">
+    
+    <script>
+      function toggleDarkMode() {
+        const element = document.getElementById("main-body");
+        element.classList.toggle("dark");
+
+        if (element.classList.contains("dark")) {
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+      }
+
+      // Apply saved theme on page load
+      if (localStorage.getItem("theme") === "dark") {
+        document.addEventListener("DOMContentLoaded", function () {
+          document.getElementById("main-body")?.classList.add("dark");
+        });
+      }
+    </script>
+</head>
+<body id="main-body" class="overflow-x-hidden">
+    <div class="navbar">
+        <h1><a href="./">
+          <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
+              <br>Creators-Space</a></h1>
+        <div class="nav-links align-items-center">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="courses.html">Courses</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="internship.html">Internship</a>
+            <a href="campus-ambassador.html">Campus Ambassador</a>
+            <a href="blog.html">Blog</a>
+            <a href="bookmarked.html">BookMarks</a>
+            <a href="./login.html" class="btn login">Log In</a>
+            <a href="./signup.html" class="btn signup">Sign Up</a>
+        </div>
+        <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
+            <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
+                <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
+                    stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"
+                    class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"></polyline>
+                <polyline id="globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2"
+                    stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"
+                    class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"></polyline>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navbar-x-logo" class="bi bi-x-lg d-none"
+                viewBox="0 0 16 16">
+                <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+            </svg>
+        </div>
+    </div>
+    <!-- Dark Mode Toggle -->
+    <div class="toggle-switch">
+        <label class="switch-label">
+            <input onclick="toggleDarkMode()" type="checkbox" class="checkbox">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <!-- Hero Section with Animation -->
+    <div class="main">
+        <h1>Campus Ambassador Program</h1>
+        <p>
+            Join the Creators-Space Campus Ambassador Program and become a bridge between innovation and education at your institution. As an ambassador, you'll lead initiatives, inspire peers, and shape the future of tech learning in your community.
+        </p>
+    </div>
+
+    <main class="margin-top-3 padding-inline-lg">
+        <!-- <section class="project-overview">
+            <div class="container">
+                <h2 class="section-title">Campus Ambassador Program</h2>
+                <p class="overview-text">
+                    Join the Creators-Space Campus Ambassador Program and become a bridge between innovation and education at your institution. As an ambassador, you'll lead initiatives, inspire peers, and shape the future of tech learning in your community.
+                </p>
+            </div>
+        </section> -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Grid Section -->
+        <section class="campus-ambassador-section">
+            <div class="content-container">
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📚</div>
+                        <h3>Leadership Development</h3>
+                        <p>Develop essential leadership skills through real-world experience and mentorship</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🌟</div>
+                        <h3>Event Organization</h3>
+                        <p>Plan and execute tech events, workshops, and community meetups at your campus</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💼</div>
+                        <h3>Career Opportunities</h3>
+                        <p>Build your resume with valuable experience and connect with potential employers</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">�</div>
+                        <h3>Innovation Hub</h3>
+                        <p>Create an innovation ecosystem at your institution and drive technological advancement</p>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Ready to lead the change?</h3>
+                    <p>Join thousands of student leaders who are already making an impact in their communities!</p>
+                    <a href="signup.html" class="btn btn-primary">Apply Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <div class="social">
+            <h1>Creators-Space</h1>
+            <div style="display: flex; gap: 10px;">
+                <svg fill="currentColor" viewBox="0 0 24 24" width="40" height="40">
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                </svg>
+                <svg fill="currentColor" viewBox="0 0 24 24" width="40" height="40">
+                    <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="contact">
+            <h3>Contact Us</h3>
+            <a href="mailto:contact@creators-space.com">contact@creators-space.com</a>
+            <a href="tel:+1234567890">+123 456 7890</a>
+        </div>
+        
+        <div class="form">
+            <h3>Newsletter</h3>
+            <input type="email" placeholder="Your email">
+            <textarea placeholder="Your message"></textarea>
+            <button>Subscribe</button>
+        </div>
+        
+        <div class="copy">
+            <p>&copy; 2024 Creators-Space. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

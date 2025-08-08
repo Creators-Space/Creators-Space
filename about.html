@@ -2,8 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses - Creators-Space</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+<!-- Mission and Vision Section -->
     <title>About Us – Creators-Space</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./src/css/utils.css">
@@ -13,39 +19,40 @@
 </head>
 <body id="main-body" class="overflow-x-hidden">
     <!-- Reused Navbar from index.html -->
-    <div class="navbar">
-        <h1>
-            <a href="./">
-                <img width="80px" src="./assets/images/logo-nav.png" alt="logo Creators-Space"><br>
-                Creators-Space
-            </a>
-        </h1>
+<div class="navbar">
+        <h1><a href="./">
+          <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
+
+              <br>Creators-Space</a></h1>
         <div class="nav-links align-items-center">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="courses.html">Courses</a>
-            <a href="#">Services</a>
+            <a href="services.html" class="active">Services</a>
             <a href="internship.html">Internship</a>
-            <a href="#">Campus Ambassador</a>
+            <a href="campus-ambassador.html">Campus Ambassador</a>
             <a href="blog.html">Blog</a>
             <a href="bookmarked.html">BookMarks</a>
             <a href="./login.html" class="btn login">Log In</a>
             <a href="./signup.html" class="btn signup">Sign Up</a>
-        </div>
+      </div>
         <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
-            <!-- Hamburger menu icons -->
             <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
-                <polyline fill="none" stroke="currentColor" stroke-width="1.2"
-                          stroke-linecap="round" stroke-linejoin="round"
-                          points="2 12, 16 12"></polyline>
-                <polyline fill="none" stroke="currentColor" stroke-width="1.2"
-                          stroke-linecap="round" stroke-linejoin="round"
-                          points="2 5, 16 5"></polyline>
+                <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
+                    stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"
+                    class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"></polyline>
+                <polyline id="globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2"
+                    stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"
+                    class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"></polyline>
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                 id="navbar-x-logo" class="bi bi-x-lg d-none" viewBox="0 0 16 16">
-                <path d="M2.146 2.854..."></path>
+
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navbar-x-logo" class="bi bi-x-lg d-none"
+                viewBox="0 0 16 16">
+                <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
             </svg>
+
+
         </div>
     </div>
 
@@ -57,33 +64,32 @@
         </label>
     </div>
 
+    <!-- Hero Section with Animation -->
+    <div class="main">
+        <h1>Project Overview</h1>
+        <p>
+            Creator's Space is an inclusive digital hub designed to empower creators across all fields — art, music, design, coding, and more. We aim to build a community where talent is discovered, supported, and celebrated. From showcasing portfolios to finding collaborators, Creator's Space fuels creativity and growth.
+        </p>
+    </div>
+
     <!-- Main About Us Content Section -->
     <main class="margin-top-3 padding-inline-lg">
-        <h1>About Us</h1>
+        <!-- <h1>About Us</h1> -->
 
-    <section class="project-overview">
+    <!-- <section class="project-overview">
         <div class="container">
             <h2 class="section-title">Project Overview</h2>
             <p class="overview-text">
                 Creator’s Space is an inclusive digital hub designed to empower creators across all fields — art, music, design, coding, and more. We aim to build a community where talent is discovered, supported, and celebrated. From showcasing portfolios to finding collaborators, Creator’s Space fuels creativity and growth.
             </p>
-
-            <div class="highlights">
-                <div class="highlight-card">
-                    <h3>🌐 Community Driven</h3>
-                    <p>Built by creators, for creators — fostering collaboration and knowledge sharing.</p>
-                </div>
-                <div class="highlight-card">
-                    <h3>🎨 Multi-Domain Support</h3>
-                    <p>From art to AI, we welcome creators from every domain under one roof.</p>
-                </div>
-                <div class="highlight-card">
-                    <h3>🚀 Career & Discovery</h3>
-                    <p>Connect with opportunities, mentors, and showcase your talent globally.</p>
-                </div>
-            </div>
         </div>
-    </section>
+    </section> -->
+    <div class="main">
+      <h1>Project Overview</h1>
+      <p>
+        Creator’s Space is an inclusive digital hub designed to empower creators across all fields — art, music, design, coding, and more. We aim to build a community where talent is discovered, supported, and celebrated. From showcasing portfolios to finding collaborators, Creator’s Space fuels creativity and growth.
+      </p>
+    </div>
     
 <!-- Mission and Vision Section -->
 <section class="mission-vision-section">
