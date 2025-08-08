@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apply Now | Creators-Space</title>
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/utils.css">
+  <link rel="stylesheet" href="./src/css/responsive.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0f7fa, #fff3e0);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 2.5rem 2rem;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .form-container:hover {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.3rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #555;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1.5px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border 0.3s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #2196f3;
+      outline: none;
+    }
+
+    button {
+      background-color: #2196f3;
+      color: #fff;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1976d2;
+    }
+
+    .success-message {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Apply for Internship</h2>
+    <form id="internship-form" novalidate>
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <div class="error-message" id="email-error">Please enter a valid email address.</div>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" required>
+        <div class="error-message" id="phone-error">Enter a valid phone number (10–13 digits).</div>
+      </div>
+      <div class="form-group">
+        <label for="course">Select Internship Course:</label>
+        <select id="course" required>
+          <option value="">Loading...</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Why are you applying?</label>
+        <textarea id="message" rows="4" required></textarea>
+      </div>
+      <button type="submit">Submit Application</button>
+      <p class="success-message" id="success-msg" style="display: none;">Form submitted successfully! Redirecting to home...</p>
+    </form>
+  </div>
+
+  <script>
+    const dropdown = document.getElementById("course");
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedCourse = urlParams.get("course");
+
+    async function loadCourses() {
+      try {
+        const res = await fetch("./src/data/internship.json");
+        if (!res.ok) throw new Error("Failed to load internships");
+
+        const data = await res.json();
+        dropdown.innerHTML = '<option value="">-- Select a Course --</option>';
+
+        data.forEach((item) => {
+          const option = document.createElement("option");
+          option.value = item.title;
+          option.textContent = item.title;
+          dropdown.appendChild(option);
+        });
+
+        if (selectedCourse) {
+          dropdown.value = selectedCourse;
+        }
+      } catch (err) {
+        dropdown.innerHTML = '<option value="">Error loading courses</option>';
+        console.error(err);
+      }
+    }
+
+    function validateEmail(email) {
+      const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      return pattern.test(email.toLowerCase());
+    }
+
+    function validatePhone(phone) {
+      const pattern = /^\d{10,13}$/;
+      return pattern.test(phone);
+    }
+
+    document.getElementById("internship-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const emailError = document.getElementById("email-error");
+      const phoneError = document.getElementById("phone-error");
+
+      let valid = true;
+
+      // Email validation
+      if (!validateEmail(email)) {
+        emailError.style.display = "block";
+        valid = false;
+      } else {
+        emailError.style.display = "none";
+      }
+
+      // Phone validation
+      if (!validatePhone(phone)) {
+        phoneError.style.display = "block";
+        valid = false;
+      } else {
+        phoneError.style.display = "none";
+      }
+
+      if (valid) {
+        document.getElementById("success-msg").style.display = "block";
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 2000);
+      }
+    });
+
+    window.addEventListener("DOMContentLoaded", loadCourses);
+  </script>
+</body>
+</html>

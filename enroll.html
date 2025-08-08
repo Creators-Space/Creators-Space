@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enroll Now - Creators-Space</title>
+  <link rel="stylesheet" href="./src/css/utils.css">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/responsive.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f8f9fa, #e0e7ff);
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #6c5ce7;
+      color: white;
+      padding: 1rem 2rem;
+    }
+
+    .navbar h1 a {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .main {
+      max-width: 600px;
+      margin: 3rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #6c5ce7;
+    }
+
+    form label {
+      display: block;
+      margin: 1rem 0 0.3rem;
+      font-weight: 600;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      margin-top: 2rem;
+      width: 100%;
+      background-color: #6c5ce7;
+      color: white;
+      border: none;
+      padding: 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #5e54c4;
+    }
+
+    @media screen and (max-width: 600px) {
+      .main {
+        margin: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <h1><a href="./index.html">
+      <img width="60px" src="./assets/images/logo-nav.png" alt="logo"> Creators-Space
+    </a></h1>
+  </div>
+
+  <div class="main">
+    <h1>Enroll Now</h1>
+    <form id="enrollForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required placeholder="Your full name" />
+
+      <label for="email">Email (only @gmail.com):</label>
+      <input type="email" id="email" required placeholder="e.g. example@gmail.com" />
+
+      <label for="phone">Phone Number (10 digits):</label>
+      <input type="tel" id="phone" required placeholder="e.g. xxxxxxxxxx" />
+
+      <label for="course">Select Course:</label>
+      <select id="course" required>
+        <option value="">-- Choose a course --</option>
+        <option value="Web Development">Web Development</option>
+        <option value="C Programming">C Programming</option>
+        <option value="Python Programming">Python Programming</option>
+        <option value="UI/UX Design">UI/UX Design</option>
+        <option value="Graphic Design">Graphic Design</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("enrollForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const course = document.getElementById("course").value;
+
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+      const phoneRegex = /^[1-9]\d{9}$/;
+
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid Gmail address.");
+        return;
+      }
+
+      if (!phoneRegex.test(phone)) {
+        alert("Please enter a valid 10-digit phone number starting with 6-9.");
+        return;
+      }
+
+      if (!course) {
+        alert("Please select a course.");
+        return;
+      }
+
+      alert("Form submitted successfully!");
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
