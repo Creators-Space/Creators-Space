@@ -11,6 +11,23 @@ body {
   background-color: white;
   transition: all 0.3s linear;
 }
+.search-bar-container {
+  text-align: center;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 600px;
+}
+
+.search-bar-container input {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
 
 /* NavBar */
 

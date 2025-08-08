@@ -111,6 +111,17 @@
       </p>
     </div>
 
+    
+    <!-- 🔍 Search Bar -->
+<div class="search-bar-container">
+  <input
+    type="text"
+    id="courseSearch"
+    placeholder="Search for a course (e.g. Python, UI/UX)..."
+    onkeyup="filterCourses()"
+  />
+</div>
+
     <!-- Enhanced Courses Section -->
     <section class="courses-container">
       <div class="card" onclick="toggleSyllabus(this)">
@@ -405,6 +416,21 @@
       toggleCheckbox.checked = false;
     }
   });
+  function filterCourses() {
+  const input = document.getElementById("courseSearch").value.toLowerCase();
+  const cards = document.querySelectorAll(".courses-container .card");
+
+  cards.forEach((card) => {
+    const title = card.querySelector("h3").innerText.toLowerCase();
+    const desc = card.querySelector("p").innerText.toLowerCase();
+    if (title.includes(input) || desc.includes(input)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
 </script>
 
 
