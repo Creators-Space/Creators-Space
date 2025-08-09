@@ -53,3 +53,12 @@ body.dark .main p {
   max-height: 250px;
   padding: 20px;
 }
+
+.card-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; 
+  margin: 20px 0;
+}

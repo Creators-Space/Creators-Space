@@ -302,7 +302,11 @@
         <p>Copyright &copy; 2024 - 2025 Creators-Space. All rights reserved.</p>
       </div>
     </footer>
-    <button id="scrollTopBtn" title="Back to Top">↑</button>
+    <!-- Added Svg arrow  -->
+    <button id="scrollTopBtn" title="Back to Top">
+  <!-- added svg of arrow up -->
+    <svg data-name="1-Arrow Up" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 32 32"><path d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z"/></svg>
+</button> 
 
    
 
@@ -311,7 +315,50 @@
     <script src="./src/js/slider.js"></script>
     <script src="./src/js/scrollToTop.js"></script>
     <script src="./src/js/utils.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <title>Chatbot Test</title>
+  <style>
+    .chatbot { padding: 20px; border: 1px solid #ccc; max-width: 400px; margin: auto; }
+    .chat-body { height: 150px; overflow-y: auto; margin-bottom: 10px; }
+    .bot-message, .user-message { margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <div class="chatbot-container">
+  <button class="chatbot-toggle" aria-label="Open chat">💬</button>
+  <div class="chatbot-window" role="dialog" aria-label="Chat window">
+    <div class="chat-body" id="chat-body">
+      <div class="bot-message">Hi! How can I help you today?</div>
+    </div>
+    <input type="text" id="user-input" placeholder="Type your message..." />
+    <button onclick="handleUserInput()">Send</button>
+  </div>
+</div>
+  <script>
+    function handleUserInput() {
+      const input = document.getElementById("user-input").value;
+      if (!input) return;
+      const chatBody = document.getElementById("chat-body");
+      const userMsg = document.createElement("div");
+      userMsg.className = "user-message";
+      userMsg.textContent = input;
+      chatBody.appendChild(userMsg);
 
+      const botMsg = document.createElement("div");
+      botMsg.className = "bot-message";
+      botMsg.textContent = "Thanks for your question!";
+      chatBody.appendChild(botMsg);
+
+      document.getElementById("user-input").value = "";
+    }
+  </script>
+</body>
+</html>
 </body>
 
 </html>

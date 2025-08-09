@@ -3,10 +3,12 @@
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 200) {
-    scrollTopBtn.style.display = "block";
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    scrollTopBtn.classList.add("show");
+    scrollTopBtn.classList.add("bounce");
   } else {
-    scrollTopBtn.style.display = "none";
+    scrollTopBtn.classList.remove("show");
+    scrollTopBtn.classList.remove("bounce"); 
   }
 });
 

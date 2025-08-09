@@ -84,10 +84,3 @@ window.addEventListener("DOMContentLoaded", () => {
     container.appendChild(card);
   });
 });
-
-function removeBookmark(title) {
-  let bookmarks = JSON.parse(localStorage.getItem("bookmarkedCourses")) || [];
-  bookmarks = bookmarks.filter((c) => c.title !== title);
-  localStorage.setItem("bookmarkedCourses", JSON.stringify(bookmarks));
-  location.reload(); // Refresh to update UI
-}
