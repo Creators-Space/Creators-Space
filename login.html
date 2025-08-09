@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="./src/js/firebase.js" defer type="module"></script>
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <title>Login</title>
   <style>
     * {
@@ -109,6 +113,65 @@
       animation: spin 1s linear infinite;
       margin-top: 1rem;
     }
+
+
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 20px 0; /* spacing between login and google button */
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #ccc; /* gray line */
+    }
+
+    .divider:not(:empty)::before {
+      margin-right: 10px;
+    }
+
+    .divider:not(:empty)::after {
+      margin-left: 10px;
+    }
+
+    .divider span {
+      color: #888;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    /* Google Button */
+    .google-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%; 
+        background-color: white !important; 
+        color: #3c4043 !important; 
+        border: 1px solid #dadce0;
+        border-radius: 7px !important;
+        padding: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+        transition: background-color 0.3s ease;
+    }
+
+
+    .google-btn:hover {
+        background-color: #f7f8f8;
+    }
+
+    .google-icon {
+        width: 20px;
+        height: 20px; 
+    }
+
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
@@ -156,6 +219,24 @@
 
       <button type="submit" class="btn">Login</button>
       <div class="spinner" id="spinner"></div>
+
+      <div class="divider">
+        <span>or continue with</span>
+      </div>
+
+      <div class="input">
+        <button id="google-login-btn" class="google-btn">
+            <span class="google-logo">
+              <svg class="google-icon" viewBox="0 0 533.5 544.3">
+                <path fill="#4285F4" d="M533.5 278.4c0-18.5-1.6-37.1-5-55.2H272v104.5h146.9c-6.4 34.7-25.7 64.1-54.9 83.5l89 69.4c52-47.8 80.5-118.3 80.5-202.2z"/>
+                <path fill="#34A853" d="M272 544.3c73.6 0 135.4-24.3 180.5-65.9l-89-69.4c-24.7 16.6-56.4 26.2-91.5 26.2-70.4 0-130-47.6-151.3-111.5l-93.6 72.3c43.3 85.1 132.1 147.3 244.9 147.3z"/>
+                <path fill="#FBBC04" d="M120.7 323.7c-10.4-30.7-10.4-63.6 0-94.3L27 157c-40.7 79.7-40.7 172 0 251.7l93.7-72.3z"/>
+                <path fill="#EA4335" d="M272 107.7c38.6-.6 75.5 13.6 104 39.4l77.7-77.7C403.2 23.9 340.2-.2 272 0 159.2 0 70.5 62.2 27.2 147.3l93.6 72.4c21.4-63.9 81-111.5 151.2-112z"/>
+              </svg>
+              </span>
+            <span>Sign in with Google</span>
+        </button>
+
 
       <div class="signup-page">
       <p>Don't have an account? <a href="signup.html"> Sign up</a></p>
