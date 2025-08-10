@@ -123,23 +123,23 @@ Version Control: Git & GitHub
 
 ## 📸 Screenshots
 
-1. Home Page (Light Mode)
-   ![Home Page(Light)](<Screenshots\intro(light).png>)
+1. Home Page (Light Mode)  
+   ![Home Page (Light)](<./Screenshots/intro(light).png>)
 
-2. Home Page (Dark Mode)
-   ![Home Page(Dark)](<Screenshots\intro(dark).png>)
+2. Home Page (Dark Mode)  
+   ![Home Page (Dark)](<./Screenshots/intro(dark).png>)
 
-3. Login Page
-   ![Login Page](Screenshots\login.png)
+3. Login Page  
+   ![Login Page](./Screenshots/login.png)
 
-4. Sign Up Page
-   ![Sign Up Page](Screenshots\signup.png)
+4. Sign Up Page  
+   ![Sign Up Page](./Screenshots/signup.png)
 
-5. Internship Page
-   ![Internship Page](Screenshots\internship.png)
+5. Internship Page  
+   ![Internship Page](./Screenshots/internship.png)
 
-6. Course Page
-   ![Course Page](Screenshots\course.png)
+6. Course Page  
+   ![Course Page](./Screenshots/course.png)
 
 ---
 
