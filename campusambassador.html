@@ -4,12 +4,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us – Creators-Space</title>
+    <title>Campus Ambassador – Creators-Space</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./src/css/utils.css">
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/responsive.css">
-     <link rel="stylesheet" href="./src/css/about.css">
+     <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fc;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: auto;
+      opacity: 0.9;
+    }
+
+    /* Form Section */
+    .form-section {
+      display: flex;
+      justify-content: center;
+      padding: 2.5rem 1rem;
+    }
+
+    .ambassador-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .ambassador-form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .ambassador-form input,
+    .ambassador-form select,
+    .ambassador-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .ambassador-form input:focus,
+    .ambassador-form select:focus,
+    .ambassador-form textarea:focus {
+      border-color: #6a11cb;
+      outline: none;
+      box-shadow: 0 0 5px rgba(106,17,203,0.3);
+    }
+
+    /* Submit Button */
+    .btn-submit {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      border: none;
+      padding: 0.9rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 1.5rem;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+  </style>
 </head>
 <body id="main-body" class="overflow-x-hidden">
     <!-- Reused Navbar from index.html -->
@@ -57,99 +156,65 @@
         </label>
     </div>
 
-    <!-- Main About Us Content Section -->
-    <main class="margin-top-3 padding-inline-lg">
-        <h1>About Us</h1>
+<section class="form-section">
+    <form class="ambassador-form" action="about.html">
+      <h1 style="text-align: center">Campus Ambassador</h1>
+      <label for="name">Full Name*</label>
+      <input type="text" id="name" name="name" required>
 
-    <section class="project-overview">
-        <div class="container">
-            <h2 class="section-title">Project Overview</h2>
-            <p class="overview-text">
-                Creator’s Space is an inclusive digital hub designed to empower creators across all fields — art, music, design, coding, and more. We aim to build a community where talent is discovered, supported, and celebrated. From showcasing portfolios to finding collaborators, Creator’s Space fuels creativity and growth.
-            </p>
+      <label for="email">Email Address*</label>
+      <input type="email" id="email" name="email" required>
 
-            <div class="highlights">
-                <div class="highlight-card">
-                    <h3>🌐 Community Driven</h3>
-                    <p>Built by creators, for creators — fostering collaboration and knowledge sharing.</p>
-                </div>
-                <div class="highlight-card">
-                    <h3>🎨 Multi-Domain Support</h3>
-                    <p>From art to AI, we welcome creators from every domain under one roof.</p>
-                </div>
-                <div class="highlight-card">
-                    <h3>🚀 Career & Discovery</h3>
-                    <p>Connect with opportunities, mentors, and showcase your talent globally.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-<!-- Mission and Vision Section -->
-<section class="mission-vision-section">
-  <div class="container">
-    <h2>🎯 Mission & Vision</h2>
+      <label for="college">College/University*</label>
+      <input type="text" id="college" name="college" required>
 
-    <!-- Mission Block: Text Left, Image Right -->
-    <div class="mv-row">
-      <div class="mv-text">
-        <h3>Our Mission</h3>
-        <p>
-          To empower creators with accessible learning tools, community support,
-          and project-based opportunities that drive innovation and self-growth.
-        </p>
-      </div>
-      <div class="mv-image">
-        <img src="./assets/images/aboutpage/mission.gif" alt="Mission Animation">
-      </div>
-    </div>
+      <label for="year">Year of Study*</label>
+      <select id="year" name="year" required>
+        <option value="">Select Year</option>
+        <option>1st Year</option>
+        <option>2nd Year</option>
+        <option>3rd Year</option>
+        <option>4th Year</option>
+      </select>
 
-    <!-- Vision Block: Image Left, Text Right -->
-    <div class="mv-row vision-row">
-      <div class="mv-image">
-        <img src="./assets/images/aboutpage/vision.webp" alt="Vision Animation">
-      </div>
-      <div class="mv-text">
-        <h3>Our Vision</h3>
-        <p>
-          To foster a global, inclusive ecosystem where creativity and technology
-          converge to create positive social impact.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+      <label for="social">Social Media Links*</label>
+      <input type="url" id="social" name="social" placeholder="LinkedIn/Instagram/Twitter" required>
 
-<!-- Technologies Used Section -->
+      <label for="motivation">Why do you want to be a Campus Ambassador?*</label>
+      <textarea id="motivation" name="motivation" rows="5" required></textarea>
 
-    <section class="tech-used-section">
-         <h2>Technologies Used</h2>
-            <div class="tech-logos">
-             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 Logo">
-             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 Logo">
-             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript Logo">
-            </div>
-    </section>
+      <button type="submit" class="btn-submit">Submit Application</button>
+    </form>
+  </section>
 
-    <!-- stay connected section -->
-    <section id="stay-connected">
-        <div class="stay-container">
-           <h2>🤝 Stay Connected with Us!</h2>
-           <p>
-            Join our growing open-source community! Whether you're a coder, designer, or contributor — your efforts matter.
-           ⭐ Star our repo, share feedback, or suggest improvements. Together, we build better!
-           </p>
+  <!-- Footer -->
 
-        <div class="stay-actions">
-        <a href="https://github.com/Creators-Space/Creators-Space" target="_blank" rel="noopener noreferrer" class="github-button">
-         ⭐ Star & Contribute on GitHub
-        </a>
-        </div>
-        </div>
-    </section>
-</main>
 
-<!-- Footer section -->
+  <!-- Dark Mode Script -->
+  <script>
+    const toggle = document.getElementById('dark-mode-toggle');
+    const logo = document.getElementById('logo');
+    const darkLogo = 'images/logo-nav-light.png';
+    const lightLogo = 'images/logo-nav.png';
+
+    // Load preference
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+      logo.src = darkLogo;
+    }
+
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        logo.src = darkLogo;
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+        logo.src = lightLogo;
+      }
+    });
+  </script>
+  <!-- Footer section -->
     <div class="margin-top-5"></div>
 
 
@@ -200,4 +265,6 @@
     <script src="./src/js/scrollToTop.js"></script>
 </body>
 
+</html>
+</body>
 </html>
