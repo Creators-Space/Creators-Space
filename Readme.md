@@ -2,12 +2,12 @@
 
 <img src="./assets/images/logo.png" alt="Creators-Space Logo" height="100px" />
 
-
 Creators-Space is a modern tech-learning platform created to empower students and professionals through high-quality content and career-oriented resources.
 
 🔗 **Live Website:** [https://creators-space.netlify.app/](https://creators-space.netlify.app/)
 
 ---
+
 ---
 
 ## 🚀 Project under GSSoC'25
@@ -17,8 +17,8 @@ We welcome and encourage contributions from participants and the entire open-sou
 
 > ⭐ If you're a GSSoC'25 contributor, check out our [CONTRIBUTING.md](./CONTRIBUTING.md) to get started!
 
-
 ---
+
 📌 Table of Contents
 🎯 Introduction
 
@@ -42,12 +42,12 @@ We welcome and encourage contributions from participants and the entire open-sou
 
 🌟 Acknowledgment
 
-
 ---
 
 ## 📌 About
 
-Creators-Space provides an innovative and user-friendly environment for individuals looking to enhance their skills in technology and digital design. 
+Creators-Space provides an innovative and user-friendly environment for individuals looking to enhance their skills in technology and digital design.
+
 <!-- The platform includes features like:
 
 - Home
@@ -58,8 +58,11 @@ Creators-Space provides an innovative and user-friendly environment for individu
 - Authentication (Login / Sign Up)
 - Contact & Social Links
 -->
+
 ---
+
 ## To run locally
+
 Clone the repository:
 
 ```bash
@@ -74,7 +77,6 @@ Open index.html in your preferred web browser
 
 **Anurag Vishwakarma**  
 🔗 [LinkedIn Profile](https://www.linkedin.com/in/anuragvishwakarma/)
-
 
 ---
 
@@ -104,9 +106,11 @@ Creators-Space/
 ├── signup.html
 └── README.md
 ```
+
 ---
 
 ## 🛠 Tech Stack
+
 Frontend: HTML5, CSS3, JavaScript
 
 Design: Responsive Web Design, Flexbox, CSS Grid
@@ -119,33 +123,35 @@ Version Control: Git & GitHub
 
 ## 📸 Screenshots
 
-
 1. Home Page (Light Mode)
-![Home Page(Light)](screenshots/intro(light).png)
+   ![Home Page(Light)](<Screenshots\intro(light).png>)
 
-2.  Home Page (Dark Mode)
-![Home Page(Dark)](screenschots/intro(dark).png)
+2. Home Page (Dark Mode)
+   ![Home Page(Dark)](<Screenshots\intro(dark).png>)
 
 3. Login Page
-![Login Page](screenshots/login.png)
+   ![Login Page](Screenshots\login.png)
 
 4. Sign Up Page
-![Sign Up Page](screenshots/signup.png)
+   ![Sign Up Page](Screenshots\signup.png)
 
 5. Internship Page
-![Internship Page](screenshots/internship.png)
+   ![Internship Page](Screenshots\internship.png)
 
 6. Course Page
-![Course Page](screenshots/course.png)
+   ![Course Page](Screenshots\course.png)
 
 ---
+
 ## 🌐 Community & Support
+
 💬 Join the GSSoC community discussions.
 🐛 Report bugs or request features via GitHub Issues.
 
 ---
 
 ## 🤝 Contributing
+
 We welcome contributions from the community!
 Please check out our CONTRIBUTING.md for guidelines.
 
