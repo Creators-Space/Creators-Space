@@ -6,10 +6,12 @@
   box-sizing: border-box;
   font-family: "SF Pro Display", sans-serif;
   transition: all 0.3s linear;
+  
 }
 
 body {
   width: 100vw !important;
+
 }
 
 .navbar {
@@ -20,9 +22,9 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 15px 10px;
-  height: 85px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.6);
+  height: 65px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: rgba(147, 149, 151, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -42,14 +44,16 @@ body {
   transition: color 0.3s;
   display: flex;
   position: relative;
+  
 }
 
 .navbar .nav-links a {
-  color: #2c3e50;
+  color: #4c0da4;
   display: inline-block;
   text-decoration: none;
-  font-weight: 500;
-  padding: 8px 12px;
+  font-weight: 760;
+  font-size: 18px;
+  padding: 8px 10px;
   transition: all 0.3s ease;
 }
 
@@ -60,23 +64,24 @@ body {
   bottom: 0;
   height: 1.5px;
   width: 0%;
-  background-color: rgba(0, 0, 0, 0.889);
+  background-color: rgba(241, 6, 111, 0.889);
   transition: width 0.3s ease;
 }
 
 .navbar .nav-links a:nth-child(-n + 6):hover::after {
   width: 100%;
+
 }
 
 .navbar .btn.login {
-  border: 1px solid black;
+  border: 1px solid gray;
   display: inline-block;
   box-sizing: border-box;
   outline: none;
   background-color: transparent;
   padding: 8px 16px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 20px;
   margin-left: 5px;
   margin-right: 5px;
   font-weight: 500;
@@ -84,19 +89,19 @@ body {
 }
 
 .navbar .btn.login:hover {
-  background-color: black;
+  background-color: #881253;
   color: white;
 }
 
 .navbar .btn.signup {
-  border: 1px solid black;
+  border: 1px solid gray;
   display: inline-block;
   box-sizing: border-box;
   outline: none;
-  background-color: black;
+  background-color: #881253;
   padding: 8px 16px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 20px;
   margin-left: 5px;
   margin-right: 5px;
   font-weight: 500;
@@ -123,7 +128,7 @@ body {
   justify-content: center;
   flex-direction: column;
   height: 80vh;
-  background-color: white;
+background-color: white;
   margin-top: 20px;
 }
 
@@ -249,14 +254,14 @@ body {
   outline: none;
   background-color: blue;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 6px;
   cursor: pointer;
   border-radius: 5px;
 }
 
 #webdev .info button:hover {
-  background-color: white;
-  color: blue;
+  background-color:rgb(166, 158, 137);
+  color:black;
 }
 
 #webdev .tech {
@@ -337,6 +342,7 @@ body {
 
 .course-info del {
   margin-left: 10px;
+  padding: 5px;
 }
 
 .course-info button {
@@ -351,22 +357,22 @@ body {
 }
 
 .course-info button:hover {
-  background-color: white;
-  color: blue;
+  background-color: rgb(239, 80, 22);
+  color: white;
 }
 
 .course:not(.alter-course) {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   color: white;
 }
 
 .course:nth-child(odd) .course-info button {
-  background-color: white;
+  background-color: rgb(232, 150, 150);
   color: black;
 }
 
 .course:nth-child(odd) .course-info button:hover {
-  background-color: black;
+  background-color: rgb(56, 67, 233);
   color: white;
 }
 
@@ -498,6 +504,7 @@ body {
 }
 
 .testimonial-card {
+  
   width: 330px;
   max-width: 700px;
   background-color: black;
@@ -516,6 +523,8 @@ body {
   transform: translateY(-12px) scale(1.03) rotateX(3deg) rotateY(-3deg);
   box-shadow: 0 20px 40px rgba(0, 255, 255, 0.25); /* Aqua glow */
   cursor: pointer;
+  background-color: rgb(227, 224, 220);
+  color: #000;
 }
 
 .testimonial-card img {
@@ -572,6 +581,7 @@ body {
   --dark: #28292c;
   --link: rgb(27, 129, 112);
   --link-hover: rgb(24, 94, 82);
+ 
 }
 
 .switch-label {
@@ -596,6 +606,7 @@ body {
   border-radius: 25px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  
 }
 
 .checkbox:checked ~ .slider {
