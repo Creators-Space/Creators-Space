@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard • Creators-Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header class="dash-wrap" style="display:flex;justify-content:space-between;align-items:center;">
+    <h1>🎯 Your Learning Dashboard</h1>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a href="index.html" class="btn ghost">Home</a>
+      <button id="themeToggle" class="theme-btn"><span id="themeLabel">🌙</span></button>
+    </div>
+  </header>
+
+  <main class="dash-wrap">
+    <p class="muted">Keep track of your saved courses, update progress, and continue learning.</p>
+
+    <section style="margin-top:20px;">
+      <div id="emptyState" class="empty" style="display:none;">
+        No saved courses yet. Browse <a class="nav-link" href="courses.html">Courses</a> and tap the ♥ to add to your dashboard.
+      </div>
+
+      <div id="dashGrid" class="dash-grid"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    function renderDashboard() {
+      const grid = document.getElementById("dashGrid");
+      const empty = document.getElementById("emptyState");
+      let wl = [];
+      try { wl = JSON.parse(localStorage.getItem("cs_wishlist")) || []; } catch { wl = []; }
+
+      grid.innerHTML = "";
+      if (!wl.length) {
+        empty.style.display = "block";
+        return;
+      }
+      empty.style.display = "none";
+
+      wl.forEach(item => {
+        const prog = Math.max(0, Math.min(100, item.progress || 0));
+        const card = document.createElement("article");
+        card.className = "cs-card dash-card";
+        card.innerHTML = `
+          <img src="${item.img}" alt="${item.name}">
+          <div class="dash-body">
+            <div class="dash-title">${item.name}</div>
+            <div class="progress" aria-label="Progress">
+              <span style="width:${prog}%"></span>
+            </div>
+            <div class="muted" style="margin-top:6px;">Progress: <strong>${prog}%</strong></div>
+            <div class="dash-actions">
+              <a href="${item.url}" class="btn">Continue</a>
+              <button class="btn ghost" data-act="more" data-id="${item.id}">+5%</button>
+              <button class="btn ghost" data-act="less" data-id="${item.id}">-5%</button>
+              <button class="btn destructive" data-act="remove" data-id="${item.id}">Remove</button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-act]");
+      if (!btn) return;
+      const id = btn.dataset.id;
+      if (btn.dataset.act === "remove") {
+        // remove from wishlist (uses global util if present)
+        if (typeof wl_remove === "function") wl_remove(id);
+        else {
+          let wl = []; try { wl = JSON.parse(localStorage.getItem("cs_wishlist")) || []; } catch {}
+          wl = wl.filter(c => c.id !== id);
+          localStorage.setItem("cs_wishlist", JSON.stringify(wl));
+        }
+      }
+      if (btn.dataset.act === "more") {
+        if (typeof prog_inc === "function") prog_inc(id, 5);
+        else {
+          let wl = []; try { wl = JSON.parse(localStorage.getItem("cs_wishlist")) || []; } catch {}
+          const it = wl.find(c => c.id === id); if (it) it.progress = Math.min(100, (it.progress||0)+5);
+          localStorage.setItem("cs_wishlist", JSON.stringify(wl));
+        }
+      }
+      if (btn.dataset.act === "less") {
+        if (typeof prog_inc === "function") prog_inc(id, -5);
+        else {
+          let wl = []; try { wl = JSON.parse(localStorage.getItem("cs_wishlist")) || []; } catch {}
+          const it = wl.find(c => c.id === id); if (it) it.progress = Math.max(0, (it.progress||0)-5);
+          localStorage.setItem("cs_wishlist", JSON.stringify(wl));
+        }
+      }
+      renderDashboard();
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // theme init is in script.js
+      renderDashboard();
+    });
+  </script>
+</body>
+</html>

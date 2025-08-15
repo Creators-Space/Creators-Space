@@ -51,3 +51,107 @@ function appendMessage(sender, text) {
   chatBody.appendChild(message);
   chatBody.scrollTop = chatBody.scrollHeight;
 }
+
+/* =========================
+   THEME (light/dark)
+========================= */
+const THEME_KEY = "cs_theme";
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  const lbl = document.getElementById("themeLabel");
+  if (lbl) lbl.textContent = theme === "dark" ? "☀️" : "🌙";
+}
+function loadTheme() {
+  const t = localStorage.getItem(THEME_KEY) || "light";
+  applyTheme(t);
+}
+document.addEventListener("DOMContentLoaded", () => {
+  loadTheme();
+  const btn = document.getElementById("themeToggle");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      const cur = document.documentElement.getAttribute("data-theme") || "light";
+      const next = cur === "dark" ? "light" : "dark";
+      localStorage.setItem(THEME_KEY, next);
+      applyTheme(next);
+    });
+  }
+});
+
+/* =========================
+   WISHLIST (localStorage)
+========================= */
+const WL_KEY = "cs_wishlist";
+function wl_load() {
+  try { return JSON.parse(localStorage.getItem(WL_KEY)) || []; }
+  catch { return []; }
+}
+function wl_save(list) { localStorage.setItem(WL_KEY, JSON.stringify(list)); }
+function wl_in(id) { return wl_load().some(c => c.id === id); }
+function wl_add(course) {
+  const wl = wl_load();
+  if (!wl.some(c => c.id === course.id)) wl.push(course);
+  wl_save(wl);
+}
+function wl_remove(id) {
+  wl_save(wl_load().filter(c => c.id !== id));
+}
+function wl_toggle(btn) {
+  const id = btn.dataset.courseId;
+  if (wl_in(id)) {
+    wl_remove(id);
+    markBtn(btn, false);
+  } else {
+    wl_add({
+      id,
+      name: btn.dataset.courseName || "Course",
+      img: btn.dataset.courseImg || "",
+      url: btn.dataset.courseUrl || "#",
+      progress: 0
+    });
+    markBtn(btn, true);
+  }
+}
+function markBtn(btn, active) {
+  btn.classList.toggle("active", active);
+  btn.setAttribute("aria-pressed", active ? "true" : "false");
+  const i = btn.querySelector("i");
+  if (!i) return;
+  i.classList.toggle("fa-solid", active);
+  i.classList.toggle("fa-regular", !active);
+}
+function wl_syncButtons() {
+  document.querySelectorAll(".wish-btn").forEach(btn => {
+    markBtn(btn, wl_in(btn.dataset.courseId));
+  });
+}
+document.addEventListener("click", e => {
+  const btn = e.target.closest(".wish-btn");
+  if (!btn) return;
+  wl_toggle(btn);
+});
+document.addEventListener("DOMContentLoaded", wl_syncButtons);
+
+/* =========================
+   PROGRESS (stored in wl)
+========================= */
+function prog_set(id, value) {
+  const wl = wl_load();
+  const item = wl.find(c => c.id === id);
+  if (item) {
+    item.progress = Math.max(0, Math.min(100, value));
+    wl_save(wl);
+  }
+}
+function prog_inc(id, delta = 5) {
+  const wl = wl_load();
+  const item = wl.find(c => c.id === id);
+  if (item) {
+    item.progress = Math.max(0, Math.min(100, (item.progress || 0) + delta));
+    wl_save(wl);
+  }
+}
+function prog_get(id) {
+  const wl = wl_load();
+  return (wl.find(c => c.id === id)?.progress) || 0;
+}

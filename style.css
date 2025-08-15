@@ -41,3 +41,111 @@
 .bot-message, .user-message {
   margin: 5px 0;
 }
+/* ===== Theming (light/dark) ===== */
+:root {
+  --bg: #ffffff;
+  --card: rgba(255,255,255,0.75);
+  --text: #111827;
+  --muted: #6b7280;
+  --brand: #0a8a81;   /* teal-ish */
+  --brand-2: #06b19e;
+  --shadow: 0 12px 30px rgba(0,0,0,0.08);
+  --glass: blur(12px) saturate(120%);
+}
+
+html[data-theme="dark"] {
+  --bg: #0f172a;
+  --card: rgba(18,27,54,0.55);
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background .2s ease, color .2s ease;
+}
+
+/* Simple button & link polish */
+.theme-btn {
+  border: 0;
+  background: var(--card);
+  backdrop-filter: var(--glass);
+  border-radius: 999px;
+  padding: 8px 12px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+.nav-link { color: var(--text); }
+
+/* ===== Reusable card look ===== */
+.cs-card {
+  background: var(--card);
+  backdrop-filter: var(--glass);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.cs-card:hover { transform: translateY(-3px); }
+
+/* ===== Wishlist heart button (for course cards) ===== */
+.wish-btn {
+  position: absolute; top: 10px; right: 10px;
+  border: 0; background: rgba(255,255,255,0.85);
+  border-radius: 999px; width: 38px; height: 38px;
+  display: grid; place-items: center; cursor: pointer;
+  box-shadow: var(--shadow);
+}
+.wish-btn i { color: #888; font-size: 18px; transition: color .2s; }
+.wish-btn.active { background: rgba(230,57,70,.12); }
+.wish-btn.active i { color: #e63946; }
+
+/* ===== Progress bar ===== */
+.progress {
+  width: 100%; height: 10px; border-radius: 10px;
+  background: rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+.progress > span {
+  display: block; height: 100%;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  width: 0%;
+  transition: width .25s ease;
+}
+
+/* ===== Dashboard layout ===== */
+.dash-wrap {
+  max-width: 1100px; margin: 40px auto; padding: 0 16px;
+}
+.dash-grid {
+  display: grid; gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.dash-card { position: relative; }
+.dash-card img { width: 100%; height: 160px; object-fit: cover; display: block; }
+.dash-body { padding: 14px; }
+.dash-title { font-weight: 700; margin: 8px 0; }
+.dash-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+
+.btn {
+  border: 0; padding: 8px 12px; border-radius: 10px;
+  background: var(--brand); color: white; font-weight: 600; cursor: pointer;
+}
+.btn.ghost { background: rgba(0,0,0,0.06); color: var(--text); }
+.btn.destructive { background: #e63946; }
+.empty { color: var(--muted); text-align: center; padding: 40px 0; }
+.cta-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+.cta-button:hover {
+    background-color: #45a049;
+}

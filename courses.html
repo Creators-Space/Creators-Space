@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="./src/css/courses.css" />
     <link rel="stylesheet" href="./src/css/responsive.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  referrerpolicy="no-referrer" />
+
     <script>
       function toggleDarkMode() {
         const element = document.getElementById("main-body");
@@ -51,6 +53,31 @@
   <a href="blog.html">Blog</a>
   <a href="bookmarked.html">BookMarks</a>
    <!-- Navbar -->
+    <!-- Add somewhere inside your <nav> or header -->
+<a href="dashboard.html" class="nav-link">Dashboard</a>
+
+<button id="themeToggle" aria-label="Toggle dark mode" class="theme-btn">
+  <span id="themeLabel">🌙</span>
+</button>
+<!-- One course card -->
+<div class="cs-card course-card" style="position:relative;">
+  <img src="assets/images/logo.png" alt="UI/UX Fundamentals" />
+  <button class="wish-btn"
+    aria-label="Add to wishlist" aria-pressed="false"
+    data-course-id="COURSE-UIUX-101"
+    data-course-name="UI/UX Fundamentals"
+    data-course-img="assets/images/logo.png"
+    data-course-url="courses.html#uiux101">
+    <i class="fa-regular fa-heart"></i>
+  </button>
+
+  <div class="dash-body">
+    <div class="dash-title">UI/UX Fundamentals</div>
+    <p class="muted">Beginner • Design</p>
+  </div>
+</div>
+  
+
       <div id="authSection">
         <a href="./login.html" class="btn login">Log In</a>
         <a href="./signup.html" class="btn signup">Sign Up</a>
