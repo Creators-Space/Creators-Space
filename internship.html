@@ -63,8 +63,16 @@
     <p>Launch your career with hands-on experience from top organizations.</p>
   </section>
 
+<!--Search Bar-->
 
-  <!-- INTERNSHIP CARDS -->
+<div style="display:flex; width:100%; position:relative; left:250px">
+  <form id="searchbar">
+    <button id="searchBtn" style="background-color: white; border: none;">🔍</button>
+<input type="search" placeholder=" Search for Internships." id="searchinput" style="width:1000px; height:50px; border-radius:5%">
+
+</form>
+</div>
+<!-- INTERNSHIP CARDS -->
   <div class="courses-container" id="internship-list">
     <p>Loading internships...</p>
   </div>
@@ -161,36 +169,48 @@
 
   <!-- Loading Internship dynamically from data/internship.json -->
   <script>
-  async function loadInternships() {
     const container = document.getElementById("internship-list");
+    let internships=[];
+  async function loadInternships() {
+    
     try {
-      const res = await fetch("./src/data/internship.json");
+      const res = await fetch("http://localhost:5000/internships");
       if (!res.ok) throw new Error("Failed to fetch");
 
-      const internships = await res.json();
-      container.innerHTML = "";
+      const interns = await res.json();
+      internships=interns.data;
+      renderInterships(internships);
+    }
+       catch (err) {
+      container.innerHTML = "<p style='color:red;text-align:center;font-size:20px;'>Couldn't load the internships.</p>";
+      console.error("Error loading internships:", err);
+    }
+  }
+  function renderInterships(internships)
+  {
+    container.innerHTML = "";
 
       internships.forEach((item) => {
-        const responsibilitiesHTML = item.responsibilities
+        const responsibilitiesHTML = Array.isArray(item.responsibilities)?item.responsibilities
           .map(task => `<li>${task}</li>`)
-          .join("");
+          .join(""):"<li>No data available</li>";
 
         const card = document.createElement("div");
         card.className = "card";
         card.innerHTML = `
           <div class="card-content">
-            <img src="${item.image}" alt="${item.title}" />
-            <h3>${item.title}</h3>
-            <p>Company: ${item.company}</p>
-            <p>Duration: ${item.duration} | Location: ${item.type}</p>
-            <p>Stipend: ${item.stipend}</p>
+            <img src="${item.employer_logo}" alt="${item.job_title}" />
+            <h3>${item.job_title}</h3>
+            <p>Company: ${item.employer_name}</p>
+            <p> Location: ${item.job_location}</p>
+            <p>Type: ${item.job_employment_type}</p>
             <button class="button toggle-btn">View More</button>
             <div class="syllabus">
               <h4>Responsibilities:</h4>
               <ul>${responsibilitiesHTML}</ul>
             </div>
             <div class="enroll">
-              <a href="${item.applyLink}" class="button">Apply Now</a>
+              <a href="${item.job_apply_link}" class="button">Apply Now</a>
             </div>
           </div>
         `;
@@ -204,12 +224,15 @@
           btn.textContent = card.classList.contains("expanded") ? "View Less" : "View More";
         });
       });
-    } catch (err) {
-      container.innerHTML = "<p style='color:red;text-align:center;font-size:20px;'>Couldn't load the internships.</p>";
-      console.error("Error loading internships:", err);
     }
-  }
-
+    document.querySelector("#searchbar").addEventListener("submit",(e)=>{
+      e.preventDefault();
+      let search=document.querySelector("#searchinput").value.trim().toLowerCase();
+      const filtered=internships.filter( item=>item.job_title.toLowerCase().includes(search) ||
+      item.employer_name.toLowerCase().includes(search) ||
+      item.job_location.toLowerCase().includes(search));
+      renderInterships(filtered);
+    })
   window.addEventListener("DOMContentLoaded", loadInternships);
 </script>
 
