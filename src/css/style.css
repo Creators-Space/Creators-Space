@@ -42,6 +42,8 @@ body {
   transition: color 0.3s;
   display: flex;
   position: relative;
+  white-space: nowrap;
+  align-items: center;
 }
 
 .navbar .nav-links a {
