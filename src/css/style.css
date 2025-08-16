@@ -1,15 +1,19 @@
-@import url("https://fonts.googleapis.com/css?family=SF+Pro+Display:300,400,500,700&display=swap");
+:root {
+  --font-main:  'Lora', serif;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "SF Pro Display", sans-serif;
-  transition: all 0.3s linear;
+  font: inherit; /* inherit from body so everything stays consistent */
 }
 
 body {
-  width: 100vw !important;
+  font-family:  'Lora', serif !important;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .navbar {
@@ -22,16 +26,16 @@ body {
   padding: 15px 10px;
   height: 85px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.6);
+  background: rgb(241, 239, 241);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(16, 2, 14, 0);
 }
 
 .navbar h1 {
   font-size: 24px;
   font-weight: bold;
-  color: black;
+  color: rgb(7, 6, 7);
   margin-left: 10px;
 }
 
@@ -280,7 +284,7 @@ body {
   font-weight: 800;
   text-align: center;
   margin: 40px 0 20px;
-  color: #2575fc;
+  color: #6b12f0;
   transition: 0.4s ease;
 }
 
@@ -503,6 +507,24 @@ body.dark #our-course-h1:hover {
 }
 
 /* This CSS is for testimonial */
+.testimonial-heading {
+  font-family: 'Lora', serif;
+  font-size: 40px !important;   /* makes it bigger */
+  font-weight: 400 !important;  /* bold */
+  color: #333333;    /* professional dark gray */
+  margin-bottom: 10px;
+}
+
+.testimonial-text {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  color: #555555;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .testimonial-container {
   display: flex;
   justify-content: center;
@@ -538,7 +560,7 @@ body.dark #our-course-h1:hover {
 }
 
 .testimonial-quote {
-  font-style: italic;
+  font-style:normal ;
   margin-bottom: 10px;
 }
 
