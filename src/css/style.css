@@ -45,7 +45,7 @@ body {
 }
 
 .navbar .nav-links a {
-  color: #2c3e50;
+  /* color: #2c3e50; */
   display: inline-block;
   text-decoration: none;
   font-weight: 500;
@@ -115,6 +115,53 @@ body {
   /* font-size: 0.9rem; */
 }
 
+/* dropdown styles */
+.nav-item{
+  list-style: none;
+  position: relative;
+}
+.dropdown{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0; 
+  background-color: #444;
+  min-width: 180px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* shadow */
+  z-index: 1000;
+  overflow: hidden; 
+  margin-top: 5px;
+}
+.arrow{
+   font-size: 14px;   /* force equal size */
+  width: 14px;       /* fix width */
+  height: 14px;      /* fix height */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+.dropdown a{
+  display: block;              /* ensures full width */
+  width: 100%;   
+  border-bottom: 1px solid rgba(255,255,255,0.2); /* divider line */
+  color: #fff !important;
+  margin: 0; 
+}
+.dropdown a:last-child {
+  border-bottom: none; /* remove last line */
+}
+.dropdown a:hover{
+  background-color: #555;  
+} 
+ /* Show dropdown when active */
+.nav-item.show .dropdown{
+  display: block;
+}
+.nav-item.show .arrow {
+    transform: rotate(180deg); /* flip arrow */
+}
 /* #navbar-x-logo {} */
 /* } */
 
@@ -457,6 +504,10 @@ body.dark #our-course-h1:hover {
   color: white;
 }
 
+#envelope-icon, #call-icon {
+  margin-right: 10px;
+}
+
 .footer .form {
   display: flex;
   flex-direction: column;
@@ -590,6 +641,13 @@ body.dark #our-course-h1:hover {
 #scrollTopBtn:hover svg{
   transform: scale(1.1);
   top: 0;
+}
+.dark #scrollTopBtn{
+  background-color: white;
+  
+}
+.dark #scrollTopBtn svg {
+  fill: #0a0a0a; /* arrow color for dark mode */
 }
 
 /* bounce animation added to back to top */

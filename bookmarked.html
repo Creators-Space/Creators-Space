@@ -8,31 +8,34 @@
   <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="./src/css/style.css" />
-  <link rel="stylesheet" href="./src/css/utils.css" />
-  <script src="./src/js/auth.js"></script>
+  <link rel="stylesheet" href="./src/css/utils.css" /> 
   <link rel="stylesheet" href="./src/css/responsive.css" />
   <link rel="stylesheet" href="./src/css/courses.css" />
-  <!-- <link rel = "stylesheet" href = "./src/css/bookmarked.css"/> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<!-- <link rel = "stylesheet" href = "./src/css/bookmarked.css"/> -->
 
-  <script>
-    function toggleDarkMode() {
-      const element = document.getElementById("main-body");
-      element.classList.toggle("dark");
+<script>
+  function toggleDarkMode() {
+    const element = document.getElementById("main-body");
+    element.classList.toggle("dark");
 
-      if (element.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
-      } else {
-        localStorage.setItem("theme", "light");
-      }
+    if (element.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
     }
+  }
 
-    // Apply saved theme on page load
-    if (localStorage.getItem("theme") === "dark") {
-      document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("main-body")?.classList.add("dark");
-      });
-    }
-  </script>
+  // Apply saved theme on page load
+  if (localStorage.getItem("theme") === "dark") {
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("main-body")?.classList.add("dark");
+    });
+  }
+</script>
 </head>
 
 <body id="main-body" class="overflow-x-hidden">
@@ -43,6 +46,7 @@
         <br>Creators-Space</a></h1>
     <div class="nav-links align-items-center">
       <a href="index.html">Home</a>
+
       <a href="about.html">About Us</a>
       <a href="courses.html">Courses</a>
       <a href="services.html" class="active">Services</a>
@@ -52,6 +56,35 @@
       <a href="myCourses.html">My Courses</a>
       <a href="bookmarked.html">BookMarks</a>
       <a href="./certificate/">Certificates</a>
+
+
+      <!-- dropDown 1 - About → About Us, Campus Ambassador-->
+      <li class="nav-item">
+        <a href="#" class="dropdown-toggle">About <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="about.html">About Us</a>
+          <a href="campus-ambassador.html">Campus Ambassador</a>
+        </div>
+      </li> 
+      <!--dropDown 2 - Programs → Courses, Internship, Services -->
+      <li class="nav-item">
+        <a href="#" class="dropdown-toggle">Programs <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="courses.html">Courses</a>
+          <a href="internship.html">Internship</a>
+          <a href="services.html" class="active">Services</a>
+        </div>
+      </li>
+       <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
+       <li class="nav-item">
+        <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="blog.html">Blog</a>
+          <a href="bookmarked.html">BookMarks</a>
+          <a href="./certificate/">Certificates</a>
+        </div>
+       </li>  
+>>>>>>> main
       <!-- Navbar -->
       <div id="authSection">
         <a href="./login.html" class="btn login">Log In</a>
@@ -203,8 +236,10 @@
     </div>
     <div class="contact">
       <h3>Contact Us</h3>
-      <p>21brac0401@polygwalior.ac.in</p>
-      <p>+91 88xxxxxx89</p>
+      <p><a href="mailto:21brac0401@polygwalior.ac.in"><i class="fa-solid fa-envelope"
+            id="envelope-icon"></i>21brac0401@polygwalior.ac.in</a></p>
+            <br>
+     <p><a href="tel:+9188xxxxxx89"><i class="fa-solid fa-phone" id="call-icon"></i>+91 88xxxxxx89</a></p>
     </div>
     <div class="form">
       <h3>Get In Touch</h3>
@@ -219,7 +254,10 @@
   </footer>
 
   <script src="./src/js/navbar.js"></script>
-  <script src="./src/js/courses.js"></script>
+  <script src="./src/js/coursebm.js"></script>
+  <script src="./src/js/auth.js"></script>
+  <script src="./src/js/utils.js"></script>
+
 </body>
 
 </html>

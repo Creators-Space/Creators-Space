@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../src/css/style.css">
     <link rel="stylesheet" href="../src/css/certificates.css">
     <link rel="stylesheet" href="../src/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
 </head>
 
 <body id="main-body" class="overflow-x-hidden">
@@ -23,15 +24,34 @@
 
               <br>Creators-Space</a></h1>
         <div class="nav-links align-items-center">
-            <a href="../">Home</a>
-            <a href="../about.html">About Us</a>
-            <a href="../courses.html">Courses</a>
-            <a href="../services.html" class="active">Services</a>
-            <a href="../internship.html">Internship</a>
-            <a href="../campus-ambassador.html">Campus Ambassador</a>
-            <a href="../blog.html">Blog</a>
-            <a href="../bookmarked.html">BookMarks</a>
-            <a href="../certificate/">Certificates</a>
+            <a href="../index.html">Home</a>
+
+      <!-- dropDown 1 - About → About Us, Campus Ambassador-->
+      <li class="nav-item">
+        <a href="#" class="dropdown-toggle">About <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="../about.html">About Us</a>
+          <a href="../campus-ambassador.html">Campus Ambassador</a>
+        </div>
+      </li> 
+      <!--dropDown 2 - Programs → Courses, Internship, Services -->
+      <li class="nav-item">
+        <a href="#" class="dropdown-toggle">Programs <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="../courses.html">Courses</a>
+          <a href="../internship.html">Internship</a>
+          <a href="../services.html" class="active">Services</a>
+        </div>
+      </li>
+       <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
+       <li class="nav-item">
+        <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="../blog.html">Blog</a>
+          <a href="../bookmarked.html">BookMarks</a>
+          <a href="../certificate/">Certificates</a>
+        </div>
+       </li>  
             <a href="../login.html" class="btn login">Log In</a>
           <a href="../signup.html" class="btn signup">Sign Up</a>
       </div>
@@ -385,6 +405,32 @@ async function downloadPDF() {
     
     pdf.save(`Creators-Space-Certificate_${document.getElementById('username').innerText}.pdf`);
 }
+</script>
+
+<script>
+  // drop-down menu
+document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    e.stopPropagation(); // prevent auto close immediately
+    this.parentElement.classList.toggle("show");
+
+    // Close other dropdowns
+    document.querySelectorAll(".nav-item").forEach((drop) => {
+      if (drop !== this.parentElement) {
+        drop.classList.remove("show");
+      }
+    });
+  });
+});
+
+// Close dropdown if clicked outside
+window.addEventListener("click", function (e) {
+  if (!e.target.closest(".nav-item")) {
+    document.querySelectorAll(".nav-item").forEach((drop) => {
+      drop.classList.remove("show");
+    });
+  }
+});
 </script>
 
 </body>

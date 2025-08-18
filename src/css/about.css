@@ -290,7 +290,10 @@ body {
     border: none;
 }
 
-#main-body.dark .btn:hover,
+#main-body.dark button{
+  background-color: white;
+  
+}
 #main-body.dark button:hover {
     background-color: #444;
 }
@@ -506,7 +509,7 @@ nav {
 .nav-links li a {
   text-decoration: none;
   color: #000;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 

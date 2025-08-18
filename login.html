@@ -101,7 +101,7 @@
       font-size: 0.9rem;
       color: black;
       text-decoration: none;
-
+      margin-top: 1rem;
     }
 
     .btn {
@@ -200,17 +200,27 @@
     .social-buttons {
       display: flex;
       gap: 10px;
-      margin-top: 1rem;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto;      
+      width: fit-content;
     }
 
     .social-btn {
-      flex: 1;
+      /* flex: 1; */
+      display: flex;
+      align-items: center;
+      gap: 8px;
       padding: 8px;
       border-radius: 6px;
       border: 1px solid #ccc;
       text-align: center;
       cursor: pointer;
       font-size: 0.85rem;
+    }
+
+    .nav-hamburger{
+      cursor: pointer;
     }
   </style>
 </head>
@@ -234,7 +244,7 @@
       <a href="./signup.html" class="btn signup">Sign Up</a>
     </div>
     <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
-      <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
+      <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="nav-hamburger">
         <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
           stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"
           class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"></polyline>
@@ -266,7 +276,7 @@
       <div class="form-group">
         <label>Password</label>
         <input type="password" id="password" required />
-        <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+        <span class="toggle-password" onclick="togglePassword('password')"></span>
       </div>
 
       <div class="checkbox-group">
@@ -306,8 +316,8 @@
         </div>
 
         <div class="social-buttons">
-          <div class="social-btn">🔵 Instagram</div>
-          <div class="social-btn">⚫ Twitter</div>
+          <div class="social-btn"><img src="assets/images/instagram.png" width="20%"> Instagram</div>
+          <div class="social-btn"><img src="assets/images/twitter.png" width="20%"> Twitter</div>
         </div>
     </form>
   </div>

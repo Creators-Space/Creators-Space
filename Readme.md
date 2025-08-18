@@ -48,16 +48,17 @@ We welcome and encourage contributions from participants and the entire open-sou
 ## 📌 About
 
 Creators-Space provides an innovative and user-friendly environment for individuals looking to enhance their skills in technology and digital design. 
-<!-- The platform includes features like:
 
-- Home
-- Courses
-- Services
-- Internship & Campus Ambassador Opportunities
-- Blog
-- Authentication (Login / Sign Up)
-- Contact & Social Links
--->
+The platform includes features like:
+
+- **Home** - Landing page with hero section and course overview
+- **Courses** - Comprehensive learning paths and tutorials
+- **Services** - Career guidance, mentorship, and professional development
+- **Projects** - Open source projects and GitHub repositories categorized by tech stack
+- **Internship & Campus Ambassador Opportunities** - Real-world experience and leadership roles
+- **Blog** - Latest tech insights and tutorials
+- **Authentication** - Secure login and signup system
+- **Contact & Social Links** - Community engagement and support
 ---
 ## To run locally
 Clone the repository:

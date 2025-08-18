@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Projects Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-result { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+    </style>
+</head>
+<body>
+    <h1>Projects Page Test</h1>
+    
+    <div id="test-results">
+        <div class="test-result info">Running tests...</div>
+    </div>
+
+    <script>
+        const testResults = document.getElementById('test-results');
+        
+        function addResult(message, type = 'info') {
+            const div = document.createElement('div');
+            div.className = `test-result ${type}`;
+            div.textContent = message;
+            testResults.appendChild(div);
+        }
+
+        // Test 1: Check if projects.json exists
+        fetch('./src/data/projects.json')
+            .then(response => {
+                if (response.ok) {
+                    addResult('✅ projects.json file found and accessible', 'success');
+                    return response.json();
+                } else {
+                    throw new Error('projects.json not found');
+                }
+            })
+            .then(data => {
+                addResult(`✅ Loaded ${data.length} projects from JSON file`, 'success');
+            })
+            .catch(error => {
+                addResult(`❌ Error loading projects.json: ${error.message}`, 'error');
+            });
+
+        // Test 2: Check if GitHub API is accessible
+        fetch('https://api.github.com/search/repositories?q=stars:>100&sort=stars&order=desc&per_page=5')
+            .then(response => {
+                if (response.ok) {
+                    addResult('✅ GitHub API is accessible', 'success');
+                    return response.json();
+                } else {
+                    throw new Error(`GitHub API returned ${response.status}`);
+                }
+            })
+            .then(data => {
+                addResult(`✅ GitHub API returned ${data.items.length} repositories`, 'success');
+            })
+            .catch(error => {
+                addResult(`❌ GitHub API error: ${error.message}`, 'error');
+            });
+
+        // Test 3: Check if CSS files exist
+        fetch('./src/css/projects.css')
+            .then(response => {
+                if (response.ok) {
+                    addResult('✅ projects.css file found', 'success');
+                } else {
+                    throw new Error('projects.css not found');
+                }
+            })
+            .catch(error => {
+                addResult(`❌ Error loading projects.css: ${error.message}`, 'error');
+            });
+
+        // Test 4: Check if JavaScript file exists
+        fetch('./src/js/projects.js')
+            .then(response => {
+                if (response.ok) {
+                    addResult('✅ projects.js file found', 'success');
+                } else {
+                    throw new Error('projects.js not found');
+                }
+            })
+            .catch(error => {
+                addResult(`❌ Error loading projects.js: ${error.message}`, 'error');
+            });
+
+        // Test 5: Check if projects.html exists
+        fetch('./projects.html')
+            .then(response => {
+                if (response.ok) {
+                    addResult('✅ projects.html file found', 'success');
+                } else {
+                    throw new Error('projects.html not found');
+                }
+            })
+            .catch(error => {
+                addResult(`❌ Error loading projects.html: ${error.message}`, 'error');
+            });
+    </script>
+</body>
+</html> 
