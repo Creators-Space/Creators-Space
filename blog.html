@@ -22,14 +22,34 @@
         <br>Creators-Space</a></h1>
     <div class="nav-links align-items-center">
       <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="courses.html">Courses</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="internship.html">Internship</a>
-      <a href="campus-ambassador.html">Campus Ambassador</a>
-      <a href="blog.html">Blog</a>
-      <a href="bookmarked.html">BookMarks</a>
-      <a href="projects.html">Projects</a>
+
+      <!-- dropDown 1 - About → About Us, Campus Ambassador-->
+      <li class="nav-item">
+        <a href="#" class="dropdown-toggle">About <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="about.html">About Us</a>
+          <a href="campus-ambassador.html">Campus Ambassador</a>
+        </div>
+      </li> 
+      <!--dropDown 2 - Programs → Courses, Internship, Services -->
+      <li class="nav-item">
+        <a href="#" class="dropdown-toggle">Programs <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="courses.html">Courses</a>
+          <a href="internship.html">Internship</a>
+          <a href="services.html" class="active">Services</a>
+        </div>
+      </li>
+       <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
+       <li class="nav-item">
+        <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="blog.html">Blog</a>
+          <a href="bookmarked.html">BookMarks</a>
+          <a href="./certificate/">Certificates</a>
+        </div>
+       </li> 
+      <a href="projects.html">Projects</a> 
       <!-- Navbar -->
       <div id="authSection">
         <a href="./login.html" class="btn login">Log In</a>
