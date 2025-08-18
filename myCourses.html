@@ -32,6 +32,33 @@
         });
       }
     </script>
+
+    <style>
+        
+.no-courses {
+  text-align: center;
+  margin-top: 50px;
+}
+.no-courses p {
+  font-size: 18px;
+  font-weight: 500;
+}
+.no-courses a.button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #ff4d4d;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.no-courses a.button:hover {
+  background-color: #e60000;
+}
+</style>
+
+    </style>
   </head>
 
   <body id="main-body" class="overflow-x-hidden">
@@ -41,16 +68,14 @@
       <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
         <br>Creators-Space</a></h1>
     <div class="nav-links align-items-center">
- <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="courses.html">Courses</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="internship.html">Internship</a>
-      <a href="campus-ambassador.html">Campus Ambassador</a>
-      <a href="blog.html">Blog</a>
-      <a href="myCourses.html">My Courses</a>
-      <a href="bookmarked.html">BookMarks</a>
-      <a href="./certificate/">Certificates</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="courses.html">Courses</a>
+  <a href="services.html" class="active">Services</a>
+  <a href="internship.html">Internship</a>
+  <a href="campus-ambassador.html">Campus Ambassador</a>
+  <a href="blog.html">Blog</a>
+  <a href="bookmarked.html">BookMarks</a>
    <!-- Navbar -->
       <div id="authSection">
         <a href="./login.html" class="btn login">Log In</a>
@@ -95,199 +120,19 @@
 
     <!-- Enhanced Main Section -->
     <div class="main">
-      <h1>Explore Our Courses</h1>
+      <h1>View My Courses</h1>
       <p>
         Upskill with industry-leading programs, crafted by experts and designed
         to transform your career in the digital age.
       </p>
     </div>
 
-    
-    <!-- 🔍 Search Bar -->
-<div class="search-bar-container">
-  <input
-    type="text"
-    id="courseSearch"
-    placeholder="Search for a course (e.g. Python, UI/UX)..."
-    onkeyup="filterCourses()"
-  />
-</div>
-<!--my code -->
 
-<section class="courses-container">
-  <div class="card" onclick="toggleSyllabus(this)">
-    <div class="discount-badge">74% OFF</div>
-    <div class="card-content">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/919/919827.png"
-        alt="Web Development"
-      />
-      <h3>Full Stack Web Development</h3>
-      <p class="price">₹12,999 <del>₹49,999</del></p>
-      <p>6 Months • Complete Bootcamp</p>
-    </div>
-    <div class="syllabus hidden">
-      <h4>What You'll Master:</h4>
-      <ul>
-        <li>HTML5, CSS3 & Modern JavaScript</li>
-        <li>React.js & Node.js Development</li>
-        <li>Database Design & Management</li>
-        <li>Cloud Deployment & DevOps</li>
-        <li>Real-world Project Portfolio</li>
-      </ul>
-    </div>
-    <div class="enroll">
-      <button class="button" onclick="buyCourse(event, 'Full Stack Web Development')">
-        Enroll Now
-      </button>
-    </div>
-  </div>
 
-      <div class="card" onclick="toggleSyllabus(this)">
-        <div class="discount-badge">77% OFF</div>
-        <div class="card-content">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png"
-            alt="C Programming"
-          />
-          <h3>C Programming Mastery</h3>
-          <p class="price">₹2,999 <del>₹12,999</del></p>
-          <p>3 Months • Foundation Course</p>
-        </div>
-        <div class="syllabus hidden">
-          <h4>What You'll Master:</h4>
-          <ul>
-            <li>C Language Fundamentals & Syntax</li>
-            <li>Advanced Functions & Control Flow</li>
-            <li>Pointers & Memory Management</li>
-            <li>Data Structures Implementation</li>
-            <li>System Programming Concepts</li>
-          </ul>
-        </div>
-       <div class="enroll">
-      <button class="button" onclick="buyCourse(event, 'C Programming Mastery')">
-        Enroll Now
-      </button>
-    </div>
-      </div>
-
-      <div class="card" onclick="toggleSyllabus(this)">
-        <div class="discount-badge">77% OFF</div>
-        <div class="card-content">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
-            alt="Python Programming"
-          />
-          <h3>Python Programming Pro</h3>
-          <p class="price">₹2,999 <del>₹12,999</del></p>
-          <p>3 Months • Beginner to Advanced</p>
-        </div>
-        <div class="syllabus hidden">
-          <h4>What You'll Master:</h4>
-          <ul>
-            <li>Python Syntax & Control Structures</li>
-            <li>Object-Oriented Programming</li>
-            <li>Web Development with Django</li>
-            <li>Data Science & Machine Learning</li>
-            <li>Automation & Scripting Projects</li>
-          </ul>
-        </div>
-      <div class="enroll">
-      <button class="button" onclick="buyCourse(event, 'Python Programming Pro')">
-        Enroll Now
-      </button>
-    </div>
-      </div>
-
-      <div class="card" onclick="toggleSyllabus(this)">
-        <div class="discount-badge">70% OFF</div>
-        <div class="card-content">
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-            width="20"
-            height="20"
-            alt="UI/UX Design"
-          />
-          <h3>UI/UX Design Essentials</h3>
-          <p class="price">₹5,999 <del>₹19,999</del></p>
-          <p>4 Months • Design Thinking & Prototyping</p>
-        </div>
-        <div class="syllabus hidden">
-          <h4>What You'll Master:</h4>
-          <ul>
-            <li>User Research & Personas</li>
-            <li>Wireframing & Prototyping (Figma)</li>
-            <li>Visual Design Principles</li>
-            <li>Usability Testing</li>
-            <li>Portfolio Project</li>
-          </ul>
-        </div>
-        <div class="enroll">
-      <button class="button" onclick="buyCourse(event, 'UI/UX Design Essentials')">
-        Enroll Now
-      </button>
-    </div>
-      </div>
-
-      <div class="card" onclick="toggleSyllabus(this)">
-        <div class="discount-badge">65% OFF</div>
-        <div class="card-content">
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"
-            width="32"
-            height="32"
-            alt="Graphic Designing"
-          />
-          <h3>Graphic Designing Masterclass</h3>
-          <p class="price">₹4,499 <del>₹12,999</del></p>
-          <p>3 Months • Creative Suite Training</p>
-        </div>
-        <div class="syllabus hidden">
-          <h4>What You'll Master:</h4>
-          <ul>
-            <li>Adobe Photoshop & Illustrator</li>
-            <li>Branding & Logo Design</li>
-            <li>Social Media Graphics</li>
-            <li>Print & Digital Media</li>
-            <li>Portfolio Development</li>
-          </ul>
-        </div>
-       <div class="enroll">
-      <button class="button" onclick="buyCourse(event, 'Graphic Designing Masterclass')">
-        Enroll Now
-      </button>
-    </div>
-      </div>
-
-      <div class="card" onclick="toggleSyllabus(this)">
-        <div class="discount-badge">60% OFF</div>
-        <div class="card-content">
-          <img
-            src="assets/images/google-looker-seeklogo.svg"
-            alt="Data Analytics"
-          />
-          <h3>Data Analytics & Visualization</h3>
-          <p class="price">₹7,999 <del>₹19,999</del></p>
-          <p>4 Months • Excel, Power BI & Tableau</p>
-        </div>
-        <div class="syllabus hidden">
-          <h4>What You'll Master:</h4>
-          <ul>
-            <li>Data Cleaning & Preparation</li>
-            <li>Excel for Analytics</li>
-            <li>Power BI & Tableau Dashboards</li>
-            <li>Storytelling with Data</li>
-            <li>Capstone Analytics Project</li>
-          </ul>
-        </div>
-        <div class="enroll">
-      <button class="button" onclick="buyCourse(event, 'Data Analytics & Visualization')">
-        Enroll Now
-      </button>
-    </div>
-    </section>
-  
-    <!-- Enhanced Footer -->
+<section class="courses-container" id="purchasedCourses">
+  <!-- Purchased course cards will be rendered here dynamically -->
+</section>
+<!-- Enhanced Footer -->
     <footer class="footer">
       <div class="social">
         <h1>
@@ -384,42 +229,42 @@
 
     <script src="./src/js/navbar.js"></script>
     <script src="./src/js/courses.js"></script>
-   <script>
+   
+</div>
 
-//my code starts
-
-function buyCourse(event, courseName) {
-    event.stopPropagation(); // Prevent card toggle
-
+<script src="auth.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
     const loggedInUser = localStorage.getItem("loggedInUser");
-    if (!loggedInUser) {
-        alert("Please login to buy the course!");
+    const purchasedCourses = JSON.parse(localStorage.getItem(loggedInUser)) || [];
+    const container = document.getElementById("purchasedCourses");
+
+    if (purchasedCourses.length === 0) {
+        container.innerHTML =`
+      <div class="no-courses">
+        <p>No courses purchased yet 😢</p>
+        <a href="courses.html" class="button">👉 Want to buy?</a>
+      </div>
+    `;
         return;
     }
 
-    // Get user's purchased courses
-    let purchases = JSON.parse(localStorage.getItem(loggedInUser)) || [];
+    purchasedCourses.forEach(course => {
+        // You can add more details here if you want
+        const card = document.createElement("div");
+        card.className = "card";
 
-    if (purchases.includes(courseName)) {
-        alert("You already purchased this course!");
-        return;
-    }
-
-    purchases.push(courseName);
-    localStorage.setItem(loggedInUser, JSON.stringify(purchases));
-
-    alert(`Successfully purchased: ${courseName}`);
-}
-
-//my code ends 
-
-
-
-
-
-
-
-
+        card.innerHTML = `
+            <div class="card-content">
+                <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" alt="${course}" />
+                <h3>${course}</h3>
+                <p class="price">Purchased ✅</p>
+                <p>Details coming soon...</p>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+});
 
   function toggleDarkMode() {
     const element = document.getElementById("main-body");
