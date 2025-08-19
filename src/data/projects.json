@@ -1,0 +1,1482 @@
+[
+  {
+    "Project name": "Astra-Ai – AI Secretary App",
+    "Project description": "Astra-Ai is an open-source AI-powered personal assistant for Android built with Kotlin. It supports both voice and text interactions, powered by LLaMA 3 via Ollama for local inference. The app features a memory-based context engine and retrieval-augmented generation (RAG) to deliver context-aware, intelligent responses. Designed with modular components, it provides users with a chat-like interface, voice capabilities, and future integration plans for task automation, email, and calendar management.",
+    "Project link": "https://github.com/A-Akhil/Astra-Ai",
+    "Project admin": "A Akhil",
+    "Admin linkedin": "https://www.linkedin.com/in/a-akhil-16b396201",
+    "Tech stack": "The primary tech stack used is Kotlin, with support for Android Jetpack components, Ollama (for LLM serving), speech services, and MVVM architecture."
+  },
+  {
+    "Project name": "TechXNinjas website",
+    "Project description": "TechXNinjas community website",
+    "Project link": "https://www.github.com/techxninjas/techxninjas-client",
+    "Project admin": "Aadil Latif",
+    "Admin linkedin": "https://www.linkedin.com/in/iaadillatif",
+    "Tech stack": "ReactJS, Next.js, Typescript, Vite, CSS Tailwind"
+  },
+  {
+    "Project name": "SmartC.V.",
+    "Project description": "we are building a ats score checker and resume builder for students and working professional",
+    "Project link": "https://github.com/krit-vardhan-mishra/SmartC.V..git",
+    "Project admin": "Abhinav Dhiman",
+    "Admin linkedin": "https://www.linkedin.com/in/abhinav-dhiman-7b170b256",
+    "Tech stack": "MERN , python microservices, libraries like spaCy or nltk for Natural Language processing and docx2txt , pdfminer.six for parsing .docx or pdf"
+  },
+  {
+    "Project name": "FinPilot",
+    "Project description": "FinPilot is an open-source, enterprise-grade internal finance and expense approval system designed to streamline the reimbursement process within organizations. It provides a structured, transparent, and secure workflow where employees can raise expense claims, managers can review and approve them, and finance teams can validate and settle the claims.",
+    "Project link": "https://github.com/Abhinavhaldiya/FinPilot",
+    "Project admin": "Abhinav Kumar",
+    "Admin linkedin": "https://www.linkedin.com/in/abhinav-kumar-nitkkr/",
+    "Tech stack": "FinPilot is built using a simple and modern tech stack that includes React and Tailwind CSS for the frontend, Node.js and Express for the backend, and PostgreSQL for the database. It also uses JWT for authentication, bcrypt for password hashing, Multer for file uploads, and Chart.js for displaying data in graphs and charts."
+  },
+  {
+    "Project name": "eventstack",
+    "Project description": "EventStack is a platform alternative to Doodle and Luma Events  for managing, organizing and stacking events effeciently.",
+    "Project link": "https://github.com/abhirajadhikary06/eventstack.git",
+    "Project admin": "Abhiraj Adhikary",
+    "Admin linkedin": "https://www.linkedin.com/in/abhirajadhikary06/",
+    "Tech stack": "Tornado, HTML, CSS, Js, SQLite"
+  },
+  {
+    "Project name": "DevElevate",
+    "Project description": "DevElevate is a full-stack, AI-powered open-source platform built to help students and developers learn technical skills, grow confidently, and prepare for careers—all from a single platform.  The platform offers:\nStructured learning paths in DSA, Java, MERN, AI/ML, and Data Science\nAn AI chatbot (Study Buddy) to solve doubts, guide on career paths, and suggest resources.\nPersonalized dashboards for learners, including progress tracking, daily planners, and goals.\nA tech feed offering real-time internship updates, hackathon events, and developer news.\nTools like resume and cover letter builders, mock interview practice, and profile optimizers.\nRole-based authentication for users and admins, with profile management and admin dashboard.\nIntegrated coding practice links (GFG, LeetCode, HackerRank).\nAccessibility features like dark mode,white.",
+    "Project link": "https://github.com/abhisek2004/Dev-Elevate.git",
+    "Project admin": "ABHISEK PANDA",
+    "Admin linkedin": "http://www.linkedin.com/in/abhisekpanda2004",
+    "Tech stack": "Frontend: TypeScript, Tailwind CSS, Shadcn UI\nBackend: Node.js or  Express.js\nDatabase: MongoDB Atlas"
+  },
+  {
+    "Project name": "people hub",
+    "Project description": "This project is a comprehensive Employee Management Portal with secure login authentication. It empowers users to efficiently create, update, and delete employee details, along with managing leave requests. Future enhancements include a modernized user interface, notification management, and the integration of other advanced features for a complete people management solution.",
+    "Project link": "https://github.com/abhisek247767/PeopleHub-Frontend \n\nhttps://github.com/abhisek247767/PeopleHub-Backend",
+    "Project admin": "Abhisek Roy",
+    "Admin linkedin": "https://www.linkedin.com/in/royabhisek247767/",
+    "Tech stack": "Angular, NodeJS, MongoDB, Docker"
+  },
+  {
+    "Project name": "Foodie",
+    "Project description": "online food delivery application",
+    "Project link": "https://github.com/Abhishek2634/Foodie",
+    "Project admin": "Abhishek Farshwal",
+    "Admin linkedin": "https://www.linkedin.com/in/abhishekfarswal/",
+    "Tech stack": "MERN stack"
+  },
+  {
+    "Project name": "TravelGrid",
+    "Project description": "An all-in-one travel platform offering seamless booking for hotels, flights, and rentals, along with personalized trip planning and travel guides. The website aims to simplify travel experiences by combining convenience, affordability, and expert recommendations in one place.",
+    "Project link": "https://github.com/Adarsh-Chaubey03/TravelGrid",
+    "Project admin": "Adarsh Chaubey",
+    "Admin linkedin": "https://in.linkedin.com/in/adarsh-chaubey",
+    "Tech stack": "MERN Stack (Recact Js)"
+  },
+  {
+    "Project name": "JobSync - Inclusive Job Finder Platform",
+    "Project description": "JobSync is a job discovery platform designed for underprivileged individuals and daily wage workers. It simplifies access to job opportunities through a clean UI, multilingual support, and voice-enabled search. Contributors will help build core features like user authentication, a job search dashboard with scraping or API integration, and accessibility tools for low-literacy users. The goal is to create a user-friendly and inclusive job-seeking experience for those who need it most.",
+    "Project link": "https://github.com/adityagarwal15/JobSync",
+    "Project admin": "Aditya Agarwal",
+    "Admin linkedin": "https://www.linkedin.com/in/adityagarwal15/",
+    "Tech stack": "HTML,CSS,JS,REACT.JS,NODE.JS,EXPRESS.JS,MONGODB,WEB SPEECH API, I18NEXT,NETLIFY"
+  },
+  {
+    "Project name": "CodeClip",
+    "Project description": "Code Snippet Manager Extension",
+    "Project link": "https://github.com/opensource-society/CodeClip",
+    "Project admin": "Aditya Kumar",
+    "Admin linkedin": "https://linkedin.com/in/adityai0",
+    "Tech stack": "HTML, CSS, JAVASCRIPT"
+  },
+  {
+    "Project name": "NotesVault",
+    "Project description": "NotesVault is a beginner-friendly, open-source web app designed to help students store, browse, and manage academic notes and previous year questions (PYQs) in one place. This project is perfect for contributors who want to build and grow a useful educational tool from scratch.",
+    "Project link": "https://github.com/opensource-society/NotesVault",
+    "Project admin": "Aditya Patwa",
+    "Admin linkedin": "https://www.linkedin.com/in/AdityaPatwa07",
+    "Tech stack": "HTML, CSS, JavaScript"
+  },
+  {
+    "Project name": "Aluma",
+    "Project description": "With the growing need for mental health support and the lack of accessible or affordable resources , Aluma aims to provide a simple and supportive platform for emotjonal well being, for people of all ages. Aluma combines helpful tools like mood tracking, AI powered chatbots which personalise the response based on the information the user gives and music to support users in their daily mental health journey. The platform features 2 chatbots, Elena for emotional support and Jess for motivation, offering friendly conversations and helpful suggestions. Users can track their daily mood and events in a virtual Journal, take emotional assessments and receive AI generated tips for their specific situation. Aluma also offers relaxing music and meditation video links to help with anxiety and stress. This project has been shaped by feedback from over 60 users and focuses on providing a safe anf welcoming space for emotional care.",
+    "Project link": "https://github.com/AdityaRalhan/Aluma",
+    "Project admin": "Aditya Ralhan",
+    "Admin linkedin": "https://www.linkedin.com/in/aditya-ralhan/",
+    "Tech stack": "Nextjs, Reactjs, Tailwind, Expressjs, MongoDB, Mongoose, Gemini API, Spotify API, JWT and Bcrypt"
+  },
+  {
+    "Project name": "Trendhora",
+    "Project description": "Trendhora – your gateway to a seamless online shopping experience. This full-stack ecommerce application harnesses the power of the MERN stack to bring you a dynamic and interactive marketplace. Whether you're a buyer exploring diverse product categories or an admin managing inventory and customer accounts, Trendhora offers a robust and feature-rich platform for all your ecommerce needs.",
+    "Project link": "https://github.com/agamjotsingh18/trendhora",
+    "Project admin": "Agamjot Singh",
+    "Admin linkedin": "https://www.linkedin.com/in/agamjot-singh/",
+    "Tech stack": ""
+  },
+  {
+    "Project name": "quiz app",
+    "Project description": "a quiz app made using html, css and javascript",
+    "Project link": "https://github.com/Jadhav124Akshada/SkinSense.git",
+    "Project admin": "Akshada Jadhav",
+    "Admin linkedin": "https://www.linkedin.com/in/akshada-jadhav-4b72062b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "HTML, CSS, javascript"
+  },
+  {
+    "Project name": "KinetiX : AI Powered Fitness Application",
+    "Project description": "KinetiX is an AI-powered Android fitness app that helps users improve posture, track workouts, and maintain a healthy lifestyle. Built using Kotlin and ML models, KinetiX combines mobile development with machine learning to provide real-time posture correction and personalized exercise feedback. The app is designed with a sleek dark theme UI, offering features like:\nPosture AI: Real-time posture detection using TensorFlow Lite. Workout Tracker: Customizable workout plans and tracking. Progress Dashboard: Visual insights into fitness journey.\nReminders & Goals: Push notifications for workouts and hydration.\nUser Profile: BMI calculator and fitness analytics.",
+    "Project link": "https://github.com/akshtshrma/KinetiX",
+    "Project admin": "Akshat Sharma",
+    "Admin linkedin": "https://www.linkedin.com/in/akshtshrma",
+    "Tech stack": "Kotlin, XML, Mediapipe, MVVM,"
+  },
+  {
+    "Project name": "exciting_pong-game",
+    "Project description": "An classic Pong game built with HTML, CSS, and JavaScript, featuring AI, difficulty levels, and sound effects.",
+    "Project link": "https://github.com/Akki-jaiswal/pong-game.git",
+    "Project admin": "Akshay Jaiswal",
+    "Admin linkedin": "https://www.linkedin.com/in/akshay-jaiswal-20348a31b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "Html | CSS | JavaScript"
+  },
+  {
+    "Project name": "AI Stock Analyzer",
+    "Project description": "The Stock Analyzer project is a complete stock market analysis tool utilizing ML models. It allows users to input stock symbols, select date ranges, view historical stock trends, and see future stock price predictions via interactive charts.",
+    "Project link": "https://github.com/SrigadaAkshayKumar/stock",
+    "Project admin": "Akshay kumar",
+    "Admin linkedin": "https://www.linkedin.com/in/akshaykumarsrigada",
+    "Tech stack": "Frontend: React, JavaScript Backend: Python"
+  },
+  {
+    "Project name": "aitoolbox.software",
+    "Project description": "AIToolbox is an open-source platform offering a suite of daily-use AI tools in one place, including email writing, GPT chatbot, image and logo generation, YouTube transcription, and more. It's designed for simplicity, productivity, and easy access without switching between multiple apps.",
+    "Project link": "https://github.com/huamanraj/aitoolbox.software",
+    "Project admin": "Aman",
+    "Admin linkedin": "https://www.linkedin.com/in/huamanraj/",
+    "Tech stack": "NextJS, Tailwind, ReactJS"
+  },
+  {
+    "Project name": "InfantCareCompass",
+    "Project description": "InfantCareCompass is a dedicated platform designed to simplify childcare management for modern parents. Balancing the joys and challenges of parenting, this application empowers users to efficiently track their child’s healthcare needs, particularly focusing on vaccination schedules, educational resources, and more.",
+    "Project link": "https://github.com/Amarjha01/InfantCareCompass",
+    "Project admin": "Amar jha",
+    "Admin linkedin": "https://www.linkedin.com/in/amarjha01/",
+    "Tech stack": "MERN (MongoDB, Express.js, React.js, Node.js), Tailwind CSS, ZegoCloud, cloudinary, JWT, Docker, GitHub Actions, Planned AI Integration: OpenAI API / LangChain / TensorFlow.js / Python (FastAPI)"
+  },
+  {
+    "Project name": "EdgeCareer",
+    "Project description": "🚀 EdgeCareer – AI-Powered Career Coach Full Stack AI Career Coach built with React 19 + Next.js 15, Tailwind CSS, NeonDB, Prisma, Clerk Authentication, Inngest, Gemini API, and Shadcn UI. A cutting-edge AI-driven career platform that provides personalized job recommendations, AI resume reviews, and real-time career insights to help users",
+    "Project link": "https://github.com/amitkumardemo/EdgeCareer.git",
+    "Project admin": "Amit Kumar",
+    "Admin linkedin": "https://www.linkedin.com/in/amit-kumar-686196225/",
+    "Tech stack": "React 19 & Next.js 15-\tFrontend & Server-Side Rendering\nTailwind CSS & Shadcn UI  -\tModern UI & Styling\nNeonDB & Prisma\t-  Database & ORM\nClerk Authentication  -\tSecure login & access control\nInngest\tBackground job processing\nGemini API  - AI-powered career guidance\nVercel\t- Deployment & hosting"
+  },
+  {
+    "Project name": "Music tracker API",
+    "Project description": "MusicTrackerAPI is a lightweight, RESTful API built to help users track, organize, and manage their favorite songs easily. Designed using Node.js and SQLite, this backend service allows full CRUD operations on music entries, making it ideal for personal music dashboards, playlist managers, or even as a backend for music-based applications.",
+    "Project link": "https://github.com/Ananya-te/MusicTrackerAPI.git",
+    "Project admin": "Ananya Giri",
+    "Admin linkedin": "https://www.linkedin.com/in/ananya-giri-38738b240?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "node.js,SQLite(DB browser),RESTful API ,python,html css"
+  },
+  {
+    "Project name": "Vaccination Portal",
+    "Project description": "VacciTrack is a digital platform that helps parents and healthcare workers manage child vaccination records with ease. Using QR codes, timely reminders, and educational resources, we ensure every child gets the right vaccine at the right time — safety and  affordability.",
+    "Project link": "https://github.com/ShishuCard/Vaccination_Portal",
+    "Project admin": "Ankit Shaw",
+    "Admin linkedin": "https://www.linkedin.com/in/ankit-shaw-884b0728a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "React - frontend, Firebase - backend."
+  },
+  {
+    "Project name": "KrishiMitra.py",
+    "Project description": "KrishiMitra.py is an all-in-one AI-powered assistant designed to support Indian farmers by addressing their daily agricultural challenges. The project integrates multiple features including multi-language support (for Hindi, Tamil, Telugu, Bhojpuri, etc.), crop disease detection via image upload, mandi price updates, fertilizer and loan information, weather forecasting based on location, a crop calendar, task reminders, and a smart chatbot for instant help. Built using Python and Streamlit, KrishiMitra aims to empower farmers with personalized, accessible, and region-specific agricultural guidance in their native languages.",
+    "Project link": "https://github.com/Ansikka/KrishiMitra.py",
+    "Project admin": "Anshika Sharma",
+    "Admin linkedin": "https://www.linkedin.com/in/anshikasharma5",
+    "Tech stack": "python, gTTs, pillow , openCV, ML model, streamlit"
+  },
+  {
+    "Project name": "AnimateItNow",
+    "Project description": "AnimateItNow is an open-source project that showcases beautiful and creative web animations using HTML, CSS, and JavaScript — without any frameworks or libraries. The goal is to build a collection of unique, visually engaging components and pages that help developers learn modern frontend techniques through real-world animation examples.",
+    "Project link": "https://github.com/itsAnimation/AnimateItNow",
+    "Project admin": "Anuj Shrivastava",
+    "Admin linkedin": "https://www.linkedin.com/in/anuj-shrivastava-949645299/",
+    "Tech stack": "HTML, CSS and JavaScript"
+  },
+  {
+    "Project name": "Menthub",
+    "Project description": "Menthub is a full-stack web platform designed to bridge the gap between college students seeking guidance (mentees) and those who are ready to offer support (mentors) — all within the same academic environment. It facilitates seamless mentor-mentee connections, fosters community-driven learning, and promotes a culture of shared growth and collaboration.\n\nThis platform empowers students to:\n\nGet help from peers in academics, internships, placements, time management, and more.\n\nVolunteer as mentors based on their experiences and strengths.\n\nMake informed mentorship choices through intelligent matching and profile-based filtering.",
+    "Project link": "https://github.com/anugit24/Menthub",
+    "Project admin": "Anusha Jha",
+    "Admin linkedin": "https://www.linkedin.com/in/anusha-jha-8038491ba/",
+    "Tech stack": "HTML, CSS ,Javascript ,Python, Flask, PostgresSQL,SQLAlchemy,Scikit-learn,"
+  },
+  {
+    "Project name": "OWASP Nest",
+    "Project description": "Your gateway to OWASP",
+    "Project link": "https://github.com/owasp/nest",
+    "Project admin": "Arkadii Yakovets",
+    "Admin linkedin": "https://www.linkedin.com/in/arkid15r/",
+    "Tech stack": "Python, Django, GraphQL, TypeScript, Next.js, React, TailwindCSS, Docker"
+  },
+  {
+    "Project name": "Travel_Website",
+    "Project description": "About\n🚀 Welcome🌈 , This repo is officially accepted for 🌟APERTRE 2025🌟 & 🌟CODEPEAK 2025🌟 This repo contains my project on Travel Website ✈️ using HTML,CSS . It contains the landing page of a travel tour company website. If you have any front end project on this or you can add new features in the project or in this repos.",
+    "Project link": "https://github.com/apu52/Travel_Website",
+    "Project admin": "Arpan Chowdhury",
+    "Admin linkedin": "https://www.linkedin.com/in/arpan-chowdhury-775294251/",
+    "Tech stack": "HTML , CSS ,JS"
+  },
+  {
+    "Project name": "VehiGo",
+    "Project description": "An open-source car rental website powered by HTML, CSS, and JavaScript, designed for effortless vehicle booking. It features intuitive user management, a streamlined car search and booking system, and a responsive design for web and mobile. Perfect for GSSoC 2025 contributors to enhance front-end functionality, improve user experience, and build practical open-source skills.",
+    "Project link": "https://github.com/InnoWebLabs/Vehigo",
+    "Project admin": "Aryan",
+    "Admin linkedin": "https://www.linkedin.com/in/aryan-soni-26794924a/",
+    "Tech stack": "Full Stack Development"
+  },
+  {
+    "Project name": "PG genie",
+    "Project description": "PG genie is a web application designed to help users find, review, and rate paying guest (PG) accommodations. Whether you're a tenant looking for your next stay or a PG owner aiming to showcase your property, PG genie makes the process seamless and efficient.",
+    "Project link": "https://github.com/coderashhar/PG-genie",
+    "Project admin": "Ashhar Khan",
+    "Admin linkedin": "https://www.linkedin.com/in/mohd-ashhar-khan-728a912a1/",
+    "Tech stack": "MERN"
+  },
+  {
+    "Project name": "Drx.MediMate",
+    "Project description": "Aditi is a Flask-based web application that serves as your AI-powered pharmaceutical assistant. It provides:\n\nClinical drug information, including therapeutic uses, dosage guidelines, side effects, contraindications, and drug interactions.\n\nSymptom-based drug recommendations following evidence-based guidelines.\n\nEducational Use: Designed for educational purposes to assist in healthcare decision-making.",
+    "Project link": "https://github.com/MAVERICK-VF142/Drx.MediMate",
+    "Project admin": "ASHUTOSH",
+    "Admin linkedin": "https://www.linkedin.com/in/ashutosh-jena-/",
+    "Tech stack": "Backend: Python, Flask\n\nAI: Google Generative AI (Gemini Model)\n\nFrontend: HTML, CSS (Flask templates)"
+  },
+  {
+    "Project name": "Code A2Z",
+    "Project description": "A collaborative platform for developers & learners to explore, build, and contribute to Web Development & AI projects. Features include AI-driven recommendations, role-based access, project tracking, interactive community engagement, and structured learning resources.",
+    "Project link": "https://github.com/Code-A2Z/code-a2z",
+    "Project admin": "Avdhesh Varshney",
+    "Admin linkedin": "https://www.linkedin.com/in/avdhesh-varshney/",
+    "Tech stack": "React, Vite, Node.js, Express.js, MongoDB, Firebase, Tailwind CSS"
+  },
+  {
+    "Project name": "Flavor Ai",
+    "Project description": "This project is designed to make meal planning and recipe exploration effortless and fun. Whether you're looking for AI-curated recipes, diverse food categories, or exciting culinary surprises, FlavorAI has it all.",
+    "Project link": "https://github.com/Ayushjhawar8/Flavor-ai",
+    "Project admin": "Ayush Jhawar",
+    "Admin linkedin": "linkedin.com/in/ayushjhawar8",
+    "Tech stack": "Frontend: Next.js\nBackend: Fetches data from a custom API\nStyling: Tailwind CSS, DaisyUI\nAI Integration: OpenAI/Groq API\nHosting: Vercel\\"
+  },
+  {
+    "Project name": "KnockoutZone",
+    "Project description": "A full stack web app to manage tournaments end-to-end. Admins can create tournaments, set rules, and schedule matches. Players can register, get auto-assigned to teams, view match schedule and track scores..",
+    "Project link": "https://github.com/Ayush0316/KnockoutZone",
+    "Project admin": "Ayush Kansal",
+    "Admin linkedin": "https://www.linkedin.com/ayushkansal0316/",
+    "Tech stack": "React, Spring Boot"
+  },
+  {
+    "Project name": "SkillTrade",
+    "Project description": "Skill Trade is an innovative platform designed to connect two primary user groups: Consumers (or Users) and Service Providers (or Workers). The platform facilitates seamless interaction, enabling users to request services and service providers to fulfill them efficiently. It is a service booking platform where users can book various services such as electricians, carpenters, plumbers, and more.",
+    "Project link": "https://github.com/AyushSharma72/Skill_Trade",
+    "Project admin": "Ayush Sharma",
+    "Admin linkedin": "https://www.linkedin.com/in/ayush-sharma-a155a8267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "nextjs,nodejs,reactjs,"
+  },
+  {
+    "Project name": "Euphoric",
+    "Project description": "campus site for euphoric registerations, updates, promoting and showcasing events",
+    "Project link": "https://euphoric-2025.42web.io/",
+    "Project admin": "Ayushi Tomar",
+    "Admin linkedin": "https://www.linkedin.com/in/ayushi-tomar-b388ba337",
+    "Tech stack": "php, mysql, javascript, ajax, html/css, bootstrap, libraries"
+  },
+  {
+    "Project name": "WanderWise",
+    "Project description": "WanderWise-Smart-routes.-Hidden-gems.-Travel-smarter.-",
+    "Project link": "https://github.com/Balamurugan-cyber/WanderWise-Smart-routes.-Hidden-gems.-Travel-smarter.-",
+    "Project admin": "Balamurugan",
+    "Admin linkedin": "https://www.linkedin.com/in/balamurugankarthikeyan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "(Fullstack)HTMl CSS JS"
+  },
+  {
+    "Project name": "HabitHeat",
+    "Project description": "A modern, feature-rich habit tracking application built with React and TypeScript. Track your daily habits, build streaks, earn achievements, and maintain consistency with powerful analytics and gamification features.",
+    "Project link": "https://github.com/BaraniVA/Habitheat",
+    "Project admin": "Barani",
+    "Admin linkedin": "https://www.linkedin.com/in/barani-a-90716422a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "React 18, TypeScript, Tailwind CSS, Lucide React"
+  },
+  {
+    "Project name": "Refixly",
+    "Project description": "Refixly is a smart DIY repair assistant that uses AI to detect objects through your webcam and suggest repair tutorials. Future updates will include AR overlays and community support for an interactive repair experience.",
+    "Project link": "https://github.com/Bavanetha27/Refixly.git",
+    "Project admin": "Bavanetha M.R",
+    "Admin linkedin": "https://www.linkedin.com/in/bavanethamr",
+    "Tech stack": "React.js, Vite, Tailwind CSS, Node.js, Express.js, Firebase Authentication, MongoDB Atlas, TensorFlow.js, YouTube Data API"
+  },
+  {
+    "Project name": "Pouranik - Read. Share. Connect.",
+    "Project description": "Pouranik is a community-driven web app that helps readers explore books, join book clubs, track reading goals, and share second-hand books, all in one cozy, open-source platform.",
+    "Project link": "https://github.com/BhaktiMore18/Pouranik",
+    "Project admin": "Bhakti More",
+    "Admin linkedin": "https://www.linkedin.com/in/bhakti-more-01a619208",
+    "Tech stack": "React, Tailwind CSS, Vite, Node.js, Express, and MongoDB, Google Books API."
+  },
+  {
+    "Project name": "eventmappr",
+    "Project description": "📌 Project Description – EventMappr\nEventMappr is a community-focused web application that allows users to discover, add, and explore local events on an interactive map. Built using React JS and Leaflet.js, the app provides a simple and intuitive interface to visualize nearby happenings like music events, tech meetups, volunteering drives, art fairs, and more.\n\nUsers can pin new events on the map by submitting a short form and selecting a location. The app also features event filtering by category and a geolocation-based search to find events near the user's current location. With no backend dependencies, EventMappr runs entirely in the browser and is a perfect example of what can be achieved with modern frontend tools alone.\n\nIdeal for communities, colleges, and local networks — EventMappr makes event discovery and sharing effortless.",
+    "Project link": "https://github.com/Bhavya1352/eventmappr",
+    "Project admin": "Bhavya Mishra",
+    "Admin linkedin": "https://www.linkedin.com/in/bhavya-mishra-7a3b09324",
+    "Tech stack": "React.js – For building the component-based user interface.\n\nLeaflet.js – For rendering interactive maps and markers.\n\nReact Leaflet – React bindings for Leaflet to handle maps in a declarative way.\n\nHTML5 – Markup structure of the web application.\n\nCSS3 – For styling, layout, and responsive design.\n\nJavaScript (ES6+) – Core programming language for interactivity and logic.\n\nGeolocation API – To fetch and use the user's current location.\n\nOpenStreetMap – Used as the map tile provider (free and open-source).\n\nVite / Create React App – For scaffolding and developing the React application.\n\nGit & GitHub – For version control and open-source collaboration."
+  },
+  {
+    "Project name": "Clean Breath",
+    "Project description": "Clean Breath is an intuitive web application designed to empower users to actively improve the air quality in their homes, offices, and communities by recommending the most effective air-purifying plants based on real-time pollutant data. By addressing pollutants like SO₂, NO₂, CO, O₃, PM2.5, and PM10, the app connects environmental science with daily living to create cleaner, greener spaces.\n\n🔑 Core Features\n📊 Track Air Quality:\nMonitor real-time air quality data (AQI) and pollutant concentrations in your area to understand the air you breathe.\n\n🪴 Know Your Plant:\nExplore detailed information about various plants, including their air-purifying capabilities, ideal conditions, and aesthetic appeal.\n\n📚 Green Insights:\nAccess well-curated articles, care guides, and expert tips on plant maintenance, indoor gardening, and sustainable practices.\n\n🌿 Find Your Plant:\nGet personalized plant recommendations tailored to your location, indoor/outdoor preferences, and the pollutants you wish to target.\n\n🎯 Purpose\nClean Breath aims to bridge the gap between environmental awareness and actionable solutions. By promoting the use of nature-based strategies for air purification, the app fosters healthier living while encouraging plant adoption and eco-conscious decision-making.\n\n💡 Ideal For\nUrban dwellers seeking cleaner indoor air\n\nHealth-conscious individuals and families\n\nEnvironmental enthusiasts and green lifestyle advocates\n\nSchools, offices, and wellness centers looking to green their spaces",
+    "Project link": "https://github.com/chandannekya/Clean-Breath",
+    "Project admin": "Chandan",
+    "Admin linkedin": "www.linkedin.com/in/chandannekya",
+    "Tech stack": "Frontend: React, Tailwind CSS, Vite\n\nBackend: Node.js, Express\n\nDatabase: MongoDB\n\nPayment Gateway: Razorpay"
+  },
+  {
+    "Project name": "CodeBrosPlatform",
+    "Project description": "CodeBros is a full-stack web application designed to connect developers, enabling them to network, collaborate, and communicate. The platform features user profiles, connection management, real-time messaging, and developer discovery capabilities.",
+    "Project link": "https://github.com/Altair-05/CodeBrosPlatform",
+    "Project admin": "Dakshata",
+    "Admin linkedin": "https://www.linkedin.com/in/dakshata-borse-57994326b/",
+    "Tech stack": "react with typescript, tailwind css express js"
+  },
+  {
+    "Project name": "SheSync",
+    "Project description": "SheSync is a comprehensive women's health and wellness platform built with modern web technologies. The platform aims to provide a supportive environment for women to access health resources, connect with healthcare professionals, and engage with a community of like-minded individuals.",
+    "Project link": "https://github.com/divi-24/SheSync",
+    "Project admin": "Deepak Gupta",
+    "Admin linkedin": "https://www.linkedin.com/in/deepak2405",
+    "Tech stack": "Frontend\nReact18,Vite,TailwindCSS,Framer Motion (for animations),React Router DOM,Google Maps API,Google Generative AI,Clerk Authentication\nUI Components- Headless UI, Radix UI, React Icons,Lucide React, React Feather\nDevelopment Tools- ESLint, PostCSS, Autoprefixer ,TypeScript support"
+  },
+  {
+    "Project name": "silai-hub",
+    "Project description": "🧵 GuddiSilai – Tailoring Made Digital 👗\nGuddiSilai is a full-stack tailoring platform that brings traditional Indian stitching services online. Designed especially for customers in Tier 2 and Tier 3 cities, the platform allows users to book stitching services, customize blouses, lehengas, and dresses, and track their orders — all from the comfort of their home.\n\nBuilt with React, Node.js, Express, and MongoDB, it offers both a user-facing interface and an admin panel to manage designs, track orders, and monitor payments.",
+    "Project link": "www.guddisilai.shop",
+    "Project admin": "Deepak Vishwakarma",
+    "Admin linkedin": "https://www.linkedin.com/in/deepakv2003",
+    "Tech stack": "react js, node js, express , full stack , authentication"
+  },
+  {
+    "Project name": "Splitwiser",
+    "Project description": "Splitwiser is an open-source application designed to simplify expense sharing among groups. It aims to provide a robust and user-friendly platform for tracking and settling shared expenses, similar to popular expense-splitting apps, but completely open source and community-driven.",
+    "Project link": "https://github.com/Devasy23/splitwiser",
+    "Project admin": "Delin",
+    "Admin linkedin": "https://in.linkedin.com/in/devasy-patel",
+    "Tech stack": "Backend: FastAPI (Python) and MongoDB. Frontend: React Native with Expo."
+  },
+  {
+    "Project name": "Smart Chat Assistant",
+    "Project description": "Developed a fully responsive \"Smart Chat Assistant\" using HTML, CSS, and JavaScript featuring dark mode, voice input/output, chat history saving, and a user-friendly UI/UX. Hand-coded for real-world use, ideal for websites and portfolios.",
+    "Project link": "https://github.com/devangjain999/Smart-Chat-Assistant.git",
+    "Project admin": "Devang Jain",
+    "Admin linkedin": "https://www.linkedin.com/in/devangjain999",
+    "Tech stack": "HTML/CSS/JS/WEB APIs"
+  },
+  {
+    "Project name": "ClassSync",
+    "Project description": "ClassSync is an advanced, multi-tenant school scheduling and substitution management system that streamlines weekly timetable creation, automates teacher substitutions during absences, and ensures conflict-free allocations through intelligent load-balancing logic; built with a scalable MERN stack architecture, it features role-based access for admins and teachers, real-time email notifications, a visually intuitive timetable UI, and future-ready support for audit trails and class-wise views.",
+    "Project link": "https://github.com/dhananjay6561/ClassSync-GSSOC",
+    "Project admin": "Dhananjay Aggarwal",
+    "Admin linkedin": "https://www.linkedin.com/in/dhananjay6561",
+    "Tech stack": "Tech Stack: React.js, Tailwind CSS, Vite, Node.js, Express.js, MongoDB with Mongoose, JWT-based Auth, Nodemailer for emails, Node Cron for scheduling, deployed on Vercel and Render, with GitHub Actions for CI/CD."
+  },
+  {
+    "Project name": "Netflix Clone",
+    "Project description": "Its a clone website for Netflix",
+    "Project link": "https://github.com/DhruvJohri/Netflix-Clone",
+    "Project admin": "Dhruv Johri",
+    "Admin linkedin": "https://www.linkedin.com/in/dhruv-johri",
+    "Tech stack": "MERN"
+  },
+  {
+    "Project name": "Firebase Chat App",
+    "Project description": "A real-time chat application built using Firebase and React. It allows users to sign in with Google authentication, exchange messages instantly, and manage user sessions securely. The app showcases the power of serverless technologies with a sleek and responsive UI. Ideal for contributors interested in React, Firebase, and modern frontend/backend integration.",
+    "Project link": "https://github.com/Dhruvi-tech/firebase-chat-app",
+    "Project admin": "Dhruvi Mittal",
+    "Admin linkedin": "https://www.linkedin.com/in/dhruvi-mittal/",
+    "Tech stack": "React.js, Firebase Authentication, Firestore Database, HTML/CSS, JavaScript"
+  },
+  {
+    "Project name": "Healconnect",
+    "Project description": "A  health monitoring system that provides real-time tracking of vital signs, helping users manage their well-being with accurate data and smart insights—all in one easy-to-use platform.",
+    "Project link": "https://github.com/Dipanita45/HEALCONNECT",
+    "Project admin": "Dipanita Mondal",
+    "Admin linkedin": "https://www.linkedin.com/in/dipanita-mondal-6a9257306?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "NextJS, Javascript, C++, Tailwind CSS"
+  },
+  {
+    "Project name": "AgroData Portal – A Data Visualization & Profiling System for Rural Agribusinesses",
+    "Project description": "AgroData Portal is a web-based open-source application designed to support data collection, profiling, and visualization of youth and women-led agribusinesses across the Niger Delta. The system allows LIFE-ND and similar development projects to:\n•\tDigitally profile beneficiaries and enterprise groups.\n•\tAnalyze socio-economic and agribusiness data by location, gender, and value chain.\n•\tMonitor progress and outcomes of livelihood interventions.",
+    "Project link": "https://medium.com/@rimoh11",
+    "Project admin": "Divya Jain",
+    "Admin linkedin": "www.linkedin.com/in/victor-imoh-uwem-941257225",
+    "Tech stack": "Tools: PowerBI (for data visualization), Google Sheets API (for integration)"
+  },
+  {
+    "Project name": "SKYwatch Alerts",
+    "Project description": "A simple next js application that send the alerts when airplane are passing near to your live location also tell you about pattern in flight.",
+    "Project link": "https://github.com/Dnyaneshpise/skywatch_alerts",
+    "Project admin": "Dnyanesh Pise",
+    "Admin linkedin": "https://linkedin.com/in/pise",
+    "Tech stack": "Nextjs , React"
+  },
+  {
+    "Project name": "BookReview",
+    "Project description": "BookReview is a website for reviewing your favourite book using ai.",
+    "Project link": "https://bookreview-se1e.onrender.com/",
+    "Project admin": "Donald Reddy",
+    "Admin linkedin": "https://www.linkedin.com/in/donald-reddy-indelu/",
+    "Tech stack": "React.js, Tailwind, Node.js, Express.js, Postgresql, Prisma, Typescript, Javascript, OpenRouter"
+  },
+  {
+    "Project name": "Medical Adherence Monitoring System",
+    "Project description": "An innovative healthcare management system designed to help patients track medication intake, connect with doctors, and maintain a healthier lifestyle. Demo Video: https://res.cloudinary.com/dzl3qnjqk/video/upload/v1751681025/VID-20250419-WA0000_4_tycodg.mp4",
+    "Project link": "https://github.com/BrewedAlgorithms/Medical-Adherence-Monitoring-System",
+    "Project admin": "Durgesh Khade",
+    "Admin linkedin": "https://www.linkedin.com/in/durgeshkhade/",
+    "Tech stack": "MERN, Tensorflow, Python, Embedded C"
+  },
+  {
+    "Project name": "MindJournal",
+    "Project description": "A full-featured mental health journal app built with React.js, Tailwind CSS, and Vite.\nFeatures: authentication, mood visualization via charts, theme toggling, calendar integration.Used React Router and Context API for navigation and state management.",
+    "Project link": "https://github.com/efshaperveen/MindJournal",
+    "Project admin": "Efsha Perveen",
+    "Admin linkedin": "https://www.linkedin.com/in/efsha-perveen-124718282",
+    "Tech stack": "Frontend: React.js, Vite,  Styling: Tailwind CSS,\nState Management: Context API, React Hooks,\nRouting: React Router,\nCharts: Recharts,\nIcons: React Icons"
+  },
+  {
+    "Project name": "Web Development",
+    "Project description": "Engage students in Web Development with an outstanding line of teaching",
+    "Project link": "https://github.com/roshnideyic365/Culinary-King-e-commerce-website.git",
+    "Project admin": "Emmanuel Famous",
+    "Admin linkedin": "https://www.linkedin.com/in/𝑬𝒎𝒎𝒂𝒏𝒖𝒆𝒍-𝑶𝒌𝒊𝒌𝒊𝒐𝒍𝒂-505783248/",
+    "Tech stack": "LEMPSTACK"
+  },
+  {
+    "Project name": "Driver Drowiness System",
+    "Project description": "Achieved 92% accuracy in detecting drowsiness using facial recognition and machine learning algorithms.  • Processed driver images using OpenCV and Dlib for real-time monitoring of eye closure and head position.  • Integrated real-time alerts with audio/visual warnings, responding in less than 1 second when fatigue is detected.  • Trained a model on 5,000+ driver images, ensuring reliable performance in diverse conditions and real-world  testing.",
+    "Project link": "https://github.com/Gagandeep-2003/driver-drowsiness-detection-system",
+    "Project admin": "Gagandeep Singh",
+    "Admin linkedin": "https://linkedin.com/in/gagandeepsingh22",
+    "Tech stack": "OpenCv, Dlib, Machine Learning"
+  },
+  {
+    "Project name": "Weather-API",
+    "Project description": "A simple yet powerful weather scraper built with Node.js, Express and Cheerio. This project dynamically fetches real-time weather data for any city, scrapes the necessary details, and presents them on an intuitive user interfaec.",
+    "Project link": "https://github.com/GauravKarakoti/Weather-API",
+    "Project admin": "Gaurav Karakoti",
+    "Admin linkedin": "https://linkedin.com/in/gaurav-karakoti",
+    "Tech stack": "Express, Axios, Cheerio, Cors, Dotenv"
+  },
+  {
+    "Project name": "Blogging Platform",
+    "Project description": "User friendly Interface where users can create accounts and post blogs on any topic and also allows users to read other blogs based on preference and intrest ,also allows sharing",
+    "Project link": "https://github.com/Gnanaashritha/Blogging-Platform-",
+    "Project admin": "Gnana Ashritha Maddukuri",
+    "Admin linkedin": "www.linkedin.com/in/gnana-ashritha-",
+    "Tech stack": "Html, Css,Js,NodeJs,Mern"
+  },
+  {
+    "Project name": "otploginfrontend",
+    "Project description": "web app designed to interact or login with users based upon otp verification from fastapi as backend",
+    "Project link": "https://github.com/OpenTekHub/otploginfrontend",
+    "Project admin": "Harish",
+    "Admin linkedin": "https://www.linkedin.com/in/harish-peddina",
+    "Tech stack": "next.js"
+  },
+  {
+    "Project name": "otp authentication",
+    "Project description": "an otp authentication frontend app built using fastapi and twilo and jwt tokens",
+    "Project link": "https://github.com/Harish-2003/otpauthentication",
+    "Project admin": "Harish",
+    "Admin linkedin": "https://www.linkedin.com/in/harish-peddina",
+    "Tech stack": "fastapi"
+  },
+  {
+    "Project name": "Civix",
+    "Project description": "Civix – Local Civic Issue Reporting App\nDomain: Governance / Public Welfare\n\nCivix is a civic tech solution that empowers citizens to report and track local issues such as potholes, broken lights, and garbage piles. Users can submit reports with images, location data (via map), and descriptions, while also tracking progress as issues move from Open to Resolved. Community-driven upvoting helps prioritize problems that matter most. City workers manage reports through a dedicated admin dashboard.",
+    "Project link": "https://github.com/HarshS16/Civix",
+    "Project admin": "HARSH SRIVASTAVA",
+    "Admin linkedin": "https://www.linkedin.com/in/harsh-srivastava-51b67324a/",
+    "Tech stack": "🔧 Tech Stack:\n\nFrontend: React, Tailwind CSS, Leaflet.js (Maps)\n\nBackend: Node.js, Express.js, PostgreSQL\n\nImage Upload: Cloudinary\n\nAuth: Role-based (Citizen/Admin)"
+  },
+  {
+    "Project name": "Advanced Discord Bots - VAISH",
+    "Project description": "VAISH — Ultra-Modern AI Discord Bot Framework is an open-source, next-generation Discord bot solution designed for modern communities, gaming servers, and large-scale deployments. It combines powerful automation, AI-driven features, and complete code ownership — all with zero subscription fees or vendor lock-in. Built using Discord.js v14, Node.js 18+, MongoDB Atlas, Google Gemini AI, and Mongoose, VAISH delivers intelligent conversations, advanced moderation, community rewards, and a beautiful, responsive user interface. The framework offers developer-friendly architecture, scalable database integration, and seamless cloud deployment to platforms like Render, Railway, or private servers.\n\nAs an open-source project, VAISH welcomes contributors to build their own custom bots, develop new AI features, enhance performance, and improve documentation. Our mission is to empower Discord communities with secure, AI-powered automation tools while fostering global collaboration. Developers passionate about Discord, AI, or open-source innovation are invited to join VAISH and help shape the future of intelligent, community-driven Discord bots.",
+    "Project link": "https://github.com/harshendram/Advanced-Discord-Bot",
+    "Project admin": "Harshendta",
+    "Admin linkedin": "https://www.linkedin.com/in/harshendra-m-2b8bb5299/",
+    "Tech stack": "VAISH Discord Bot – Full Tech Stack  1. JavaScript – Primary language for building bot functionality, event handling, and server logic. 2. Node.js (v18+) – Backend runtime for executing JavaScript efficiently with non-blocking, real-time operations. 3. Discord.js (v14) – Official Discord API wrapper for creating modern slash commands, embeds, and bot interactions. 4. MongoDB Atlas – Scalable, cloud-hosted NoSQL database to store user data, points, XP, tickets, and more. 5. Mongoose– Object Data Modeling (ODM) library for defining schemas and interacting with MongoDB easily. 6. Google Gemini AI – Integrated AI model for intelligent, context-aware conversations and automation. 7. TypeScript (Optional Support) – Provides optional static typing and enhanced developer tooling for large codebases. 8. dotenv – Manages configuration secrets securely through environment variables. 9. ESLint & Prettier – Code quality tools to enforce consistent syntax, formatting, and maintainability. 10. Render– Cloud platform for automated deployment, scalable hosting, and environment management. 11. Redis (Planned) – High-performance caching layer to accelerate response times and enable real-time features. 12. Railway / Heroku / VPS (Alternative Deployments) – Additional options for flexible bot hosting. 13. Web Dashboard (Planned)– Future browser-based interface for bot configuration and analytics without coding."
+  },
+  {
+    "Project name": "Zip Tales",
+    "Project description": "AI-powered news verification platform that filters misinformation and provides community-verified credibility scores for authentic journalism.",
+    "Project link": "https://github.com/HimanshuHeda/Zip_Tales",
+    "Project admin": "Himanshu Heda",
+    "Admin linkedin": "https://www.linkedin.com/in/himanshu-heda/",
+    "Tech stack": "Frontend Technology : -- \nReact 18.3.1 , TypeScript 5.5.3 , Tailwind CSS 3.4.1 , Vite 5.4.2 , React Router DOM 6.8.1\n\nBackend & Database : --\nSupabase , Row Level Security (RLS) , Real-time Subscriptions , Blockchain Integration\n\nAI & APIs : --\nGoogle Gemini AI\nNews API\nSerpAPI\n\nDevelopment Tools : --\nESLint\nPostCSS\nLucide React \n\nDeployment Tool : --\nNetlify"
+  },
+  {
+    "Project name": "Clubverse",
+    "Project description": "Peer-led tech collective working on AI, ML, and open-source projects across \ncolleges. Focused on research collaboration and real-world problem solving.",
+    "Project link": "https://github.com/Club-Syndicate/ClubVerse",
+    "Project admin": "Himanshu Lohokane",
+    "Admin linkedin": "https://www.linkedin.com/in/himanshu-lohokane-6618a8259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "MERN, socket.io, Vercel"
+  },
+  {
+    "Project name": "FrostIQ",
+    "Project description": "FrostIQ is an open-source platform designed to make it easier for users to generate and customize bakery items according to their preferences. The project aims to simplify the process of finding, creating, and sharing bakery recipes and products, allowing users to explore a variety of options and contribute their own creations. By fostering collaboration and contribution, FrostIQ empowers a community of baking enthusiasts and developers to innovate together.",
+    "Project link": "https://github.com/indra7777/frostiq",
+    "Project admin": "Indra Prakash Gottipati",
+    "Admin linkedin": "https://www.linkedin.com/in/indra-prakash-gottipati-6a3b13226",
+    "Tech stack": "Python\n,Django/Flask (or your backend framework)\n,JavaScript (React.js/Vue.js for frontend),\nHTML, CSS,\nSQLite/MySQL (database)\n,Docker (for containerization)\n,Git & GitHub"
+  },
+  {
+    "Project name": "City Pulse",
+    "Project description": "City Pulse is a sleek, real-time dashboard built with **Streamlit** that provides everything you need to know about any city — from live weather updates and air quality to crime news, tourist recommendations, Google Trends analysis, and even an AI-powered chatbot that lets you search through Google.",
+    "Project link": "https://github.com/Jotthecode/CITY-PULSE",
+    "Project admin": "Jot Ajmani",
+    "Admin linkedin": "https://www.linkedin.com/in/jot-ajmani-b9154b217?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "**Frontend**: Streamlit\n- **Backend/APIs**:\n  - [OpenWeatherMap API](https://openweathermap.org/api) for Weather and AQI\n  - [Google Places API](https://developers.google.com/maps/documentation/places/web-service/overview)\n  - [Google Trends via Pytrends](https://github.com/GeneralMills/pytrends)\n  - News API for crime-related news\n  - Custom chatbot using Google Search integration\n- **Others**: Pandas, Requests, Python, HTML/CSS (via Streamlit components)"
+  },
+  {
+    "Project name": "HealthVault",
+    "Project description": "HealthVault is a secure and efficient medical record management platform designed to provide quick access to health data while maintaining encrypted privacy. By integrating an AI-powered chatbot, it enhances user experience by offering smart recommendations on home remedies and health-related queries. This platform is tailored for individuals, caregivers, and healthcare professionals who need seamless access to medical records, ensuring better self-care and informed decision-making.",
+    "Project link": "https://github.com/Priyanka-28-BM/HealthVault",
+    "Project admin": "K N Meghana",
+    "Admin linkedin": "https://www.linkedin.com/in/meghanakn473",
+    "Tech stack": "React js Node.js Supabase"
+  },
+  {
+    "Project name": "CodeArena",
+    "Project description": "CodeArena is a cutting-edge, AI-powered ecosystem architected with a microservices-based MERN stack, combining Dockerized online judging, AI-integrated collaboration tools, and smart career utilities. With intelligent workflows powered by n8n and Relevance AI, CodeArena is more than a platform- it's your real-time coding and career companion.",
+    "Project link": "https://github.com/kanikaa-3018/contest_onlinejudge",
+    "Project admin": "Kanika Singhal",
+    "Admin linkedin": "https://www.linkedin.com/in/kanika-singhal-93388428b",
+    "Tech stack": "MERN, Websockets, n8n, Relevance AI, Gemini AI, Open AI, Python, TailwindCSS, Javacript, Docker, AWS(EC2 , ECR)"
+  },
+  {
+    "Project name": "Real-Time Disaster Dashboard",
+    "Project description": "A real-time disaster management dashboard that fetches and displays live disaster data from APIs like NASA and NDMA. It helps authorities and the public stay informed through alerts, analytics, and visualizations.",
+    "Project link": "https://github.com/Himanshi150/real-time-daister-project",
+    "Project admin": "Kanzariya Himanshi Bharatbhai",
+    "Admin linkedin": "https://www.linkedin.com/in/himanshi -kanzariya-0?",
+    "Tech stack": "FastAPI, Python, Streamlit, JavaScript, HTML, CSS, NASA API, NDMA API"
+  },
+  {
+    "Project name": "VisionMate",
+    "Project description": "VisionMate is a smart assistive solution designed to support visually impaired people in navigating their surroundings more independently. It uses computer vision and speech technologies to identify objects, read text, and give real time voice feedback through a user friendly interface. I have uploaded the initial code and concept to GitHub to give an idea of the project’s vision, but not the full implementation yet. The project is currently in the development phase, with plans to expand its capabilities to include environment detection and safe navigation features.",
+    "Project link": "https://www.github.com/kaushav07/VisionMate",
+    "Project admin": "Kaushav",
+    "Admin linkedin": "https://www.linkedin.com/in/kaushav-kumar-2324ab247",
+    "Tech stack": "Python, OpenCV, Flask/Django, Flutter, MySQL,  Google Cloud Vision API, Text to Speech / Speech to Text APIs"
+  },
+  {
+    "Project name": "Zylar's World",
+    "Project description": "Zylar’s World is a 3D educational RPG that introduces players to philosophy through immersive﻿ gamification. Players take on the role of Zylar, an alien who escapes the monotony of its home﻿ world and crash-lands on Earth, only to be captured by humans for scientific study. Perceiving﻿ the humans as the true “aliens,” Zylar feels isolated and overwhelmed, eventually slipping into a﻿ deep slumber. Within this dream world, a mysterious alien goddess guides Zylar through five﻿ distinct philosophical eras—each presenting a unique challenge. As Zylar overcomes these﻿ trials, it gains insight into the human condition and the enduring questions of existence.",
+    "Project link": "https://github.com/algorathem/philosophical-rpg",
+    "Project admin": "Kc",
+    "Admin linkedin": "https://www.linkedin.com/in/kye-cin-leck?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "unity (core engine), yarnspinner for unity (narrative system), blender (3d modelling), humeai (preparing voiceover assets)"
+  },
+  {
+    "Project name": "foodBridge",
+    "Project description": "Its a food Donation website",
+    "Project link": "https://github.com/Khushbudaswani/Foodbridge.git",
+    "Project admin": "Khushbu Daswani",
+    "Admin linkedin": "https://www.linkedin.com/in/khushbu-daswani-6a420b301",
+    "Tech stack": "python django dbsqlite"
+  },
+  {
+    "Project name": "DreamJobs-Job Portal",
+    "Project description": "this project aims to bridge the gap between job seekers and employers",
+    "Project link": "https://github.com/Khushi-Nigam/jobportal",
+    "Project admin": "Khushi Nigam",
+    "Admin linkedin": "https://www.linkedin.com/in/khushinigam7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "HTML CSS JS PYTHON Django"
+  },
+  {
+    "Project name": "one- stop- guide",
+    "Project description": "Explore city guide and Radme details hai",
+    "Project link": "https://github.com/komalkhatod1105/One-Stop-Guide",
+    "Project admin": "Komal Khatod",
+    "Admin linkedin": "linkedin.com/in/komalkhatod",
+    "Tech stack": "Full stack developer"
+  },
+  {
+    "Project name": "TCM Website - Open Source",
+    "Project description": "A student led literary magazine showcasing youth voices. This open source project aims to improve the website’s design, features, and performance while offering contributors real-world experience in web development and digital publishing",
+    "Project link": "https://github.com/Kritika75/TheCawnporeMag.github.io",
+    "Project admin": "Kritika Singh",
+    "Admin linkedin": "https://www.linkedin.com/in/kritika-singh-214602288/",
+    "Tech stack": "HTML, CSS, JavaScript"
+  },
+  {
+    "Project name": "Amour Editorial Website",
+    "Project description": "A website for amour editorial which focuses on helping students go abroad with their documentations such as personalized SOP, LOR and scholarship essays to get their admission. As well as one on one counselling to help them achieve their study abroad dreams!",
+    "Project link": "https://github.com/lolpanda2004/Amour-Editorial-Website.git",
+    "Project admin": "Lathika",
+    "Admin linkedin": "https://www.linkedin.com/in/lathika-devanand-bb5813224",
+    "Tech stack": "Html, css, js, React"
+  },
+  {
+    "Project name": "Rohit YouTube Advocate chatbot",
+    "Project description": "The Rohit YouTube Advocate AI Chatbot is an intelligent assistant designed for YouTubers. It helps creators understand content guidelines, copyright issues, strikes, and monetization policies. The chatbot instantly answers questions, offers decision support, and provides clear guidance on avoiding violations. It also suggests best practices for growing channels and resolving disputes, empowering YouTubers to create confidently and stay compliant.",
+    "Project link": "https://github.com/mpawank/Rohit-Youtube-Advocate-AiBot",
+    "Project admin": "Magapalli Pawan Kumar",
+    "Admin linkedin": "https://www.linkedin.com/in/m-pawan-kumar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "Html, css, javascript,Flask api , Deepseek r1 model, vector database  and rag pipelines."
+  },
+  {
+    "Project name": "AlgoLab-Learn Ml algos Visually",
+    "Project description": "AlgoLab is an open-source project built to help students, developers, and enthusiasts understand Machine Learning algorithms through visual and interactive demonstrations.  Whether you're a beginner curious about how KNN or Decision Trees work, or someone who learns better by seeing algorithms in action, AlgoLab is for you.",
+    "Project link": "https://github.com/manasvi-0/AlgoLab",
+    "Project admin": "Manasvi Jindal",
+    "Admin linkedin": "https://www.linkedin.com/in/manasvi-jindal-03aa6a278/",
+    "Tech stack": "fastapi uvicorn scikit-learn pandas numpy matplotlib seaborn python"
+  },
+  {
+    "Project name": "QuickStay",
+    "Project description": "QuickStay is a hotel booking web application built using the MERN Stack (MongoDB, Express.js, React.js, Node.js). It features user authentication with Clerk, image storage via Cloudinary, and real-time notifications using Toast. The app offers a seamless experience for users to search, book, and manage hotel stays, with both frontend and backend integration deployed for scalability.",
+    "Project link": "https://github.com/manishkumar8312/Hotel-Booking",
+    "Project admin": "Manish Kumar Sah",
+    "Admin linkedin": "https://www.linkedin.com/manish8312",
+    "Tech stack": "MERN Stack, Clerk, Cloudinary"
+  },
+  {
+    "Project name": "LetsDoDsaTogether",
+    "Project description": "LetsDoDSATogether is a clean, community-powered DSA learning platform where learners can connect through Discord, explore curated resources, and solve problems collaboratively. It's designed to make learning DSA less isolating and more empowering — together, not alone.",
+    "Project link": "https://github.com/Vaishnavi-Manne/LetsDoDsaTogether",
+    "Project admin": "Manne vaishnavi",
+    "Admin linkedin": "https://wwww.linkedin.com/in/manne-vaishnavi",
+    "Tech stack": "React, tailwind css"
+  },
+  {
+    "Project name": "FailUForward",
+    "Project description": "FailUForward is a community driven platform where users share their biggest failures and the lessons they learned. Using AI, it curates and tags stories, highlights common themes and recommends relatable experiences to help users grow through others’ mistakes. It encourages vulnerability, resilience and real talk like turning failure into fuel. Users mint their failure story as an NFT or anonymous soulbound badge to own their growth journey.",
+    "Project link": "https://github.com/mansiruhil/fail-u-forward",
+    "Project admin": "mansi ruhil",
+    "Admin linkedin": "https://www.linkedin.com/in/mansi-ruhil-7a00a0228",
+    "Tech stack": "Frontend: Next.js, TypeScript\n .. Backend: Next.js (API Routes)\n.. Database: Firebase (Firestore + Auth)\n.. AI Validation: Gemini API"
+  },
+  {
+    "Project name": "Wanderlust",
+    "Project description": "A full stack project using CRUD operations",
+    "Project link": "https://github.com/meenakshi-011/Wanderlust",
+    "Project admin": "Meenakshi Patel",
+    "Admin linkedin": "https://www.linkedin.com/in/meenakshi-patel-7429b4308?",
+    "Tech stack": "Frontend - HTML , CSS, JavaScript, Backend -Nodejs, express js , databse - Mongodb"
+  },
+  {
+    "Project name": "Recipedia",
+    "Project description": "Recipedia, a recipe management app using MongoDB, Express.js, React.js, and Node.js. It allows users to explore, save, and share recipes with a seamless UI. Implemented user authentication, search functionality, and RESTful APIs for smooth data handling. Optimized performance with Redux for state management and cloud storage for media.",
+    "Project link": "https://github.com/MeghanaDG04/Recipedia.git",
+    "Project admin": "Meghana Gaonkar",
+    "Admin linkedin": "https://www.linkedin.com/in/meghana-gaonkar-415653282/",
+    "Tech stack": "MERN Stack"
+  },
+  {
+    "Project name": "student portal",
+    "Project description": "A modern, responsive student management system built with React, TypeScript, and Tailwind CSS. This application provides a comprehensive platform for students to manage their academic journey with features like authentication, user directory, and dashboard analytics.",
+    "Project link": "https://github.com/mehak-ui/Student-Portal",
+    "Project admin": "Mehak",
+    "Admin linkedin": "https://www.linkedin.com/in/mehak-chauhan-591a72291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "Frontend Framework: React 18 with TypeScript\nStyling: Tailwind CSS\nRouting: React Router DOM v6"
+  },
+  {
+    "Project name": "Github Tracker",
+    "Project description": "Tracks activity of guthub user",
+    "Project link": "https://github.com/mehul-m-prajapati/github_tracker",
+    "Project admin": "Mehul P",
+    "Admin linkedin": "https://linkedin.com/in/mehulmp",
+    "Tech stack": "React,Nodejs,Express,MongoDb,Tailwindcss"
+  },
+  {
+    "Project name": "Notes-Aid",
+    "Project description": "A modern platform to access academic notes with embedded YouTube videos and PDFs for better learning!",
+    "Project link": "https://github.com/MinavKaria/Notes-Aid",
+    "Project admin": "Minav",
+    "Admin linkedin": "https://www.linkedin.com/in/minav-karia",
+    "Tech stack": "Nextjs,Reactjs"
+  },
+  {
+    "Project name": "CoffeeShop",
+    "Project description": "MsCafe was founded with a simple mission: to serve the best coffee in town. Our passion for quality beans and expert brewing techniques has made us a favorite among coffee enthusiasts. We source our beans from sustainable farms around the world, ensuring that every cup of coffee you enjoy is not only delicious but also ethically produced.",
+    "Project link": "https://github.com/Mujtabaa07/coffeeShop",
+    "Project admin": "Mohamed Mujtaba",
+    "Admin linkedin": "https://www.linkedin.com/in/mohamed-mujtaba",
+    "Tech stack": "React.js , TailwindCss, HTML CSS, Javascript"
+  },
+  {
+    "Project name": "Placify : \"Smarter Placements. Sharper Talent.",
+    "Project description": "Placify is an AI-driven recruitment and skill-assessment platform designed to transform campus placements and early-career hiring. It streamlines over 60–70% of the traditional recruitment process by automating resume screening, conducting adaptive assessments, and generating actionable feedback for students, colleges, and companies.\n\nPlacify serves three primary stakeholders — students, colleges, and recruiters — by bridging the gap between industry expectations and candidate readiness.",
+    "Project link": "https://github.com/MonishRaman/Placify-Smarter-Placements.-Sharper-Talent.-.git",
+    "Project admin": "Monish Raman",
+    "Admin linkedin": "www.linkedin.com/in/monishr608",
+    "Tech stack": "Frontend: React.js + Tailwind CSS\nBackend API : Node.js + Express\nML Service : Python + Flask / FastAPI , OpenAI / HuggingFace Transformers , spaCy / NLTK \nDatabase : MongoDB\nDeployment : Netlify + Render/Railway\nAuth & Security : JWT, Helmet.js\nCharts & Reports  : Recharts / Chart.js"
+  },
+  {
+    "Project name": "DocMagic",
+    "Project description": "DocMagic is an AI-powered document creation platform that transforms simple text prompts into professional documents. Create stunning resumes, presentations, CVs, and letters with the power of AI.",
+    "Project link": "https://www.github.com/Muneerali199/DocMagic",
+    "Project admin": "Muneer Ali",
+    "Admin linkedin": "https://www.linkedin.com/in/muneer-ali",
+    "Tech stack": "nextjs,supabase with postresql,gemini 2.0 flash etc"
+  },
+  {
+    "Project name": "Eco finder",
+    "Project description": "Eco Career Finder is a full-stack web app that helps students and job seekers discover eco-friendly jobs, internships, and career guidance. It includes login/signup with Firebase, an easy-to-use dashboard, and a feedback system for user input.",
+    "Project link": "https://github.com/lohithya143/Eco-Finder-App",
+    "Project admin": "Nagidi Lohithya",
+    "Admin linkedin": "https://www.linkedin.com/in/lohithya?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "javascript"
+  },
+  {
+    "Project name": "Housify",
+    "Project description": "Housify is a full-stack property rental web application where users can list, search, and book properties. It features secure session-based authentication, dynamic filtering (by location, price, and guest count), and supports CRUD operations for listings, bookings, and reviews. Built with Node.js, Express, MongoDB, and MySQL, Housify uses RESTful APIs and a responsive, SEO-friendly UI powered by EJS and Tailwind CSS. Relational data is structured using MySQL schemas for users, properties, and reservations",
+    "Project link": "https://github.com/Naveenkumar30838/Housify",
+    "Project admin": "Naveen Kumar",
+    "Admin linkedin": "https://www.linkedin.com/in/naveen-kumar-7a4566223",
+    "Tech stack": "Node. js, Express. js, mongodb, mysql, ejs tailwindcss"
+  },
+  {
+    "Project name": "Shopiko- E commerce website",
+    "Project description": "Its an ecommerce website that have different features login,signup as a buyer or seller . You can add product to cart and checkout them .",
+    "Project link": "https://github.com/Neha-Singh-j/shopiko",
+    "Project admin": "Neha Singh",
+    "Admin linkedin": "https://www.linkedin.com/in/neha-singh-4952992a7",
+    "Tech stack": "MERN"
+  },
+  {
+    "Project name": "facial recognition attendance system",
+    "Project description": "The Facial Recognition System is a smart AI-powered solution that uses real-time computer vision and machine learning to identify or verify a person from a digital image or video. It combines OpenCV for image processing, Hugging Face for advanced AI models, and Glitch for an interactive, cloud-based user interface",
+    "Project link": "https://github.com/Nisha229/ttwitter-sentiment-analysis-",
+    "Project admin": "Nisha",
+    "Admin linkedin": "https://www.linkedin.com/in/nisha-kanojia-ba7441264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "OpenCV\nUsed for real-time face detection and image processing from webcam input.\n\nHugging Face\nUtilized pre-trained models for facial recognition and identity verification.\n\nGlitch\nHosted the frontend of the application and connected it to the backend.\n\nHTML, CSS, JavaScript\nBuilt the web interface, handled webcam access, and managed user interactions."
+  },
+  {
+    "Project name": "W3nity",
+    "Project description": "W3nity is a unified, Web3-enabled collaboration platform that brings together:\n\nFreelancing Marketplace,  Event Management, & Real-Time Community Chat.\nW3nity lets startups, developers, and communities connect, collaborate, and transact seamlessly — on-chain or off-chain.",
+    "Project link": "https://github.com/nishantharkut/W3nity",
+    "Project admin": "Nishant Harkut",
+    "Admin linkedin": "https://www.linkedin.com/in/nishant-harkut",
+    "Tech stack": "React, Vite, Tailwind CSS, Framer Motion, Node.js, Express, MongoDB, Mongoose, Socket.IO, Solidity & Hardhat (local/testnet), Alchemy, Ethers.js, MetaMask, Cloudinary, Vercel, Render"
+  },
+  {
+    "Project name": "HR Roadways",
+    "Project description": "this is the project in which we are adding govt buses info (haryana one is added) of all the stated of india so that it will be easier to travel with public transportation, and it will also help to save the environment.",
+    "Project link": "https://github.com/NishantRana07/HrRoadways",
+    "Project admin": "Nishant Rana",
+    "Admin linkedin": "https://www.linkedin.com/in/nishantrana07?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "React + Vite + MongoDB"
+  },
+  {
+    "Project name": "AgriTech",
+    "Project description": "AgriTech is an AI-powered web platform that offers crop recommendations, yield prediction, disease detection, and collaborative tools to empower farmers and promote smart, sustainable agriculture.",
+    "Project link": "https://github.com/omroy07/AgriTech",
+    "Project admin": "Om Roy",
+    "Admin linkedin": "https://www.linkedin.com/in/om-roy-3b809628a/",
+    "Tech stack": "Flask, Python ,HTML , CSS, JS"
+  },
+  {
+    "Project name": "Ai interview practice platform",
+    "Project description": "A comprehensive interview preparation platform that combines advanced AI evaluation, real-time face monitoring, and structured learning paths to help you ace your technical and behavioral interviews.",
+    "Project link": "https://github.com/byteom/Interview01",
+    "Project admin": "Om singh",
+    "Admin linkedin": "https://www.linkedin.com/in/byteom",
+    "Tech stack": "react, typescript, tailwind, supabase, express, node, ai, groq ai"
+  },
+  {
+    "Project name": "TuneCrate",
+    "Project description": "A beautiful, dark-themed Chrome extension for playing music files with flowing UI effects and comprehensive audio controls.",
+    "Project link": "https://github.com/Anjaliavv51/TuneCrate",
+    "Project admin": "Pamidi Lakshmi Pavananjali",
+    "Admin linkedin": "https://www.linkedin.com/in/lakshmi-pavananjali-pamidi-766760296",
+    "Tech stack": "HTML JS TS CSS"
+  },
+  {
+    "Project name": "EmailScript",
+    "Project description": "This project aims to develop a system that detects and blocks temporary or disposable email addresses in real time, helping websites and applications reduce spam, protect data integrity, and enhance user authentication.",
+    "Project link": "https://www.github.com/EmailScript/EmailScript",
+    "Project admin": "Pankaj Kumar Bind",
+    "Admin linkedin": "https://www.linkedin.com/in/pankaj-bind",
+    "Tech stack": "HTML, CSS, JavaScript, Python, Flask"
+  },
+  {
+    "Project name": "WallGodds Web",
+    "Project description": "WallGodds is a open-source wallpaper platform tailored for individuals who love to personalize their devices. Whether you're looking for the perfect wallpaper for your mobile, tablet, or desktop, or you're a designer wanting to share your creativity with the world, WallGodds has you covered.",
+    "Project link": "https://github.com/Parnab03/WallGodds",
+    "Project admin": "Parnab Bagchi",
+    "Admin linkedin": "https://www.linkedin.com/in/parnab-bagchi-072966251/",
+    "Tech stack": "MERN, Firebase RDB"
+  },
+  {
+    "Project name": "Project Vault",
+    "Project description": "Project Vault is a website containing different tech stack projects in one place with live working",
+    "Project link": "https://github.com/pavitraag/Project-Vault",
+    "Project admin": "Pavitraa G",
+    "Admin linkedin": "https://www.linkedin.com/in/pavitraa-g/",
+    "Tech stack": "HTML, CSS, Javascript"
+  },
+  {
+    "Project name": "SimplifAI",
+    "Project description": "AI-Powered Learning Platform\nTransform your documents into flashcards, summaries, and quizzes with cutting-edge AI.",
+    "Project link": "https://github.com/Er-luffy-D/SimplifAI",
+    "Project admin": "Piyush",
+    "Admin linkedin": "https://www.linkedin.com/in/piyushdixitizme",
+    "Tech stack": "Frontend: Next.js 14, React, Tailwind CSS, Redux Toolkit\nAuth: NextAuth.js (Credentials & Google)\nAI Backend: DeepSeek/OpenRouter API for document parsing and generation\nDatabase: PostgreSQL with Prisma ORM"
+  },
+  {
+    "Project name": "NBG (NEET Battleground)",
+    "Project description": "NEET Battleground (NBG) is a real-time, multiplayer web app that gamifies NEET exam practice with timed MCQ quizzes and a Skribbl.io-style drawing game. It features private room creation, live chat, custom usernames, and round-based gameplay with scoring. The app is built using React 18 with TypeScript, Tailwind CSS, Socket.IO, Zustand for state management, and React Router for navigation. Designed with a responsive, mobile-first layout and a medical/educational theme, NBG aims to make learning competitive, fun, and interactive.",
+    "Project link": "https://github.com/Piyush-t24/NBG",
+    "Project admin": "Piyush Gupta",
+    "Admin linkedin": "https://www.linkedin.com/in/piyush-gupta-rgipt",
+    "Tech stack": "React 18, Typescript, Tailwind CSS, React Router, Socket.IO, Node.js, Express.js, MongoDB, JWT"
+  },
+  {
+    "Project name": "cpp-sdk-appwrite",
+    "Project description": "The first ever C++ SDK for Appwrite, build from scratch!",
+    "Project link": "https://github.com/pooranjoyb/cpp-sdk-appwrite",
+    "Project admin": "Pooranjoy",
+    "Admin linkedin": "https://linkedin.com/in/pooranjoyb",
+    "Tech stack": "C++, conan, cmake, libcurl"
+  },
+  {
+    "Project name": "SortVision",
+    "Project description": "SortVision is a web-based sorting algorithm visualizer 🖥️ that lets users explore and compare algorithms like Bubble, Quick, Merge, and more 🔄. Easily adjust speed ⚡ and array size 📊 to watch the sorting process in real-time. Perfect for students and enthusiasts looking to understand sorting mechanics!",
+    "Project link": "https://github.com/alienx5499/SortVision",
+    "Project admin": "Prabal Patra",
+    "Admin linkedin": "https://www.linkedin.com/in/prabalpatra5499",
+    "Tech stack": "React.js (Vite) · Tailwind CSS · ShadCN · Lucide · Framer Motion · ESLint · Git · Vercel"
+  },
+  {
+    "Project name": "Airplane Boarding Simulation",
+    "Project description": "This project simulates the process of boarding passengers onto an airplane using various real-world boarding strategies such as back-to-front, random boarding, window-middle-aisle, and more. It visualizes how different strategies impact total boarding time and overall efficiency. Built entirely in Python using matplotlib, NumPy, and object-oriented design, the simulation is a great tool for analyzing time complexity, crowd dynamics, and real-life optimization scenarios.\n\nThe goal of the project is to make this simulation more interactive, modular, and extensible for educational, research, or visualization purposes.",
+    "Project link": "https://github.com/18Prachi/airplane-boarding-simulation",
+    "Project admin": "Prachi Saxena",
+    "Admin linkedin": "https://www.linkedin.com/in/prachi-saxena-59a4a0259",
+    "Tech stack": "Python"
+  },
+  {
+    "Project name": "Karbon",
+    "Project description": "Karbon is a desktop app that uses AI to generate and iteratively refine HTML/CSS/JS websites from simple prompts. Built with Python and Tkinter, it provides a live preview and export functionality.",
+    "Project link": "https://github.com/ProTecGames/Karbon",
+    "Project admin": "Prakhar Doneria",
+    "Admin linkedin": "https://www.linkedin.com/in/prakhar-doneria",
+    "Tech stack": "Python"
+  },
+  {
+    "Project name": "OpSo",
+    "Project description": "OpSo is a Flutter app that provides comprehensive information about various open-source programs, including Google Summer of Code, Summer of Bitcoin, Linux Foundation, and more. It allows users to explore different open-source opportunities, learn about their eligibility criteria, and access important resources.",
+    "Project link": "https://github.com/andoriyaprashant/OpSo",
+    "Project admin": "Prashant Andoriya",
+    "Admin linkedin": "https://in.linkedin.com/in/prashant-andoriya-272953251",
+    "Tech stack": "Flutter, Dart"
+  },
+  {
+    "Project name": "FoodIO",
+    "Project description": "FoodIO – Collaborative Recipe Sharing Platform - FoodIO is a full-fledged, MERN stack–based recipe-sharing web application designed to foster a collaborative cooking community. It enables users to upload, manage, and explore a diverse collection of recipes tailored to their personal preferences. With a responsive UI and robust backend, FoodIO ensures an engaging and seamless user experience.",
+    "Project link": "https://github.com/Prashanti-Hebbar/FoodIO",
+    "Project admin": "Prashanti Hebbar",
+    "Admin linkedin": "https://www.linkedin.com/in/prashanti-hebbar-205a51282/",
+    "Tech stack": "MongoDB, Express.js, React.js, Node.js"
+  },
+  {
+    "Project name": "Nagarvikas",
+    "Project description": "An app that is built to file civic issues faced by citizens of india , they can easily track their complaint status in realtime , admins can check the complaints and after working on it they can update status accordingly , admin dashboard also has analytics option to keep data of all complaints for future use",
+    "Project link": "https://github.com/Prateek9876/NagarVikas",
+    "Project admin": "Prateek Chourasia",
+    "Admin linkedin": "https://www.linkedin.com/in/prateek-chourasia-in",
+    "Tech stack": "Flutter , dart , firebase(auth and realtime Database), onesignal (in app notification), cloudinary (image storage)"
+  },
+  {
+    "Project name": "Weather App",
+    "Project description": "A simple and responsive weather web application that allows users to search for any city and get real-time weather updates including temperature, humidity, wind speed, and weather conditions. It uses the OpenWeatherMap API to fetch dynamic data and updates the UI accordingly. The application was developed without frameworks, focusing on modular, clean, and maintainable code.",
+    "Project link": "https://github.com/PreetySinha84/VerveBridge-Task-1-Weather-App.git",
+    "Project admin": "Preety Sinha",
+    "Admin linkedin": "https://www.linkedin.com/in/preety-sinha-318674274?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "HTML, CSS, JavaScript, OpenWeatherMap API, Git & GitHub"
+  },
+  {
+    "Project name": "etsi-watchdog",
+    "Project description": "etsi-watchdog is a Python library for drift detection, version comparison, and real-time monitoring of data streams. Designed for ML practitioners, data scientists, and AI engineers who need reliable data quality insights.",
+    "Project link": "https://github.com/etsi-ai/etsi-watchdog",
+    "Project admin": "Priyansh Srivastava",
+    "Admin linkedin": "https://www.linkedin.com/in/priyansh-srivastava-91a0511bb/",
+    "Tech stack": "python machine-learning"
+  },
+  {
+    "Project name": "DataSentience-AIML",
+    "Project description": "🚀 Introducing DataSentience-AIML 🌐 A collaborative open-source project building real-world AI/ML solutions across domains like Healthcare, Finance, Agriculture, NLP, Safety & more! 💡 Key Technologies: Deep Learning Reinforcement Learning LLMs / NLP Data Science & Automation 🎯 Domains We Cover: 🏥 Healthcare | 💰 Finance | 🌾 Agriculture | 📈 Stocks & Crypto | 🛣️ Road Safety | 📷 Optical Detection | 💬 Chatbots | 🔒 Federated Learning 📁 Modular Project Structure: Organized under src/ for: Crop Yield Prediction Disease Detection Traffic & Safety Systems Federated Learning Pipelines BiLSTM Architectures & more!",
+    "Project link": "https://github.com/PRIYANSHU2026/DataSentience-AIML",
+    "Project admin": "PRIYANSHU TIWARI",
+    "Admin linkedin": "https://www.linkedin.com/in/priyanshu-tiwari-305661258/",
+    "Tech stack": "Python , Machine learning"
+  },
+  {
+    "Project name": "CineVerse",
+    "Project description": "A beautiful and modern movie search application which allows users to search for movies, view detailed information, and rate their favourites.",
+    "Project link": "https://github.com/rahulkhandait-sde/movie-search",
+    "Project admin": "Rahul Khandait",
+    "Admin linkedin": "https://www.linkedin.com/in/rahulkhandait/",
+    "Tech stack": "Next.js, Typescript, Redux Toolkit, Tailwind CSS, React, OMDB API"
+  },
+  {
+    "Project name": "UrHired",
+    "Project description": "URHired is a comprehensive job application tracking platform designed to streamline the job search process. This application helps job seekers manage their applications, track interview stages, and organize their career opportunities in one centralized location.",
+    "Project link": "https://github.com/techieRahul17/URHired",
+    "Project admin": "Rahul V S",
+    "Admin linkedin": "https://www.linkedin.com/in/rahul-v-s/",
+    "Tech stack": "React+Vite, Tailwind CSS"
+  },
+  {
+    "Project name": "Canvas",
+    "Project description": "A Kotlin Multiplatform Paint application to pain and draw Sketch Doodle. This application uses local storage to store drawings and doesn't require any internet access.",
+    "Project link": "https://github.com/Rajkumarbhakta/Canvas",
+    "Project admin": "Rajkumar Bhakta",
+    "Admin linkedin": "https://www.linkedin.com/in/rajkumar-bhakta",
+    "Tech stack": "Kotlin, Kotlin Multiplatform, Compose Multiplatform"
+  },
+  {
+    "Project name": "Honor Box",
+    "Project description": "HonorBox , is a free and open-source web-based application that allows users to generate and verify certificates effortlessly. It provides a seamless and secure way to issue digital certificates and validate their authenticity",
+    "Project link": "https://github.com/RamakrushnaBiswal/HonorBox",
+    "Project admin": "Ramakrushna Biswal",
+    "Admin linkedin": "https://www.linkedin.com/in/ramakrushna-biswal",
+    "Tech stack": "React.js, Tailwind CSS,Node.js, Express.js,MongoDB,Vercel,Nodemailer"
+  },
+  {
+    "Project name": "CryptoInsight",
+    "Project description": "CryptoInsight is an open-source, beginner-friendly crypto dashboard that allows users to monitor real-time cryptocurrency prices, analyze market trends, and track wallet balances using blockchain APIs. Built with Python and Streamlit, the project aims to simplify the crypto experience through clean visualizations and a user-first design.\n\nWhether you're a crypto enthusiast, data lover, or curious developer, CryptoInsight empowers you to explore the crypto world with clarity and confidence.",
+    "Project link": "https://github.com/RM-f1/Cryptoinsight",
+    "Project admin": "Ramandeep Kaur",
+    "Admin linkedin": "https://www.linkedin.com/in/ramandeep-kaur-9a548132b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "Python, Pandas, NumPy, Matplotlib, Plotly, Streamlit, CoinGecko API, Git, GitHub"
+  },
+  {
+    "Project name": "AutoPilotX-",
+    "Project description": "Open-source RPA toolkit to build, run, and share automation bots with a learning-first approach.",
+    "Project link": "https://guthub.com/rammya29/AutoPilotX-",
+    "Project admin": "Rammya Dharshini K",
+    "Admin linkedin": "https://www.linkedin.com/in/rammyak",
+    "Tech stack": "Python, UiPath, Automation Anywhere, OpenRPA, Robocorp"
+  },
+  {
+    "Project name": "Zero Waste Mart",
+    "Project description": "ZeroWasteMart is a sustainable online platform that allows users to buy, sell, or donate surplus groceries and reusable household items, aiming to reduce waste and promote eco-friendly living.",
+    "Project link": "Rena-code93/ZeroWasteMart https://share.google/eLYniGBWs6C9jMUCl",
+    "Project admin": "Renascence Dey",
+    "Admin linkedin": "https://www.linkedin.com/in/renascence-dey-b422642b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "Frontend: React.js, Tailwind CSS, CSS Modules, React Router DOM\nBackend: Node.js, Express.js\nDatabase: MongoDB (with Mongoose ORM)\nLanguages: JavaScript, Python, HTML, CSS\nOCR: Python (Tesseract OCR) with Flask API\nAuthentication: JWT (JSON Web Tokens)\nAPIs: REST APIs"
+  },
+  {
+    "Project name": "Analysis and Prediction of Electric Vehicle Costs",
+    "Project description": "This project focuses on analyzing historical electric vehicle data to understand cost trends, features, and specifications influencing price variations. Using machine learning models like Linear Regression and Random Forest, the goal is to predict future EV prices based on selected features. The project aims to aid consumers and manufacturers with actionable insights into cost-effective EV production and purchase.",
+    "Project link": "https://github.com/reshamsai150/7.Analysis-and-Prediction-of-Electric-Vehicle-Costs-A-Machine-Learning-Based-Approach",
+    "Project admin": "Resham Sai Pranathi",
+    "Admin linkedin": "https://www.linkedin.com/in/saipranathi-resham-5a7921315",
+    "Tech stack": "Python,HTML,CSS, javascript ,Pandas, NumPy, scikit-learn, Matplotlib, Jupyter Notebook, Git, GitHub"
+  },
+  {
+    "Project name": "Trip_assistant",
+    "Project description": "Project Title Trip Assistant – A Smart Travel Companion Platform  Organization Name Independent  Project Description Trip Assistant is a full-stack travel platform designed to simplify trip planning, booking, and social coordination for travelers. Inspired by platforms like Airbnb, Trip Assistant goes a step further by integrating social features such as a friend system, real-time chat, and a built-in AI chatbot for smart travel assistance.  The platform also includes dedicated dashboards for admin users and hotel/property partners, allowing seamless management of bookings, customer data, and platform activity.  The project is ideal for open-source contributors interested in modern web development, role-based access control, real-time applications, and AI integration.  Key Features ✈️ User Features Accommodation Discovery – Browse and explore stays and destinations  Friend System – Add and connect with fellow travelers  Real-Time Chat – Communicate with friends to plan trips collaboratively  AI Chatbot – Get destination suggestions and answers to FAQs  Secure Authentication – Firebase-based login and registration  🛠 Admin & Partner Features Admin Dashboard – Manage users, content, activity logs, and site moderation  Hotel Dashboard – Hotels/hosts can view bookings, manage properties, and analyze customer engagement  Tech Stack Frontend: React.js with Vite  Backend: Node.js with Express.js  Database & Authentication: Firebase (Firestore + Firebase Auth)  Real-Time Communication: Firebase listeners (Firestore/Realtime DB)  Chatbot Integration: Planned via Dialogflow or custom NLP API  Current Status Frontend development initiated using React + Vite  Firebase setup completed for future integration  Core UI components (homepage, partial authentication) under development  Backend and dashboard planning in progress  Clear roadmap defined for upcoming GSSoC contribution phase  Goals for GSSoC Finalize and optimize user flows and authentication  Implement friend system and real-time chat  Build fully functional admin and partner dashboards  Integrate chatbot for intelligent travel assistance  Improve UI/UX and ensure responsiveness across devices  Maintain clear documentation and contribution guidelines  Why This Project? Trip Assistant offers contributors an opportunity to work on a real-world, community-focused travel application using modern technologies. It is suitable for developers interested in:  Full-stack web development  Real-time applications  Firebase ecosystem  Role-based access systems  AI chatbot integration  This project combines technology and travel to create a practical, scalable platform with real social impact.",
+    "Project link": "https://github.com/Richajaishwal0/Trip_assistant",
+    "Project admin": "Richa Jaishwal",
+    "Admin linkedin": "https://www.linkedin.com/in/richa-jaishwal/",
+    "Tech stack": "HTML, Typescript, JS, React JS, Node js, Firebase Database"
+  },
+  {
+    "Project name": "Portfolio",
+    "Project description": "A personal portfolio website designed to showcase my skills, projects, achievements, and experiences as a software developer. The site features smooth navigation, responsive design for all devices, and dynamic components built using React. It includes sections such as About Me, Projects, Skills, Resume Download, and Contact Form.",
+    "Project link": "https://github.com/The-Rishabh-Mishra",
+    "Project admin": "Rishabh Mishra",
+    "Admin linkedin": "https://www.linkedin.com/in/rishabh-mishra-knit",
+    "Tech stack": "MERN"
+  },
+  {
+    "Project name": "Influence of Tariff on Fashion Industry",
+    "Project description": "After the intensity of imposition of Tariff tax in US, it has heavily affected the import of goods the country. Imports of materials, designers that get their products from countries like China, India or European country are thought twice before making a final call. Our objective is to run some analysis and see on what scale is tariff affecting the fashion industry.",
+    "Project link": "https://github.com/ritikka06/Tariff-Fashion",
+    "Project admin": "Ritika Gosain",
+    "Admin linkedin": "https://www.linkedin.com/in/ritika-gosain-374871251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    "Tech stack": "Machine Learning. Python."
+  },
+  {
+    "Project name": "automataverse",
+    "Project description": "Automata-Verse is an interactive educational platform for learning and experimenting with theory of computation concepts. The application provides intuitive visual simulators for various automata models that are fundamental to computer science.",
+    "Project link": "https://github.com/robinsingh-ai/AutomataVerse",
+    "Project admin": "Robin",
+    "Admin linkedin": "https://www.linkedin.com/in/robinsingh-ai",
+    "Tech stack": "nextjs, react, firebase and tailwind css"
+  },
+  {
+    "Project name": "failprint",
+    "Project description": "MLOps focused diagnostic tool for automatic root cause analysis of ML Model performance failures.It an important step towards explainable AI.",
+    "Project link": "https://github.com/etsi-ai/etsi-failprint",
+    "Project admin": "Romit Chatterjee",
+    "Admin linkedin": "https://www.linkedin.com/in/romit23",
+    "Tech stack": "Python"
+  },
+  {
+    "Project name": "WebDevIn100_Days",
+    "Project description": "WebDevIn100Days is an open-source project designed to help contributors enhance their web development skills by building a wide range of projects—from simple to advanced—using HTML, CSS, and JavaScript. It encourages consistent learning through hands-on practice.",
+    "Project link": "https://github.com/ruchikakengal/WebDevIn100_Days",
+    "Project admin": "Ruchika Kengal",
+    "Admin linkedin": "https://www.linkedin.com/in/ruchika-kengal-8085092b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "The project uses core web technologies: HTML, CSS, and JavaScript, encouraging consistent, hands-on learning through real-world mini projects."
+  },
+  {
+    "Project name": "100_DAYS_OF_WEBPROJECTS",
+    "Project description": "100 Days 100 Web Projects is a frontend-focused open-source challenge where I build one project daily using HTML, CSS, and JavaScript. Contributors are welcome to add creative mini-projects, improve existing ones, fix bugs, or enhance UI/UX. A great opportunity to learn, build, and grow together in the open-source community",
+    "Project link": "https://github.com/rutikakengal/100DAYS_OF_100WEBPROJECTS",
+    "Project admin": "Rutika K",
+    "Admin linkedin": "https://www.linkedin.com/in/rutika-kengal-b3b0a22b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "HTML,CSS and JavaScript"
+  },
+  {
+    "Project name": "Smart Waste Management System",
+    "Project description": "A brief summary of your project idea. Include what problem it solves and how it works.",
+    "Project link": "no",
+    "Project admin": "S MOHAMMED ARIF",
+    "Admin linkedin": "https://www.linkedin.com/in/mohammed-arif-768178283",
+    "Tech stack": "Python, Django, React, MySQL"
+  },
+  {
+    "Project name": "TalkHeal",
+    "Project description": "• A compassionate AI-based mental health assistant\n• 24/7 support with smart chat history\n• Mood slider and AI-based coping tips\n• Mental health resources and helplines\n• Location-based center search (Google Maps)\n• Clean 3D-inspired pink/magenta UI and mobile-ready responsive design",
+    "Project link": "https://github.com/eccentriccoder01/TalkHeal",
+    "Project admin": "Sagnik Chakraborty",
+    "Admin linkedin": "https://linkedin.com/in/eccentricexplorer",
+    "Tech stack": "Python, Streamlit, Gemini API, CSS3"
+  },
+  {
+    "Project name": "Travel-Book",
+    "Project description": "The project is about storing the travel story virtually.",
+    "Project link": "https://github.com/Sahilll94/Travel-Book",
+    "Project admin": "SAHIL",
+    "Admin linkedin": "https://www.linkedin.com/in/sahilll94",
+    "Tech stack": "MongoDB, Reactjs, Expressjs, Nodejs, AWS."
+  },
+  {
+    "Project name": "Sneaker Price Prediction using Machine Learning",
+    "Project description": "A Django-based web application that predicts sneaker prices using machine learning. It leverages historical sneaker data, performs preprocessing, model training, and allows users to input features like brand, color, and release year to get an estimated price.",
+    "Project link": "https://github.com/sahithinandikula/Sneaker-price-prediction",
+    "Project admin": "Sahithi Nandikula",
+    "Admin linkedin": "https://www.linkedin.com/in/sahithi-nandikula",
+    "Tech stack": "Python, Django, Scikit-learn, Pandas, Matplotlib, HTML, CSS"
+  },
+  {
+    "Project name": "GuruShish",
+    "Project description": "Gurushish is a student-teacher interaction platform designed to help learners find the right tuition teachers based on subject and availability. With limited slots per teacher, it ensures focused learning and better engagement.",
+    "Project link": "https://github.com/sailaja-adapa/GuruShish",
+    "Project admin": "Sailaja Adapa",
+    "Admin linkedin": "https://www.linkedin.com/in/sailaja-adapa-770167291",
+    "Tech stack": "Next.js, Tailwind CSS, TypeScript, Node.js, Nest js, Express js, Postgre Sql"
+  },
+  {
+    "Project name": "Hospital Management Website",
+    "Project description": "A full-featured hospital management platform where patients can seamlessly book surgeries, schedule doctor appointments, order medicines, upload prescriptions, and book lab test slots online. Built using MongoDB, Express.js, React, and Node.js for a secure, responsive, and user-friendly experience, the system streamlines healthcare services and improves patient engagement through digital convenience.",
+    "Project link": "https://github.com/samarsajad/Hospital_Management_Website",
+    "Project admin": "Samar",
+    "Admin linkedin": "https://www.linkedin.com/in/samar-sajad-70b30b246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "React, CSS modules, Node.js, MongoDB"
+  },
+  {
+    "Project name": "Brevity",
+    "Project description": "Brevity is an AI-powered news curation app that delivers seamless and concise news built with Flutter, Firebase, and upcoming with Chatbot and nodejs backend support. It aims to simplify how users consume news—through clean UI, fast performance, and future-ready AI features like summarization and myth-busting chatbot.",
+    "Project link": "https://github.com/Yash159357/BREVITY",
+    "Project admin": "Samarth Sharma",
+    "Admin linkedin": "https://www.linkedin.com/in/saysamarth/",
+    "Tech stack": "Flutter, Dart, Firebase, Node.js, express.js, MongoDB, REST API and Shared Preferences."
+  },
+  {
+    "Project name": "Winix",
+    "Project description": "Winix is a cross-platform command-line application designed to bridge the gap between Unix/Linux and Windows environments. Built with Rust for optimal performance and reliability, it provides native implementations of essential Unix commands that Windows users frequently need.",
+    "Project link": "https://github.com/0xsambit/winix",
+    "Project admin": "Sambit Singha",
+    "Admin linkedin": "https://www.linkedin.com/in/sambit-singha?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "Rust"
+  },
+  {
+    "Project name": "RigCraft",
+    "Project description": "Build your dream gaming PC with our interactive component selector. Choose compatible parts, optimize your budget, and craft the perfect rig.",
+    "Project link": "https://github.com/SamXop123/RigCrafter",
+    "Project admin": "Sameer Prajapati",
+    "Admin linkedin": "https://www.linkedin.com/in/sameer-prajapati-vit",
+    "Tech stack": "Typescript, HTML, CSS, Javascript, Express.js, Node.js, React, Etc"
+  },
+  {
+    "Project name": "DeshDarshan",
+    "Project description": "DeshDarshan is a cultural web experience that captures the spirit of India through its diverse regions. It brings together the richness of tradition, heritage, and identity in a visually immersive format. With a balance of modern design and traditional essence, the platform reflects the soul of the nation. DeshDarshan isn’t just a digital space—it’s a tribute to India’s timeless beauty and diversity, told through thoughtful visuals and storytelling. It invites users to connect emotionally with the roots of India.",
+    "Project link": "https://github.com/sampadatiwari30/DeshDarshan",
+    "Project admin": "sampada tiwari",
+    "Admin linkedin": "https://www.linkedin.com/in/sampada-tiwari-217123257",
+    "Tech stack": "HTMl5, CSS3, javascript bootstrap"
+  },
+  {
+    "Project name": "TechHub",
+    "Project description": "This project is a web-based platform designed for managing student tech clubs efficiently. It includes modules for event scheduling, team management, project tracking, and resource sharing. It aims to simplify the operations of tech clubs like Robonixx by providing an organized dashboard and easy collaboration tools.",
+    "Project link": "https://github.com/sania28/clubmate",
+    "Project admin": "Sania Mujtaba",
+    "Admin linkedin": "https://www.linkedin.com/in/sania-mujtaba-12a79925b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "HTML, CSS, JavaScript, React, Node.js, Python."
+  },
+  {
+    "Project name": "recode-website",
+    "Project description": "community blog website",
+    "Project link": "https://github.com/recodehive/recode-website",
+    "Project admin": "Sanjay",
+    "Admin linkedin": "https://www.linkedin.com/in/sanjay-k-v/",
+    "Tech stack": "nextjs, js, css,html, sql"
+  },
+  {
+    "Project name": "Hotel Table Reservation System",
+    "Project description": "A Python-Tkinter based hotel table reservation system that enables users to book, cancel and manage dining reservations with real-time updates and notifications. The system offers a user-friendly GUI built with Tkinter, providing real-time table availability tracking to enhance the reservation experience. It includes sign-up and login functionality for secure access, as well as features for creating, cancelling, and confirming reservations. Email notifications are sent to both clients and hotel administrators to keep them informed. Additionally, the system incorporates data validation and error handling to ensure reliable operation, along with an admin dashboard that allows administrators to view and manage all reservations efficiently.",
+    "Project link": "https://github.com/santhoshkumar1204/hotel-table-reservation-system.git",
+    "Project admin": "Santhoshkumar R",
+    "Admin linkedin": "https://www.linkedin.com/in/santhoshkumar-ravichandran-27b727305",
+    "Tech stack": "Python ( Data structures - Hash table, Priority Queue, Linkedlist), Tkinter ( Frontend), Figma- UI/ UX, Agile Methodology - JIRA"
+  },
+  {
+    "Project name": "Hackgrid",
+    "Project description": "An advanced and customizable Learning Management System (LMS) built using modern web technologies. This platform includes key features for students, teachers, and course creators, supporting course browsing, creation, management, and secure payment processing.",
+    "Project link": "https://github.com/Sarthak027/Hackgrid",
+    "Project admin": "Sarthak Prasad Parida",
+    "Admin linkedin": "https://www.linkedin.com/in/sarthak-prasad-parida",
+    "Tech stack": "Frontend: React, Next.js 13 (App Router)\nBackend: Next.js API Routes\nORM: Prisma\nDatabase: Xata (PostgreSQL)\nPayment: Razorpay\nFile Uploads: UploadThing & Mux\nAuthentication: Clerk\nStyling: Tailwind CSS"
+  },
+  {
+    "Project name": "Wisdom-Weaver",
+    "Project description": "Develop an AI-driven, multi-modal mental health support system that integrates NLP, emotion recognition, and reinforcement learning to provide real-time, adaptive mental health assistance using Spiritual Book *Bhagwat Geeta*",
+    "Project link": "https://github.com/satvik091/WisdomWeaver",
+    "Project admin": "Satvik gupta",
+    "Admin linkedin": "https://www.linkedin.com/in/satvik-gupta-091a37229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "python, Streamlit"
+  },
+  {
+    "Project name": "TextEditingApp",
+    "Project description": "This is a basic text editing app made for fun, any contributions are welcome, Let's make a fun app with a lot more cool features.",
+    "Project link": "https://github.com/may-tas/TextEditingApp",
+    "Project admin": "Satyam Jha",
+    "Admin linkedin": "https://www.linkedin.com/in/satyam-jha-7746201a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "Flutter, Dart, Cubit"
+  },
+  {
+    "Project name": "DSAMate",
+    "Project description": "DSAMate is a platform that helps students practice in a structured way to clear OA, stay consistent and practice regularly.",
+    "Project link": "https://github.com/saumyayadav25/cpp-dsa-sheet-testing",
+    "Project admin": "Saumya Yadav",
+    "Admin linkedin": "https://www.linkedin.com/in/saumya-yadav-",
+    "Tech stack": "Next.js, Tailwind CSS, Framer Motion, Backend"
+  },
+  {
+    "Project name": "WallGodds App",
+    "Project description": "WallGodds is reimagined for mobile — fast, clean, and loaded with stunning high-res wallpapers for every screen. It’s more than an app — it’s your personal visual canvas, made for those who style their screen with every swipe.",
+    "Project link": "https://github.com/sayan0328/WallGodds-App",
+    "Project admin": "Sayan Basak",
+    "Admin linkedin": "https://www.linkedin.com/in/sayan-basak003/",
+    "Tech stack": "Frontend: Kotlin with Compose, Backend: Kotlin, Firebase, Database: Firebase RealTime DB"
+  },
+  {
+    "Project name": "Quizz project",
+    "Project description": "Its a small project which i have made in this procet titel is quizz game wherw you have total five qustion each qusyion have 4 option whre one is correct thia quezz is realted to novel bolks and the book name and whos the correct author or writer whe have sletec",
+    "Project link": "https://github.com/sshakti971/NODE-JS",
+    "Project admin": "Shakti sharma",
+    "Admin linkedin": "https://www.linkedin.com/in/shaktisharmajava21",
+    "Tech stack": "front end devloper"
+  },
+  {
+    "Project name": "scr-game",
+    "Project description": "SCR gaming is a visually captivating website featuring amazing UI interactions.",
+    "Project link": "https://github.com/SCR01/scr-game",
+    "Project admin": "SHARAD CHANDRA REDDY",
+    "Admin linkedin": "https://www.linkedin.com/in/sharad-chandra-reddy-b0737a231/",
+    "Tech stack": "React.js, Gsap, Tailwind"
+  },
+  {
+    "Project name": "Music Recommendation Using Facial Expressions",
+    "Project description": "This Python-based application uses computer vision and deep learning (TensorFlow/Keras) to detect real-time facial expressions via webcam. Based on the detected emotion, it automatically recommends and opens suitable music on YouTube. It integrates AI, sentiment analysis, and web browser automation to deliver an emotionally responsive user experience.",
+    "Project link": "https://github.com/SGCODEX/Music-Recommendation-Using-Facial-Expressions",
+    "Project admin": "Shivam Gupta",
+    "Admin linkedin": "https://www.linkedin.com/in/shivam-gupta-055921248/",
+    "Tech stack": "Python, OpenCV, TensorFlow, Keras, Webbrowser, Requests, YOLO, Sentiment Analysis, Computer Vision"
+  },
+  {
+    "Project name": "Paytm app",
+    "Project description": "Its a full stack project in which users can can send/recieve money to/from others users.",
+    "Project link": "https://github.com/shivam74/payment-app",
+    "Project admin": "Shivam Raghuwanshi",
+    "Admin linkedin": "https://www.linkedin.com/in/shivam-raghuwanshi-8a1639242?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "MERN stack , zod for input validation,JWT tokens for authorisation"
+  },
+  {
+    "Project name": "Gitnet",
+    "Project description": "GitNet is a privacy-first, GitHub-authenticated chat app that lets developers connect instantly—no personal info, just your username. AI repo insights & workspaces coming soon.",
+    "Project link": "https://github.com/git-net-org/gitnet",
+    "Project admin": "shreya",
+    "Admin linkedin": "www.linkedin.com/in/shreya-shaw",
+    "Tech stack": "Nextjs, Expressjs, Socketio,Prisma"
+  },
+  {
+    "Project name": "MediGuide",
+    "Project description": "Personalized Medicine Recommendation System",
+    "Project link": "https://github.com/ShrutiparnaRoy/Medicine_Recommendation/blob/main/README.md",
+    "Project admin": "Shrutiparna Roy",
+    "Admin linkedin": "https://www.linkedin.com/in/shrutiparna-roy-a70b9728a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "Google Colab,Python"
+  },
+  {
+    "Project name": "CodeStreak",
+    "Project description": "CodeStreak is a productivity and motivation tool designed for coders who want to keep up with the daily problem solving or project goals Whether you are preaparing for coding interviews  buding person projects or improving your skills oneineat a time  Codestte allows you to stay on track and maintain your momentum.",
+    "Project link": "https://github.com/karmveershubham/CodeStreak",
+    "Project admin": "Shubham Karmveer",
+    "Admin linkedin": "https://www.linkedin.com/in/shubham-karmveer",
+    "Tech stack": "Next JS, Appwrite, Typescript, Tawind CSS"
+  },
+  {
+    "Project name": "bodhika",
+    "Project description": "Bodhika is a web platform designed to empower students & job seekers with a centralized hub for curated resource for career preparation.",
+    "Project link": "https://github.com/singodiyashubham87/bodhika",
+    "Project admin": "Shubham Singodiya",
+    "Admin linkedin": "https://www.linkedin.com/in/singodiyashubham87",
+    "Tech stack": "NextJS, TailwindCSS, MongoDP, Auth0"
+  },
+  {
+    "Project name": "ClassMgmtSys",
+    "Project description": "Class Management System is a comprehensive MERN stack web application designed to streamline classroom operations and enhance communication between students, class representatives (CRs), class Advisors (CAs). Built with a decoupled architecture using Node.js/Express.js backend and React.js frontend, the system features Firebase authentication integrated with MongoDB for user management, providing role-based access control for different user types. The platform offers a centralized noticeboard for announcements, student roster management, subject-wise material uploads via Cloudinary integration, and planned features including voting systems, attendance tracking, push notifications, exam schedules, and event management. With Material-UI for consistent design, Tailwind CSS for styling, and Progressive Web App (PWA) capabilities for offline functionality, the system ensures a responsive, scalable, and user-friendly experience while maintaining security through Firebase token verification and data filtering via DTOs, making it an ideal solution for educational institutions seeking to digitize and organize their classroom management processes.",
+    "Project link": "https://github.com/ShudarsanRegmi/ClassMgmtSysOS-",
+    "Project admin": "Shudarsan Regmi",
+    "Admin linkedin": "https://www.linkedin.com/in/shudarsanregmi/",
+    "Tech stack": "React, Node, Express, MongoDB, Firebase, Material-UI, Tailwind CSS, Cloudinary, Vite, Axios"
+  },
+  {
+    "Project name": "Security Screening System",
+    "Project description": "A real-time security screening system, using face recognition with OpenCV. The system aims to scan individuals via a webcam at check-points (e.g., hotels, airports). If a person’s face matches an entry in the system’s dataset of known threats, runaway criminals or wanted individuals, the system triggers a threat alarm and sends an email alert to authorities immediately. Otherwise, a safe alarm is triggered, allowing them to proceed. The project aims to reduce manual intervention and automate security surveillance systems by enabling quick identification of flagged individuals.",
+    "Project link": "https://github.com/SomdattaNag/Security-Screening-System",
+    "Project admin": "Somdatta Nag",
+    "Admin linkedin": "https://www.linkedin.com/in/somdatta-nag-523362260/",
+    "Tech stack": "Python, OpenCV,  Face Recognition, SMTPLib, Winsound."
+  },
+  {
+    "Project name": "faculty publication management",
+    "Project description": "faculty publication  management",
+    "Project link": "https://github.com/SOURAVtec/Facility-publication-management-",
+    "Project admin": "Sonali subhadarsini nath",
+    "Admin linkedin": "https://www.linkedin.com/in/sonali-nath-859a362a4",
+    "Tech stack": "html ,css ,js"
+  },
+  {
+    "Project name": "ResqFood",
+    "Project description": "ResQFood is a platform dedicated to the noble cause of reducing food wastage by facilitating the redistribution of surplus food during late-night hours before restaurant closures.",
+    "Project link": "https://github.com/sourabhkumar47/ResQFood",
+    "Project admin": "Sourabh Kumar",
+    "Admin linkedin": "https://www.linkedin.com/in/sourabhkumar47?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "Android, Kotlin, Jetpack compose"
+  },
+  {
+    "Project name": "LearnHub",
+    "Project description": "Master Technology Skills",
+    "Project link": "https://github.com/souvikpramanikgit/LearnHub",
+    "Project admin": "Souvik Kumar Pramanik",
+    "Admin linkedin": "https://www.linkedin.com/in/souvik-kr/",
+    "Tech stack": "React js, TypeScript, JavaScript, Html, Css"
+  },
+  {
+    "Project name": "next-payroll",
+    "Project description": "Multi-Terant Payroll & Tax compliance system automates tax filings",
+    "Project link": "https://github.com/sristy17/next-payroll",
+    "Project admin": "Sristy paul",
+    "Admin linkedin": "https://www.linkedin.com/in/sristy-paul",
+    "Tech stack": "nextjs, TypeScript, JavaScript, Tailwind Css, nodejs, supabase, frontend, backend, development, full stack"
+  },
+  {
+    "Project name": "PrepBuddy",
+    "Project description": "PrepBuddy is a student-focused platform where users can practice aptitude tests based on real company patterns, track their progress, upload profile pictures, earn badges, and compete on a global leaderboard.",
+    "Project link": "https://github.com/SurajSG23/PrepBuddy",
+    "Project admin": "Suraj S G Dhanva",
+    "Admin linkedin": "https://www.linkedin.com/in/suraj-s-g-dhanva-995a23298/",
+    "Tech stack": "Frontend:\nReact + Vite (TypeScript)\nTailwind CSS\nShadCN/UI & Lucide Icons\nAxios.\nBackend\nNode.js + Express.js\nMongoDB + Mongoose\nFirebase Auth\nCloudinary + Multer"
+  },
+  {
+    "Project name": "Bit By Query",
+    "Project description": "Bit By Query is a web-based platform where users can compete in SQL competitions",
+    "Project link": "https://github.com/swarooppatilx/bit-by-query",
+    "Project admin": "Swaroop Patil",
+    "Admin linkedin": "https://www.linkedin.com/in/swarooppatilx",
+    "Tech stack": "ReactJS, Express, MySQL, SQLite3"
+  },
+  {
+    "Project name": "Syed Imtiyaz Ali",
+    "Project description": "Swapify is a secure, add-free, and community-driven platform designed to revolutionize how Indians buy and sell pre-owned products.",
+    "Project link": "https://github.com/SyedImtiyaz-1/Swapify",
+    "Project admin": "Syed Imtiyaz Ali",
+    "Admin linkedin": "https://linkedin.com/in/imtiyaz-sde",
+    "Tech stack": "Next.js, React.js, React-Native, TailwindCSS, Google Maps, OpenStreetMap, Node.js, Express.js, MongoDB"
+  },
+  {
+    "Project name": "CompliAI — AI-Powered Compliance Copilot & 2nd Project Smart Irrigation Valve System using AI + IoT",
+    "Project description": "CompliAI is an AI-driven compliance assistant built for Indian startups, SMEs, and corporates. The system uses generative AI and intelligent document parsing to automate, predict, and simplify legal, tax, labor, and regulatory obligations. It offers features like 24/7 legal Q&A chat, deadline reminders, GST/MCA parsing, and a location-based compliance map. The platform is also being integrated with AI Policy Wizard to enhance policy interpretation for new acts like DPDP, ESG norms, FSSAI, SEBI, etc. This project is perfect for students interested in AI/ML, NLP, backend automation, or legaltech product development. & 2nd Project Description it is a Hardware Project Model so I have created a Website This project aims to empower farmers with an AI-IoT-based automated water valve system. It uses soil moisture sensors, weather data, and solar-powered microcontrollers to control irrigation remotely — via mobile or SMS. The system is affordable, low-maintenance, and scalable for small and marginal farmers. Students will get hands-on experience with microcontrollers, embedded programming, and real-world impact engineering. The solution will be showcased at Eureka! (Asia's largest startup competition).",
+    "Project link": "https://agri-automation-system-automated-valve-system--aopjgjl58ghrz7g5.builder-preview.com/",
+    "Project admin": "Tanmay B. Pansare",
+    "Admin linkedin": "https://www.linkedin.com/in/tanmay-pansare-16394330b/",
+    "Tech stack": "Python (Flask/FastAPI) LangChain + GPT-4-o Vector DB (FAISS) Google Cloud (Vertex AI, Cloud Functions) Azure Form Recognizer / Amazon Textract MongoDB / PostgreSQL Frontend: React.js / Streamlit / Gradio GitHub Actions (CI/CD) & 2nd Project Techstack Arduino / NodeMCU / Raspberry Pi Python (IoT scripting, backend integration) MQTT / Blynk / Firebase Realtime DB Solar panel + Li-ion power management SMS APIs (Twilio / Fast2SMS) Optional: Google Cloud IoT / ESPNow"
+  },
+  {
+    "Project name": "Smart Irrigation Valve System using AI + IoT",
+    "Project description": "It is a Hardware Project Model so I have created a Website This project aims to empower farmers with an AI-IoT-based automated water valve system. It uses soil moisture sensors, weather data, and solar-powered microcontrollers to control irrigation remotely — via mobile or SMS. The system is affordable, low-maintenance, and scalable for small and marginal farmers. Students will get hands-on experience with microcontrollers, embedded programming, and real-world impact engineering. The solution will be showcased at Eureka! (Asia's largest startup competition).",
+    "Project link": "https://agri-automation-system-automated-valve-system--aopjgjl58ghrz7g5.builder-preview.com/",
+    "Project admin": "Tanmay B. Pansare",
+    "Admin linkedin": "https://www.linkedin.com/in/tanmay-pansare-16394330b/",
+    "Tech stack": "Arduino / NodeMCU / Raspberry Pi Python (IoT scripting, backend integration) MQTT / Blynk / Firebase Realtime DB Solar panel + Li-ion power management SMS APIs (Twilio / Fast2SMS) Optional: Google Cloud IoT / ESPNow"
+  },
+  {
+    "Project name": "SmartLog",
+    "Project description": "A beautiful, responsive, and modern Expense Tracker App built with React that helps users manage and visualize their income and expenses smartly.",
+    "Project link": "https://github.com/TanmayKalra09/SmartLog",
+    "Project admin": "Tanmay Kalra",
+    "Admin linkedin": "https://www.linkedin.com/in/tanmay-kalra-09oct/",
+    "Tech stack": "React, Vite, TailwindCSS"
+  },
+  {
+    "Project name": "Hotel management system",
+    "Project description": "I have worked on a Hotel Management System using C++, MySQL, and HTML/CSS. I’ve also designed UI using Figma and have experience in basic Python and graphic designing.",
+    "Project link": "https://github.com/tasmiyashaikh711",
+    "Project admin": "Tasmiya Shaikh MD Arshad",
+    "Admin linkedin": "https://www.linkedin.com/in/tasmiya-shaikh711?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "I used the following technologies:\n\nFrontend: HTML, CSS (for designing the user interface)\n\nBackend: C++ using Turbo C++ (for logic and core functionalities)\n\nDatabase: MySQL (to store user, booking, and room data)\n\nTools: Figma (for UI/UX planning and wireframes)\n\n\nThis combination allowed me to build a structured, interactive, and functional system, ensuring both usability and performance."
+  },
+  {
+    "Project name": "Dataverse",
+    "Project description": "A versatile Open-Source Software (OSS) that allows organizing, analyzing and visualizing data, leveraging ML algorithms for predictive analysis. Supporting all data visualisation techniques on one platform, accessible on both desktop and mobile.",
+    "Project link": "https://github.com/multiverseweb/Dataverse",
+    "Project admin": "Tejas Gupta",
+    "Admin linkedin": "https://www.linkedin.com/in/tejascodes",
+    "Tech stack": "Python, HTML, CSS, JavaScript"
+  },
+  {
+    "Project name": "AgriBazaar - E-commerce Agricultural Products Website",
+    "Project description": "AgriBazaar is an online platform that connects farmers, suppliers, and buyers of agricultural products. The website allows users to browse and purchase a wide range of agricultural products, including seeds, fertilizers, pesticides, and farm equipment.  *Key Features:*  - User registration and login functionality - Product catalog with search, filter, and sort options - Shopping cart and checkout functionality - Payment gateway integration (e.g., PayPal, Stripe) - Order management and tracking - User reviews and ratings - Admin dashboard for managing products, orders, and users  *Technology Stack:*  - Front-end: HTML, CSS, JavaScript, JSP - Back-end: Java, Spring Framework (e.g., Spring MVC, Spring Boot) - Database: MySQL or PostgreSQL - Server: Apache Tomcat or similar  *Functionality:*  - Users can browse and purchase agricultural products - Farmers and suppliers can list their products and manage orders - Admin can manage products, orders, and users - Payment processing and order tracking  *Benefits:*  - Increased market access for farmers and suppliers - Convenience and flexibility for buyers - Streamlined order management and payment processing  *Java Technologies Used:*  - Spring Framework for building the back-end - Hibernate or JPA for database interactions - Java Servlet and JSP for handling requests and rendering views  This project would involve designing and implementing a robust e-commerce platform using Java and related technologies. It would require a good understanding of web development, database design, and payment processing.",
+    "Project link": "https://github.com/KOMARAUDAYKIRAN/E-commerce-AgriGro-Website-Project",
+    "Project admin": "Uday",
+    "Admin linkedin": "https://www.linkedin.com/in/udaykirankomara",
+    "Tech stack": "java full stack"
+  },
+  {
+    "Project name": "Anime-Ecstasy",
+    "Project description": "Anime review sites",
+    "Project link": "https://github.com/Chandu6702/Anime-Ecstasy",
+    "Project admin": "Uma Chandra Sekhara Sarma Thadepalli",
+    "Admin linkedin": "https://www.linkedin.com/in/umachandrasekhara/",
+    "Tech stack": "HTML, JavaScript, Tailwind CSS, React.js"
+  },
+  {
+    "Project name": "PyVerse",
+    "Project description": "PyVerse is an open-source collection of diverse Python projects, tools, and scripts, ranging from beginner to advanced, across various domains like machine learning, web development, and automation.",
+    "Project link": "https://github.com/UTSAVS26/PyVerse",
+    "Project admin": "Utsav Singhal",
+    "Admin linkedin": "https://www.linkedin.com/in/utsavsinghal2604/",
+    "Tech stack": "Python"
+  },
+  {
+    "Project name": "Term",
+    "Project description": "A minimal terminal with AI capabilities",
+    "Project link": "https://github.com/sapatevaibhav/term",
+    "Project admin": "Vaibhav",
+    "Admin linkedin": "https://linkedin.com/in/sapatevaibhav",
+    "Tech stack": "React, Rust"
+  },
+  {
+    "Project name": "Nitra Mitra",
+    "Project description": "Nitra Mitra is an open-source educational platform designed to support students of AKTU and similar technical universities by providing a centralized system for academic resources. Developed by students of NITRA Technical Campus, the project aims to make essential study material easily accessible, especially for students in under-resourced colleges.\n\nThe platform offers semester-wise and subject-wise notes, previous year question papers, syllabus documents, and event updates. It eliminates the need to search through multiple unofficial sources and provides a clean, organized interface focused on academic success.\n\nNitra Mitra is built using HTML, CSS, JavaScript, PHP, and MySQL, and is hosted on a custom domain. It is a beginner-friendly open-source project, welcoming contributors to improve features like responsive design, content upload automation, admin moderation tools, and search optimization.\n\nThis project aligns with the goals of GSSoC by fostering open collaboration, offering meaningful contributions for beginners and intermediate developers, and solving real student problems through technology.",
+    "Project link": "https://github.com/VAIBHAVBABELE/vaibhavbabele.github.io",
+    "Project admin": "Vaibhav Babele",
+    "Admin linkedin": "https://in.linkedin.com/in/vaibhavbabele",
+    "Tech stack": "HTML, CSS, JavaScript, PHP, MySQL, google app script, bootstrap"
+  },
+  {
+    "Project name": "Ardh Naari Shakti",
+    "Project description": "It is a web app, which is a warm hug to all the trangender community people out there. It contains various pages like a chatbot named Taara, Blogs page, shelter page and jobs page.",
+    "Project link": "https://github.com/Agarwalvidu/ArdhNaariShakti_Taara_Frontend",
+    "Project admin": "Vidushi Agarwal",
+    "Admin linkedin": "https://www.linkedin.com/in/vidushi-agarwal-a95885256",
+    "Tech stack": "ReactJs, NodeJs, ExpressJs, MongoDB"
+  },
+  {
+    "Project name": "Athletix",
+    "Project description": "Athletix is a Flutter, Firebase and Gemini API based platform for athlete management in India, offering performance tracking, injury management, AI recovery, and real-time messaging. Future upgrades include dashboards, finance and AI career planning",
+    "Project link": "https://github.com/vjlive/athletix",
+    "Project admin": "Vijay Guttula",
+    "Admin linkedin": "https://linkedin.com/in/vijay-guttula",
+    "Tech stack": "Flutter, Firebase, Gemini API, Node Js, Javascript, Dart, REST APIs"
+  },
+  {
+    "Project name": "Orthoplay - Spell. Guess. Learn",
+    "Project description": "Orthoplay is an interactive voice-based word learning game designed to make vocabulary building fun and engaging. The game challenges players with spoken words accompanied by descriptive hints in text. Players must guess the word by identifying the number of letters and gradually unveiling the correct spelling through intuitive, game-based mechanics.",
+    "Project link": "https://github.com/whyvineet/orthoplay",
+    "Project admin": "Vineet Kumar",
+    "Admin linkedin": "https://www.linkedin.com/in/whyvineet",
+    "Tech stack": "python, javascript, reactjs, fastapi"
+  },
+  {
+    "Project name": "Product Ledger",
+    "Project description": "Its a Ledger Application for Reatilers to manage their services.",
+    "Project link": "https://github.com/vishalmaurya850/Product-Ledger",
+    "Project admin": "Vishal Maurya",
+    "Admin linkedin": "https://www.linkedin.com/in/vishalmaurya850",
+    "Tech stack": "Next.js, Tailwind CSS, Express.js"
+  },
+  {
+    "Project name": "SentiLog AI",
+    "Project description": "SentiLog AI is an open-source platform that helps users track their personal emotions through mood journaling while simultaneously analyzing global news sentiment to reveal how external events might influence their inner world. Combining the power of machine learning and a modern MERN stack architecture, SentiLog offers intelligent insights by visualizing the emotional tone of daily journal entries alongside real-time sentiment analysis of news articles and tweets. Users can explore patterns, compare their moods with global trends, and gain a deeper understanding of the connection between internal feelings and external narratives. Built for accessibility, scalability, and community collaboration, SentiLog AI is a unique intersection of emotion, analytics, and technology — empowering individuals to stay emotionally aware in an ever-changing world.",
+    "Project link": "https://github.com/openml-stack/SentiLog-AI",
+    "Project admin": "vivek prakash",
+    "Admin linkedin": "https://www.linkedin.com/in/itsvivekprakash",
+    "Tech stack": "•\tFrontend:\n\t•\tReact.js\n\t•\tTailwind CSS\n\t•\tReact Router for navigation\n\t•\tAxios for API calls\n\t•\tBackend (App Server):\n\t•\tNode.js\n\t•\tExpress.js\n\t•\tMongoose (MongoDB ODM)\n\t•\tDatabase:\n\t•\tMongoDB Atlas (Cloud NoSQL)\n\t•\tML Service (Python):\n\t•\tFlask (API framework)\n\t•\tHugging Face Transformers (e.g., BERT)\n\t•\tVADER Sentiment"
+  },
+  {
+    "Project name": "Brevity",
+    "Project description": "Brevity is a smart news app that cuts through the noise, delivering crisp, trustworthy stories with a clean, modern interface—designed to make staying informed effortless and engaging.",
+    "Project link": "https://github.com/Yash159357/BREVITY",
+    "Project admin": "Yash",
+    "Admin linkedin": "https://www.linkedin.com/in/yash-kumar101/",
+    "Tech stack": "Flutter, Firebase, RestAPI, NodeJS, MongoDB, ExpressJS,"
+  },
+  {
+    "Project name": "BMC Product Review Scrapping & Sentiment Analysis",
+    "Project description": "This project performs Web Scrapping & Sentiment Analysis on verified Gartner reviews of popular BMC Software Products, using Python NLP Techniques and Data Visualization.\n\nBMC Product Review Scrapping & Sentiment Analysis is an open source project designed for performing sentiment analysis on customer reviews of BMC Software products scraped from public platforms like Gartner. It leverages Natural Language Processing (NLP) techniques and visualization tools to extract actionable insights from product reviews.\n\nThis project is perfect for beginners and intermediate contributors who want hands-on experience with web scraping, NLP, data visualization, and open source collaboration.",
+    "Project link": "https://github.com/Yash22222/BMC-Product-Reviews-Web-Scrapping-Sentiment-Analysis",
+    "Project admin": "Yash",
+    "Admin linkedin": "https://www.linkedin.com/in/yash-shirsath-cr49/",
+    "Tech stack": "This project uses Selenium with Undetected-Chromedriver for web scraping dynamic Gartner pages. Data is handled using Pandas and NumPy, and exported via OpenPyXL and XlsxWriter. For NLP, we use NLTK for preprocessing and VADER for sentiment analysis. Visualizations are built using Matplotlib for charts and WordCloud for keyword clouds. TQDM adds progress tracking throughout the workflow."
+  },
+  {
+    "Project name": "Legalease",
+    "Project description": "A platform built for people to get legal advice on, you can directly track your cases, converse with a AI-legal chat bot and find real life lawyers, working on the issues.",
+    "Project link": "https://github.com/yashvikram30/LegalEase",
+    "Project admin": "Yash Vikram",
+    "Admin linkedin": "https://www.linkedin.com/in/yashvikram30?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Tech stack": "Next.js, Typescript, Shad-CN, Groq-API"
+  },
+  {
+    "Project name": "White Paper",
+    "Project description": "The White Paper project is a simple notepad app built with Python Django. It allows users to create, save, and manage notes with a secure authentication system to keep their data private. Users can sign up, log in, and access their notes, offering a seamless and secure note-taking experience.",
+    "Project link": "https://github.com/ygowthamr/WhitePaper",
+    "Project admin": "YEMIREDDY GOWTHAM REDDY",
+    "Admin linkedin": "https://www.linkedin.com/in/ygowthamr/",
+    "Tech stack": "Python, Django Framework, HTML, CSS, JavaScript, SQLite."
+  },
+  {
+    "Project name": "ShopSmart",
+    "Project description": "By ShopSmart we provide Smart Shopping from Local Stores.",
+    "Project link": "https://github.com/yuvrajsinghgmx/ShopSmart",
+    "Project admin": "Yuvraj Singh",
+    "Admin linkedin": "https://linkedin.com/in/yuvrajsinghgmx",
+    "Tech stack": "Android Studio, Kotlin, JetPack Compose, Springboot, Kotlin, Frontend, Backend,"
+  }
+]

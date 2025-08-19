@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "title": "Career Guidance",
+    "description": "Personalized career counseling and roadmap planning",
+    "icon": "./assets/images/icons/career-guidance.svg",
+    "features": [
+      "One-on-one career counseling sessions",
+      "Industry trend analysis and insights",
+      "Skill gap analysis and recommendations",
+      "Career transition planning",
+      "Professional networking guidance"
+    ],
+    "ctaText": "Get Started",
+    "ctaLink": "./contact.html"
+  },
+  {
+    "id": 2,
+    "title": "Open-Source Mentorship",
+    "description": "Learn to contribute to open-source projects effectively",
+    "icon": "./assets/images/icons/opensource.svg",
+    "features": [
+      "Git and GitHub mastery",
+      "Finding the right projects to contribute",
+      "Code review and best practices",
+      "Building your open-source portfolio",
+      "Community engagement strategies"
+    ],
+    "ctaText": "Start Contributing",
+    "ctaLink": "./contact.html"
+  },
+  {
+    "id": 3,
+    "title": "Project-Based Learning",
+    "description": "Hands-on experience through real-world projects",
+    "icon": "./assets/images/icons/project-learning.svg",
+    "features": [
+      "End-to-end project development",
+      "Industry-standard coding practices",
+      "Team collaboration experience",
+      "Agile methodology training",
+      "Project deployment and hosting",
+      "Client communication skills",
+      "Portfolio project guidance"
+    ],
+    "ctaText": "Start Building",
+    "ctaLink": "./contact.html"
+  },
+  {
+    "id": 4,
+    "title": "Resume Building Tips",
+    "description": "Craft compelling resumes that get noticed by recruiters",
+    "icon": "./assets/images/icons/resume-tips.svg",
+    "features": [
+      "ATS-optimized resume templates",
+      "Technical skills presentation",
+      "Project showcase strategies",
+      "Achievement quantification methods",
+      "Industry-specific customization",
+      "Cover letter writing guidance",
+      "LinkedIn profile optimization"
+    ],
+    "ctaText": "Improve Resume",
+    "ctaLink": "./contact.html"
+  },
+  {
+    "id": 5,
+    "title": "Mock Interviews",
+    "description": "Practice interviews with industry professionals",
+    "icon": "./assets/images/icons/mock-interviews.svg",
+    "features": [
+      "Technical interview preparation",
+      "Behavioral question practice",
+      "System design interview training",
+      "Coding challenge sessions",
+      "Real-time feedback and improvement tips",
+      "Industry-specific interview formats",
+      "Confidence building techniques"
+    ],
+    "ctaText": "Book Session",
+    "ctaLink": "./contact.html"
+  }
+]

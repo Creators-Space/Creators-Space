@@ -1,0 +1,113 @@
+body {
+    user-select: none;
+}
+
+.position-absolute {
+    position: absolute;
+}
+.certificate-generation-date {
+    top: 80px;
+    right: 85px;
+}
+.certificate-id {
+    top: 80px;
+    left: 85px;
+}
+
+.bg-certificate-template {
+    background-image: url('../../assets/images/Certificate/Creators-Sapce-Certificate Template.png') !important;
+}
+
+#captureArea {
+    /* background-image: url('../../assets/images/Creators-Sapce-Certificate Template.png') !important; */
+    height: 620px;
+    width: 880px;
+    background-size: cover !important;
+    position: relative;
+}
+.certificate-verification-url {
+    /* bottom: 90px;
+    left: 85px;
+    width: 120px; */
+
+    bottom: 95px;
+    left: 98px;
+    width: 100px;
+}
+.certificate-content {
+    
+    top: 180px;
+    width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: larger;
+    
+}
+.certificate-content i b {
+    font-size: 2rem;
+    
+    
+}
+
+#getCertificate {
+    gap: 10px;
+    width: 30vw;
+    height: 400px;
+    padding: 20px;
+    border: 1px solid rgb(48, 131, 146);
+}
+
+#certificate-form-heading {
+    color: black;
+}
+
+input {
+    outline: none !important;
+    border: 1px solid grey;
+    padding: 5px;
+}
+#getCertificate #submit-btn {
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background-color: black !important;
+    color: white;
+    font-size: large;
+}
+#getCertificate #submit-btn:hover {
+    background-color: rgb(237, 244, 236) !important;
+    color: black;
+    border: 1px solid grey;
+}
+
+#certificate-template-part button.download-certificate {
+    width: 200px;
+    height: 40px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background-color: black !important;
+    color: white;
+    font-size: large;
+}
+
+#certificate-template-part button.download-certificate:hover {
+    background-color: rgb(237, 244, 236) !important;
+    color: black;
+    border: 1px solid grey;
+}
+
+div#failure-dialog-box {
+    color: red;
+    /* width: 50vw !important; */
+    text-align: center;
+}
+
+.loading-animation {
+    width: 200px;
+    align-self: center !important;
+    justify-self: center !important;
+}

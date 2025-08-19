@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Freelance Platforms Guide</title>
+  <meta name="description" content="A dark, responsive, animated guide to top freelance platforms with direct links, categorized for Beginner, Intermediate, and Advanced users." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-elev: #0f141b;
+      --card: #121821;
+      --muted: #8b9bb0;
+      --text: #e6edf6;
+      --accent: #5dd6c9;
+      --accent-2: #9a7bff;
+      --ring: #2c3a4c;
+      --ok: #58d38c;
+      --warn: #ffd066;
+      --danger: #ff6b6b;
+      --shadow: 0 10px 25px rgba(0,0,0,.35), 0 6px 12px rgba(0,0,0,.25);
+      --radius-xl: 18px;
+      --radius-2xl: 26px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 10% -20%, rgba(93,214,201,.18), transparent 40%),
+                  radial-gradient(1000px 600px at 110% -10%, rgba(154,123,255,.14), transparent 45%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    
+    .hero {
+      position: relative;
+      padding: clamp(28px, 5vw, 64px) 18px 24px;
+      display: grid;
+      gap: 20px;
+      place-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .glow {
+      position: absolute;
+      inset: -10% -20% auto -20%;
+      height: 360px;
+      background: conic-gradient(from 180deg at 50% 50%, var(--accent), var(--accent-2), var(--accent));
+      filter: blur(70px) saturate(130%);
+      opacity: .18;
+      animation: spin 28s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .title {
+      font-weight: 800;
+      font-size: clamp(28px, 4.6vw, 56px);
+      letter-spacing: -0.02em;
+      margin: 16px 0 6px;
+    }
+    .subtitle { color: var(--muted); max-width: 900px; margin: 0 auto; font-size: clamp(14px, 2.2vw, 18px); }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      background: linear-gradient(180deg, rgba(11,15,20,.85), rgba(11,15,20,.60));
+      border-bottom: 1px solid var(--ring);
+    }
+    .toolbar-inner{
+      max-width: 1150px; margin: 0 auto; padding: 12px 16px; display: grid; gap: 12px; align-items: center;
+      grid-template-columns: 1fr auto; 
+    }
+
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; border: 1px solid var(--ring);
+      background: rgba(255,255,255,.02); color: var(--text); font-weight: 600; font-size: 14px; cursor: pointer;
+      transition: transform .15s ease, background .2s ease, border-color .2s ease;
+      user-select: none;
+    }
+    .chip:hover { transform: translateY(-1px) scale(1.02); border-color: rgba(93,214,201,.45); }
+    .chip.active { background: linear-gradient(180deg, rgba(93,214,201,.20), rgba(154,123,255,.18)); border-color: rgba(93,214,201,.55); }
+
+    .search {
+      display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--bg-elev); border: 1px solid var(--ring);
+      border-radius: 12px; min-width: 260px; box-shadow: var(--shadow);
+    }
+    .search input { background: transparent; border: none; outline: none; color: var(--text); width: 200px; font-size: 14px; }
+
+    /* Grid */
+    .container { max-width: 1150px; margin: 0 auto; padding: 22px 16px 80px; }
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(1, minmax(0, 1fr)); }
+    @media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+    /* Card */
+    .card {
+      position: relative; overflow: hidden; border-radius: var(--radius-xl); background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)), var(--card);
+      border: 1px solid var(--ring); box-shadow: var(--shadow);
+      transform: translateY(10px) scale(.98); opacity: 0; 
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease, opacity .6s ease;
+    }
+    .card.revealed { transform: translateY(0) scale(1); opacity: 1; }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 16px 32px rgba(0,0,0,.45), 0 8px 16px rgba(0,0,0,.35);
+      border-color: rgba(93,214,201,.65);
+    }
+
+    .card-header { padding: 18px 18px 8px; display:flex; gap: 12px; align-items:center; }
+    .logo { width: 36px; height: 36px; border-radius: 10px; display:grid; place-items:center; font-weight:800; background: linear-gradient(135deg, rgba(93,214,201,.15), rgba(154,123,255,.15)); border: 1px solid var(--ring); }
+    .name { font-size: 18px; font-weight: 700; letter-spacing: -.01em; }
+    .tag { font-size: 12px; padding: 4px 8px; border-radius: 999px; border: 1px solid var(--ring); color: var(--muted); }
+    .card-body { padding: 0 18px 18px; color: #c9d8ec; }
+
+    .meta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+    .meta .pill { background: rgba(255,255,255,.03); border: 1px solid var(--ring); border-radius: 10px; padding: 8px 10px; font-size: 12px; color: var(--muted); }
+    .meta strong { display:block; color: var(--text); font-size: 13px; margin-bottom: 2px; }
+
+    .card-footer { display:flex; align-items:center; justify-content: flex-start; gap: 12px; padding: 14px 18px 18px; }
+    .btn {
+      display:inline-flex; align-items:center; gap:10px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--ring);
+      background: linear-gradient(180deg, rgba(93,214,201,.16), rgba(154,123,255,.12)); color: var(--text); font-weight: 700; cursor: pointer; text-decoration:none;
+      transition: transform .15s ease, filter .2s ease, border-color .2s ease; box-shadow: var(--shadow);
+    }
+    .btn:hover { transform: translateY(-1px); border-color: rgba(93,214,201,.55); }
+
+    .ext { font-size: 12px; color: var(--muted); }
+
+    /* Footer */
+    footer { color: var(--muted); text-align: center; padding: 32px 16px 64px; }
+    footer .small { font-size: 12px; opacity: .9; }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="glow" aria-hidden="true"></div>
+    <h1 class="title">Find Your Next Gig — Fast ⚡</h1>
+    <p class="subtitle">Creators-Space guide to top freelance platforms with direct links and key details. Filter by experience level and search by name or niche.</p>
+  </header>
+
+  <div class="toolbar">
+    <div class="toolbar-inner">
+      <div class="filters" role="tablist" aria-label="Experience filters">
+        <button class="chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="chip" data-filter="beginner" role="tab" aria-selected="false">Beginner</button>
+        <button class="chip" data-filter="intermediate" role="tab" aria-selected="false">Intermediate</button>
+        <button class="chip" data-filter="advanced" role="tab" aria-selected="false">Advanced</button>
+      </div>
+      <label class="search" aria-label="Search platforms">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        <input id="search" type="search" placeholder="Search platform or niche…" />
+      </label>
+    </div>
+  </div>
+
+  <main class="container">
+    <section id="grid" class="grid" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <p class="small">Tips: Beginner platforms are great to build reviews quickly. Intermediate sites suit sustained projects and higher rates. Advanced networks are curated and pay top-tier rates but require vetting.</p>
+  </footer>
+
+  <script>
+    const platforms = [
+      // BEGINNER
+      {
+        name: 'Fiverr',
+        url: 'https://www.fiverr.com/',
+        category: 'beginner',
+        summary: 'Gig-style marketplace for quick services across creative, dev, marketing, and more.',
+        fees: '20% seller fee (varies)',
+        vetting: 'Open signup',
+        payment: 'Escrow-like; milestone/payout after delivery',
+        bestFor: 'Fast gigs, building initial reviews'
+      },
+      {
+        name: 'Freelancer.com',
+        url: 'https://www.freelancer.com/',
+        category: 'beginner',
+        summary: 'Large marketplace with contests and projects across most categories.',
+        fees: '10% project fee (or min $5)',
+        vetting: 'Open signup',
+        payment: 'Milestones via escrow',
+        bestFor: 'Contests, broad project types'
+      },
+      {
+        name: 'PeoplePerHour',
+        url: 'https://www.peopleperhour.com/',
+        category: 'beginner',
+        summary: 'UK-based marketplace with “offers” (fixed-price services) and project bidding.',
+        fees: 'Service fee tiered',
+        vetting: 'Basic application',
+        payment: 'Escrow with invoices',
+        bestFor: 'Fixed-price micro-services'
+      },
+      {
+        name: 'Workana',
+        url: 'https://www.workana.com/',
+        category: 'beginner',
+        summary: 'Popular in LATAM; broad categories with bid-based projects.',
+        fees: 'Tiered commission',
+        vetting: 'Open signup',
+        payment: 'Escrow releases',
+        bestFor: 'Writers, devs, VA, design'
+      },
+
+      // INTERMEDIATE
+      {
+        name: 'Upwork',
+        url: 'https://www.upwork.com/',
+        category: 'intermediate',
+        summary: 'Massive marketplace with hourly + fixed projects and robust client base.',
+        fees: 'Sliding service fee',
+        vetting: 'Profile review; Job Success matters',
+        payment: 'Hourly protection + escrow',
+        bestFor: 'Longer engagements, higher rates over time'
+      },
+      {
+        name: 'Guru',
+        url: 'https://www.guru.com/',
+        category: 'intermediate',
+        summary: 'Flexible agreements and “WorkRooms” for collaboration.',
+        fees: 'Tiered fees by membership',
+        vetting: 'Open signup',
+        payment: 'SafePay escrow',
+        bestFor: 'Agencies & experienced freelancers'
+      },
+      {
+        name: '99designs',
+        url: 'https://99designs.com/',
+        category: 'intermediate',
+        summary: 'Design-only marketplace with contests and one-to-one projects.',
+        fees: 'Platform & client fees apply',
+        vetting: 'Design portfolio review',
+        payment: 'Escrow via Stripe',
+        bestFor: 'Logo, brand, web, packaging design'
+      },
+      {
+        name: 'Turing (Jobs)',
+        url: 'https://www.turing.com/',
+        category: 'intermediate',
+        summary: 'Remote dev placements for long-term roles (tests + screenings).',
+        fees: 'Employer-side; freelancers as contractors',
+        vetting: 'Skill tests + interviews',
+        payment: 'Monthly payouts',
+        bestFor: 'Mid-senior software engineers'
+      },
+
+      // ADVANCED
+      {
+        name: 'Toptal',
+        url: 'https://www.toptal.com/',
+        category: 'advanced',
+        summary: 'Elite network for developers, designers, finance experts, PMs.',
+        fees: 'Client-side; premium rates to talent',
+        vetting: 'Rigorous multi-stage screening',
+        payment: 'On time via invoice',
+        bestFor: 'Senior experts and niche specialists'
+      },
+      {
+        name: 'Gun.io',
+        url: 'https://www.gun.io/',
+        category: 'advanced',
+        summary: 'Curated network connecting senior engineers with vetted clients.',
+        fees: 'Client-side; strong rates',
+        vetting: 'Technical screening + interviews',
+        payment: 'Weekly invoice cycles',
+        bestFor: 'Senior backend, full-stack, DevOps'
+      },
+      {
+        name: 'Braintrust',
+        url: 'https://www.usebraintrust.com/',
+        category: 'advanced',
+        summary: 'Talent-owned network with 0% talent fees; high-quality clients.',
+        fees: '0% to talent',
+        vetting: 'Application + screening',
+        payment: 'Direct client payments',
+        bestFor: 'Senior product, design, engineering'
+      },
+      {
+        name: 'Hired',
+        url: 'https://hired.com/',
+        category: 'advanced',
+        summary: 'Tech hiring marketplace; candidates get matched with vetted companies.',
+        fees: 'Client-side',
+        vetting: 'Profile curation + assessments',
+        payment: 'Contract or full-time',
+        bestFor: 'Senior engineers & data professionals'
+      },
+      {
+        name: 'Catalant',
+        url: 'https://gocatalant.com/',
+        category: 'advanced',
+        summary: 'Independent consultants for strategy, ops, finance; enterprise clients.',
+        fees: 'Client-side',
+        vetting: 'Experience-based screening',
+        payment: 'Invoice per engagement',
+        bestFor: 'Consultants & ex-MBB/FAANG'
+      }
+    ];
+
+    // --- DOM Helpers ---
+    const $grid = document.getElementById('grid');
+    const $search = document.getElementById('search');
+    const $chips = document.querySelectorAll('.chip');
+
+    function createCard(p) {
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.setAttribute('data-category', p.category);
+      card.setAttribute('tabindex', '0');
+
+      card.innerHTML = `
+        <div class="card-header">
+          <div class="logo" aria-hidden="true">${p.name[0]}</div>
+          <div style="flex:1 1 auto">
+            <div class="name">${p.name}</div>
+            <div class="ext">${capitalize(p.category)}</div>
+          </div>
+          <span class="tag">${p.bestFor}</span>
+        </div>
+        <div class="card-body">
+          <p>${p.summary}</p>
+          <div class="meta">
+            <div class="pill"><strong>Fees</strong>${p.fees}</div>
+            <div class="pill"><strong>Vetting</strong>${p.vetting}</div>
+            <div class="pill"><strong>Payments</strong>${p.payment}</div>
+            <div class="pill"><strong>Category</strong>${capitalize(p.category)}</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a class="btn" href="${p.url}" target="_blank" rel="noopener noreferrer" aria-label="Visit ${p.name} (opens in new tab)">
+            Visit ${p.name}
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 7h9v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      `;
+
+      return card;
+    }
+
+    function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+    function render(filter = 'all', query = '') {
+      $grid.innerHTML = '';
+      const q = query.trim().toLowerCase();
+      const items = platforms.filter(p => (filter === 'all' || p.category === filter) && (!q || (p.name.toLowerCase().includes(q) || p.summary.toLowerCase().includes(q) || p.bestFor.toLowerCase().includes(q))));
+
+      if (!items.length) {
+        const empty = document.createElement('div');
+        empty.className = 'card revealed';
+        empty.innerHTML = `<div class="card-header"><div class="logo">😅</div><div class="name">No matches</div></div><div class="card-body"><p>Try clearing filters or searching a broader term.</p></div>`;
+        $grid.appendChild(empty);
+        return;
+      }
+
+      items.forEach(p => $grid.appendChild(createCard(p)));
+      revealOnScroll();
+    }
+
+    // Filter chip interactions
+    $chips.forEach(chip => chip.addEventListener('click', () => {
+      $chips.forEach(c => { c.classList.remove('active'); c.setAttribute('aria-selected', 'false'); });
+      chip.classList.add('active');
+      chip.setAttribute('aria-selected', 'true');
+      render(chip.dataset.filter, $search.value);
+    }));
+
+    // Search interaction
+    $search.addEventListener('input', (e) => {
+      const active = document.querySelector('.chip.active')?.dataset.filter || 'all';
+      render(active, e.target.value);
+    });
+
+    // Reveal on scroll animation
+    function revealOnScroll(){
+      const cards = document.querySelectorAll('.card');
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12 });
+      cards.forEach(c => io.observe(c));
+    }
+
+    
+    render('all', '');
+
+    document.addEventListener('focusin', (e) => {
+      if (e.target.classList.contains('card')) {
+        e.target.classList.add('revealed');
+      }
+    });
+  </script>
+</body>
+</html>

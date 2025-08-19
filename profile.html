@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./src/css/profile.css">
+</head>
+<style>
+    .profile-section {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .profile-card {
+        background: white;
+        border-radius: 16px;
+        padding: 20px;
+        max-width: 350px;
+        width: 100%;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .profile-avatar-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #282828;
+    }
+
+    .change-photo-btn {
+        background: black;
+        border: none;
+        color: #f1f1f3;
+        font-size: 14px;
+        margin-top: 8px;
+        cursor: pointer;
+    }
+
+    .profile-name {
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: 12px;
+    }
+
+    .profile-email {
+        color: #656667;
+        font-size: 16px;
+    }
+
+    .detail-section {
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .detail-title {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .detail-content {
+        color: #333;
+    }
+
+    .profile-input,
+    .profile-textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 6px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    .profile-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .action-button {
+        flex: 1;
+        padding: 8px;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        color: white;
+    }
+
+    .edit-button {
+        background: #101010;
+    }
+
+    .save-button {
+        background: #10b981;
+    }
+
+
+
+    .profile-avatar-container {
+        position: relative;
+    }
+
+    .profile-avatar {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .change-photo-btn {
+        margin-top: 8px;
+        background: #050505;
+        color: white;
+        padding: 6px 12px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+
+
+    /* Skills Section */
+    .detail-section {
+        text-align: left;
+        margin-top: 20px;
+        background: linear-gradient(135deg, #ffffff, #f9fafb);
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .detail-section:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .detail-title {
+        font-weight: 600;
+        font-size: 1.2em;
+        color: #1e293b;
+        margin-bottom: 15px;
+        border-left: 4px solid #363636;
+        padding-left: 10px;
+    }
+
+    /* Skills list */
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .skill-item {
+        background: #e0f2fe;
+        color: #313232;
+        padding: 6px 14px;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 2px 8px rgba(3, 105, 161, 0.1);
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .skill-item:hover {
+        background: #646565;
+        transform: translateY(-2px);
+    }
+
+    .remove-skill {
+        background: none;
+        border: none;
+        color: #dc2626;
+        font-size: 14px;
+        cursor: pointer;
+        transition: color 0.2s ease;
+    }
+
+    .remove-skill:hover {
+        color: #b91c1c;
+    }
+
+    /* Add skill form */
+    .add-skill-container {
+        display: flex;
+        gap: 8px;
+    }
+
+    .profile-input {
+        flex: 1;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #d1d5db;
+        font-size: 14px;
+        background: #f9fafb;
+        transition: border 0.2s ease, background 0.2s ease;
+    }
+
+    .profile-input:focus {
+        border: 1px solid #666667;
+        background: #ffffff;
+        outline: none;
+    }
+
+    /* Add Button */
+    .add-skill-btn {
+        background: linear-gradient(90deg, #333333, #505051);
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background 0.3s ease;
+    }
+
+    .add-skill-btn:hover {
+        background: linear-gradient(90deg, #adaeae, #5d5d5eb9);
+
+    }
+
+    .profile-container {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+
+
+
+    /* Certificates Section */
+    .certificates-section {
+        flex: 1;
+        background: linear-gradient(135deg, #ffffff, #f9fafb);
+        padding: 25px;
+        border-radius: 16px;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+        font-family: 'Poppins', sans-serif;
+        transition: all 0.3s ease-in-out;
+        margin-top: 20px;
+    }
+
+    .certificates-section:hover {
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+    }
+
+    .certificates-section h2 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #1e293b;
+        border-left: 4px solid #252525;
+        padding-left: 10px;
+        margin-bottom: 18px;
+    }
+
+    /* Certificates List */
+    .certificates-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 10px;
+    }
+
+    .certificate-item {
+        background: #ffffff;
+        padding: 14px 16px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .certificate-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+    }
+
+    .certificate-item span {
+        display: block;
+        font-size: 15px;
+        font-weight: 500;
+        color: #334155;
+    }
+
+    /* Remove Button */
+    .remove-certificate {
+        background: #fee2e2;
+        border: none;
+        cursor: pointer;
+        color: #dc2626;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 5px 8px;
+        border-radius: 6px;
+        transition: background 0.2s;
+    }
+
+    .remove-certificate:hover {
+        background: #fecaca;
+    }
+
+    /* Add Certificate Form */
+    .add-certificate-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+    }
+
+    .add-certificate-container input {
+        flex: 1;
+        min-width: 180px;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #d1d5db;
+        font-size: 14px;
+        background: #f9fafb;
+        transition: border 0.2s ease;
+    }
+
+    .add-certificate-container input:focus {
+        border: 1px solid #535454;
+        outline: none;
+        background: #ffffff;
+    }
+
+    /* Add Button */
+    .add-certificate-btn {
+        background: linear-gradient(90deg, #2f2f2f, #464747);
+        color: white;
+        border: none;
+        padding: 10px 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background 0.3s ease;
+    }
+
+    .add-certificate-btn:hover {
+        background: linear-gradient(90deg, #adaeae, #5d5d5eb9);
+    }
+
+
+    /* Layout Fix */
+    .content {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .content-center {
+        display: block;
+        padding-left: 100px;
+    }
+
+    /* Courses Section */
+    .courses-section {
+        flex: 1;
+        background: linear-gradient(135deg, #ffffff, #f9fafb);
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        font-family: 'Poppins', sans-serif;
+        transition: all 0.3s ease-in-out;
+        margin-top: 20px;
+    }
+
+    .courses-section:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .courses-section h2 {
+        font-weight: 600;
+        font-size: 1.2em;
+        color: #1e293b;
+        margin-bottom: 15px;
+        border-left: 4px solid #232323;
+        padding-left: 10px;
+    }
+
+    /* Course list */
+    .courses-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 15px;
+    }
+
+    .course-item {
+        background: #ffffff;
+        padding: 14px;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .course-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+    }
+
+    .course-title {
+        font-size: 15px;
+        font-weight: 500;
+        color: #334155;
+        margin-bottom: 8px;
+    }
+
+    /* Progress bar container */
+    .progress-container {
+        background: #f1f5f9;
+        border-radius: 8px;
+        height: 10px;
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        height: 10px;
+        border-radius: 8px;
+        background: linear-gradient(90deg, #3e3e3e, #424243);
+        width: 0%;
+        transition: width 0.4s ease;
+    }
+
+    /* Add course form */
+    .add-course-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .add-course-container input {
+        flex: 1;
+        min-width: 160px;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #d1d5db;
+        font-size: 14px;
+        background: #f9fafb;
+        transition: border 0.2s ease, background 0.2s ease;
+    }
+
+    .add-course-container input:focus {
+        border: 1px solid #212222;
+        background: #ffffff;
+        outline: none;
+    }
+
+    /* Add button */
+    .add-course-btn {
+        background: linear-gradient(90deg, #222223, #525252);
+        color: rgb(250, 246, 246);
+        border: none;
+        padding: 10px 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background 0.3s ease;
+    }
+
+    .add-course-btn:hover {
+        background: linear-gradient(90deg, #adaeae, #5d5d5eb9);
+    }
+</style>
+
+<body>
+    <header>
+        <div class="navbar">
+            <h1><a href="./">
+                    <img width="80px" src="./assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
+                    <br>Creators-Space</a></h1>
+            <div class="nav-links align-items-center">
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="#">Services</a>
+                <a href="internship.html">Internship</a>
+                <a href="#">Campus Ambassador</a>
+                <a href="blog.html">Blog</a>
+                <a href="bookmarked.html">BookMarks</a>
+                <button id="logoutBtn" class="btn login">Logout</button>
+            </div>
+        </div>
+
+    </header>
+    <div class="content">
+        <aside class="sidebar">
+            <section class="profile-section font-poppins">
+                <div class="profile-card">
+                    <!-- Profile Picture -->
+                    <div class="profile-avatar-container">
+                        <img id="profile-avatar" class="profile-avatar"
+                            src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Profile Picture">
+                        <input type="file" id="upload" accept="image/*" style="display: none;">
+                        <button class="change-photo-btn" onclick="document.getElementById('upload').click()">Change
+                            Photo</button>
+                    </div>
+
+                    <!-- Name & Email -->
+                    <h1 id="displayName" class="profile-name">User</h1>
+                    <input type="text" id="displayNameInput" class="profile-input" style="display:none;" />
+                    <p id="userEmail" class="profile-email"></p>
+
+                    <!-- About Me -->
+                    <div class="detail-section">
+                        <h2 class="detail-title">About Me</h2>
+                        <p id="bioText" class="detail-content"></p>
+                        <textarea id="bioInput" class="profile-textarea" style="display:none;"></textarea>
+                    </div>
+
+                    <!-- Favorite Genres -->
+                    <div class="detail-section">
+                        <h2 class="detail-title">Favorite Genres</h2>
+                        <p id="genresText" class="detail-content"></p>
+                        <input id="genresInput" type="text" class="profile-input" style="display:none;" />
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="profile-actions">
+                        <button id="editBtn" class="action-button edit-button">Edit Profile</button>
+                        <button id="saveBtn" class="action-button save-button" style="display:none;">Save
+                            Changes</button>
+                    </div>
+                </div>
+            </section>
+        </aside>
+
+        <div class="content-center">
+            <div style="margin-bottom: 40px;  margin-top: 30px;">
+                <center>
+
+                    <h1 id="displayName" class="profile-name"> User Profile</h1>
+                    <p>welcome! User</p>
+                </center>
+            </div>
+
+
+            <!-- Skills Section -->
+            <div class="detail-section">
+                <h2 class="detail-title">Skills</h2>
+                <div id="skillsList" class="skills-list"></div>
+                <div class="add-skill-container">
+                    <input type="text" id="skillInput" class="profile-input" placeholder="Add a skill">
+                    <button id="addSkillBtn" class="add-skill-btn">Add</button>
+                </div>
+            </div>
+
+            <!-- Certificates Section -->
+            <section class="certificates-section">
+                <h2 class="detail-title">Certificates</h2>
+
+                <div id="certificatesList" class="certificates-list"></div>
+
+                <div class="add-certificate-container">
+                    <input type="text" id="certificateNameInput" placeholder="Certificate name">
+                    <input type="text" id="certificateIssuerInput" placeholder="Issued by">
+                    <button id="addCertificateBtn" class="add-certificate-btn">Add</button>
+                </div>
+            </section>
+
+            <!-- Courses Progress Section -->
+            <section class="courses-section">
+                <h2 class="detail-title">Courses Progress</h2>
+
+                <div id="coursesList" class="courses-list"></div>
+
+                <div class="add-course-container">
+                    <input type="text" id="courseNameInput" placeholder="Course name">
+                    <input type="number" id="courseProgressInput" placeholder="Progress %" min="0" max="100">
+                    <button id="addCourseBtn" class="add-course-btn">Add</button>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+
+
+
+
+    <footer class="footer">
+        <div class="social">
+            <h1><img width="80px" src="./assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
+                <br>Creators-Space
+            </h1>
+            <h3>Social Media</h3>
+            <div class="all-social-links">
+                <a target="_blank" href="https://linkedin.com/in/anuragvishwakarma">
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" id="linkedin">
+                        <path
+                            d="M55.35,44.17h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11ZM50.8,3.77A45.67,45.67,0,1,0,96.47,49.44,45.72,45.72,0,0,0,50.8,3.77ZM39.38,70a.77.77,0,0,1-.77.76h-8.8a.76.76,0,0,1-.76-.76V40.43a.76.76,0,0,1,.76-.77h8.8a.77.77,0,0,1,.77.77ZM33.9,35.71a5.53,5.53,0,1,1,5.53-5.53A5.52,5.52,0,0,1,33.9,35.71ZM76.62,70a.77.77,0,0,1-.77.76h-8.8a.76.76,0,0,1-.76-.76V54.11c0-4.18-1.49-7-5.23-7a5.65,5.65,0,0,0-5.3,3.78,7.12,7.12,0,0,0-.34,2.52V70a.77.77,0,0,1-.77.77h-8.8a.76.76,0,0,1-.76-.77c0-4.22.11-24.71,0-29.53a.76.76,0,0,1,.76-.77h8.78a.76.76,0,0,1,.77.77v3.63a10.26,10.26,0,0,1,9.31-5.13c6.79,0,11.89,4.44,11.89,14Zm-21.2-25.8v-.11l-.07.11Zm-.07,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Z">
+                        </path>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://www.instagram.com/">
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Instagram w/circle" viewBox="0 0 19.2 19.2"
+                        id="instagram">
+                        <path
+                            d="M13.498 6.651a1.656 1.656 0 0 0-.95-.949 2.766 2.766 0 0 0-.928-.172c-.527-.024-.685-.03-2.02-.03s-1.493.006-2.02.03a2.766 2.766 0 0 0-.929.172 1.656 1.656 0 0 0-.949.95 2.766 2.766 0 0 0-.172.928c-.024.527-.03.685-.03 2.02s.006 1.493.03 2.02a2.766 2.766 0 0 0 .172.929 1.656 1.656 0 0 0 .95.949 2.766 2.766 0 0 0 .928.172c.527.024.685.03 2.02.03s1.493-.006 2.02-.03a2.766 2.766 0 0 0 .929-.172 1.656 1.656 0 0 0 .949-.95 2.766 2.766 0 0 0 .172-.928c.024-.527.03-.685.03-2.02s-.006-1.493-.03-2.02a2.766 2.766 0 0 0-.172-.929zM9.6 12.168A2.568 2.568 0 1 1 12.168 9.6 2.568 2.568 0 0 1 9.6 12.168zm2.669-4.637a.6.6 0 1 1 .6-.6.6.6 0 0 1-.6.6z">
+                        </path>
+                        <circle cx="9.6" cy="9.6" r="1.667"></circle>
+                        <path
+                            d="M9.6 0a9.6 9.6 0 1 0 9.6 9.6A9.6 9.6 0 0 0 9.6 0zm4.97 11.662a3.67 3.67 0 0 1-.233 1.213 2.556 2.556 0 0 1-1.462 1.462 3.67 3.67 0 0 1-1.213.233c-.534.024-.704.03-2.062.03s-1.528-.006-2.062-.03a3.67 3.67 0 0 1-1.213-.233 2.556 2.556 0 0 1-1.462-1.462 3.67 3.67 0 0 1-.233-1.213c-.024-.534-.03-.704-.03-2.062s.006-1.528.03-2.062a3.67 3.67 0 0 1 .233-1.213 2.556 2.556 0 0 1 1.462-1.462 3.67 3.67 0 0 1 1.213-.233c.534-.024.704-.03 2.062-.03s1.528.006 2.062.03a3.67 3.67 0 0 1 1.213.233 2.556 2.556 0 0 1 1.462 1.462 3.67 3.67 0 0 1 .233 1.213c.024.534.03.704.03 2.062s-.006 1.528-.03 2.062z">
+                        </path>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://www.facebook.com/">
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" id="facebook">
+                        <path
+                            d="M50.8,3.57A45.75,45.75,0,1,0,96.54,49.32,45.8,45.8,0,0,0,50.8,3.57ZM63.49,30.71a.69.69,0,0,1-.69.69H57.3a2.45,2.45,0,0,0-2.45,2.44V39.6h7.83a.69.69,0,0,1,.68.75l-.68,8.12a.69.69,0,0,1-.69.63H54.85V76.05a.69.69,0,0,1-.69.69H44.31a.69.69,0,0,1-.69-.69V49.1H38.7a.69.69,0,0,1-.69-.69V40.29a.69.69,0,0,1,.69-.69h4.92V31.78A9.88,9.88,0,0,1,53.5,21.9h9.3a.69.69,0,0,1,.69.69Z">
+                        </path>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://x.com/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" fill="none" viewBox="0 0 512 512"
+                        id="twitter">
+                        <g clip-path="url(#clip0_84_15697)">
+                            <rect width="512" height="512" fill="#000" rx="60"></rect>
+                            <path fill="#fff"
+                                d="M355.904 100H408.832L293.2 232.16L429.232 412H322.72L239.296 302.928L143.84 412H90.8805L214.56 270.64L84.0645 100H193.28L268.688 199.696L355.904 100ZM337.328 380.32H366.656L177.344 130.016H145.872L337.328 380.32Z">
+                            </path>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_84_15697">
+                                <rect width="512" height="512" fill="#fff"></rect>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="contact">
+            <h3>Contact Us</h3>
+            <p><a href="mailto:21brac0401@polygwalior.ac.in">21brac0401@polygwalior.ac.in</a></p>
+            <p><a href="tel:+9188xxxxxx89">+91 88xxxxxx89</a></p>
+        </div>
+
+        <div class="form">
+            <h3>Get In Touch</h3>
+            <input type="text" placeholder="Your name">
+            <input type="email" placeholder="Your email">
+            <textarea type="text" placeholder="Your message"></textarea>
+            <button>Send</button>
+        </div>
+        <div class="copy">
+            <p>Copyright &copy; 2024 - 2025 Creators-Space. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+  
+    <script src="./src/js/auth.js"></script>
+
+
+    <script src="./src/js/profile.js"></script>
+</body>
+
+</html>

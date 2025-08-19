@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Creators-Space</title>
+  <link rel="stylesheet" href="./src/css/courses.css">
+  <link rel="stylesheet" href="./src/css/projects.css">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/utils.css">
+  <link rel="stylesheet" href="./src/css/responsive.css">
+</head>
+
+<body id="main-body" class="overflow-x-hidden">
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1><a href="./">
+        <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
+        <br>Creators-Space</a></h1>
+    <div class="nav-links align-items-center">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="courses.html">Courses</a>
+      <a href="services.html">Services</a>
+      <a href="internship.html">Internship</a>
+      <a href="campus-ambassador.html">Campus Ambassador</a>
+      <a href="blog.html">Blog</a>
+      <a href="bookmarked.html">BookMarks</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="./certificate/">Certificates</a>
+      <!-- Navbar -->
+      <div id="authSection">
+        <a href="./login.html" class="btn login">Log In</a>
+        <a href="./signup.html" class="btn signup">Sign Up</a>
+      </div>
+
+      <div id="userSection" style="display: none; align-items: center; gap: 10px;">
+        <button id="logoutBtn" class="btn login">Logout</button>
+        <a href="profile.html" title="Your Profile">
+          <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
+            style="border-radius: 50%;" />
+        </a>
+      </div>
+
+    </div>
+    <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
+      <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
+        <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
+          stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"
+          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"></polyline>
+        <polyline id="globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2"
+          stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"
+          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"></polyline>
+      </svg>
+
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navbar-x-logo" class="bi bi-x-lg d-none"
+        viewBox="0 0 16 16">
+        <path
+          d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+      </svg>
+
+
+    </div>
+  </div>
+
+
+  <!-- Dark Mode Toggle -->
+  <div class="toggle-switch">
+    <label class="switch-label">
+      <input type="checkbox" class="checkbox" id="dark-mode-toggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <!-- MAIN SECTION -->
+  <section class="main">
+    <h1>Open Source Projects</h1>
+    <p>Discover amazing projects and contribute to the open-source community.</p>
+  </section>
+
+  <!-- FILTER SECTION -->
+  <div class="filter-section">
+    <div class="filter-container">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search projects...">
+        <button id="searchBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="tech-stack-filters-container">
+        <div class="tech-stack-header">
+          <span>Tech Stack</span>
+          <button id="toggleTechFilters" class="toggle-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+          </button>
+        </div>
+        <div class="tech-stack-filters collapsed" id="techStackFilters">
+          <!-- Tech stack filters will be populated dynamically -->
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- PROJECTS CONTAINER -->
+  <div class="projects-container" id="projectsContainer">
+    <div class="loading-spinner" id="loadingSpinner">
+      <div class="spinner"></div>
+      <p>Loading projects...</p>
+    </div>
+  </div>
+  <div class="show-more-container">
+        <button id="showMoreBtn" class="show-more-btn">
+          <span>Show More</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6,9 12,15 18,9"></polyline>
+          </svg>
+        </button>
+      </div>
+
+  <!-- GITHUB API STATUS -->
+  <div class="api-status" id="apiStatus">
+    <div class="status-indicator">
+      <span class="status-dot"></span>
+      <span class="status-text">GitHub API: Connected</span>
+    </div>
+    <div class="last-updated">
+      Last updated: <span id="lastUpdated">Just now</span>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" title="Back to Top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18,15 12,9 6,15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="social">
+      <h1><img width="80px" src="./assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
+        <br>Creators-Space
+      </h1>
+      <h3>Social Media</h3>
+      <div class="all-social-links">
+        <a target="_blank" href="https://linkedin.com/in/anuragvishwakarma">
+          <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" id="linkedin">
+            <path
+              d="M55.35,44.17h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11ZM50.8,3.77A45.67,45.67,0,1,0,96.47,49.44,45.72,45.72,0,0,0,50.8,3.77ZM39.38,70a.77.77,0,0,1-.77.76h-8.8a.76.76,0,0,1-.76-.76V40.43a.76.76,0,0,1,.76-.77h8.8a.77.77,0,0,1,.77.77ZM33.9,35.71a5.53,5.53,0,1,1,5.53-5.53A5.52,5.52,0,0,1,33.9,35.71ZM76.62,70a.77.77,0,0,1-.77.76h-8.8a.76.76,0,0,1-.76-.76V54.11c0-4.18-1.49-7-5.23-7a5.65,5.65,0,0,0-5.3,3.78,7.12,7.12,0,0,0-.34,2.52V70a.77.77,0,0,1-.77.77h-8.8a.76.76,0,0,1-.76-.77c0-4.22.11-24.71,0-29.53a.76.76,0,0,1,.76-.77h8.78a.76.76,0,0,1,.77.77v3.63a10.26,10.26,0,0,1,9.31-5.13c6.79,0,11.89,4.44,11.89,14Zm-21.2-25.8v-.11l-.07.11Zm-.07,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Z">
+            </path>
+          </svg>
+        </a>
+        <a target="_blank" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" data-name="Instagram w/circle" viewBox="0 0 19.2 19.2" id="instagram">
+            <path
+              d="M13.498 6.651a1.656 1.656 0 0 0-.95-.949 2.766 2.766 0 0 0-.928-.172c-.527-.024-.685-.03-2.02-.03s-1.493.006-2.02.03a2.766 2.766 0 0 0-.929.172 1.656 1.656 0 0 0-.949.95 2.766 2.766 0 0 0-.172.928c-.024.527-.03.685-.03 2.02s.006 1.493.03 2.02a2.766 2.766 0 0 0 .172.929 1.656 1.656 0 0 0 .95.949 2.766 2.766 0 0 0 .928.172c.527.024.685.03 2.02.03s1.493-.006 2.02-.03a2.766 2.766 0 0 0 .929-.172 1.656 1.656 0 0 0 .949-.95 2.766 2.766 0 0 0 .172-.928c.024-.527.03-.685.03-2.02s-.006-1.493-.03-2.02a2.766 2.766 0 0 0-.172-.929zM9.6 12.168A2.568 2.568 0 1 1 12.168 9.6 2.568 2.568 0 0 1 9.6 12.168zm2.669-4.637a.6.6 0 1 1 .6-.6.6.6 0 0 1-.6.6z">
+            </path>
+            <circle cx="9.6" cy="9.6" r="1.667"></circle>
+            <path
+              d="M9.6 0a9.6 9.6 0 1 0 9.6 9.6A9.6 9.6 0 0 0 9.6 0zm4.97 11.662a3.67 3.67 0 0 1-.233 1.213 2.556 2.556 0 0 1-1.462 1.462 3.67 3.67 0 0 1-1.213.233c-.534.024-.704.03-2.062.03s-1.528-.006-2.062-.03a3.67 3.67 0 0 1-1.213-.233 2.556 2.556 0 0 1-1.462-1.462 3.67 3.67 0 0 1-.233-1.213c-.024-.534-.03-.704-.03-2.062s.006-1.528.03-2.062a3.67 3.67 0 0 1 .233-1.213 2.556 2.556 0 0 1 1.462-1.462 3.67 3.67 0 0 1 1.213-.233c.534-.024.704-.03 2.062-.03s1.528.006 2.062.03a3.67 3.67 0 0 1 1.213.233 2.556 2.556 0 0 1 1.462 1.462 3.67 3.67 0 0 1 .233 1.213c.024.534.03.704.03 2.062s-.006 1.528-.03 2.062z">
+            </path>
+          </svg>
+        </a>
+        <a target="_blank" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" id="facebook">
+            <path
+              d="M50.8,3.57A45.75,45.75,0,1,0,96.54,49.32,45.8,45.8,0,0,0,50.8,3.57ZM63.49,30.71a.69.69,0,0,1-.69.69H57.3a2.45,2.45,0,0,0-2.45,2.44V39.6h7.83a.69.69,0,0,1,.68.75l-.68,8.12a.69.69,0,0,1-.69.63H54.85V76.05a.69.69,0,0,1-.69.69H44.31a.69.69,0,0,1-.69-.69V49.1H38.7a.69.69,0,0,1-.69-.69V40.29a.69.69,0,0,1,.69-.69h4.92V31.78A9.88,9.88,0,0,1,53.5,21.9h9.3a.69.69,0,0,1,.69.69Z">
+            </path>
+          </svg>
+        </a>
+        <a target="_blank" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" fill="none" viewBox="0 0 512 512"
+            id="twitter">
+            <g clip-path="url(#clip0_84_15697)">
+              <rect width="512" height="512" fill="#000" rx="60"></rect>
+              <path fill="#fff"
+                d="M355.904 100H408.832L293.2 232.16L429.232 412H322.72L239.296 302.928L143.84 412H90.8805L214.56 270.64L84.0645 100H193.28L268.688 199.696L355.904 100ZM337.328 380.32H366.656L177.344 130.016H145.872L337.328 380.32Z">
+              </path>
+            </g>
+            <defs>
+              <clipPath id="clip0_84_15697">
+                <rect width="512" height="512" fill="#fff"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="contact">
+      <h3>Contact Us</h3>
+      <p><a href="mailto:21brac0401@polygwalior.ac.in">21brac0401@polygwalior.ac.in</a></p>
+      <p><a href="tel:+9188xxxxxx89">+91 88xxxxxx89</a></p>
+    </div>
+
+    <div class="form">
+      <h3>Get In Touch</h3>
+      <input type="text" placeholder="Your name">
+      <input type="email" placeholder="Your email">
+      <textarea type="text" placeholder="Your message"></textarea>
+      <button>Send</button>
+    </div>
+  </footer>
+
+  <script src="./src/js/navbar.js"></script>
+  <script src="./src/js/projects.js"></script>
+</body>
+
+</html> 

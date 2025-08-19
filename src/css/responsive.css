@@ -187,9 +187,20 @@
     #testimonial-card-1{
       display: none;
     }
-  }
-  @media screen and (max-width: 1090px){
-    #testimonial-card-3{
-      display: none;
+    #getCertificate {
+        max-width: 300px;
+        min-width: 280px;
     }
+    div#certificate-template-part {
+        overflow-x: scroll;
+    }
+    div#captureArea {
+        transform: translateX(250px);
+    }
+}
+
+@media screen and (max-width: 1090px){
+  #testimonial-card-3{
+    display: none;
   }
+}

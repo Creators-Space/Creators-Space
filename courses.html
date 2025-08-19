@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./src/css/utils.css" />
     <link rel="stylesheet" href="./src/css/courses.css" />
     <link rel="stylesheet" href="./src/css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <script>
       function toggleDarkMode() {
@@ -37,58 +38,70 @@
   <body id="main-body" class="overflow-x-hidden">
     <!-- Navbar -->
     <div class="navbar">
+      <h1><a href="./">
+        <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
+          <br>Creators-Space</a>
+      </h1>
+    <div class="nav-links align-items-center">
+      <a href="index.html">Home</a>
 
-        <h1><a href="./">
-          <img width="80px" src="./assets/images/logo-nav.png" alt="logo Anurag Vishwakarma's Creators-Space">
-              <br>Creators-Space</a></h1>
-        <div class="nav-links align-items-center">
-            <a href="index.html">Home</a>
-            <a href="courses.html">Courses</a>
-            <a href="#">Services</a>
-            <a href="internship.html">Internship</a>
-            <a href="#">Campus Ambassador</a>
-            <a href="blog.html">Blog</a>
-            <a href="bookmarked.html">BookMarks</a>
-            <a href="./login.html" class="btn login">Log In</a>
-          <a href="./signup.html" class="btn signup">Sign Up</a>
-
+      <!-- dropDown 1 - About → About Us, Campus Ambassador-->
+      <li class="nav-item">
+        <a href="#" class="dropdown-toggle">About <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="about.html">About Us</a>
+          <a href="campus-ambassador.html">Campus Ambassador</a>
+        </div>
+      </li> 
+      <!--dropDown 2 - Programs → Courses, Internship, Services -->
+      <li class="nav-item">
+        <a href="#" class="dropdown-toggle">Programs <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="courses.html">Courses</a>
+          <a href="internship.html">Internship</a>
+          <a href="services.html" class="active">Services</a>
+        </div>
+      </li>
+       <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
+       <li class="nav-item">
+        <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="blog.html">Blog</a>
+          <a href="bookmarked.html">BookMarks</a>
+          <a href="./certificate/">Certificates</a>
+        </div>
+       </li> 
+       <a href="projects.html">Projects</a> 
+   <!-- Navbar -->
+      <div id="authSection">
+        <a href="./login.html" class="btn login">Log In</a>
+        <a href="./signup.html" class="btn signup">Sign Up</a>
       </div>
-      <div
-        class="nav-toggle align-items-center justify-content-center"
-        onclick="toggleNav()"
-      >
-        <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
-          <polyline
-            id="globalnav-menutrigger-bread-bottom"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            points="2 12, 16 12"
-            class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"
-          ></polyline>
-          <polyline
-            id="globalnav-menutrigger-bread-top"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            points="2 5, 16 5"
-            class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"
-          ></polyline>
-        </svg>
 
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          id="navbar-x-logo"
-          class="bi bi-x-lg d-none"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+      <div id="userSection" style="display: none; align-items: center; gap: 10px;">
+        <button id="logoutBtn" class="btn login">Logout</button>
+        <a href="profile.html" title="Your Profile">
+          <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
+            style="border-radius: 50%;" />
+        </a>
+      </div>
+
+    </div>
+    <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
+      <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
+        <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
+          stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"
+          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"></polyline>
+        <polyline id="globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2"
+          stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"
+          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"></polyline>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navbar-x-logo" class="bi bi-x-lg d-none"
+        viewBox="0 0 16 16">
+        <path
+          d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+      </svg>
+    </div>
           />
         </svg>
       </div>
@@ -109,6 +122,17 @@
         to transform your career in the digital age.
       </p>
     </div>
+
+    
+    <!-- 🔍 Search Bar -->
+<div class="search-bar-container">
+  <input
+    type="text"
+    id="courseSearch"
+    placeholder="Search for a course (e.g. Python, UI/UX)..."
+    onkeyup="filterCourses()"
+  />
+</div>
 
     <!-- Enhanced Courses Section -->
     <section class="courses-container">
@@ -353,8 +377,9 @@
       </div>
       <div class="contact">
         <h3>Contact Us</h3>
-        <p>21brac0401@polygwalior.ac.in</p>
-        <p>+91 88xxxxxx89</p>
+        <p><a href="mailto:21brac0401@polygwalior.ac.in"><i class="fa-solid fa-envelope" id="envelope-icon"></i>21brac0401@polygwalior.ac.in</a></p>
+        <br>
+        <p><a href="tel:+9188xxxxxx89"><i class="fa-solid fa-phone" id="call-icon"></i>+91 88xxxxxx89</a></p>
       </div>
       <div class="form">
         <h3>Get In Touch</h3>
@@ -369,6 +394,60 @@
     </footer>
 
     <script src="./src/js/navbar.js"></script>
-    <script src="./src/js/courses.js"></script>
+    <script src="./src/js/coursebm.js"></script>
+    <script src="./src/js/utils.js"></script>
+   <script>
+  function toggleDarkMode() {
+    const element = document.getElementById("main-body");
+    const navbarLogo = document.getElementById("navbar-logo");
+
+    element.classList.toggle("dark");
+
+    // Change logo based on theme
+    if (element.classList.contains("dark")) {
+      navbarLogo.src = "./assets/images/logo-nav-dark.png";
+      localStorage.setItem("theme", "dark");
+    } else {
+      navbarLogo.src = "./assets/images/logo-nav-light.png";
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  // Apply saved theme & logo on page load
+  document.addEventListener("DOMContentLoaded", function () {
+    const savedTheme = localStorage.getItem("theme");
+    const element = document.getElementById("main-body");
+    const navbarLogo = document.getElementById("navbar-logo");
+    const toggleCheckbox = document.querySelector(".toggle-switch input");
+
+    if (savedTheme === "dark") {
+      element.classList.add("dark");
+      navbarLogo.src = "./assets/images/logo-nav-dark.png";
+      toggleCheckbox.checked = true;
+    } else {
+      element.classList.remove("dark");
+      navbarLogo.src = "./assets/images/logo-nav-light.png";
+      toggleCheckbox.checked = false;
+    }
+  });
+  function filterCourses() {
+  const input = document.getElementById("courseSearch").value.toLowerCase();
+  const cards = document.querySelectorAll(".courses-container .card");
+
+  cards.forEach((card) => {
+    const title = card.querySelector("h3").innerText.toLowerCase();
+    const desc = card.querySelector("p").innerText.toLowerCase();
+    if (title.includes(input) || desc.includes(input)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+</script>
+<script src="./src/js/auth.js"></script>
+
+
   </body>
 </html>

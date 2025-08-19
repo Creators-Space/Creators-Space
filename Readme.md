@@ -48,16 +48,17 @@ We welcome and encourage contributions from participants and the entire open-sou
 ## 📌 About
 
 Creators-Space provides an innovative and user-friendly environment for individuals looking to enhance their skills in technology and digital design. 
-<!-- The platform includes features like:
 
-- Home
-- Courses
-- Services
-- Internship & Campus Ambassador Opportunities
-- Blog
-- Authentication (Login / Sign Up)
-- Contact & Social Links
--->
+The platform includes features like:
+
+- **Home** - Landing page with hero section and course overview
+- **Courses** - Comprehensive learning paths and tutorials
+- **Services** - Career guidance, mentorship, and professional development
+- **Projects** - Open source projects and GitHub repositories categorized by tech stack
+- **Internship & Campus Ambassador Opportunities** - Real-world experience and leadership roles
+- **Blog** - Latest tech insights and tutorials
+- **Authentication** - Secure login and signup system
+- **Contact & Social Links** - Community engagement and support
 ---
 ## To run locally
 Clone the repository:
@@ -69,12 +70,63 @@ cd Creators-Space
 # Open in browser
 Open index.html in your preferred web browser
 ```
+## 🔑 Firebase Configuration
 
+Update your Firebase SDK configuration in the file:
+
+```bash
+src/js/firebase.js
+```
+
+To enable Google Sign-In and other Firebase services, update your Firebase SDK configuration inside the project:
+
+```bash
+// Firebase Config
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",  
+  authDomain: "YOUR_AUTH_DOMAIN",  
+  projectId: "YOUR_PROJECT_ID",  
+  storageBucket: "YOUR_STORAGE_BUCKET",  
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",  
+  appId: "YOUR_APP_ID",  
+  measurementId: "YOUR_MEASUREMENT_ID"  
+};
+```
+
+<!--
 ## 👨‍💻 Developer
 
 **Anurag Vishwakarma**  
 🔗 [LinkedIn Profile](https://www.linkedin.com/in/anuragvishwakarma/)
+-->
 
+ # Project Admin⚡
+ 
+<table>
+<tr>
+<td align="center"><a href="https://github.com/vishanurag"><img src="https://avatars.githubusercontent.com/u/126074487?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Anurag Vishwakarma</h4>
+ <a href="https://www.linkedin.com/in/anuragvishwakarma/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
+</td>
+</tr>
+</table>
+
+ # Project Mentors⚡🧑‍💻
+ 
+<table>
+<tr>
+<td align="center"><a href="https://github.com/anshiagrawal22"><img src="https://avatars.githubusercontent.com/u/147601739?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Anshi Agrawal</h4>
+ <a href="https://www.linkedin.com/in/anshiagrawal22/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
+</td>
+<td></td>
+<td align="center"><a href="https://github.com/Rahma5983"><img src="https://avatars.githubusercontent.com/u/218832021?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Rahma Naqui</h4>
+ <a href="https://www.linkedin.com/in/rahma-naqui/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
+</td>
+<td></td>
+<td align="center"><a href="https://github.com/Shivangi10-10"><img src="https://avatars.githubusercontent.com/u/107495159?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Shivangi Suyash</h4>
+ <a href="https://www.linkedin.com/in/shivangi-suyash-05a484259/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
+</td>
+</tr>
+</table>
 
 ---
 

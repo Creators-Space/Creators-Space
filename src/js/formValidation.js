@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("signup-form");
   const error = document.getElementById("error-message");
   const success = document.getElementById("success-message");
+  const terms = document.getElementById("terms");
 
   form.addEventListener("submit", function (e) {
     e.preventDefault(); // Stop the form from submitting
@@ -32,6 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (password !== confirmPassword) {
       error.textContent = "Passwords do not match.";
+      success.textContent = "";
+      return;
+    }
+    
+    if (!terms.checked) {
+      error.textContent = "Please accept the Terms and Conditions.";
       success.textContent = "";
       return;
     }

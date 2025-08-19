@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Anurag Vishwakarma Creators-Space">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creators-Space</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <meta name="description" content="Creators-Space - Welcome to the future of tech learning...">
+    <meta name="keywords" content="Creators-Space, coding, gwalior, technology">
+    <link rel="stylesheet" href="../src/css/utils.css">
+    <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" href="../src/css/certificates.css">
+    <link rel="stylesheet" href="../src/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+</head>
+
+<body id="main-body" class="overflow-x-hidden">
+     <div class="navbar">
+        <h1><a href="../">
+          <img id="navbar-logo" width="80px" src="../assets/images/logo-nav-light.png" alt="logo Creators-Space">
+
+              <br>Creators-Space</a></h1>
+        <div class="nav-links align-items-center">
+            <a href="../index.html">Home</a>
+
+      <!-- dropDown 1 - About → About Us, Campus Ambassador-->
+      <li class="nav-item">
+        <a href="#" class="dropdown-toggle">About <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="../about.html">About Us</a>
+          <a href="../campus-ambassador.html">Campus Ambassador</a>
+        </div>
+      </li> 
+      <!--dropDown 2 - Programs → Courses, Internship, Services -->
+      <li class="nav-item">
+        <a href="#" class="dropdown-toggle">Programs <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="../courses.html">Courses</a>
+          <a href="../internship.html">Internship</a>
+          <a href="../services.html" class="active">Services</a>
+        </div>
+      </li>
+       <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
+       <li class="nav-item">
+        <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="../blog.html">Blog</a>
+          <a href="../bookmarked.html">BookMarks</a>
+          <a href="../certificate/">Certificates</a>
+        </div>
+       </li>  
+            <a href="../login.html" class="btn login">Log In</a>
+          <a href="../signup.html" class="btn signup">Sign Up</a>
+      </div>
+        <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
+            <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
+                <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
+                    stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"
+                    class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"></polyline>
+                <polyline id="globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2"
+                    stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"
+                    class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"></polyline>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navbar-x-logo" class="bi bi-x-lg d-none"
+                viewBox="0 0 16 16">
+                <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+            </svg>
+
+
+        </div>
+    </div>
+
+  <!-- <div class="toggle-switch">
+    <label class="switch-label">
+      <input onclick="toggleDarkMode()" type="checkbox" class="checkbox">
+      <span class="slider"></span>
+    </label>
+  </div>   -->
+  <!-- Not needed here as of now -->
+
+    <div class="margin-top-5 d-flex justify-content-center align-items-center">
+      <form action="" id="getCertificate" class="rounded d-flex justify-content-center align-items-center flex-col">
+        <h1 id="certificate-form-heading">Generate/Verify Certificate</h1><br><br>
+        <input class="form-control rounded" type="text" name="github_username" required placeholder="GitHub Username*" title="Github Username" id="github-id-input">
+        <select class="form-control rounded" name="program" id="program-input" placeholder="Program" title="Program">
+          <option value="" selected >Select (Optional)</option>
+          <option value="GSSoC25">GSSoC'25</option>
+        </select>
+        <select class="form-control rounded" name="role" id="role-input" placeholder="Role" title="Role" required>
+          <option value="" selected >Select*</option>
+          <option value="C">Contributor</option>
+          <!-- <option value="A">Project Admin</option>
+          <option value="M">Maintainer</option> -->
+        </select>
+        <input type="text" name="creation_date" value="" id="creation-date-input" class="d-none">
+<br>
+        <button id="submit-btn" type="submit" class="rounded">Submit</button>
+      </form>
+    </div>
+
+    <div class="d-none  " id="loading-animation">
+
+      
+      <img  class="loading-animation d-flex justify-content-center" src="../assets/aminations/loading.webp" alt="Loading Animation">
+      <span class=" d-flex loading-animation justify-content-center">Loading Hold on...</span>
+    </div>
+
+    <div class="d-none  " id="failure-dialog-box">
+
+      
+      <!-- <img  class=" d-flex " src="./assets/animations/loading.webp" alt="Loading Animation"> -->
+      <span class=" d-flex loading-animation justify-content-center">Failed to verify the Certification<br>Make sure you provided correct details.</span>
+    </div>
+
+    <div id="certificate-template-part" class="d-flex justify-content-center align-items-center d-none flex-col">
+        <div class="certificate-box margin-top-mv-3 bg-certificate-template" id="captureArea">
+        <div class="certificate-content position-absolute ff-times-new-roman">
+            This is to certify that,
+            <br>
+<i><b id="real-name">-</b></i> <br>
+has worked as a <b>Contributor</b> on our official <b>open-source project</b> repository (<b>Creators Space’s Website</b>) <span id="content_program"></span> & his/her <b> <span id="pr-count">-</span> Pull Requests</b> were successfully merged by our maintainers.
+<br>
+<br>
+We appreciate his/her contributions to the open-source world.
+        </div>
+        <img src="data:image/png;base64,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" alt="certificate-verification-url" id="certificate-verification-url" class="certificate-verification-url position-absolute">
+        <p id="creation-date" class="certificate-generation-date position-absolute ff-times-new-roman fs-small">
+            DD/MM/YYYY
+        </p>
+        <p class="certificate-id position-absolute ff-times-new-roman fs-small">
+            CS/<span id="program"></span><span id="role">C/</span><span id="username"></span>
+        </p>
+    </div>
+    <br>
+    <button class="download-certificate rounded" onclick="downloadPDF()">Download as PDF</button>
+    </div>
+
+    
+  
+  <!-- testimonial End -->
+  <div class="margin-top-5"></div>
+
+
+    <footer class="footer">
+        <div class="social">
+            <h1><img width="80px" src="../assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
+              <br>Creators-Space</h1>
+            <h3>Social Media</h3>
+            <div class="all-social-links">
+                <a target="_blank" href="https://linkedin.com/in/anuragvishwakarma">
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" id="linkedin"><path d="M55.35,44.17h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11ZM50.8,3.77A45.67,45.67,0,1,0,96.47,49.44,45.72,45.72,0,0,0,50.8,3.77ZM39.38,70a.77.77,0,0,1-.77.76h-8.8a.76.76,0,0,1-.76-.76V40.43a.76.76,0,0,1,.76-.77h8.8a.77.77,0,0,1,.77.77ZM33.9,35.71a5.53,5.53,0,1,1,5.53-5.53A5.52,5.52,0,0,1,33.9,35.71ZM76.62,70a.77.77,0,0,1-.77.76h-8.8a.76.76,0,0,1-.76-.76V54.11c0-4.18-1.49-7-5.23-7a5.65,5.65,0,0,0-5.3,3.78,7.12,7.12,0,0,0-.34,2.52V70a.77.77,0,0,1-.77.77h-8.8a.76.76,0,0,1-.76-.77c0-4.22.11-24.71,0-29.53a.76.76,0,0,1,.76-.77h8.78a.76.76,0,0,1,.77.77v3.63a10.26,10.26,0,0,1,9.31-5.13c6.79,0,11.89,4.44,11.89,14Zm-21.2-25.8v-.11l-.07.11Zm-.07,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Z"></path></svg>
+                </a>
+                <a target="_blank" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Instagram w/circle" viewBox="0 0 19.2 19.2" id="instagram"><path d="M13.498 6.651a1.656 1.656 0 0 0-.95-.949 2.766 2.766 0 0 0-.928-.172c-.527-.024-.685-.03-2.02-.03s-1.493.006-2.02.03a2.766 2.766 0 0 0-.929.172 1.656 1.656 0 0 0-.949.95 2.766 2.766 0 0 0-.172.928c-.024.527-.03.685-.03 2.02s.006 1.493.03 2.02a2.766 2.766 0 0 0 .172.929 1.656 1.656 0 0 0 .95.949 2.766 2.766 0 0 0 .928.172c.527.024.685.03 2.02.03s1.493-.006 2.02-.03a2.766 2.766 0 0 0 .929-.172 1.656 1.656 0 0 0 .949-.95 2.766 2.766 0 0 0 .172-.928c.024-.527.03-.685.03-2.02s-.006-1.493-.03-2.02a2.766 2.766 0 0 0-.172-.929zM9.6 12.168A2.568 2.568 0 1 1 12.168 9.6 2.568 2.568 0 0 1 9.6 12.168zm2.669-4.637a.6.6 0 1 1 .6-.6.6.6 0 0 1-.6.6z"></path><circle cx="9.6" cy="9.6" r="1.667"></circle><path d="M9.6 0a9.6 9.6 0 1 0 9.6 9.6A9.6 9.6 0 0 0 9.6 0zm4.97 11.662a3.67 3.67 0 0 1-.233 1.213 2.556 2.556 0 0 1-1.462 1.462 3.67 3.67 0 0 1-1.213.233c-.534.024-.704.03-2.062.03s-1.528-.006-2.062-.03a3.67 3.67 0 0 1-1.213-.233 2.556 2.556 0 0 1-1.462-1.462 3.67 3.67 0 0 1-.233-1.213c-.024-.534-.03-.704-.03-2.062s.006-1.528.03-2.062a3.67 3.67 0 0 1 .233-1.213 2.556 2.556 0 0 1 1.462-1.462 3.67 3.67 0 0 1 1.213-.233c.534-.024.704-.03 2.062-.03s1.528.006 2.062.03a3.67 3.67 0 0 1 1.213.233 2.556 2.556 0 0 1 1.462 1.462 3.67 3.67 0 0 1 .233 1.213c.024.534.03.704.03 2.062s-.006 1.528-.03 2.062z"></path></svg>
+                </a>
+                <a target="_blank" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" id="facebook"><path d="M50.8,3.57A45.75,45.75,0,1,0,96.54,49.32,45.8,45.8,0,0,0,50.8,3.57ZM63.49,30.71a.69.69,0,0,1-.69.69H57.3a2.45,2.45,0,0,0-2.45,2.44V39.6h7.83a.69.69,0,0,1,.68.75l-.68,8.12a.69.69,0,0,1-.69.63H54.85V76.05a.69.69,0,0,1-.69.69H44.31a.69.69,0,0,1-.69-.69V49.1H38.7a.69.69,0,0,1-.69-.69V40.29a.69.69,0,0,1,.69-.69h4.92V31.78A9.88,9.88,0,0,1,53.5,21.9h9.3a.69.69,0,0,1,.69.69Z"></path></svg>
+                </a>
+                <a target="_blank" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" fill="none" viewBox="0 0 512 512" id="twitter"><g clip-path="url(#clip0_84_15697)"><rect width="512" height="512" fill="#000" rx="60"></rect><path fill="#fff" d="M355.904 100H408.832L293.2 232.16L429.232 412H322.72L239.296 302.928L143.84 412H90.8805L214.56 270.64L84.0645 100H193.28L268.688 199.696L355.904 100ZM337.328 380.32H366.656L177.344 130.016H145.872L337.328 380.32Z"></path></g><defs><clipPath id="clip0_84_15697"><rect width="512" height="512" fill="#fff"></rect></clipPath></defs></svg>
+                </a>
+            </div>
+        </div>
+        <div class="contact">
+            <h3>Contact Us</h3>
+            <p>21brac0401@polygwalior.ac.in</p>
+            <p>+91 88xxxxxx89</p>
+        </div>
+        <div class="form">
+            <h3>Get In Touch</h3>
+            <input type="text" placeholder="Your name">
+            <input type="email" placeholder="Your email">
+            <textarea type="text" placeholder="Your message"></textarea>
+            <button>Send</button>
+        </div>
+        <div class="copy">
+            <p>Copyright &copy; 2024 - 2025 Creators-Space. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+    <script src="../src/js/navbar.js"></script>    
+    <!-- <script src="../src/js/utils.js"></script> -->
+     <!-- Removed dark mode intentionally... -->
+
+
+      <script>
+    const owner = "Creators-Space";
+    const repo = "Creators-Space";
+    const perPage = 50;
+
+    function getQueryParams() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        github_username: params.get('github_username'),
+        creation_date: params.get('creation_date'),
+        role: params.get('role'),
+        program: params.get('program')
+      };
+    }
+
+    function getTodayDateFormatted() {
+      const today = new Date();
+      const dd = String(today.getDate()).padStart(2, '0');
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const yyyy = today.getFullYear();
+      return `${dd}/${mm}/${yyyy}`;
+    }
+
+    function isValidDDMMYYYY(dateStr) {
+      const regex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
+      if (!regex.test(dateStr)) return false;
+      const [_, dd, mm, yyyy] = dateStr.match(regex);
+      const date = new Date(`${yyyy}-${mm}-${dd}`);
+      return (
+        date.getDate() === parseInt(dd) &&
+        date.getMonth() === parseInt(mm) - 1 &&
+        date.getFullYear() === parseInt(yyyy)
+      );
+    }
+
+    async function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    
+    async function fetchGitHubName(username) {
+      // fetching the actual name of the github profile...
+      const url = `https://api.github.com/users/${username}`;
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("User not found");
+        const data = await response.json();
+        document.getElementById('real-name').textContent = ((data.name).toLowerCase()
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ')) || username;
+      } catch (error) {
+        console.error("Error fetching GitHub name:", error);
+        document.getElementById('real-name').textContent = "Not available";
+      }
+    }
+
+    async function fetchMergedPRCount(username) {
+      // fetching the total PR merged count from github repo...
+      let mergedCount = 0;
+      let page = 1;
+      let hasMore = true;
+
+      while (hasMore) {
+        const searchURL = `https://api.github.com/search/issues?q=repo:${owner}/${repo}+is:pr+author:${username}&per_page=${perPage}&page=${page}`;
+        const searchRes = await fetch(searchURL);
+        if (!searchRes.ok) {
+          document.getElementById('pr-count').textContent = "Failed to load";
+          return;
+        }
+
+        const searchData = await searchRes.json();
+        const items = searchData.items || [];
+
+        if (items.length === 0) {
+          hasMore = false;
+          break;
+        }
+
+        for (let pr of items) {
+          const prNumber = pr.number;
+          const prDetailsURL = `https://api.github.com/repos/${owner}/${repo}/pulls/${prNumber}`;
+          const prDetailsRes = await fetch(prDetailsURL);
+
+          if (prDetailsRes.ok) {
+            const prData = await prDetailsRes.json();
+            if (prData.merged_at) mergedCount++;
+          }
+
+          await delay(300); // optional delay
+        }
+
+        page++;
+        if (page > 10) break; // safety limit
+      }
+      
+      if(mergedCount <= 0) {
+        document.getElementById('loading-animation').classList.toggle('d-none');
+        document.getElementById('failure-dialog-box').classList.toggle('d-none');
+        return;
+      }
+      document.getElementById('pr-count').textContent = mergedCount;
+
+      document.getElementById('loading-animation').classList.toggle('d-none');
+      document.getElementById('certificate-template-part').classList.toggle('d-none');
+    }
+
+    function getGoogleQRURL(url_str) {
+    const encoded_url = encodeURIComponent(url_str);
+    return `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encoded_url}`;
+  }
+
+    const inputDateForm = document.getElementById('creation-date-input');
+    inputDateForm.value = getTodayDateFormatted();
+    console.log(inputDateForm.value)
+
+    // Main Execution
+    const { github_username, creation_date, role, program } = getQueryParams();
+
+
+    if (github_username) {
+      document.title = github_username;
+      document.getElementById('getCertificate').classList.toggle('d-none');
+      document.getElementById('loading-animation').classList.toggle('d-none');
+      document.getElementById('username').textContent = github_username;
+      document.getElementById('program').textContent = program?`${program}/`:'';
+      document.getElementById('role').textContent = role?`${role}/`:'C/';
+      document.getElementById('content_program').innerHTML = program?`during <b>${program} </b> period`:'';
+      fetchGitHubName(github_username); // ✅ Fetch real name
+      fetchMergedPRCount(github_username); // ✅ Fetch merged PR count
+    } else {
+        document.title = 'No Username';
+        document.getElementById('username').textContent = 'Not provided';
+        document.getElementById('real-name').textContent = '-';
+        document.getElementById('pr-count').textContent = '-';
+    }
+    
+    let dateToShow = creation_date && isValidDDMMYYYY(creation_date.trim())
+    ? creation_date.trim()
+    : getTodayDateFormatted();
+    document.getElementById('creation-date').textContent = dateToShow;
+
+
+    
+    // ADDON CODE FOR TESTING....
+
+  let qr_code_str = getGoogleQRURL(`https://creators-space.netlify.app/certificate/?github_username=${github_username}&creation_date=${creation_date}&role=${role}&program=${program}`);
+  let qr_img = document.getElementById('certificate-verification-url');
+  qr_img.src = qr_code_str;
+    </script>
+   
+
+    <script>
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+    // alert("Right-click is disabled on this page.");
+});
+
+// Block F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+document.addEventListener('keydown', function (e) {
+    if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
+        (e.ctrlKey && e.key === "U")
+    ) {
+        e.preventDefault();
+    }
+});
+
+// Detect DevTools open (basic)
+setInterval(function () {
+    if (window.outerWidth - window.innerWidth > 200 || window.outerHeight - window.innerHeight > 200) {
+        // alert("Developer Tools detected!");
+        // Optionally redirect:
+        // window.location.href = "about:blank";
+    }
+}, 1000);
+
+</script>
+
+<!-- html2canvas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+    <script>
+async function downloadPDF() {
+    const { jsPDF } = window.jspdf;
+
+    // Create PDF in landscape
+    const pdf = new jsPDF('landscape', 'mm', 'a4');
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
+
+    // 1️⃣ Add high-res background image directly
+    const backgroundUrl = '../assets/images/Certificate/Creators-Sapce-Certificate Template.png'; // Local or CORS-enabled URL
+    pdf.addImage(backgroundUrl, 'JPEG', 0, 0, pageWidth, pageHeight);
+
+    // 2️⃣ Capture only the overlay content (transparent background)
+    const element = document.getElementById('captureArea');
+    element.classList.toggle('bg-certificate-template')
+    const canvas = await html2canvas(element, {
+        scale: 3,
+      backgroundColor: null, // keep transparent
+      backgroundImage: null, // keep transparent
+      useCORS: true
+    });
+    
+    const imgData = canvas.toDataURL('image/png', 1.0);
+    element.classList.toggle('bg-certificate-template')
+    
+    // 3️⃣ Overlay the captured content on the background
+    pdf.addImage(imgData, 'PNG', 0, 0, pageWidth, pageHeight);
+    
+    pdf.save(`Creators-Space-Certificate_${document.getElementById('username').innerText}.pdf`);
+}
+</script>
+
+<script>
+  // drop-down menu
+document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    e.stopPropagation(); // prevent auto close immediately
+    this.parentElement.classList.toggle("show");
+
+    // Close other dropdowns
+    document.querySelectorAll(".nav-item").forEach((drop) => {
+      if (drop !== this.parentElement) {
+        drop.classList.remove("show");
+      }
+    });
+  });
+});
+
+// Close dropdown if clicked outside
+window.addEventListener("click", function (e) {
+  if (!e.target.closest(".nav-item")) {
+    document.querySelectorAll(".nav-item").forEach((drop) => {
+      drop.classList.remove("show");
+    });
+  }
+});
+</script>
+
+</body>
+</html>
+
+<!-- http://127.0.0.1:5500/test-certificate.html?github_username=vishanurag&program=GSSoC25&role=A&creation_date=11%2F08%2F2024 -->

@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/utils.css">
+  <link rel="stylesheet" href="./src/css/responsive.css">
   <title>Sign Up</title>
   <style>
     * {
       box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
     }
+
     body {
-      background:  white;
-      display: flex;
+      background: white;
+      /*       display: flex; */
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 20px;
+      /*       padding: 20px; */
     }
+
     .container {
       background: white;
       padding: 2rem;
       border-radius: 12px;
-     width: 100%;
+      width: 100%;
       max-width: 400px;
-      box-shadow: 0 8px 150px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 150px rgba(0, 0, 0, 0.15);
       border: 1px solid #ccc;
       font-weight: 500;
     }
+
     h2 {
       text-align: center;
       margin-bottom: 1rem;
     }
+
     .form-group {
       margin-bottom: 1rem;
       position: relative;
     }
+
     label {
       display: block;
       margin-bottom: 5px;
     }
+
     input[type="email"],
     input[type="password"],
     input[type="text"] {
@@ -48,6 +58,7 @@
       border: 1px solid #ccc;
       border-radius: 6px;
     }
+
     .toggle-password {
       position: absolute;
       right: 10px;
@@ -55,11 +66,13 @@
       cursor: pointer;
       color: #555;
     }
+
     .inline-feedback {
       font-size: 0.85rem;
       color: red;
       margin-top: 5px;
     }
+
     .btn {
       width: 100%;
       padding: 10px;
@@ -70,9 +83,11 @@
       font-weight: bold;
       cursor: pointer;
     }
+
     .btn:disabled {
       background-color: #999;
     }
+
     .spinner {
       display: none;
       width: 24px;
@@ -84,9 +99,13 @@
       animation: spin 1s linear infinite;
       margin-top: 1rem;
     }
+
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
+
     .login-page {
       display: block;
       text-align: center;
@@ -95,11 +114,13 @@
       color: black;
       text-decoration: none;
     }
+
     .social-buttons {
       display: flex;
       gap: 10px;
       margin-top: 1rem;
     }
+
     .social-btn {
       flex: 1;
       padding: 8px;
@@ -111,11 +132,50 @@
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
+  <div class="navbar">
+    <h1><a href="./">
+        <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
+        <br>Creators-Space</a></h1>
+    <div class="nav-links align-items-center">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="courses.html">Courses</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="internship.html">Internship</a>
+      <a href="campus-ambassador.html">Campus Ambassador</a>
+      <a href="blog.html">Blog</a>
+      <a href="bookmarked.html">BookMarks</a>
+      <a href="./login.html" class="btn login">Log In</a>
+      <a href="./signup.html" class="btn signup">Sign Up</a>
+    </div>
+    <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
+      <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
+        <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
+          stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"
+          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"></polyline>
+        <polyline id="globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2"
+          stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"
+          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"></polyline>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navbar-x-logo" class="bi bi-x-lg d-none"
+        viewBox="0 0 16 16">
+        <path
+          d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+      </svg>
+    </div>
+  </div>
+  <br><br>
+  <div class="container margin-top-5">
+    <a href="index.html"
+      style="display: inline-block; margin-bottom: 10px; font-size: 14px; color: #555; text-decoration: none;">
+      ← Back to Homepage
+    </a>
     <h2>Sign Up</h2>
     <form id="signup-form">
-        <div class="form-group">
+      <div class="form-group">
         <label>Name</label>
         <input type="text" id="name" required />
         <div id="name" class="name"></div>
@@ -139,6 +199,12 @@
         <span class="toggle-password" onclick="togglePassword('confirm-password')">👁️</span>
         <div id="matchFeedback" class="inline-feedback"></div>
       </div>
+      <div class="form-group">
+        <input type="checkbox" id="terms" required style="width:auto; margin-right:8px;" />
+        <label for="terms" style="display:inline;">
+          I agree to the <a href="tandc.html" target="_blank">Terms and Conditions</a>
+        </label>
+      </div>
 
       <button type="submit" class="btn">Sign Up</button>
       <div class="spinner" id="spinner"></div>
@@ -147,61 +213,84 @@
         <p>Already have an account? <a href="login.html">Login</a></p>
       </div>
 
-  <script>
-    function togglePassword(id) {
-      const input = document.getElementById(id);
-      input.type = input.type === "password" ? "text" : "password";
-    }
+      <script>
+        function togglePassword(id) {
+          const input = document.getElementById(id);
+          input.type = input.type === "password" ? "text" : "password";
+        }
 
-    const form = document.getElementById("signup-form");
-    const password = document.getElementById("password");
-    const confirmPassword = document.getElementById("confirm-password");
-    const email = document.getElementById("email");
-    const matchFeedback = document.getElementById("matchFeedback");
-    const emailFeedback = document.getElementById("emailFeedback");
-    const spinner = document.getElementById("spinner");
+        const form = document.getElementById("signup-form");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirm-password");
+        const email = document.getElementById("email");
+        const matchFeedback = document.getElementById("matchFeedback");
+        const emailFeedback = document.getElementById("emailFeedback");
+        const spinner = document.getElementById("spinner");
 
-    confirmPassword.addEventListener("input", () => {
-      matchFeedback.textContent = confirmPassword.value !== password.value
-        ? "Passwords do not match"
-        : "";
-    });
+        confirmPassword.addEventListener("input", () => {
+          matchFeedback.textContent = confirmPassword.value !== password.value
+            ? "Passwords do not match"
+            : "";
+        });
 
-    email.addEventListener("input", () => {
-     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-     emailFeedback.textContent = regex.test(email.value)
-        ? ""
-        : "Enter a valid email address";
-    });
+        email.addEventListener("input", () => {
+          const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          emailFeedback.textContent = regex.test(email.value)
+            ? ""
+            : "Enter a valid email address";
+        });
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
 
-      if (password.value.length < 6) {
-        alert("Password must be at least 6 characters.");
-        return;
-      }
+          if (password.value.length < 6) {
+            alert("Password must be at least 6 characters.");
+            return;
+          }
 
-      if (password.value !== confirmPassword.value) {
-        alert("Passwords do not match.");
-        return;
-      }
-     localStorage.setItem("email", email.value);
-     localStorage.setItem("password", password.value);
-  
+          if (password.value !== confirmPassword.value) {
+            alert("Passwords do not match.");
+            return;
+          }
 
-      spinner.style.display = "block";
+          // Save credentials for login
+          localStorage.setItem("email", email.value);
+          localStorage.setItem("password", password.value);
 
-      setTimeout(() => {
-        spinner.style.display = "none";
-        alert("Account created successfully!");
-        form.reset();
-      }, 1500);
-   
+          // Create user profile object
+          const newUser = {
+            name: document.getElementById("name").value,
+            email: email.value,
+            skills: [],
+            courses: [],
+            certificates: [],
+            profileImage: ""
+          };
+
+          localStorage.setItem("loggedInUser", JSON.stringify(newUser));
+
+          spinner.style.display = "block";
+
+          setTimeout(() => {
+            spinner.style.display = "none";
+            alert("Account created successfully!");
+            form.reset();
+
+            // Redirect to login page AFTER signup success
+            window.location.href = "login.html";
+          }, 1500);
+        });
 
 
-    });
-  </script>
 
+
+
+
+
+
+      </script>
+      <script src="./src/js/navbar.js"></script>
+      <script src="./src/js/utils.js"></script>
 </body>
+
 </html>

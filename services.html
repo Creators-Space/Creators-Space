@@ -4,38 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bookmarked - Creators-Space</title>
-  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="./src/css/style.css" />
-  <link rel="stylesheet" href="./src/css/utils.css" /> 
-  <link rel="stylesheet" href="./src/css/responsive.css" />
-  <link rel="stylesheet" href="./src/css/courses.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<!-- <link rel = "stylesheet" href = "./src/css/bookmarked.css"/> -->
-
-<script>
-  function toggleDarkMode() {
-    const element = document.getElementById("main-body");
-    element.classList.toggle("dark");
-
-    if (element.classList.contains("dark")) {
-      localStorage.setItem("theme", "dark");
-    } else {
-      localStorage.setItem("theme", "light");
-    }
-  }
-
-  // Apply saved theme on page load
-  if (localStorage.getItem("theme") === "dark") {
-    document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById("main-body")?.classList.add("dark");
-    });
-  }
-</script>
+  <title>Services | Creators-Space</title>
+  <link rel="stylesheet" href="./src/css/courses.css">
+  <link rel="stylesheet" href="./src/css/services.css">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/utils.css">
+  <link rel="stylesheet" href="./src/css/internship.css">
+  <link rel="stylesheet" href="./src/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body id="main-body" class="overflow-x-hidden">
@@ -72,7 +48,8 @@
           <a href="bookmarked.html">BookMarks</a>
           <a href="./certificate/">Certificates</a>
         </div>
-       </li>  
+       </li> 
+      <a href="projects.html">Projects</a> 
       <!-- Navbar -->
       <div id="authSection">
         <a href="./login.html" class="btn login">Log In</a>
@@ -103,79 +80,38 @@
         <path
           d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
       </svg>
+
+
     </div>
   </div>
 
+
+  <!-- Dark Mode Toggle -->
   <div class="toggle-switch">
     <label class="switch-label">
-      <input onclick="toggleDarkMode()" type="checkbox" class="checkbox" />
+      <input type="checkbox" class="checkbox" id="dark-mode-toggle" />
       <span class="slider"></span>
     </label>
   </div>
 
-  <!-- Enhanced Main Section -->
-  <div class="main">
-    <h1>📌 Bookmarked Courses</h1>
+  <!-- MAIN SECTION -->
+  <section class="main">
+    <h1>Our Services</h1>
+    <p>Empowering your journey with comprehensive career and technical guidance.</p>
+  </section>
+
+
+
+  <!-- INTERNSHIP CARDS -->
+  <div class="services-container" id="services-list">
+    <p>Loading services...</p>
   </div>
 
-  <!--    <h1> Bookmarked Courses</h1>Enhanced Courses Section -->
-
-  <section class="courses-container" id="bookmarked-list">
-    <div class="card" onclick="toggleSyllabus(this)">
-      <div class="discount-badge">74% OFF</div>
-      <div class="card-content">
-        <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" alt="Web Development" />
-        <h3>Full Stack Web Development</h3>
-        <p class="price">₹12,999 <del>₹49,999</del></p>
-        <p>6 Months • Complete Bootcamp</p>
-      </div>
-      <div class="syllabus hidden">
-        <h4>What You'll Master:</h4>
-        <ul>
-          <li>HTML5, CSS3 & Modern JavaScript</li>
-          <li>React.js & Node.js Development</li>
-          <li>Database Design & Management</li>
-          <li>Cloud Deployment & DevOps</li>
-          <li>Real-world Project Portfolio</li>
-        </ul>
-      </div>
-      <div class="enroll hidden">
-        <button class="button">Enroll Now</button>
-      </div>
-
-    </div>
-
-    <div class="card" onclick="toggleSyllabus(this)">
-
-      <div class="discount-badge">77% OFF</div>
-      <div class="card-content">
-        <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="C Programming" />
-        <h3>C Programming Mastery</h3>
-        <p class="price">₹2,999 <del>₹12,999</del></p>
-        <p>3 Months • Foundation Course</p>
-      </div>
-      <div class="syllabus hidden">
-        <h4>What You'll Master:</h4>
-        <ul>
-          <li>C Language Fundamentals & Syntax</li>
-          <li>Advanced Functions & Control Flow</li>
-          <li>Pointers & Memory Management</li>
-          <li>Data Structures Implementation</li>
-          <li>System Programming Concepts</li>
-        </ul>
-      </div>
-      <div class="enroll hidden">
-        <button class="button">Enroll Now</button>
-      </div>
-
-    </div>
-  </section>
-  <!-- Enhanced Footer -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="social">
-      <h1>
-        <img width="80px" src="./assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space" />
-        <br />Creators-Space
+      <h1><img width="80px" src="./assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
+        <br>Creators-Space
       </h1>
       <h3>Social Media</h3>
       <div class="all-social-links">
@@ -223,16 +159,17 @@
       </div>
     </div>
     <div class="contact">
-      <h3>Contact Us</h3>
-      <p><a href="mailto:21brac0401@polygwalior.ac.in"><i class="fa-solid fa-envelope"
-            id="envelope-icon"></i>21brac0401@polygwalior.ac.in</a></p>
-            <br>
-     <p><a href="tel:+9188xxxxxx89"><i class="fa-solid fa-phone" id="call-icon"></i>+91 88xxxxxx89</a></p>
-    </div>
+            <h3>Contact Us</h3>
+            <p><a href="mailto:21brac0401@polygwalior.ac.in"><i class="fa-solid fa-envelope"
+                        id="envelope-icon"></i>21brac0401@polygwalior.ac.in</a></p>
+                        <br>
+            <p><a href="tel:+9188xxxxxx89"><i class="fa-solid fa-phone" id="call-icon"></i>+91 88xxxxxx89</a></p>
+        </div>
+
     <div class="form">
       <h3>Get In Touch</h3>
-      <input type="text" placeholder="Your name" />
-      <input type="email" placeholder="Your email" />
+      <input type="text" placeholder="Your name">
+      <input type="email" placeholder="Your email">
       <textarea type="text" placeholder="Your message"></textarea>
       <button>Send</button>
     </div>
@@ -242,9 +179,62 @@
   </footer>
 
   <script src="./src/js/navbar.js"></script>
-  <script src="./src/js/coursebm.js"></script>
-  <script src="./src/js/auth.js"></script>
   <script src="./src/js/utils.js"></script>
+
+  <!-- Dark Mode JS -->
+  <script>
+    async function loadServices() {
+      const container = document.getElementById("services-list");
+      try {
+        const res = await fetch("./src/data/services.json");
+        if (!res.ok) throw new Error("Failed to fetch");
+
+        const services = await res.json();
+        container.innerHTML = "";
+
+        services.forEach((service) => {
+          const featuresHTML = service.features
+            .map(feature => `<li>${feature}</li>`)
+            .join("");
+
+          const card = document.createElement("div");
+          card.className = "service-card";
+          card.innerHTML = `
+        <div class="service-content">
+          <img src="${service.icon}" alt="${service.title}" class="service-icon" />
+          <h3>${service.title}</h3>
+          <p>${service.description}</p>
+          <button class="button toggle-btn">Learn More</button>
+          <div class="service-features">
+            <h4>What's Included:</h4>
+            <ul>${featuresHTML}</ul>
+          </div>
+          <div class="cta-section">
+            <a href="${service.ctaLink}" class="button primary-btn">${service.ctaText}</a>
+          </div>
+        </div>
+      `;
+          container.appendChild(card);
+        });
+
+        // Add toggle functionality
+        document.querySelectorAll(".toggle-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const card = btn.closest(".service-card");
+            card.classList.toggle("expanded");
+            btn.textContent = card.classList.contains("expanded") ? "Show Less" : "Learn More";
+          });
+        });
+      } catch (err) {
+        container.innerHTML = "<p style='color:red;text-align:center;font-size:20px;'>Couldn't load services.</p>";
+        console.error("Error loading services:", err);
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", loadServices);
+  </script>
+  <script src="./src/js/auth.js"></script>
+
 
 </body>
 
