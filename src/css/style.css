@@ -126,12 +126,14 @@ body {
   height: 80vh;
   background-color: white;
   margin-top: 20px;
+  /* border: 2px s; */
 }
 
 .main h1 {
   font-size: 48px;
   text-align: center;
   margin-bottom: 20px;
+  /* text-decoration: underline; */
 }
 
 .main .images {
