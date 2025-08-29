@@ -114,57 +114,80 @@ body {
   padding: 0 10px;
   /* font-size: 0.9rem; */
 }
-
 /* dropdown styles */
-.nav-item{
+.nav-item {
   list-style: none;
   position: relative;
 }
-.dropdown{
+
+.dropdown {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0; 
-  background-color: #444;
-  min-width: 180px;
-  border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* shadow */
+  left: 0;
+  min-width: 200px;
+  margin-top: 8px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  transform: translateY(-10px) scale(0.95);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
   z-index: 1000;
-  overflow: hidden; 
-  margin-top: 5px;
+
+  /* 🔥 make items stack */
+  display: flex;
+  flex-direction: column;
 }
-.arrow{
-  font-size: 14px;   /* force equal size */
-  width: 14px;       /* fix width */
-  height: 14px;      /* fix height */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
+
+.dropdown a {
+  display: block; /* make sure each link takes full width */
+  width: 100%;
+  padding: 12px 18px;
+  color: #222;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
-.dropdown a{
-  display: block;              /* ensures full width */
-  width: 100%;   
-  border-bottom: 1px solid rgba(255,255,255,0.2); /* divider line */
-  color: #fff !important;
-  margin: 0; 
+
+
+.dropdown a:hover {
+  background: rgba(0, 119, 255, 0.1); /* subtle blue tint */
+  color: #0077ff;
+  padding-left: 22px; /* small slide effect */
 }
-.dropdown a:last-child {
-  border-bottom: none; /* remove last line */
-}
-.dropdown a:hover{
-  background-color: #555;  
-} 
- /* Show dropdown when active */
-.nav-item.show .dropdown{
+
+/* Show dropdown when active */
+.nav-item.show .dropdown {
   display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
 }
+
 .nav-item.show .arrow {
-    transform: rotate(180deg); /* flip arrow */
+  transform: rotate(180deg);
 }
-#authSection{
-  margin-left: 3rem;
+
+/* Dark mode dropdown */
+body.dark .dropdown {
+  background: rgba(24, 24, 24, 0.8);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
 }
+
+body.dark .dropdown a {
+  color: #eee;
+}
+
+body.dark .dropdown a:hover {
+  background: rgba(0, 119, 255, 0.15);
+  color: #4a90e2;
+}
+
 /* #navbar-x-logo {} */
 /* } */
 
