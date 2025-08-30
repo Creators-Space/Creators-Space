@@ -119,6 +119,11 @@ body {
   list-style: none;
   position: relative;
 }
+ul {
+  list-style: none;   /* removes dots */
+  margin: 0;          /* removes default spacing */
+  padding: 0;         /* removes default spacing */
+}
 
 .dropdown {
   display: none;
@@ -129,7 +134,7 @@ body {
   margin-top: 8px;
   border-radius: 12px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgb(255, 255, 255);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.2);
