@@ -23,52 +23,43 @@
 
         <br>Creators-Space</a>
     </h1>
-    <div class="nav-links align-items-center">
-      
-      <a href="index.html">Home</a>
+  <ul class="nav-links align-items-center">
+  <li><a href="index.html">Home</a></li>
 
-      <!-- dropDown 1 - About → About Us, Campus Ambassador-->
-      <li class="nav-item">
-        <a href="#" class="dropdown-toggle">About <i class="fa-solid fa-chevron-down arrow"></i></a>
-        <div class="dropdown">
-          <a href="about.html">About Us</a>
-          <a href="campus-ambassador.html">Campus Ambassador</a>
-        </div>
-      </li> 
-      <!--dropDown 2 - Programs → Courses, Internship, Services -->
-      <li class="nav-item">
-        <a href="#" class="dropdown-toggle">Programs <i class="fa-solid fa-chevron-down arrow"></i></a>
-        <div class="dropdown">
-          <a href="courses.html">Courses</a>
-          <a href="internship.html">Internship</a>
-          <a href="services.html" class="active">Services</a>
-          <a href="freelancing.html">Freelance</a>
-        </div>
-      </li>
-       <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
-       <li class="nav-item">
-        <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-chevron-down arrow"></i></a>
-        <div class="dropdown">
-          <a href="blog.html">Blog</a>
-          <a href="bookmarked.html">BookMarks</a>
-          <a href="./certificate/">Certificates</a>
-        </div>
-       </li> 
-      <a href="projects.html">Projects</a> 
-      <!-- Navbar -->
-      <div id="authSection">
-        <a href="./login.html" class="btn login">Log In</a>
-        <a href="./signup.html" class="btn signup">Sign Up</a>
-      </div>
+  <!-- About -->
+  <li class="nav-item dropdown-parent">
+    <a href="#" class="dropdown-toggle">About <i class="fa-solid fa-chevron-down arrow"></i></a>
+    <ul class="dropdown">
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="campus-ambassador.html">Campus Ambassador</a></li>
+    </ul>
+  </li>
 
-      <div id="userSection" style="display: none; align-items: center; gap: 10px;">
-        <button id="logoutBtn" class="btn login">Logout</button>
-        <a href="profile.html" title="Your Profile">
-          <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
-            style="border-radius: 50%;" />
-        </a>
-      </div>
-    </div>
+  <!-- Programs -->
+  <li class="nav-item dropdown-parent">
+    <a href="#" class="dropdown-toggle">Programs <i class="fa-solid fa-chevron-down arrow"></i></a>
+    <ul class="dropdown">
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="internship.html">Internship</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="freelancing.html">Freelance</a></li>
+    </ul>
+  </li>
+
+  <!-- Resources -->
+  <li class="nav-item dropdown-parent">
+    <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-chevron-down arrow"></i></a>
+    <ul class="dropdown">
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="bookmarked.html">Bookmarks</a></li>
+      <li><a href="./certificate/">Certificates</a></li>
+    </ul>
+  </li>
+
+  <li><a href="projects.html">Projects</a></li>
+</ul>
+
+
     <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
       <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
         <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
