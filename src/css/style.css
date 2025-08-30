@@ -114,57 +114,80 @@ body {
   padding: 0 10px;
   /* font-size: 0.9rem; */
 }
+/* ========== Dropdown Styles ========== */
 
-/* dropdown styles */
-.nav-item{
+/* Parent */
+.nav-item {
   list-style: none;
   position: relative;
 }
-.dropdown{
+
+/* Dropdown container */
+.dropdown {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0; 
-  background-color: #444;
-  min-width: 180px;
+  top: 100%;   /* directly below parent */
+  left: 0;
+  background-color: #ffffff; /* white background */
+  min-width: 200px;
   border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* shadow */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  flex-direction: column; /* stack like list */
   z-index: 1000;
-  overflow: hidden; 
-  margin-top: 5px;
 }
-.arrow{
-  font-size: 14px;   /* force equal size */
-  width: 14px;       /* fix width */
-  height: 14px;      /* fix height */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+
+/* Dropdown items */
+.dropdown a {
+  display: block;
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.2s ease, padding-left 0.2s ease;
+}
+
+/* Hover effect */
+.dropdown a:hover {
+  background-color: #c880de72; /* light gray highlight */
+  padding-left: 20px;        /* slight indent */
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown,
+.nav-item.show .dropdown {
+  display: flex;
+}
+
+/* Arrow rotation when active */
+.nav-item.show .arrow {
+  transform: rotate(180deg);
+}
+
+/* Arrow */
+.arrow {
+  font-size: 14px;
+  margin-left: 6px;
   transition: transform 0.3s ease;
 }
-.dropdown a{
-  display: block;              /* ensures full width */
-  width: 100%;   
-  border-bottom: 1px solid rgba(255,255,255,0.2); /* divider line */
-  color: #fff !important;
-  margin: 0; 
+
+/* ========== Mobile view ========== */
+@media (max-width: 768px) {
+  .dropdown {
+    position: static;
+    min-width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    display: none;
+  }
+
+  .nav-item.show .dropdown {
+    display: flex;
+  }
+
+  .dropdown a {
+    border-bottom: 1px solid #eee;
+  }
 }
-.dropdown a:last-child {
-  border-bottom: none; /* remove last line */
-}
-.dropdown a:hover{
-  background-color: #555;  
-} 
- /* Show dropdown when active */
-.nav-item.show .dropdown{
-  display: block;
-}
-.nav-item.show .arrow {
-    transform: rotate(180deg); /* flip arrow */
-}
-#authSection{
-  margin-left: 3rem;
-}
+
 /* #navbar-x-logo {} */
 /* } */
 
