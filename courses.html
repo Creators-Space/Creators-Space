@@ -56,55 +56,54 @@
         >
       </h1>
       <div class="nav-links align-items-center">
-        <a href="index.html">Home</a>
+        <a href="index.html" data-translate="navbar.home">Home</a>
 
         <!-- dropDown 1 - About → About Us, Campus Ambassador-->
         <li class="nav-item">
           <a href="#" class="dropdown-toggle"
-            >About <i class="fa-solid fa-chevron-down arrow"></i
+            ><span data-translate="navbar.about">About</span> <i class="fa-solid fa-chevron-down arrow"></i
           ></a>
           <div class="dropdown">
-            <a href="about.html">About Us</a>
-            <a href="campus-ambassador.html">Campus Ambassador</a>
+            <a href="about.html" data-translate="navbar.aboutUs">About Us</a>
+            <a href="campus-ambassador.html" data-translate="navbar.campusAmbassador">Campus Ambassador</a>
           </div>
         </li>
         <!--dropDown 2 - Programs → Courses, Internship, Services -->
         <li class="nav-item">
           <a href="#" class="dropdown-toggle"
-            >Programs <i class="fa-solid fa-chevron-down arrow"></i
+            ><span data-translate="navbar.programs">Programs</span> <i class="fa-solid fa-chevron-down arrow"></i
           ></a>
           <div class="dropdown">
-            <a href="courses.html">Courses</a>
-            <a href="internship.html">Internship</a>
-            <a href="services.html">Services</a>
+            <a href="courses.html" data-translate="navbar.courses">Courses</a>
+            <a href="internship.html" data-translate="navbar.internship">Internship</a>
+            <a href="services.html" class="active" data-translate="navbar.services">Services</a>
+            <a href="freelancing.html" data-translate="navbar.freelance">Freelance</a>
           </div>
         </li>
         <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
         <li class="nav-item">
           <a href="#" class="dropdown-toggle"
-            >Resources <i class="fa-solid fa-chevron-down arrow"></i
+            ><span data-translate="navbar.resources">Resources</span> <i class="fa-solid fa-chevron-down arrow"></i
           ></a>
           <div class="dropdown">
-            <a href="blog.html">Blog</a>
-            <a href="bookmarked.html">BookMarks</a>
-            <a href="./certificate/">Certificates</a>
-            <a href="projects.html">Projects</a>
-            <a href="roadmap.html">Roadmap</a>
+            <a href="blog.html" data-translate="navbar.blog">Blog</a>
+            <a href="bookmarked.html" data-translate="navbar.bookmarks">BookMarks</a>
+            <a href="./certificate/" data-translate="navbar.certificates">Certificates</a>
           </div>
         </li>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
+        <a href="projects.html" data-translate="navbar.projects">Projects</a>
+        <a href="contact.html" data-translate="navbar.contact">Contact</a>
         <!-- Navbar -->
         <div id="authSection">
-          <a href="./login.html" class="btn login">Log In</a>
-          <a href="./signup.html" class="btn signup">Sign Up</a>
+          <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
+          <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
         </div>
 
         <div
           id="userSection"
           style="display: none; align-items: center; gap: 10px"
         >
-          <button id="logoutBtn" class="btn login">Logout</button>
+          <button id="logoutBtn" class="btn login" data-translate="navbar.logout">Logout</button>
           <a href="profile.html" title="Your Profile">
             <img
               id="profileImg"
@@ -165,8 +164,8 @@
 
     <!-- Enhanced Main Section -->
     <div class="main">
-      <h1>Explore Our Courses</h1>
-      <p>
+      <h1 data-translate="courses.title">Explore Our Courses</h1>
+      <p data-translate="courses.subtitle">
         Upskill with industry-leading programs, crafted by experts and designed
         to transform your career in the digital age.
       </p>
@@ -191,9 +190,9 @@
             src="https://cdn-icons-png.flaticon.com/512/919/919827.png"
             alt="Web Development"
           />
-          <h3>Full Stack Web Development</h3>
+          <h3 data-translate="courses.webDev.title">Full Stack Web Development</h3>
           <p class="price">₹12,999 <del>₹49,999</del></p>
-          <p>6 Months • Complete Bootcamp</p>
+          <p><span data-translate="courses.webDev.duration">6 Months</span> • Complete Bootcamp</p>
         </div>
         <!-- Hover Button -->
         <div class="tooltip-container">
@@ -510,6 +509,7 @@
         </svg>
       </button>
 
+    <script src="./src/js/language.js"></script>
     <script src="./src/js/navbar.js"></script>
     <script src="./src/js/coursebm.js"></script>
     <script src="./src/js/utils.js"></script>

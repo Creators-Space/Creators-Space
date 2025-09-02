@@ -133,17 +133,21 @@ body {
   border-radius: 6px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   flex-direction: column; /* stack like list */
-  z-index: 1000;
+  z-index: auto;
+  line-height: 1.2;
+  gap : 2px;
+  margin : 0px;
 }
 
 /* Dropdown items */
 .dropdown a {
   display: block;
-  padding: 12px 16px;
+  padding: 0px 16px;
   color: #333;
   border: none !important;
   text-decoration: none;
   transition: all .2s ease;
+  margin : 0px;
 }
 
 /* Hover effect */
@@ -989,4 +993,126 @@ body.dark .why-card{
 
 body.dark .why-card p {
   color: rgb(231, 224, 224);
+}
+
+/* ========== Language Selector Styles ========== */
+#language-selector {
+  position: relative;
+}
+
+.language-toggle {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px !important;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.language-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.language-toggle .flag {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.language-toggle .lang-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.language-dropdown {
+  min-width: 180px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.language-option {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px !important;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.2s ease;
+}
+
+.language-option:last-child {
+  border-bottom: none;
+}
+
+.language-option:hover {
+  background-color: #f8f9fa;
+  padding-left: 20px !important;
+}
+
+.language-option.active {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+.language-option.active:hover {
+  background-color: #e3f2fd;
+}
+
+.language-option .flag {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.language-option .lang-name {
+  font-size: 14px;
+}
+
+/* Dark mode styles for language selector */
+body.dark .language-toggle {
+  color: white;
+}
+
+body.dark .language-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark .language-dropdown {
+  background-color: #2c2c2c;
+  border: 1px solid #444;
+}
+
+body.dark .language-option {
+  color: white;
+  border-bottom-color: #444;
+}
+
+body.dark .language-option:hover {
+  background-color: #3c3c3c;
+}
+
+body.dark .language-option.active {
+  background-color: #1976d2;
+  color: white;
+}
+
+body.dark .language-option.active:hover {
+  background-color: #1976d2;
+}
+
+/* Mobile responsive for language selector */
+@media (max-width: 768px) {
+  .language-dropdown {
+    position: static;
+    min-width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    max-height: none;
+  }
+
+  .language-option {
+    border-bottom: 1px solid #eee;
+  }
+
+  body.dark .language-option {
+    border-bottom-color: #444;
+  }
 }

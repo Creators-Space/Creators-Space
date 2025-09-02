@@ -21,46 +21,45 @@
         <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
         <br>Creators-Space</a></h1>
     <div class="nav-links align-items-center">
-      <a href="index.html">Home</a>
+      <a href="index.html" data-translate="navbar.home">Home</a>
 
       <!-- dropDown 1 - About → About Us, Campus Ambassador-->
       <li class="nav-item">
-        <a href="#" class="dropdown-toggle">About <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <a href="#" class="dropdown-toggle"><span data-translate="navbar.about">About</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
         <div class="dropdown">
-          <a href="about.html">About Us</a>
-          <a href="campus-ambassador.html">Campus Ambassador</a>
+          <a href="about.html" data-translate="navbar.aboutUs">About Us</a>
+          <a href="campus-ambassador.html" data-translate="navbar.campusAmbassador">Campus Ambassador</a>
         </div>
       </li> 
       <!--dropDown 2 - Programs → Courses, Internship, Services -->
       <li class="nav-item">
-        <a href="#" class="dropdown-toggle">Programs <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <a href="#" class="dropdown-toggle"><span data-translate="navbar.programs">Programs</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
         <div class="dropdown">
-          <a href="courses.html">Courses</a>
-          <a href="internship.html">Internship</a>
-          <a href="services.html" class="active">Services</a>
+          <a href="courses.html" data-translate="navbar.courses">Courses</a>
+          <a href="internship.html" data-translate="navbar.internship">Internship</a>
+          <a href="services.html" class="active" data-translate="navbar.services">Services</a>
+          <a href="freelancing.html" data-translate="navbar.freelance">Freelance</a>
         </div>
       </li>
        <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
        <li class="nav-item">
-        <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <a href="#" class="dropdown-toggle"><span data-translate="navbar.resources">Resources</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
         <div class="dropdown">
-          <a href="blog.html">Blog</a>
-          <a href="bookmarked.html">BookMarks</a>
-          <a href="./certificate/">Certificates</a>
-          <a href="projects.html">Projects</a>
-          <a href="roadmap.html">Roadmap</a>
+          <a href="blog.html" data-translate="navbar.blog">Blog</a>
+          <a href="bookmarked.html" data-translate="navbar.bookmarks">BookMarks</a>
+          <a href="./certificate/" data-translate="navbar.certificates">Certificates</a>
         </div>
        </li> 
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+      <a href="projects.html" data-translate="navbar.projects">Projects</a>
+      <a href="contact.html" data-translate="navbar.contact">Contact</a>
       <!-- Navbar -->
       <div id="authSection">
-        <a href="./login.html" class="btn login">Log In</a>
-        <a href="./signup.html" class="btn signup">Sign Up</a>
+        <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
+        <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
       </div>
 
       <div id="userSection" style="display: none; align-items: center; gap: 10px;">
-        <button id="logoutBtn" class="btn login">Logout</button>
+        <button id="logoutBtn" class="btn login" data-translate="navbar.logout">Logout</button>
         <a href="profile.html" title="Your Profile">
           <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
             style="border-radius: 50%;" />
@@ -99,8 +98,8 @@
 
   <!-- MAIN SECTION -->
   <section class="main">
-    <h1>Our Services</h1>
-    <p>Empowering your journey with comprehensive career and technical guidance.</p>
+    <h1 data-translate="services.title">Our Services</h1>
+    <p data-translate="services.subtitle">Empowering your journey with comprehensive career and technical guidance.</p>
   </section>
 
 
@@ -181,6 +180,7 @@
     </div>
   </footer>
 
+ add-scroll-to-top
   <button id="scrollTopBtn" title="Back to Top">
         <!-- added svg of arrow up -->
         <svg data-name="1-Arrow Up" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 32 32">
@@ -190,6 +190,7 @@
 
 
   <script src="./src/js/scrollToTop.js"></script>
+  <script src="./src/js/language.js"></script>
   <script src="./src/js/navbar.js"></script>
   <script src="./src/js/utils.js"></script>
 

@@ -25,48 +25,45 @@
     </h1>
     <div class="nav-links align-items-center">
       
-      <a href="index.html">Home</a>
+      <a href="index.html" data-translate="navbar.home">Home</a>
 
       <!-- dropDown 1 - About → About Us, Campus Ambassador-->
       <li class="nav-item">
-        <a href="#" class="dropdown-toggle">About <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <a href="#" class="dropdown-toggle"><span data-translate="navbar.about">About</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
         <div class="dropdown">
-          <a href="about.html">About Us</a>
-          <a href="campus-ambassador.html">Campus Ambassador</a>
+          <a href="about.html" data-translate="navbar.aboutUs">About Us</a>
+          <a href="campus-ambassador.html" data-translate="navbar.campusAmbassador">Campus Ambassador</a>
         </div>
       </li> 
       <!--dropDown 2 - Programs → Courses, Internship, Services -->
       <li class="nav-item">
-        <a href="#" class="dropdown-toggle">Programs <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <a href="#" class="dropdown-toggle"><span data-translate="navbar.programs">Programs</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
         <div class="dropdown">
-          <a href="courses.html">Courses</a>
-          <a href="internship.html">Internship</a>
-          <a href="services.html" >Services</a>
-          <a href="freelancing.html">Freelance</a>
+          <a href="courses.html" data-translate="navbar.courses">Courses</a>
+          <a href="internship.html" data-translate="navbar.internship">Internship</a>
+          <a href="services.html" class="active" data-translate="navbar.services">Services</a>
+          <a href="freelancing.html" data-translate="navbar.freelance">Freelance</a>
         </div>
       </li>
        <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
        <li class="nav-item">
-        <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <a href="#" class="dropdown-toggle"><span data-translate="navbar.resources">Resources</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
         <div class="dropdown">
-          <a href="blog.html">Blog</a>
-          <a href="bookmarked.html">BookMarks</a>
-          <a href="./certificate/">Certificates</a>
-          <a href="projects.html">Projects</a> 
-          <a href="roadmap.html">Roadmap</a>
+          <a href="blog.html" data-translate="navbar.blog">Blog</a>
+          <a href="bookmarked.html" data-translate="navbar.bookmarks">BookMarks</a>
+          <a href="./certificate/" data-translate="navbar.certificates">Certificates</a>
         </div>
        </li> 
-      
-  
-      <a href="contact.html">Contact</a>
+      <a href="projects.html" data-translate="navbar.projects">Projects</a>
+      <a href="contact.html" data-translate="navbar.contact">Contact</a>
       <!-- Navbar -->
       <div id="authSection">
-        <a href="./login.html" class="btn login">Log In</a>
-        <a href="./signup.html" class="btn signup">Sign Up</a>
+        <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
+        <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
       </div>
 
       <div id="userSection" style="display: none; align-items: center; gap: 10px;">
-        <button id="logoutBtn" class="btn login">Logout</button>
+        <button id="logoutBtn" class="btn login" data-translate="navbar.logout">Logout</button>
         <a href="profile.html" title="Your Profile">
           <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
             style="border-radius: 50%;" />
@@ -101,7 +98,7 @@
   </div>
 
   <div class="main margin-top-mv-3">
-    <h1>Welcome to the future of tech learning...</h1>
+    <h1 data-translate="homepage.welcomeTitle">Welcome to the future of tech learning...</h1>
     <div class="images overflow-x-hidden">
       <img class="hero-section-imgs hero-imgs-muted rounded" id="hero-img-left" src="./assets/images/hero-img-left.png"
         alt="laptop1">
@@ -115,7 +112,7 @@
   <div class="margin-top-5">
     <center>
       <div id="our-course-h1">
-        <h1>Our Courses</h1>
+        <h1 data-translate="homepage.ourCourses">Our Courses</h1>
       </div>
     </center>
 
@@ -146,10 +143,10 @@
       <div class="course">
         <img src="./assets/images/full-stack-web-developer.png" alt="Web Development">
         <div class="course-info">
-          <h3>Web Development</h3>
+          <h3 data-translate="homepage.webDevelopment">Web Development</h3>
           <span>₹12,999</span><del>₹49,999</del>
-          <p>Duration: 6 Months</p>
-          <a href="./enroll.html"><button>Enroll Now</button></a>
+          <p data-translate="homepage.duration">Duration: 6 Months</p>
+          <a href="./enroll.html"><button data-translate="homepage.enrollNow">Enroll Now</button></a>
         </div>
       </div>
 
@@ -161,8 +158,8 @@
         <div class="course-info">
           <h3>C Programming</h3>
           <span>₹2,999</span><del>₹12,999</del>
-          <p>Duration: 3 Months</p>
-          <a href="./enroll.html"><button>Enroll Now</button></a>
+          <p data-translate="homepage.duration3Months">Duration: 3 Months</p>
+          <a href="./enroll.html"><button data-translate="homepage.enrollNow">Enroll Now</button></a>
         </div>
       </div>
       <div class="course alter-course">
@@ -172,18 +169,18 @@
         <div class="course-info">
           <h3>Python Programming</h3>
           <span>₹2,999</span><del>₹12,999</del>
-          <p>Duration: 3 Months</p>
-          <a href="./enroll.html"><button>Enroll Now</button></a>
+          <p data-translate="homepage.duration3Months">Duration: 3 Months</p>
+          <a href="./enroll.html"><button data-translate="homepage.enrollNow">Enroll Now</button></a>
         </div>
       </div>
       <div class="course alter-course">
         <img src="https://cdn.dribbble.com/users/41543/screenshots/8954776/figma_logo_template_4x.png"
           alt="ui/ux design">
         <div class="course-info">
-          <h3>UI/UX Design</h3>
+          <h3 data-translate="homepage.uiUxDesign">UI/UX Design</h3>
           <span>₹4,999</span><del>₹19,999</del>
-          <p>Duration: 3 Months</p>
-          <a href="./enroll.html"><button>Enroll Now</button></a>
+          <p data-translate="homepage.duration3Months">Duration: 3 Months</p>
+          <a href="./enroll.html"><button data-translate="homepage.enrollNow">Enroll Now</button></a>
         </div>
       </div>
       <div class="course">
@@ -191,17 +188,17 @@
         <div class="course-info">
           <h3>Graphic Design</h3>
           <span>₹7,999</span><del>₹29,999</del>
-          <p>Duration: 3 Months</p>
-          <a href="./enroll.html"><button>Enroll Now</button></a>
+          <p data-translate="homepage.duration3Months">Duration: 3 Months</p>
+          <a href="./enroll.html"><button data-translate="homepage.enrollNow">Enroll Now</button></a>
         </div>
       </div>
       <div class="course">
         <img src="./Screenshots/data-research.png" alt="Data Analyst">
         <div class="course-info">
-          <h3>Data Analyst</h3>
+          <h3 data-translate="homepage.dataScience">Data Analyst</h3>
           <span>₹14,999</span><del>₹59,999</del>
-          <p>Duration: 6 Months</p>
-          <button>Enroll Now</button>
+          <p data-translate="homepage.duration">Duration: 6 Months</p>
+          <button data-translate="homepage.enrollNow">Enroll Now</button>
         </div>
       </div>
   </div>
@@ -420,9 +417,10 @@
         <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
           stroke-linejoin="round" />
       </svg>
-      <span>Newsletter</span>
+      <span data-translate="homepage.subscribe">Newsletter</span>
     </button>
 
+    <script src="./src/js/language.js"></script>
     <script src="./src/js/newsletter.js"></script>
     <script src="./src/js/auth.js"></script> 
 

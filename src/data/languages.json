@@ -1,0 +1,430 @@
+{
+  "en": {
+    "code": "en",
+    "name": "English",
+    "flag": "🇺🇸",
+    "navbar": {
+      "home": "Home",
+      "about": "About",
+      "aboutUs": "About Us",
+      "campusAmbassador": "Campus Ambassador",
+      "programs": "Programs",
+      "courses": "Courses",
+      "internship": "Internship",
+      "services": "Services",
+      "freelance": "Freelance",
+      "resources": "Resources",
+      "blog": "Blog",
+      "bookmarks": "BookMarks",
+      "certificates": "Certificates",
+      "projects": "Projects",
+      "contact": "Contact",
+      "login": "Log In",
+      "signup": "Sign Up",
+      "logout": "Logout"
+    },
+    "homepage": {
+      "welcomeTitle": "Welcome to the future of tech learning...",
+      "ourCourses": "Our Courses",
+      "webDevelopment": "Web Development",
+      "duration": "Duration: 6 Months",
+      "enrollNow": "Enroll Now",
+      "dataScience": "Data Science",
+      "duration4Months": "Duration: 4 Months",
+      "uiUxDesign": "UI/UX Design",
+      "duration3Months": "Duration: 3 Months",
+      "enrollInOurCourses": "Enroll in our courses and start your journey towards becoming a skilled professional",
+      "allCourses": "All Courses",
+      "servicesTitle": "Services",
+      "servicesSubtitle": "We provide a wide range of services to help you grow in your career",
+      "exploreServices": "Explore Services",
+      "newsletterTitle": "Stay Updated",
+      "newsletterSubtitle": "Subscribe to our newsletter and get the latest updates about our courses and services",
+      "subscribe": "Subscribe",
+      "footerText": "Made with ❤️ by Creators-Space Team"
+    },
+    "courses": {
+      "title": "Our Courses",
+      "subtitle": "Choose from our wide range of courses and start your learning journey",
+      "webDev": {
+        "title": "Full Stack Web Development",
+        "description": "Learn to build modern web applications from scratch",
+        "features": ["HTML/CSS", "JavaScript", "React", "Node.js", "MongoDB"],
+        "duration": "6 Months",
+        "level": "Beginner to Advanced"
+      },
+      "dataScience": {
+        "title": "Data Science & Analytics",
+        "description": "Master data analysis and machine learning",
+        "features": ["Python", "Pandas", "Machine Learning", "Data Visualization"],
+        "duration": "4 Months",
+        "level": "Intermediate"
+      },
+      "uiux": {
+        "title": "UI/UX Design",
+        "description": "Design beautiful and user-friendly interfaces",
+        "features": ["Figma", "Adobe XD", "User Research", "Prototyping"],
+        "duration": "3 Months",
+        "level": "Beginner to Intermediate"
+      }
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Professional services to boost your career",
+      "careerGuidance": "Career Guidance",
+      "resumeTips": "Resume Tips",
+      "mockInterviews": "Mock Interviews",
+      "projectLearning": "Project Learning",
+      "openSource": "Open Source"
+    },
+    "internship": {
+      "title": "Internship Opportunities",
+      "subtitle": "Gain real-world experience with our internship programs",
+      "apply": "Apply Now",
+      "remote": "Remote",
+      "onsite": "On-site",
+      "hybrid": "Hybrid"
+    },
+    "projects": {
+      "title": "Projects",
+      "subtitle": "Explore our amazing projects and contribute to open source",
+      "viewProject": "View Project",
+      "liveDemo": "Live Demo",
+      "sourceCode": "Source Code"
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "Read our latest articles and stay updated with technology trends",
+      "readMore": "Read More",
+      "categories": "Categories",
+      "recent": "Recent Posts"
+    },
+    "freelancing": {
+      "title": "Freelancing Opportunities",
+      "subtitle": "Find freelance projects and grow your skills",
+      "browse": "Browse Projects",
+      "postProject": "Post Project"
+    }
+  },
+  "hi": {
+    "code": "hi",
+    "name": "हिंदी",
+    "flag": "🇮🇳",
+    "navbar": {
+      "home": "होम",
+      "about": "के बारे में",
+      "aboutUs": "हमारे बारे में",
+      "campusAmbassador": "कैंपस एंबेसडर",
+      "programs": "कार्यक्रम",
+      "courses": "कोर्स",
+      "internship": "इंटर्नशिप",
+      "services": "सेवाएं",
+      "freelance": "फ्रीलांस",
+      "resources": "संसाधन",
+      "blog": "ब्लॉग",
+      "bookmarks": "बुकमार्क",
+      "certificates": "प्रमाणपत्र",
+      "projects": "प्रोजेक्ट्स",
+      "contact": "संपर्क",
+      "login": "लॉग इन",
+      "signup": "साइन अप",
+      "logout": "लॉग आउट"
+    },
+    "homepage": {
+      "welcomeTitle": "तकनीकी शिक्षा के भविष्य में आपका स्वागत है...",
+      "ourCourses": "हमारे कोर्स",
+      "webDevelopment": "वेब डेवलपमेंट",
+      "duration": "अवधि: 6 महीने",
+      "enrollNow": "अभी दाखिला लें",
+      "dataScience": "डेटा साइंस",
+      "duration4Months": "अवधि: 4 महीने",
+      "uiUxDesign": "UI/UX डिज़ाइन",
+      "duration3Months": "अवधि: 3 महीने",
+      "enrollInOurCourses": "हमारे कोर्स में दाखिला लें और एक कुशल पेशेवर बनने की यात्रा शुरू करें",
+      "allCourses": "सभी कोर्स",
+      "servicesTitle": "सेवाएं",
+      "servicesSubtitle": "हम आपके करियर में वृद्धि के लिए विभिन्न सेवाएं प्रदान करते हैं",
+      "exploreServices": "सेवाएं देखें",
+      "newsletterTitle": "अपडेट रहें",
+      "newsletterSubtitle": "हमारे न्यूज़लेटर की सदस्यता लें और हमारे कोर्स और सेवाओं की नवीनतम अपडेट प्राप्त करें",
+      "subscribe": "सदस्यता लें",
+      "footerText": "Creators-Space टीम द्वारा ❤️ के साथ बनाया गया"
+    },
+    "courses": {
+      "title": "हमारे कोर्स",
+      "subtitle": "हमारे विभिन्न कोर्स में से चुनें और अपनी सीखने की यात्रा शुरू करें",
+      "webDev": {
+        "title": "फुल स्टैक वेब डेवलपमेंट",
+        "description": "शुरू से आधुनिक वेब एप्लिकेशन बनाना सीखें",
+        "features": ["HTML/CSS", "JavaScript", "React", "Node.js", "MongoDB"],
+        "duration": "6 महीने",
+        "level": "शुरुआती से एडवांस"
+      },
+      "dataScience": {
+        "title": "डेटा साइंस और एनालिटिक्स",
+        "description": "डेटा विश्लेषण और मशीन लर्निंग में महारत हासिल करें",
+        "features": ["Python", "Pandas", "Machine Learning", "Data Visualization"],
+        "duration": "4 महीने",
+        "level": "मध्यम"
+      },
+      "uiux": {
+        "title": "UI/UX डिज़ाइन",
+        "description": "सुंदर और उपयोगकर्ता-अनुकूल इंटरफेस डिज़ाइन करें",
+        "features": ["Figma", "Adobe XD", "User Research", "Prototyping"],
+        "duration": "3 महीने",
+        "level": "शुरुआती से मध्यम"
+      }
+    },
+    "services": {
+      "title": "हमारी सेवाएं",
+      "subtitle": "आपके करियर को बढ़ावा देने के लिए पेशेवर सेवाएं",
+      "careerGuidance": "करियर गाइडेंस",
+      "resumeTips": "रेज़्यूमे टिप्स",
+      "mockInterviews": "मॉक इंटरव्यू",
+      "projectLearning": "प्रोजेक्ट लर्निंग",
+      "openSource": "ओपन सोर्स"
+    },
+    "internship": {
+      "title": "इंटर्नशिप के अवसर",
+      "subtitle": "हमारे इंटर्नशिप प्रोग्राम के साथ वास्तविक दुनिया का अनुभव प्राप्त करें",
+      "apply": "अभी आवेदन करें",
+      "remote": "रिमोट",
+      "onsite": "ऑन-साइट",
+      "hybrid": "हाइब्रिड"
+    },
+    "projects": {
+      "title": "प्रोजेक्ट्स",
+      "subtitle": "हमारे अद्भुत प्रोजेक्ट्स का अन्वेषण करें और ओपन सोर्स में योगदान दें",
+      "viewProject": "प्रोजेक्ट देखें",
+      "liveDemo": "लाइव डेमो",
+      "sourceCode": "सोर्स कोड"
+    },
+    "blog": {
+      "title": "ब्लॉग",
+      "subtitle": "हमारे नवीनतम लेख पढ़ें और तकनीकी ट्रेंड्स के साथ अपडेट रहें",
+      "readMore": "और पढ़ें",
+      "categories": "श्रेणियां",
+      "recent": "हाल की पोस्ट"
+    },
+    "freelancing": {
+      "title": "फ्रीलांसिंग के अवसर",
+      "subtitle": "फ्रीलांस प्रोजेक्ट्स खोजें और अपने कौशल को बढ़ाएं",
+      "browse": "प्रोजेक्ट्स ब्राउज़ करें",
+      "postProject": "प्रोजेक्ट पोस्ट करें"
+    }
+  },
+  "es": {
+    "code": "es",
+    "name": "Español",
+    "flag": "🇪🇸",
+    "navbar": {
+      "home": "Inicio",
+      "about": "Acerca de",
+      "aboutUs": "Sobre Nosotros",
+      "campusAmbassador": "Embajador del Campus",
+      "programs": "Programas",
+      "courses": "Cursos",
+      "internship": "Prácticas",
+      "services": "Servicios",
+      "freelance": "Freelance",
+      "resources": "Recursos",
+      "blog": "Blog",
+      "bookmarks": "Marcadores",
+      "certificates": "Certificados",
+      "projects": "Proyectos",
+      "contact": "Contacto",
+      "login": "Iniciar Sesión",
+      "signup": "Registrarse",
+      "logout": "Cerrar Sesión"
+    },
+    "homepage": {
+      "welcomeTitle": "Bienvenido al futuro del aprendizaje tecnológico...",
+      "ourCourses": "Nuestros Cursos",
+      "webDevelopment": "Desarrollo Web",
+      "duration": "Duración: 6 Meses",
+      "enrollNow": "Inscríbete Ahora",
+      "dataScience": "Ciencia de Datos",
+      "duration4Months": "Duración: 4 Meses",
+      "uiUxDesign": "Diseño UI/UX",
+      "duration3Months": "Duración: 3 Meses",
+      "enrollInOurCourses": "Inscríbete en nuestros cursos y comienza tu viaje para convertirte en un profesional hábil",
+      "allCourses": "Todos los Cursos",
+      "servicesTitle": "Servicios",
+      "servicesSubtitle": "Proporcionamos una amplia gama de servicios para ayudarte a crecer en tu carrera",
+      "exploreServices": "Explorar Servicios",
+      "newsletterTitle": "Mantente Actualizado",
+      "newsletterSubtitle": "Suscríbete a nuestro boletín y recibe las últimas actualizaciones sobre nuestros cursos y servicios",
+      "subscribe": "Suscribirse",
+      "footerText": "Hecho con ❤️ por el Equipo de Creators-Space"
+    },
+    "courses": {
+      "title": "Nuestros Cursos",
+      "subtitle": "Elige entre nuestra amplia gama de cursos y comienza tu viaje de aprendizaje",
+      "webDev": {
+        "title": "Desarrollo Web Full Stack",
+        "description": "Aprende a construir aplicaciones web modernas desde cero",
+        "features": ["HTML/CSS", "JavaScript", "React", "Node.js", "MongoDB"],
+        "duration": "6 Meses",
+        "level": "Principiante a Avanzado"
+      },
+      "dataScience": {
+        "title": "Ciencia de Datos y Análisis",
+        "description": "Domina el análisis de datos y el aprendizaje automático",
+        "features": ["Python", "Pandas", "Machine Learning", "Visualización de Datos"],
+        "duration": "4 Meses",
+        "level": "Intermedio"
+      },
+      "uiux": {
+        "title": "Diseño UI/UX",
+        "description": "Diseña interfaces hermosas y fáciles de usar",
+        "features": ["Figma", "Adobe XD", "Investigación del Usuario", "Prototipado"],
+        "duration": "3 Meses",
+        "level": "Principiante a Intermedio"
+      }
+    },
+    "services": {
+      "title": "Nuestros Servicios",
+      "subtitle": "Servicios profesionales para impulsar tu carrera",
+      "careerGuidance": "Orientación Profesional",
+      "resumeTips": "Consejos para CV",
+      "mockInterviews": "Entrevistas Simuladas",
+      "projectLearning": "Aprendizaje de Proyectos",
+      "openSource": "Código Abierto"
+    },
+    "internship": {
+      "title": "Oportunidades de Prácticas",
+      "subtitle": "Obtén experiencia del mundo real con nuestros programas de prácticas",
+      "apply": "Aplicar Ahora",
+      "remote": "Remoto",
+      "onsite": "Presencial",
+      "hybrid": "Híbrido"
+    },
+    "projects": {
+      "title": "Proyectos",
+      "subtitle": "Explora nuestros increíbles proyectos y contribuye al código abierto",
+      "viewProject": "Ver Proyecto",
+      "liveDemo": "Demo en Vivo",
+      "sourceCode": "Código Fuente"
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "Lee nuestros últimos artículos y mantente actualizado con las tendencias tecnológicas",
+      "readMore": "Leer Más",
+      "categories": "Categorías",
+      "recent": "Publicaciones Recientes"
+    },
+    "freelancing": {
+      "title": "Oportunidades de Freelance",
+      "subtitle": "Encuentra proyectos freelance y desarrolla tus habilidades",
+      "browse": "Explorar Proyectos",
+      "postProject": "Publicar Proyecto"
+    }
+  },
+  "fr": {
+    "code": "fr",
+    "name": "Français",
+    "flag": "🇫🇷",
+    "navbar": {
+      "home": "Accueil",
+      "about": "À propos",
+      "aboutUs": "À propos de nous",
+      "campusAmbassador": "Ambassadeur du Campus",
+      "programs": "Programmes",
+      "courses": "Cours",
+      "internship": "Stage",
+      "services": "Services",
+      "freelance": "Freelance",
+      "resources": "Ressources",
+      "blog": "Blog",
+      "bookmarks": "Signets",
+      "certificates": "Certificats",
+      "projects": "Projets",
+      "contact": "Contact",
+      "login": "Se connecter",
+      "signup": "S'inscrire",
+      "logout": "Se déconnecter"
+    },
+    "homepage": {
+      "welcomeTitle": "Bienvenue dans l'avenir de l'apprentissage technologique...",
+      "ourCourses": "Nos Cours",
+      "webDevelopment": "Développement Web",
+      "duration": "Durée: 6 Mois",
+      "enrollNow": "S'inscrire Maintenant",
+      "dataScience": "Science des Données",
+      "duration4Months": "Durée: 4 Mois",
+      "uiUxDesign": "Design UI/UX",
+      "duration3Months": "Durée: 3 Mois",
+      "enrollInOurCourses": "Inscrivez-vous à nos cours et commencez votre parcours pour devenir un professionnel qualifié",
+      "allCourses": "Tous les Cours",
+      "servicesTitle": "Services",
+      "servicesSubtitle": "Nous fournissons une large gamme de services pour vous aider à progresser dans votre carrière",
+      "exploreServices": "Explorer les Services",
+      "newsletterTitle": "Restez à Jour",
+      "newsletterSubtitle": "Abonnez-vous à notre newsletter et recevez les dernières mises à jour sur nos cours et services",
+      "subscribe": "S'abonner",
+      "footerText": "Fait avec ❤️ par l'Équipe Creators-Space"
+    },
+    "courses": {
+      "title": "Nos Cours",
+      "subtitle": "Choisissez parmi notre large gamme de cours et commencez votre parcours d'apprentissage",
+      "webDev": {
+        "title": "Développement Web Full Stack",
+        "description": "Apprenez à construire des applications web modernes de zéro",
+        "features": ["HTML/CSS", "JavaScript", "React", "Node.js", "MongoDB"],
+        "duration": "6 Mois",
+        "level": "Débutant à Avancé"
+      },
+      "dataScience": {
+        "title": "Science des Données et Analyse",
+        "description": "Maîtrisez l'analyse de données et l'apprentissage automatique",
+        "features": ["Python", "Pandas", "Machine Learning", "Visualisation de Données"],
+        "duration": "4 Mois",
+        "level": "Intermédiaire"
+      },
+      "uiux": {
+        "title": "Design UI/UX",
+        "description": "Concevez des interfaces belles et conviviales",
+        "features": ["Figma", "Adobe XD", "Recherche Utilisateur", "Prototypage"],
+        "duration": "3 Mois",
+        "level": "Débutant à Intermédiaire"
+      }
+    },
+    "services": {
+      "title": "Nos Services",
+      "subtitle": "Services professionnels pour booster votre carrière",
+      "careerGuidance": "Orientation de Carrière",
+      "resumeTips": "Conseils CV",
+      "mockInterviews": "Entretiens Simulés",
+      "projectLearning": "Apprentissage par Projet",
+      "openSource": "Open Source"
+    },
+    "internship": {
+      "title": "Opportunités de Stage",
+      "subtitle": "Acquérez une expérience du monde réel avec nos programmes de stage",
+      "apply": "Postuler Maintenant",
+      "remote": "À distance",
+      "onsite": "Sur site",
+      "hybrid": "Hybride"
+    },
+    "projects": {
+      "title": "Projets",
+      "subtitle": "Explorez nos projets incroyables et contribuez à l'open source",
+      "viewProject": "Voir le Projet",
+      "liveDemo": "Démo en Direct",
+      "sourceCode": "Code Source"
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "Lisez nos derniers articles et restez à jour avec les tendances technologiques",
+      "readMore": "Lire Plus",
+      "categories": "Catégories",
+      "recent": "Publications Récentes"
+    },
+    "freelancing": {
+      "title": "Opportunités de Freelance",
+      "subtitle": "Trouvez des projets freelance et développez vos compétences",
+      "browse": "Parcourir les Projets",
+      "postProject": "Publier un Projet"
+    }
+  }
+}

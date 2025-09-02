@@ -175,6 +175,131 @@
             </div>
         </section>
 
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2>❓ Frequently Asked Questions</h2>
+                <p class="faq-intro">Find answers to the most common questions about Creators-Space</p>
+                
+                <!-- FAQ Search -->
+                <div class="faq-search-container">
+                    <input type="text" id="faq-search" placeholder="Search FAQ..." class="faq-search-input">
+                    <i class="fas fa-search faq-search-icon"></i>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item" data-keywords="creators space platform community what is">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>What is Creators-Space?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Creators-Space is an inclusive digital hub designed to empower creators across all fields — art, music, design, coding, and more. We provide a platform for showcasing portfolios, finding collaborators, accessing learning resources, and building a supportive community.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-keywords="join signup register account community membership">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>How can I join the Creators-Space community?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can join by creating an account on our platform. Simply click the "Sign Up" button in the navigation bar, fill out the registration form, and start exploring our community of creators. It's completely free to join!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-keywords="courses programs web development ui ux design data science internship">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>What types of courses and programs do you offer?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer a wide range of programs including web development courses, UI/UX design, data science, internship opportunities, project-based learning, career guidance, and mock interviews. Our programs are designed to provide practical, hands-on experience.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-keywords="beginner friendly starter novice learning entry level">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Is Creators-Space suitable for beginners?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! Creators-Space welcomes creators of all skill levels. We offer beginner-friendly courses, mentorship programs, and a supportive community to help you start your creative journey, regardless of your current experience level.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-keywords="contribute open source github development coding pull request">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>How can I contribute to the open-source project?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We welcome contributions from developers, designers, and content creators! You can contribute by visiting our GitHub repository, reporting bugs, suggesting features, submitting pull requests, or helping with documentation. Check our CONTRIBUTING.md file for detailed guidelines.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-keywords="free cost pricing premium scholarship payment">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Are the courses and services free?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Many of our basic courses and community features are free. We also offer premium courses and personalized services. Our goal is to make quality education accessible to everyone, so we provide multiple pricing options including scholarships for students.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-keywords="showcase projects portfolio upload display work creative">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Can I showcase my projects on Creators-Space?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! One of our main features is the project showcase where you can display your creative work, get feedback from the community, and collaborate with other creators. You can upload projects in various formats including web applications, designs, artwork, and more.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-keywords="campus ambassador apply application student program">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>How do I apply for the Campus Ambassador program?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>To apply for our Campus Ambassador program, visit the Campus Ambassador page from the About menu. Fill out the application form with your details, explain your interest in the program, and tell us how you plan to promote Creators-Space in your community.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-keywords="certificates completion credential certification linkedin">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Do you provide certificates for completed courses?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we provide certificates of completion for our courses. These certificates can be downloaded and shared on your professional profiles like LinkedIn. They serve as proof of your newly acquired skills and knowledge.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-keywords="contact support help assistance customer service">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>How can I contact support or get help?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can reach out to us through our Contact page, where you'll find a contact form and our email address. We also have an active community forum where you can ask questions and get help from other members. Our team typically responds within 24-48 hours.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- No results message -->
+                <div id="faq-no-results" class="faq-no-results" style="display: none;">
+                    <div class="no-results-content">
+                        <i class="fas fa-search"></i>
+                        <h3>No matching questions found</h3>
+                        <p>Try adjusting your search terms or <a href="contact.html">contact us</a> directly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- stay connected section -->
         <section id="stay-connected">
             <div class="stay-container">
@@ -334,6 +459,7 @@
     <script src="./src/js/slider.js"></script>
     <script src="./src/js/scrollToTop.js"></script>
     <script src="./src/js/newsletter.js"></script>
+    <script src="./src/js/about.js"></script>
 </body>
 
 </html>
