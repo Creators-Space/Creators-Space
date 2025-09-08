@@ -17,10 +17,10 @@
 
 <body id="main-body" class="overflow-x-hidden">
   <div class="loader-track" id="loader-track">
-  <div class="loader-circle">
-    <div class="loader-dot"></div>
+    <div class="loader-circle">
+      <div class="loader-dot"></div>
+    </div>
   </div>
-</div>
 
   <div class="navbar">
     <h1><a href="./">
@@ -28,16 +28,19 @@
 
         <br>Creators-Space</a>
     </h1>
-    <div class="nav-links align-items-center">
-      
-      <a href="index.html" data-translate="navbar.home">Home</a>
+    <div class="nav-menu align-items-center">
+      <li class="nav-item">
+          <a href="index.html" data-translate="navbar.home">Home</a>
 
+      </li>
+      
       <!-- dropDown 1 - About → About Us, Campus Ambassador-->
       <li class="nav-item">
         <a href="#" class="dropdown-toggle"><span data-translate="navbar.about">About</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
         <div class="dropdown">
           <a href="about.html" data-translate="navbar.aboutUs">About Us</a>
-          <a href="campus-ambassador.html" data-translate="navbar.campusAmbassador">Campus Ambassador</a>
+          <a href="campus-ambassador.html" data-translate="navbar.campusAmbassador">Campus Ambassador</a> 
+         <a href="projects.html" data-translate="navbar.projects">Projects</a> 
         </div>
       </li> 
       <!--dropDown 2 - Programs → Courses, Internship, Services -->
@@ -59,12 +62,13 @@
           <a href="./certificate/" data-translate="navbar.certificates">Certificates</a>
         </div>
        </li> 
-      <a href="projects.html" data-translate="navbar.projects">Projects</a>
-      <a href="contact.html" data-translate="navbar.contact">Contact</a>
+       <li class="nav-item">
+         <a href="contact.html" data-translate="navbar.contact">Contact</a>
+       </li>
       <!-- Navbar -->
       <div id="authSection">
         <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
-        <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
+        <a href="./signup.html" class="btn signup" ,data-translate="navbar.signup">Sign Up</a>
       </div>
 
       <div id="userSection" style="display: none; align-items: center; gap: 10px;">
@@ -75,24 +79,9 @@
         </a>
       </div>
     </div>
-    <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
-      <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
-        <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
-          stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"
-          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"></polyline>
-        <polyline id="globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2"
-          stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"
-          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"></polyline>
-      </svg>
-
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navbar-x-logo" class="bi bi-x-lg d-none"
-        viewBox="0 0 16 16">
-        <path
-          d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-      </svg>
-
-
-    </div>
+     <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
   </div>
 
   <div class="toggle-switch">
@@ -206,9 +195,8 @@
           <button data-translate="homepage.enrollNow">Enroll Now</button>
         </div>
       </div>
-  </div>
-  </div>
-  </section>
+    </section> 
+  </div> 
 
   </div>
   <!-- Why Learn With Us Section -->
@@ -289,8 +277,7 @@
     </center> -->
 
     <!-- testimonial End -->
-    <div class="margin-top-5"></div>
-
+    <div class="margin-top-5"></div> 
 
     <footer class="footer">
       <div class="social">
@@ -369,14 +356,6 @@
       </svg>
     </button>
 
-
-
-    <script src="./src/js/hero-section.js"></script>
-    <script src="./src/js/navbar.js"></script>
-    <script src="./src/js/slider.js"></script>
-    <script src="./src/js/scrollToTop.js"></script>
-    <script src="./src/js/utils.js"></script>
-
     <!-- Newsletter Subscription Popup -->
     <div id="newsletter-popup" class="newsletter-popup">
       <div class="newsletter-content">
@@ -415,26 +394,66 @@
     </div>
 
     <!-- Newsletter Trigger Button -->
-    <button id="newsletter-trigger" class="newsletter-trigger" onclick="showNewsletterPopup()">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round" />
-      </svg>
-      <span data-translate="homepage.subscribe">Newsletter</span>
-    </button>
-
+      <button id="newsletter-trigger" class="newsletter-trigger" onclick="showNewsletterPopup()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <span data-translate="homepage.subscribe">Newsletter</span>
+      </button>
+  </div>
+    <script src="./src/js/hero-section.js"></script>
+    <script src="./src/js/navbar.js"></script>
+    <script src="./src/js/slider.js"></script>
+    <script src="./src/js/scrollToTop.js"></script>
+    <script src="./src/js/utils.js"></script>
     <script src="./src/js/language.js"></script>
     <script src="./src/js/newsletter.js"></script>
     <script src="./src/js/auth.js"></script> 
     <script>
-  window.addEventListener('DOMContentLoaded', function() {
-    setTimeout(function() {
-      document.getElementById('loader-track').style.display = 'none';
-    }, 7000); // 7 seconds
-  });
-</script>
+      window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          document.getElementById('loader-track').style.display = 'none';
+        }, 7000); // 7 seconds
+      });
+    </script>
+
+    <!-- <script>
+      // drop-down menu
+      document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          e.stopPropagation(); // prevent auto close immediately
+          this.parentElement.classList.toggle("show");
+
+          // Close other dropdowns
+          document.querySelectorAll(".nav-item").forEach((drop) => {
+            if (drop !== this.parentElement) {
+              drop.classList.remove("show");
+            }
+          });
+        });
+      });
+
+      // Close dropdown if clicked outside
+      window.addEventListener("click", function (e) {
+        if (!e.target.closest(".nav-item")) {
+          document.querySelectorAll(".nav-item").forEach((drop) => {
+            drop.classList.remove("show");
+          });
+        }
+      });
+    </script> -->
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const mobileMenu = document.querySelector(".nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
+        hamburger.classList.toggle("open");
+      });
+    </script>
 
      
 </body>
