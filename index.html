@@ -62,11 +62,14 @@
       <a href="projects.html" data-translate="navbar.projects">Projects</a>
       <a href="contact.html" data-translate="navbar.contact">Contact</a>
       <!-- Navbar -->
-      <div id="authSection">
-        <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
-        <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
-      </div>
-
+        <div id="authSection">
+    <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
+    <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
+    <button id="darkModeToggle" class="dark-toggle-btn">
+      <i class="fa fa-moon"></i>
+      <i class="fa fa-sun"></i>
+    </button>
+  </div>      
       <div id="userSection" style="display: none; align-items: center; gap: 10px;">
         <button id="logoutBtn" class="btn login" data-translate="navbar.logout">Logout</button>
         <a href="profile.html" title="Your Profile">
@@ -95,12 +98,13 @@
     </div>
   </div>
 
-  <div class="toggle-switch">
+  <!-- <div class="toggle-switch">
     <label class="switch-label">
       <input onclick="toggleDarkMode()" type="checkbox" class="checkbox">
       <span class="slider"></span>
     </label>
-  </div>
+  </div> -->
+
 
   <div class="main margin-top-mv-3">
     <h1 data-translate="homepage.welcomeTitle">Welcome to the future of tech learning...</h1>
@@ -436,7 +440,40 @@
   });
 </script>
 
-     
+      <script>
+  const darkToggleBtn = document.getElementById("darkModeToggle");
+  const body = document.body;
+  const moonIcon = darkToggleBtn.querySelector(".fa-moon");
+  const sunIcon = darkToggleBtn.querySelector(".fa-sun");
+
+  // Load saved preference
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+    moonIcon.style.display = "none";
+    sunIcon.style.display = "inline-block";
+  } else {
+    moonIcon.style.display = "inline-block";
+    sunIcon.style.display = "none";
+  }
+
+  // Toggle on click
+  darkToggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+      moonIcon.style.display = "none";
+      sunIcon.style.display = "inline-block";
+    } else {
+      localStorage.setItem("theme", "light");
+      moonIcon.style.display = "inline-block";
+      sunIcon.style.display = "none";
+    }
+  });
+</script>
+
+
+
 </body>
 
 </html>

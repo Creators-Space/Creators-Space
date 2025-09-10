@@ -108,6 +108,144 @@ body {
   background-color: white;
   color: black;
 }
+/* ==================== */
+/* Default (Light Mode) */
+/* ==================== */
+body {
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #ffffff;
+}
+.navbar a {
+  color: #333;
+}
+
+/* Buttons */
+.btn.signup {
+  background-color: rgb(218, 32, 32);
+  color: #fff;
+}
+.btn.signup:hover {
+  background-color: rgb(200, 30, 30);
+}
+
+/* Features */
+.features {
+  background-color: #f9f9f9;
+  color: #333;
+}
+.features .feature-card {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+/* Testimonials */
+.testimonial {
+  background-color: #f9f9f9;
+  color: #333;
+}
+.testimonial .testimonial-card {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+/* Footer */
+footer {
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* ==================== */
+/* Dark Mode Overrides */
+/* ==================== */
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+/* Navbar */
+body.dark-mode .navbar {
+  background-color: #1e1e1e;
+}
+body.dark-mode .navbar a {
+  color: #f5f5f5;
+}
+
+/* Buttons */
+/* body.dark-mode .btn.signup {
+  background-color: black;
+}*/
+/* body.dark-mode .btn.signup:hover {
+  background-color: black;
+}  */
+
+/* Sections background → full black */
+body.dark-mode section,
+body.dark-mode .hero,
+body.dark-mode .features-section {
+  background-color: #121212 !important;
+}
+
+/* Features */
+body.dark-mode .features .feature-card {
+  background-color: #1e1e1e !important;
+  color: #f5f5f5 !important;
+  border: 1px solid #333;
+}
+
+/* Testimonials */
+body.dark-mode .testimonial .testimonial-card {
+  background-color: #2a2a2a !important;
+  color: #f5f5f5 !important;
+  border: 1px solid #444;
+}
+
+/* Footer */
+body.dark-mode footer {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+/* Special headings fix */
+body.dark-mode #why-learn h2,
+body.dark-mode .main h1 {
+  color: black !important;
+}
+
+/* ==================== */
+/* Dark Mode Toggle Btn */
+/* ==================== */
+.dark-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+body.dark-mode .dark-toggle-btn {
+  color: #f5f5f5;
+}
+
+/* Sun / Moon Toggle Icon Switch */
+#darkModeToggle .fa-sun {
+  display: none;
+}
+body.dark-mode #darkModeToggle .fa-moon {
+  display: none;
+}
+body.dark-mode #darkModeToggle .fa-sun {
+  display: inline;
+}
+
 
 .navbar .nav-links {
   display: flex;
@@ -372,13 +510,7 @@ body {
   color: #240d64;
 }
 
-body.dark #our-course-h1 {
-  color: #00c6ff;
-}
 
-body.dark #our-course-h1:hover {
-  color: #ff512f;
-}
 
   /* courses */
 /* COURSES SECTION */
@@ -830,99 +962,6 @@ body.dark #our-course-h1:hover {
   box-shadow: none;
 }
 
-/* Dark Mode Switch Styles for Body element*/
-
-body.dark {
-  background-color: #222;
-}
-
-body.dark h1,
-body.dark .support a {
-  color: #fff;
-}
-
-/* Dark mode for navbar */
-body.dark .navbar {
-  background-color: rgba(24, 24, 24, 0.6);
-  border: 1px solid #444;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-body.dark .navbar h1,
-body.dark .navbar a {
-  color: #fff;
-}
-body.dark .navbar a.btn {
-  background-color: #222;
-  color: #fff;
-  border-color: #fff;
-}
-body.dark .navbar a.btn:hover {
-  background-color: #fff;
-  color: #222;
-}
-/* White underline for nav links in dark mode */
-body.dark .navbar .nav-links a::after {
-  content: "";
-  display: block;
-  height: 1px;
-  background-color: white;
-  transition: width 0.3s ease;
-  width: 0;
-}
-
-body.dark .navbar .nav-links a:hover::after,
-body.dark .navbar .nav-links a.active::after {
-  width: 100%;
-}
-body.dark .dropdown {
-  background-color: #333;
-  border: 1px solid #555;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-}
-
-body.dark .dropdown a {
-  color: #fff;
-  border-bottom-color: #555;
-}
-
-body.dark .dropdown a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-/* Dark mode for main section */
-body.dark .main {
-  background-color: #222;
-  color: #fff;
-}
-
-/* Dark mode for courses */
-/* body.dark .course,
-body.dark .course-info {
-  background-color: #222 !important;
-  color: #fff !important;
-  border-color: #fff !important;
-}
-body.dark .course-info button {
-  background-color: #fff;
-  color: #222;
-}
-body.dark .course-info button:hover {
-  background-color: black;
-  color: #fff;
-} */
-
-/* DARK MODE OVERRIDE */
-
-
-/* Dark mode for footer */
-body.dark .footer {
-  background-color: #181818;
-  color: #fff;
-}
-body.dark .footer a {
-  color: #fff;
-}
 /* Why Learn With Us Section */
 #why-learn {
   padding: 60px 20px;
@@ -986,18 +1025,6 @@ body.dark .footer a {
   }
 }
 
-body.dark #why-learn{
-  background:none;
-  color: white;
-}
-
-body.dark .why-card{
-  color: white;
-}
-
-body.dark .why-card p {
-  color: rgb(231, 224, 224);
-}
 
 /* ========== Language Selector Styles ========== */
 #language-selector {
@@ -1070,38 +1097,6 @@ body.dark .why-card p {
   font-size: 14px;
 }
 
-/* Dark mode styles for language selector */
-body.dark .language-toggle {
-  color: white;
-}
-
-body.dark .language-toggle:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-body.dark .language-dropdown {
-  background-color: #2c2c2c;
-  border: 1px solid #444;
-}
-
-body.dark .language-option {
-  color: white;
-  border-bottom-color: #444;
-}
-
-body.dark .language-option:hover {
-  background-color: #3c3c3c;
-}
-
-body.dark .language-option.active {
-  background-color: #1976d2;
-  color: white;
-}
-
-body.dark .language-option.active:hover {
-  background-color: #1976d2;
-}
-
 /* Mobile responsive for language selector */
 @media (max-width: 768px) {
   .language-dropdown {
@@ -1115,6 +1110,57 @@ body.dark .language-option.active:hover {
   .language-option {
     border-bottom: 1px solid #eee;
   }
+
+/* ==================== */
+/* Dark Mode Final Fix  */
+/* ==================== */
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+/* Section backgrounds full black */
+body.dark-mode .hero,
+body.dark-mode .features,
+body.dark-mode .testimonial {
+  background-color: #121212 !important;
+}
+}
+/* Keep feature cards light in dark mode */
+body.dark-mode .features .feature-card {
+  background-color: #fff !important;
+  color: #333 !important;
+  border: 1px solid #ccc !important;
+}
+
+/* Testimonials cards dark */
+body.dark-mode .testimonial .testimonial-card {
+  background-color: #2a2a2a !important;
+  color: #f5f5f5 !important;
+  border: 1px solid #444;
+}
+
+/* Headings in dark mode */
+body.dark-mode .hero h1,
+body.dark-mode #why-learn h2 {
+  color: #f5f5f5 !important;  /* or white */
+}
+
+body.dark-mode .testimonial h2 {
+  color: #f5f5f5 !important;
+}
+/* Dark mode for hero section */
+body.dark-mode .hero-section,
+body.dark-mode .main {
+  background-color: #121212 !important; /* Dark background */
+  color: #f5f5f5 !important; /* Make text white */
+}
+
+body.dark-mode .hero-section h1,
+body.dark-mode .main h1 {
+  color: #f5f5f5 !important; /* Ensure headings are white */
+}
 
   body.dark .language-option {
     border-bottom-color: #444;
@@ -1157,4 +1203,3 @@ body.dark .language-option.active:hover {
   0%   { transform: translate(-50%, -50%) rotate(0deg) translate(40px, 0); }
   100% { transform: translate(-50%, -50%) rotate(360deg) translate(40px, 0); }
 }
-
