@@ -12,7 +12,7 @@ class ProjectsManager {
     this.initialRows = 2;
     this.currentRows = this.initialRows;
     this.maxRows = 10; // Maximum rows to show
-    
+
     this.init();
   }
 
@@ -21,11 +21,11 @@ class ProjectsManager {
     this.setupDarkMode();
     await this.loadProjects();
     this.filteredProjects = [...this.projects];
-    
+
     // Set container to grid view by default
     const container = document.getElementById('projectsContainer');
     container.className = 'projects-container grid-view';
-    
+
     this.renderProjects();
     this.updateShowMoreButton();
     this.updateLastUpdated();
@@ -36,7 +36,7 @@ class ProjectsManager {
     // Search functionality
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.getElementById('searchBtn');
-    
+
     searchInput.addEventListener('input', (e) => {
       this.searchQuery = e.target.value.toLowerCase();
       this.filterProjects();
@@ -82,18 +82,18 @@ class ProjectsManager {
     // Tech stack filters toggle
     const toggleTechFilters = document.getElementById('toggleTechFilters');
     const techStackFilters = document.getElementById('techStackFilters');
-    
+
     // In the setupEventListeners() method, modify the tech stack filters toggle section:
-if (toggleTechFilters && techStackFilters) {
-  // Initialize as collapsed
-  techStackFilters.classList.add('collapsed');
-  toggleTechFilters.classList.add('collapsed');
-  
-  toggleTechFilters.addEventListener('click', () => {
-    techStackFilters.classList.toggle('collapsed');
-    toggleTechFilters.classList.toggle('collapsed');
-  });
-}
+    if (toggleTechFilters && techStackFilters) {
+      // Initialize as collapsed
+      techStackFilters.classList.add('collapsed');
+      toggleTechFilters.classList.add('collapsed');
+
+      toggleTechFilters.addEventListener('click', () => {
+        techStackFilters.classList.toggle('collapsed');
+        toggleTechFilters.classList.toggle('collapsed');
+      });
+    }
   }
 
   setupDarkMode() {
@@ -148,7 +148,7 @@ if (toggleTechFilters && techStackFilters) {
       // Fetch trending repositories from GitHub API
       const response = await fetch('https://api.github.com/search/repositories?q=stars:>100+language:javascript+language:python+language:java&sort=stars&order=desc&per_page=20');
       const data = await response.json();
-      
+
       return data.items.map(repo => ({
         name: repo.name,
         description: repo.description || 'No description available',
@@ -203,7 +203,7 @@ if (toggleTechFilters && techStackFilters) {
 
   extractTechStack(techStackString) {
     if (!techStackString) return [];
-    
+
     // Common tech stack keywords
     const techKeywords = [
       'React', 'Vue', 'Angular', 'Node.js', 'Express', 'Python', 'Django', 'Flask',
@@ -228,21 +228,21 @@ if (toggleTechFilters && techStackFilters) {
 
   getPrimaryLanguage(techStackString) {
     if (!techStackString) return 'Unknown';
-    
+
     const languages = ['JavaScript', 'Python', 'Java', 'TypeScript', 'PHP', 'C++', 'C#', 'Go', 'Rust'];
-    
+
     for (const lang of languages) {
       if (techStackString.toLowerCase().includes(lang.toLowerCase())) {
         return lang;
       }
     }
-    
+
     return 'Web Development';
   }
 
   setupTechStackFilters() {
     const techStacks = new Set();
-    
+
     this.projects.forEach(project => {
       project.techStack.forEach(tech => {
         techStacks.add(tech);
@@ -259,28 +259,39 @@ if (toggleTechFilters && techStackFilters) {
         <button class="tech-filter" data-tech="${tech}">${tech}</button>
       `).join('')}
     `;
-     this.activeFilters.clear();
+    this.activeFilters.clear();
 
     // Add event listeners to tech stack filters
     filterContainer.addEventListener('click', (e) => {
       if (e.target.classList.contains('tech-filter')) {
         const tech = e.target.dataset.tech;
-        
-        // Update active filter
-        filterContainer.querySelectorAll('.tech-filter').forEach(btn => {
-          btn.classList.remove('active');
-        });
-        e.target.classList.add('active');
 
-        // Filter projects
         if (tech === 'all') {
+          // Clear all filters and remove active class from all buttons
           this.activeFilters.clear();
-          
+          filterContainer.querySelectorAll('.tech-filter').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          e.target.classList.add('active');
         } else {
-          this.activeFilters.clear();
-          this.activeFilters.add(tech);
+          // Remove active class from "All" button
+          filterContainer.querySelector('.tech-filter[data-tech="all"]').classList.remove('active');
+
+          // Toggle the clicked filter
+          if (this.activeFilters.has(tech)) {
+            this.activeFilters.delete(tech);
+            e.target.classList.remove('active');
+          } else {
+            this.activeFilters.add(tech);
+            e.target.classList.add('active');
+          }
+
+          // If no filters are selected, activate "All"
+          if (this.activeFilters.size === 0) {
+            filterContainer.querySelector('.tech-filter[data-tech="all"]').classList.add('active');
+          }
         }
-        
+
         this.filterProjects();
       }
     });
@@ -289,15 +300,18 @@ if (toggleTechFilters && techStackFilters) {
   filterProjects() {
     this.filteredProjects = this.projects.filter(project => {
       // Search filter
-      const matchesSearch = !this.searchQuery || 
+      const matchesSearch = !this.searchQuery ||
         project.name.toLowerCase().includes(this.searchQuery) ||
         project.description.toLowerCase().includes(this.searchQuery) ||
         project.admin.toLowerCase().includes(this.searchQuery) ||
-        project.techStack.some(tech => tech.toLowerCase().includes(this.searchQuery));
+        project.techStack.every(tech => tech.toLowerCase().includes(this.searchQuery));
 
-      // Tech stack filter
+      // Tech stack filter (AND logic - project must have ALL selected technologies)
       const matchesTechStack = this.activeFilters.size === 0 ||
-        project.techStack.some(tech => this.activeFilters.has(tech));
+        Array.from(this.activeFilters).every(selectedTech =>
+          project.techStack.some(tech => tech.toLowerCase() === selectedTech.toLowerCase())
+        );
+
 
       return matchesSearch && matchesTechStack;
     });
@@ -331,7 +345,7 @@ if (toggleTechFilters && techStackFilters) {
     if (showMoreBtn) {
       const maxProjects = this.projectsPerRow * this.maxRows;
       const currentProjects = this.projectsPerRow * this.currentRows;
-      
+
       if (currentProjects >= this.filteredProjects.length || currentProjects >= maxProjects) {
         showMoreBtn.disabled = true;
         showMoreBtn.innerHTML = '<span>No More Projects</span>';
@@ -349,16 +363,16 @@ if (toggleTechFilters && techStackFilters) {
 
   renderProjects() {
     const container = document.getElementById('projectsContainer');
-    
+
     if (this.filteredProjects.length === 0) {
-    container.innerHTML = `
+      container.innerHTML = `
       <div class="no-results">
         <h3>No projects found</h3>
         <p>Try adjusting your search or filters to find more projects.</p>
       </div>
     `;
-    return;
-  }
+      return;
+    }
     // Calculate how many projects to show
     const projectsToShow = Math.min(
       this.projectsPerRow * this.currentRows,
@@ -368,13 +382,13 @@ if (toggleTechFilters && techStackFilters) {
     // Get the projects to display
     const projectsToDisplay = this.filteredProjects.slice(0, projectsToShow);
 
-    container.innerHTML = projectsToDisplay.map(project => 
+    container.innerHTML = projectsToDisplay.map(project =>
       this.createProjectCard(project)
     ).join('');
   }
 
   createProjectCard(project) {
-    const techTags = project.techStack.map(tech => 
+    const techTags = project.techStack.map(tech =>
       `<span class="tech-tag">${tech}</span>`
     ).join('');
 
@@ -439,7 +453,8 @@ if (toggleTechFilters && techStackFilters) {
   }
 }
 
+
 // Initialize the projects manager when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   new ProjectsManager();
-}); 
+});

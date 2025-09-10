@@ -1107,3 +1107,9 @@ main {
   animation: fadeInAnswer 0.3s ease forwards;
 }
 
+#main-body.dark #scrollTopBtn {
+  background-color: white;
+}
+#main-body.dark #scrollTopBtn svg {
+  fill: #0a0a0a; /* arrow visible */
+}

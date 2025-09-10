@@ -390,6 +390,97 @@ body.dark .dropdown a:hover {
   margin-bottom: 15px;
 }
 
+.main-content {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem;
+  flex-wrap: wrap; 
+}
+
+.main-cards {
+  background: linear-gradient(45deg, rgba(179, 180, 227, 0.6), rgba(124, 124, 194, 0.4), rgba(122, 141, 204, 0.2));
+  padding: 1rem;
+  font-weight: bold;
+  color: #747474;
+  border-radius: 25px;
+  width: 15vw; 
+  height: 7vh; 
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(122, 141, 204, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-cards:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(122, 141, 204, 0.6);
+}
+
+
+
+.main i {
+  font-size: 4rem;
+  margin: 0.5rem;
+  color: #6a6b6c;
+  animation: float 1.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-cards {
+    width: 25vw;
+    height: auto;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-cards {
+    width: 60vw;
+    height: auto;
+    font-size: 0.9rem;
+  }
+
+  .main button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-cards {
+    width: 80vw;
+    font-size: 0.85rem;
+    padding: 1rem;
+  }
+
+  .main button {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
 
 
 .project-icon {
@@ -429,9 +520,6 @@ body.dark .dropdown a:hover {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
-
-
 .project-meta {
   display: flex;
   align-items: center;

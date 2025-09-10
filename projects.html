@@ -143,10 +143,16 @@
 
     <!-- MAIN SECTION -->
     <section class="main">
-      <h1 data-translate="projects.title">Open Source Projects</h1>
-      <p data-translate="projects.subtitle">
+       <h1  class="projects.title">Open Source Projects</h1>
+      <p class="projects.subtitle">
         Discover amazing projects and contribute to the open-source community.
       </p>
+           <i class="fa-solid fa-laptop-code"></i>
+      <div class="main-content">
+  <div class="main-cards">Explore our projects</div>
+  <div class="main-cards">Join us and make an impact</div>
+  <div class="main-cards">Your contribution drives progress</div>
+</div>
     </section>
 
     <!-- FILTER SECTION -->
@@ -233,16 +239,10 @@
     </div>
 
     <!-- Back to Top Button -->
-    <button id="backToTopBtn" class="back-to-top-btn" title="Back to Top">
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-      >
-        <polyline points="18,15 12,9 6,15"></polyline>
+   <button id="scrollTopBtn" title="Back to Top">
+      <!-- added svg of arrow up -->
+      <svg data-name="1-Arrow Up" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 32 32">
+        <path d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z" />
       </svg>
     </button>
 
@@ -371,5 +371,6 @@
         }
       });
     </script>
+    <script src="./src/js/scrollToTop.js"></script>
   </body>
 </html>

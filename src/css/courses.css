@@ -233,9 +233,7 @@ body.dark .dropdown a:hover {
 }
 
 .card:hover .card-content img {
-  background: linear-gradient(45deg, #667eea, #764ba2);
-  filter: brightness(0) invert(1);
-  transform: rotateY(180deg) scale(1.1);
+  transform: rotateY(360deg) scale(1.1); 
 }
 
 .card-content h3 {
@@ -267,67 +265,44 @@ body.dark .dropdown a:hover {
   font-size: 1.1rem;
 }
 
-/* Tooltip button */
-.tooltip-container {
-  position: relative;
-  margin-top: 15px;
-}
-
-.info-btn {
-  background: linear-gradient(45deg, #e74c3c, #c0392b);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  font-size: 14px;
-  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
-  animation: pulse 2s infinite;
-}
-
 .info-btn:hover {
   background: linear-gradient(45deg, #ee7b6e, #c0392b);
  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.5);
 }
-/* Tooltip */
-.tooltip {
-  position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
+
+.expandable-box {
+  position: relative;
+  display: inline-block;
+  max-width: 400px;
+  font-family: sans-serif;
+}
+
+.info-btn {
+  padding: 8px 12px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.info-content {
+  margin-top: 10px;
   background: linear-gradient(45deg, #e74c3c, #c0392b);
-  backdrop-filter: blur(5px); /* Blur effect */
-  -webkit-backdrop-filter: blur(5px); /* Safari support */
-  color: #f5f0f0;
-  padding: 10px 15px;
+  color: #fff;
+  padding: 0;
   border-radius: 8px;
-  min-width: 220px; 
   font-size: 13px;
-  line-height: 1.4;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-  text-align: left;
-  z-index: 10;
+  line-height: 1.5;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
 }
-/* Hover effect */
-.tooltip-container:hover .tooltip {
-  opacity: 1;
-  visibility: visible; 
-  transform: translateX(-75%) translateY(50%);
-}
-/* Tooltip arrow */
-.tooltip::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px;
-  border-style: solid;
-  border-color: rgba(224, 222, 222, 0.85) transparent transparent transparent;
+
+.expandable-box.active .info-content {
+  max-height: 500px; 
+  padding: 10px 15px;
 }
 
 .discount-badge {

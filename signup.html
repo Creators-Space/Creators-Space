@@ -13,6 +13,20 @@
       box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
     }
+    #passwordChecklist p {
+  margin: 3px 0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.valid {
+  color: green;
+}
+
+.invalid {
+  color: red;
+}
 
     body {
       background: white;
@@ -208,6 +222,14 @@
       <div class="form-group">
         <label>Password</label>
         <input type="password" id="password" required />
+        <div id="passwordChecklist" style="margin-top: 10px; font-size: 0.9rem;">
+  <p id="length" class="invalid">Minimum 8 characters</p>
+  <p id="uppercase" class="invalid"> At least 1 uppercase letter</p>
+  <p id="lowercase" class="invalid"> At least 1 lowercase letter</p>
+  <p id="number" class="invalid"> At least 1 number</p>
+  <p id="special" class="invalid"> At least 1 special character</p>
+</div>
+
         <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
       </div>
 
@@ -244,7 +266,26 @@
         const matchFeedback = document.getElementById("matchFeedback");
         const emailFeedback = document.getElementById("emailFeedback");
         const spinner = document.getElementById("spinner");
+        const passwordInput = document.getElementById("password");
+const checklist = {
+  length: document.getElementById("length"),
+  uppercase: document.getElementById("uppercase"),
+  lowercase: document.getElementById("lowercase"),
+  number: document.getElementById("number"),
+  special: document.getElementById("special"),
+};
 
+passwordInput.addEventListener("input", () => {
+  const value = passwordInput.value;
+
+  checklist.length.className = value.length >= 8 ? "valid" : "invalid";
+  checklist.uppercase.className = /[A-Z]/.test(value) ? "valid" : "invalid";
+  checklist.lowercase.className = /[a-z]/.test(value) ? "valid" : "invalid";
+  checklist.number.className = /[0-9]/.test(value) ? "valid" : "invalid";
+  checklist.special.className = /[!@#$%^&*(),.?":{}|<>]/.test(value)
+    ? "valid"
+    : "invalid";
+});
         confirmPassword.addEventListener("input", () => {
           matchFeedback.textContent = confirmPassword.value !== password.value
             ? "Passwords do not match"
