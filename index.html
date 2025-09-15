@@ -13,6 +13,58 @@
   <link rel="stylesheet" href="./src/css/responsive.css">
   <link rel="stylesheet" href="./src/css/newsletter.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+  <style>
+    /* Additional styles for course comparison feature */
+    .course-compare-toggle {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .course-compare-toggle:hover {
+      background-color: #0056b3;
+    }
+    .comparison-section {
+      display: none;
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+    }
+    .comparison-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .comparison-section th, .comparison-section td {
+      border: 1px solid #dee2e6;
+      padding: 12px;
+      text-align: left;
+    }
+    .comparison-section th {
+      background-color: #007bff;
+      color: white;
+    }
+    .course-checkbox {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 10;
+    }
+    .course {
+      position: relative;
+    }
+    .no-courses-selected {
+      text-align: center;
+      color: #6c757d;
+      font-style: italic;
+    }
+  </style>
 </head>
 
 <body id="main-body" class="overflow-x-hidden">
@@ -149,7 +201,10 @@
 
 
     <section id="courses">
+      <button class="course-compare-toggle" onclick="toggleCourseComparison()">Compare Courses</button>
+      
       <div class="course">
+        <input type="checkbox" class="course-checkbox" data-course="webdev">
         <img src="./assets/images/full-stack-web-developer.png" alt="Web Development">
         <div class="course-info">
           <h3 data-translate="homepage.webDevelopment">Web Development</h3>
@@ -163,6 +218,7 @@
 
       <!-- <h2>Our Courses</h2> -->
       <div class="course">
+        <input type="checkbox" class="course-checkbox" data-course="cprog">
         <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png" alt="c programming">
         <div class="course-info">
           <h3>C Programming</h3>
@@ -172,6 +228,7 @@
         </div>
       </div>
       <div class="course alter-course">
+        <input type="checkbox" class="course-checkbox" data-course="python">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png"
           alt="python programming">
@@ -183,6 +240,7 @@
         </div>
       </div>
       <div class="course alter-course">
+        <input type="checkbox" class="course-checkbox" data-course="uiux">
         <img src="https://cdn.dribbble.com/users/41543/screenshots/8954776/figma_logo_template_4x.png"
           alt="ui/ux design">
         <div class="course-info">
@@ -193,6 +251,7 @@
         </div>
       </div>
       <div class="course">
+        <input type="checkbox" class="course-checkbox" data-course="graphic">
         <img src="https://i.pinimg.com/originals/11/bf/bf/11bfbf627df75cd22873be0d15472cc4.jpg" alt="graphic design">
         <div class="course-info">
           <h3>Graphic Design</h3>
@@ -202,12 +261,21 @@
         </div>
       </div>
       <div class="course">
+        <input type="checkbox" class="course-checkbox" data-course="data">
         <img src="./Screenshots/data-research.png" alt="Data Analyst">
         <div class="course-info">
           <h3 data-translate="homepage.dataScience">Data Analyst</h3>
           <span>₹14,999</span><del>₹59,999</del>
           <p data-translate="homepage.duration">Duration: 6 Months</p>
           <button data-translate="homepage.enrollNow">Enroll Now</button>
+        </div>
+      </div>
+
+      <!-- Course Comparison Section -->
+      <div class="comparison-section" id="comparison-section">
+        <h2>Course Comparison</h2>
+        <div id="comparison-content">
+          <p class="no-courses-selected">Select courses above to compare them.</p>
         </div>
       </div>
   </div>
@@ -306,7 +374,7 @@
           <a target="_blank" href="https://linkedin.com/in/anuragvishwakarma">
             <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" id="linkedin">
               <path
-                d="M55.35,44.17h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11ZM50.8,3.77A45.67,45.67,0,1,0,96.47,49.44,45.72,45.72,0,0,0,50.8,3.77ZM39.38,70a.77.77,0,0,1-.77.76h-8.8a.76.76,0,0,1-.76-.76V40.43a.76.76,0,0,1,.76-.77h8.8a.77.77,0,0,1,.77.77ZM33.9,35.71a5.53,5.53,0,1,1,5.53-5.53A5.52,5.52,0,0,1,33.9,35.71ZM76.62,70a.77.77,0,0,1-.77.76h-8.8a.76.76,0,0,1-.76-.76V54.11c0-4.18-1.49-7-5.23-7a5.65,5.65,0,0,0-5.3,3.78,7.12,7.12,0,0,0-.34,2.52V70a.77.77,0,0,1-.77.77h-8.8a.76.76,0,0,1-.76-.77c0-4.22.11-24.71,0-29.53a.76.76,0,0,1,.76-.77h8.78a.76.76,0,0,1,.77.77v3.63a10.26,10.26,0,0,1,9.31-5.13c6.79,0,11.89,4.44,11.89,14Zm-21.2-25.8v-.11l-.07.11Zm-.07,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Z">
+                d="M55.35,44.17h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11ZM50.8,3.77A45.67,45.67,0,1,0,96.47,49.44,45.72,45.72,0,0,0,50.8,3.77ZM39.38,70a.77.77,0,0,1-.77.76h-8.8a.76.76,0,0,1-.76-.76V40.43a.76.76,0,0,1,.76-.77h8.8a.77.77,0,0,1,.77.77ZM33.9,35.71a5.53,5.53,0,1,1,5.53-5.53A5.52,5.52,0,0,1,33.9,35.71ZM76.62,70a.77.77,0,0,1-.77.76h-8.8a.76.76,0,0,1-.76-.76V54.11c0-4.18-1.49-7-5.23-7a5.65,5.65,0,0,0-5.3,3.78a7.12,7.12,0,0,0-.34,2.52V70a.77.77,0,0,1-.77.77h-8.8a.76.76,0,0,1-.76-.77c0-4.22.11-24.71,0-29.53a.76.76,0,0,1,.76-.77h8.78a.76.76,0,0,1,.77.77v3.63a10.26,10.26,0,0,1,9.31-5.13c6.79,0,11.89,4.44,11.89,14Zm-21.2-25.8v-.11l-.07.11Zm-.07,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Z">
               </path>
             </svg>
           </a>
@@ -472,7 +540,122 @@
   });
 </script>
 
+    <!-- Course Comparison JavaScript -->
+    <script>
+      function toggleCourseComparison() {
+        const comparisonSection = document.getElementById('comparison-section');
+        const button = event.target;
+        if (comparisonSection.style.display === 'none' || comparisonSection.style.display === '') {
+          comparisonSection.style.display = 'block';
+          button.textContent = 'Hide Comparison';
+          updateComparisonTable();
+        } else {
+          comparisonSection.style.display = 'none';
+          button.textContent = 'Compare Courses';
+        }
+      }
 
+      function updateComparisonTable() {
+        const checkboxes = document.querySelectorAll('.course-checkbox:checked');
+        const content = document.getElementById('comparison-content');
+        
+        if (checkboxes.length === 0) {
+          content.innerHTML = '<p class="no-courses-selected">Select courses above to compare them.</p>';
+          return;
+        }
+
+        if (checkboxes.length > 3) {
+          content.innerHTML = '<p class="no-courses-selected">Please select up to 3 courses for comparison.</p>';
+          return;
+        }
+
+        let tableHTML = `
+          <table>
+            <thead>
+              <tr>
+                <th>Course</th>
+                <th>Price</th>
+                <th>Original Price</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+        `;
+
+        checkboxes.forEach(checkbox => {
+          const courseId = checkbox.dataset.course;
+          let courseName, price, originalPrice, duration;
+          
+          // Map course IDs to details (hardcoded based on HTML)
+          switch (courseId) {
+            case 'webdev':
+              courseName = 'Web Development';
+              price = '₹12,999';
+              originalPrice = '₹49,999';
+              duration = '6 Months';
+              break;
+            case 'cprog':
+              courseName = 'C Programming';
+              price = '₹2,999';
+              originalPrice = '₹12,999';
+              duration = '3 Months';
+              break;
+            case 'python':
+              courseName = 'Python Programming';
+              price = '₹2,999';
+              originalPrice = '₹12,999';
+              duration = '3 Months';
+              break;
+            case 'uiux':
+              courseName = 'UI/UX Design';
+              price = '₹4,999';
+              originalPrice = '₹19,999';
+              duration = '3 Months';
+              break;
+            case 'graphic':
+              courseName = 'Graphic Design';
+              price = '₹7,999';
+              originalPrice = '₹29,999';
+              duration = '3 Months';
+              break;
+            case 'data':
+              courseName = 'Data Analyst';
+              price = '₹14,999';
+              originalPrice = '₹59,999';
+              duration = '6 Months';
+              break;
+            default:
+              return;
+          }
+
+          tableHTML += `
+            <tr>
+              <td>${courseName}</td>
+              <td>${price}</td>
+              <td>${originalPrice}</td>
+              <td>${duration}</td>
+            </tr>
+          `;
+        });
+
+        tableHTML += `
+            </tbody>
+          </table>
+        `;
+
+        content.innerHTML = tableHTML;
+      }
+
+      // Listen for checkbox changes
+      document.addEventListener('change', function(event) {
+        if (event.target.classList.contains('course-checkbox')) {
+          const comparisonSection = document.getElementById('comparison-section');
+          if (comparisonSection.style.display !== 'none' && comparisonSection.style.display !== '') {
+            updateComparisonTable();
+          }
+        }
+      });
+    </script>
 
 </body>
 
