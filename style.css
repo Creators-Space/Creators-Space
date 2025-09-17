@@ -31,6 +31,13 @@
   right: 0;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
+.desc {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 8px 0;
+  line-height: 1.4;
+  min-height: 42px; /* keeps card heights aligned */
+}
 
 .chat-body {
   flex: 1;
