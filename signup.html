@@ -208,20 +208,20 @@
     <h2>Sign Up</h2>
     <form id="signup-form">
       <div class="form-group">
-        <label>Name</label>
-        <input type="text" id="name" required />
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter name" required />
         <div id="name" class="name"></div>
       </div>
 
       <div class="form-group">
-        <label>Email</label>
-        <input type="email" id="email" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter email" required />
         <div id="emailFeedback" class="inline-feedback"></div>
       </div>
 
       <div class="form-group">
-        <label>Password</label>
-        <input type="password" id="password" required />
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create a password" required />
         <div id="passwordChecklist" style="margin-top: 10px; font-size: 0.9rem;">
   <p id="length" class="invalid">Minimum 8 characters</p>
   <p id="uppercase" class="invalid"> At least 1 uppercase letter</p>
@@ -234,8 +234,8 @@
       </div>
 
       <div class="form-group">
-        <label>Confirm Password</label>
-        <input type="password" id="confirm-password" required />
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" placeholder="Re-enter your password" required />
         <span class="toggle-password" onclick="togglePassword('confirm-password')">👁️</span>
         <div id="matchFeedback" class="inline-feedback"></div>
       </div>

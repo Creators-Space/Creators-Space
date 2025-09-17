@@ -823,9 +823,18 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       <div class="form">
         <h3>Get In Touch</h3>
-        <input type="text" placeholder="Your name" />
-        <input type="email" placeholder="Your email" />
-        <textarea type="text" placeholder="Your message"></textarea>
+        <div class="form-group">
+            <label for="footer-name">Name</label>
+            <input type="text" id="footer-name" placeholder="Enter name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="footer-email">Email</label>
+            <input type="email" id="footer-email" placeholder="Enter email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="footer-message">Message</label>
+            <textarea id="footer-message" placeholder="Enter message" name="message"></textarea>
+        </div>
         <button>Send</button>
       </div>
       <div class="copy">

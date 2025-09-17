@@ -246,7 +246,6 @@ body.dark-mode #darkModeToggle .fa-sun {
   display: inline;
 }
 
-
 .navbar .nav-links {
   display: flex;
   padding: 0 10px;
@@ -264,7 +263,7 @@ body.dark-mode #darkModeToggle .fa-sun {
 .dropdown {
   display: none;
   position: absolute;
-  top: 100%;   /* directly below parent */
+  top: 100%; /* directly below parent */
   left: 0;
   background-color: #ffffff; /* white background */
   min-width: 200px;
@@ -274,8 +273,8 @@ body.dark-mode #darkModeToggle .fa-sun {
   z-index: auto;
   max-height: none;
   line-height: 1.2;
-  gap : 2px;
-  margin : 0px;
+  gap: 2px;
+  margin: 0px;
 }
 
 /* Dropdown items */
@@ -285,14 +284,14 @@ body.dark-mode #darkModeToggle .fa-sun {
   color: #333;
   border: none !important;
   text-decoration: none;
-  transition: all .2s ease;
-  margin : 0px;
+  transition: all 0.2s ease;
+  margin: 0px;
 }
 
 /* Hover effect */
 .dropdown a:hover {
   background-color: #b3abe6; /* light gray highlight */
-  padding-left: 20px;        /* slight indent */
+  padding-left: 20px; /* slight indent */
   border: none !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
 }
@@ -343,7 +342,12 @@ body.dark-mode #darkModeToggle .fa-sun {
   justify-content: center;
   flex-direction: column;
   height: 80vh;
-  background: linear-gradient(45deg,rgba(158, 198, 217,0.4) 20%, white 70%, rgb(150, 182, 201,0.1)10%);
+  background: linear-gradient(
+    45deg,
+    rgba(158, 198, 217, 0.4) 20%,
+    white 70%,
+    rgb(150, 182, 201, 0.1) 10%
+  );
   margin-top: 20px;
 }
 
@@ -354,7 +358,7 @@ body.dark-mode #darkModeToggle .fa-sun {
 }
 
 .main p {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .main .images {
@@ -497,7 +501,7 @@ body.dark-mode #darkModeToggle .fa-sun {
   object-fit: cover;
 } */
 
-  /* courses-heading */
+/* courses-heading */
 #our-course-h1 {
   font-size: 2.4rem;
   font-weight: 800;
@@ -511,9 +515,7 @@ body.dark-mode #darkModeToggle .fa-sun {
   color: #240d64;
 }
 
-
-
-  /* courses */
+/* courses */
 /* COURSES SECTION */
 #courses {
   display: grid;
@@ -531,7 +533,7 @@ body.dark-mode #darkModeToggle .fa-sun {
   border-radius: 20px;
   padding: 40px 30px;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: linear-gradient(to right, #2a0c0c, rgb(81, 86, 91), #0d0f11);
@@ -551,10 +553,9 @@ body.dark-mode #darkModeToggle .fa-sun {
   }
 }
 
-
 .course:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 30px rgba(255,255,255,0.1);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
 }
 
 /* Image */
@@ -602,27 +603,26 @@ body.dark-mode #darkModeToggle .fa-sun {
   cursor: pointer;
   transition: 0.3s ease;
   border: 1px solid rgba(255, 100, 0, 0.3);
-  box-shadow: 0 0 15px rgba(255, 80, 0, 0.4),
-              0 0 30px rgba(255, 0, 0, 0.3),
-              inset 0 0 5px rgba(255, 150, 0, 0.2);
+  box-shadow: 0 0 15px rgba(255, 80, 0, 0.4), 0 0 30px rgba(255, 0, 0, 0.3),
+    inset 0 0 5px rgba(255, 150, 0, 0.2);
   animation: lavaPulse 2s infinite ease-in-out;
 }
 
-
-
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 30px rgba(27, 83, 129, 0.4); }
-  50% { box-shadow: 0 0 40px rgba(27, 83, 129, 0.6); }
+  0%,
+  100% {
+    box-shadow: 0 0 30px rgba(27, 83, 129, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(27, 83, 129, 0.6);
+  }
 }
-
 
 .course-info button:hover {
   transform: scale(1.1);
   border: 1px solid #fff;
   color: #fff;
 }
-
-
 
 /* footer CSS */
 .footer {
@@ -702,7 +702,8 @@ body.dark-mode #darkModeToggle .fa-sun {
   color: white;
 }
 
-#envelope-icon, #call-icon {
+#envelope-icon,
+#call-icon {
   margin-right: 10px;
 }
 
@@ -739,6 +740,18 @@ body.dark-mode #darkModeToggle .fa-sun {
   color: blue;
 }
 
+.footer .form .form-group {
+  margin-bottom: 7px;
+  text-align: left;
+}
+
+.footer .form .form-group label {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: 500;
+  color: #f0f0f0;
+}
+
 .footer .copy {
   text-align: center;
   margin-top: 20px;
@@ -767,7 +780,7 @@ body.dark-mode #darkModeToggle .fa-sun {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   transform-style: preserve-3d;
   perspective: 1000px;
-    background: linear-gradient(to right, #0c0011, rgb(81, 86, 91), #0d0f11);
+  background: linear-gradient(to right, #0c0011, rgb(81, 86, 91), #0d0f11);
   background-size: 300% 100%;
   animation: gradientShift 6s ease-in-out infinite;
 }
@@ -783,12 +796,10 @@ body.dark-mode #darkModeToggle .fa-sun {
   width: 120px;
   border-radius: 50%;
   margin-bottom: 10px;
-  box-shadow: 0 0 45px rgba(57, 192, 215, 0.4),
-              0 0 30px rgba(18, 129, 159, 0.3),
-              inset 0 0 5px rgba(57, 199, 234, 0.2);
+  box-shadow: 0 0 45px rgba(57, 192, 215, 0.4), 0 0 30px rgba(18, 129, 159, 0.3),
+    inset 0 0 5px rgba(57, 199, 234, 0.2);
   animation: lavaPulse 2s infinite ease-in-out;
 }
-
 
 .testimonial-quote {
   padding: 0.95rem;
@@ -808,33 +819,32 @@ body.dark-mode #darkModeToggle .fa-sun {
   font-size: 14px;
 }
 
-#testimonial-btn-left, #testimonial-btn-right{
+#testimonial-btn-left,
+#testimonial-btn-right {
   background: linear-gradient(145deg, #330000, #cd5b03);
   border: none;
   padding: 10px;
   margin: 1rem;
   color: #ebe3e3;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 80, 0, 0.4),
-              0 0 30px rgba(255, 0, 0, 0.3),
-              inset 0 0 5px rgba(255, 150, 0, 0.2);
+  box-shadow: 0 0 15px rgba(255, 80, 0, 0.4), 0 0 30px rgba(255, 0, 0, 0.3),
+    inset 0 0 5px rgba(255, 150, 0, 0.2);
   animation: lavaPulse 2s infinite ease-in-out;
-
 }
 
-#testimonial-btn-left:hover, #testimonial-btn-right:hover{
+#testimonial-btn-left:hover,
+#testimonial-btn-right:hover {
   transform: scale(1.1);
-  background:rgb(90, 29, 3);
+  background: rgb(90, 29, 3);
   transition: 0.5s;
 }
 
-
 /* Scroll to top */
-#scrollTopBtn { 
+#scrollTopBtn {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  z-index: 999; 
+  z-index: 999;
   border: none;
   outline: none;
   background-color: #0a0a0a;
@@ -842,7 +852,7 @@ body.dark-mode #darkModeToggle .fa-sun {
   cursor: pointer;
   padding: 10px 15px;
   border-radius: 50%;
-  box-shadow:  0 12px 20px rgba(20, 5, 158, 0.3);
+  box-shadow: 0 12px 20px rgba(20, 5, 158, 0.3);
   opacity: 0;
   pointer-events: none;
   transition: all 0.4s ease;
@@ -850,7 +860,7 @@ body.dark-mode #darkModeToggle .fa-sun {
   transform: translateY(65px);
 }
 
-#scrollTopBtn svg{
+#scrollTopBtn svg {
   width: 24px;
   height: 24px;
   transition: transform 0.4s ease;
@@ -858,24 +868,22 @@ body.dark-mode #darkModeToggle .fa-sun {
   position: relative;
   top: 4px;
 }
-#scrollTopBtn.show{
+#scrollTopBtn.show {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
-
 }
-#scrollTopBtn:hover{
+#scrollTopBtn:hover {
   background-color: #093586;
   transform: translateY(0) scale(1.05);
-  box-shadow: 0 0 10px rgba(14 , 39 , 182 , 0.4);
+  box-shadow: 0 0 10px rgba(14, 39, 182, 0.4);
 }
-#scrollTopBtn:hover svg{
+#scrollTopBtn:hover svg {
   transform: scale(1.1);
   top: 0;
 }
-.dark #scrollTopBtn{
+.dark #scrollTopBtn {
   background-color: white;
-  
 }
 .dark #scrollTopBtn svg {
   fill: #0a0a0a; /* arrow color for dark mode */
@@ -883,16 +891,17 @@ body.dark-mode #darkModeToggle .fa-sun {
 
 /* bounce animation added to back to top */
 @keyframes bounce {
-  0% , 100%{
+  0%,
+  100% {
     transform: translateY(0);
   }
-  50%{
+  50% {
     transform: translateY(-6px);
   }
 }
 
 /* apply bounce when not hover  */
-#scrollTopBtn.bounce:not(:hover) svg{
+#scrollTopBtn.bounce:not(:hover) svg {
   animation: bounce 2s infinite;
 }
 
@@ -1026,7 +1035,6 @@ body.dark-mode #darkModeToggle .fa-sun {
   }
 }
 
-
 /* ========== Language Selector Styles ========== */
 #language-selector {
   position: relative;
@@ -1112,21 +1120,21 @@ body.dark-mode #darkModeToggle .fa-sun {
     border-bottom: 1px solid #eee;
   }
 
-/* ==================== */
-/* Dark Mode Final Fix  */
-/* ==================== */
+  /* ==================== */
+  /* Dark Mode Final Fix  */
+  /* ==================== */
 
-body.dark-mode {
-  background-color: #121212;
-  color: #f5f5f5;
-}
+  body.dark-mode {
+    background-color: #121212;
+    color: #f5f5f5;
+  }
 
-/* Section backgrounds full black */
-body.dark-mode .hero,
-body.dark-mode .features,
-body.dark-mode .testimonial {
-  background-color: #121212 !important;
-}
+  /* Section backgrounds full black */
+  body.dark-mode .hero,
+  body.dark-mode .features,
+  body.dark-mode .testimonial {
+    background-color: #121212 !important;
+  }
 }
 /* Keep feature cards light in dark mode */
 body.dark-mode .features .feature-card {
@@ -1145,7 +1153,7 @@ body.dark-mode .testimonial .testimonial-card {
 /* Headings in dark mode */
 body.dark-mode .hero h1,
 body.dark-mode #why-learn h2 {
-  color: #f5f5f5 !important;  /* or white */
+  color: #f5f5f5 !important; /* or white */
 }
 
 body.dark-mode .testimonial h2 {
@@ -1162,4 +1170,3 @@ body.dark-mode .hero-section h1,
 body.dark-mode .main h1 {
   color: #f5f5f5 !important; /* Ensure headings are white */
 }
-
