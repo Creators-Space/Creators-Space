@@ -1154,7 +1154,7 @@ body.dark-mode .testimonial h2 {
 /* Dark mode for hero section */
 body.dark-mode .hero-section,
 body.dark-mode .main {
-  background-color: #121212 !important; /* Dark background */
+  background: #121212 !important; /* Dark background */
   color: #f5f5f5 !important; /* Make text white */
 }
 

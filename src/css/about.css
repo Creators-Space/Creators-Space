@@ -854,6 +854,9 @@ main {
 }
 
 .faq-container {
+  background:rgba(114, 190, 244, 0.1);
+  padding: 2rem;
+  border-radius: 25px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -863,8 +866,10 @@ main {
   border: 1px solid #e1e5e9;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
+  transition: border-color 1.6s ease, box-shadow 0.3s ease, transform 0.3s ease;
+
 }
 
 .faq-item:hover {
@@ -874,24 +879,21 @@ main {
 
 .faq-question {
   width: 100%;
-  padding: 20px 25px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
+  padding: 20px 30px;
   cursor: pointer;
+  border: rgb(37, 110, 171) 2px solid;
+  background: white;
   display: flex;
+  color: rgb(86, 86, 86);
   justify-content: space-between;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: white;
   text-align: left;
   transition: all 0.3s ease;
   outline: none;
 }
 
-.faq-question:hover {
-  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
-}
 
 .faq-question span {
   flex: 1;
@@ -901,7 +903,15 @@ main {
 .faq-icon {
   font-size: 1rem;
   transition: transform 0.3s ease;
+   background: radial-gradient(circle at center, #87daf8 0%, #026eea 100%);
+  padding: 2px;
   color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow:
+    0 0 6px #6bc4f1,
+    0 0 12px #5cbff1,
+    0 0 18px #d6d6d680;
 }
 
 .faq-item.active .faq-icon {
@@ -1062,7 +1072,7 @@ main {
 
 /* Accessibility improvements */
 .faq-question:focus {
-  outline: 2px solid #667eea;
+  outline: 2px solid #66b1ea;
   outline-offset: 2px;
 }
 
@@ -1091,4 +1101,20 @@ main {
 }
 #main-body.dark #scrollTopBtn svg {
   fill: #0a0a0a; /* arrow visible */
+}
+
+#main-body.dark .main{
+  background: linear-gradient(45deg,#3c3c3c, black,rgb(116, 115, 115));
+}
+#main-body.dark .faq-question{
+  background: linear-gradient(45deg,#3c3c3c, black,rgb(116, 115, 115));
+}
+#main-body.dark .faq-answer{
+  background: #4d4c4c;
+}
+#main-body.dark .question{
+  color: rgb(113, 61, 235);
+}
+#main-body.dark .faq-search-input{
+  border: #60a4f2 1px solid;
 }
