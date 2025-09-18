@@ -208,7 +208,7 @@ class LanguageManager {
         const currentLang = this.languages[this.currentLanguage];
         
         selectorContainer.innerHTML = `
-            <a href="#" class="dropdown-toggle language-toggle">
+            <a href="#" class="dropdown-toggle language-toggle"">
                 <span class="flag">${currentLang.flag}</span>
                 <span class="lang-name">${currentLang.name}</span>
                 <i class="fa-solid fa-chevron-down arrow"></i>

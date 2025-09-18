@@ -70,18 +70,19 @@
         <div id="authSection">
     <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
     <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
-    <button id="darkModeToggle" class="dark-toggle-btn">
+    
+  </div>      
+      <div id="userSection" style="display: none; align-items: center; gap: 10px;">
+        <button id="logoutBtn" class="btn logout" data-translate="navbar.logout">Logout</button>
+        <a href="profile.html" title="Your Profile">
+          <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
+            style="border-radius: 50%; margin-right: 10px" />
+        </a>
+      </div>
+      <button id="darkModeToggle" class="dark-toggle-btn" style="margin-right: 10px;">
       <i class="fa fa-moon"></i>
       <i class="fa fa-sun"></i>
     </button>
-  </div>      
-      <div id="userSection" style="display: none; align-items: center; gap: 10px;">
-        <button id="logoutBtn" class="btn login" data-translate="navbar.logout">Logout</button>
-        <a href="profile.html" title="Your Profile">
-          <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
-            style="border-radius: 50%;" />
-        </a>
-      </div>
     </div>
     <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
       <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
