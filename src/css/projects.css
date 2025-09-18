@@ -572,6 +572,139 @@ body.dark .dropdown a:hover {
   align-items: center;
 }
 
+.like-btn, .fav-btn {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.like-btn:hover, .fav-btn:hover {
+  background: #e5e7eb;
+}
+
+.like-btn.active {
+  background: #fee2e2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
+.fav-btn.active {
+  background: #fef3c7;
+  border-color: #fde68a;
+  color: #92400e;
+}
+
+.comments-section {
+  margin-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 12px;
+}
+
+.comments-header {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 160px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.comment-item {
+  background: #f9fafb;
+  border: 1px solid #f3f4f6;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.comment-text {
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.comment-meta {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.comment-form {
+  display: flex;
+  gap: 8px;
+}
+
+.comment-input {
+  flex: 1;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.comment-submit {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.no-comments {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Dark mode for interactions */
+body.dark .like-btn, body.dark .fav-btn {
+  background: #333;
+  color: #ddd;
+  border-color: #555;
+}
+body.dark .like-btn:hover, body.dark .fav-btn:hover {
+  background: #3a3a3a;
+}
+body.dark .like-btn.active {
+  background: #3b1616;
+  border-color: #5b1f1f;
+  color: #fca5a5;
+}
+body.dark .fav-btn.active {
+  background: #3b2f16;
+  border-color: #5b451f;
+  color: #fde68a;
+}
+body.dark .comments-section {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+body.dark .comments-header { color: #ccc; }
+body.dark .comment-item {
+  background: #2f2f2f;
+  border-color: #444;
+}
+body.dark .comment-text { color: #e5e7eb; }
+body.dark .comment-meta { color: #9ca3af; }
+body.dark .comment-input {
+  background: #2a2a2a;
+  color: #e5e7eb;
+  border-color: #444;
+}
+
 .project-link {
   background: #2c3e50;
   color: white;
