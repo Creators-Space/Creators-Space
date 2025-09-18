@@ -200,58 +200,70 @@
     </div>
   </div>
   <br><br>
+  
   <div class="container margin-top-5">
-    <a href="index.html"
-      style="display: inline-block; margin-bottom: 10px; font-size: 14px; color: #555; text-decoration: none;">
-      ← Back to Homepage
-    </a>
-    <h2>Sign Up</h2>
-    <form id="signup-form">
-      <div class="form-group">
-        <label>Name</label>
-        <input type="text" id="name" required />
-        <div id="name" class="name"></div>
-      </div>
+  <a href="index.html"
+    style="display: inline-block; margin-bottom: 10px; font-size: 14px; color: #555; text-decoration: none;">
+    ← Back to Homepage
+  </a>
+  
+  <h2>Sign Up</h2>
+  
+  <form id="signup-form">
+    <!-- Name -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" required />
+      <div id="nameFeedback" class="inline-feedback"></div>
+    </div>
 
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" id="email" required />
-        <div id="emailFeedback" class="inline-feedback"></div>
-      </div>
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+      <div id="emailFeedback" class="inline-feedback"></div>
+    </div>
 
-      <div class="form-group">
-        <label>Password</label>
-        <input type="password" id="password" required />
-        <div id="passwordChecklist" style="margin-top: 10px; font-size: 0.9rem;">
-  <p id="length" class="invalid">Minimum 8 characters</p>
-  <p id="uppercase" class="invalid"> At least 1 uppercase letter</p>
-  <p id="lowercase" class="invalid"> At least 1 lowercase letter</p>
-  <p id="number" class="invalid"> At least 1 number</p>
-  <p id="special" class="invalid"> At least 1 special character</p>
+    <!-- Password -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" required />
+      <div id="passwordChecklist" style="margin-top: 10px; font-size: 0.9rem;">
+        <p id="length" class="invalid">Minimum 8 characters</p>
+        <p id="uppercase" class="invalid">At least 1 uppercase letter</p>
+        <p id="lowercase" class="invalid">At least 1 lowercase letter</p>
+        <p id="number" class="invalid">At least 1 number</p>
+        <p id="special" class="invalid">At least 1 special character</p>
+      </div>
+      <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="form-group">
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" required />
+      <span class="toggle-password" onclick="togglePassword('confirm-password')">👁️</span>
+      <div id="matchFeedback" class="inline-feedback"></div>
+    </div>
+
+    <!-- Terms Checkbox -->
+    <div class="form-group">
+      <input type="checkbox" id="terms" required style="width:auto; margin-right:8px;" />
+      <label for="terms" style="display:inline;">
+        I agree to the <a href="tandc.html" target="_blank">Terms and Conditions</a>
+      </label>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" class="btn">Sign Up</button>
+    <div class="spinner" id="spinner"></div>
+
+    <div class="login-page">
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </form>
 </div>
 
-        <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
-      </div>
-
-      <div class="form-group">
-        <label>Confirm Password</label>
-        <input type="password" id="confirm-password" required />
-        <span class="toggle-password" onclick="togglePassword('confirm-password')">👁️</span>
-        <div id="matchFeedback" class="inline-feedback"></div>
-      </div>
-      <div class="form-group">
-        <input type="checkbox" id="terms" required style="width:auto; margin-right:8px;" />
-        <label for="terms" style="display:inline;">
-          I agree to the <a href="tandc.html" target="_blank">Terms and Conditions</a>
-        </label>
-      </div>
-
-      <button type="submit" class="btn">Sign Up</button>
-      <div class="spinner" id="spinner"></div>
-
-      <div class="login-page">
-        <p>Already have an account? <a href="login.html">Login</a></p>
-      </div>
 
       <script>
         function togglePassword(id) {
@@ -331,14 +343,14 @@ passwordInput.addEventListener("input", () => {
           spinner.style.display = "block";
 
           setTimeout(() => {
-            spinner.style.display = "none";
-            alert("Account created successfully!");
-            form.reset();
+          spinner.style.display = "none";
+          alert("Account created successfully!");
+          form.reset();
 
-            // Redirect to login page AFTER signup success
-            window.location.href = "login.html";
-          }, 1500);
-        });
+          // Redirect to Home Page instead of login
+          window.location.href = "index.html";
+        }, 1500);
+      });
 
 
 
