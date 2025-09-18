@@ -8,50 +8,76 @@
   <link rel="stylesheet" href="./src/css/utils.css">
   <link rel="stylesheet" href="./src/css/responsive.css">
   <title>Sign Up</title>
+  <script>
+    // Prevent theme flash by applying theme immediately
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+      }
+    })();
+  </script>
   <style>
     * {
       box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
     }
+    
     #passwordChecklist p {
-  margin: 3px 0;
-  padding: 2px 6px;
-  border-radius: 4px;
-  transition: 0.3s;
-}
+      margin: 3px 0;
+      padding: 2px 6px;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
 
-.valid {
-  color: green;
-}
+    .valid {
+      color: green;
+    }
 
-.invalid {
-  color: red;
-}
+    .invalid {
+      color: red;
+    }
 
     body {
-      background: white;
-      /*       display: flex; */
+      background: var(--bg-color, #f8f9fa);
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      /*       padding: 20px; */
       overflow-x: hidden;
+      transition: background-color 0.3s ease;
+    }
+
+    body.dark {
+      background: var(--dark-bg-color, #1a1a1a);
     }
 
     .container {
-      background: white;
+      background: var(--card-bg, white);
       padding: 2rem;
       border-radius: 12px;
       width: 100%;
       max-width: 400px;
-      box-shadow: 0 8px 150px rgba(0, 0, 0, 0.15);
-      border: 1px solid #ccc;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--border-color, #e0e0e0);
       font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    body.dark .container {
+      background: var(--dark-card-bg, #2a2a2a);
+      border-color: var(--dark-border-color, #444);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
 
     h2 {
       text-align: center;
       margin-bottom: 1rem;
+      color: var(--text-color, #2c3e50);
+      transition: color 0.3s ease;
+    }
+
+    body.dark h2 {
+      color: var(--dark-text-color, #e0e0e0);
     }
 
     .form-group {
@@ -62,6 +88,12 @@
     label {
       display: block;
       margin-bottom: 5px;
+      color: var(--text-color, #2c3e50);
+      transition: color 0.3s ease;
+    }
+
+    body.dark label {
+      color: var(--dark-text-color, #e0e0e0);
     }
 
     input[type="email"],
@@ -70,8 +102,19 @@
       width: 100%;
       padding: 10px;
       padding-right: 40px;
-      border: 1px solid #ccc;
+      border: 1px solid var(--border-color, #ccc);
       border-radius: 6px;
+      background: var(--input-bg, white);
+      color: var(--text-color, #2c3e50);
+      transition: all 0.3s ease;
+    }
+
+    body.dark input[type="email"],
+    body.dark input[type="password"],
+    body.dark input[type="text"] {
+      background: var(--dark-input-bg, #333);
+      border-color: var(--dark-border-color, #555);
+      color: var(--dark-text-color, #e0e0e0);
     }
 
     .toggle-password {
@@ -93,10 +136,16 @@
       padding: 10px;
       border: none;
       border-radius: 6px;
-      background-color: #0d0d0d;
+      background-color: #2c3e50;
       color: white;
       font-weight: bold;
       cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #34495e;
+      transform: translateY(-1px);
     }
 
     .btn:disabled {
@@ -126,8 +175,13 @@
       text-align: center;
       margin-top: 1rem;
       font-size: 0.9rem;
-      color: black;
+      color: var(--text-color, #2c3e50);
       text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    body.dark .login-page {
+      color: var(--dark-text-color, #e0e0e0);
     }
 
     .social-buttons {
@@ -199,6 +253,15 @@
       </svg>
     </div>
   </div>
+
+  <!-- Dark Mode Toggle -->
+  <div class="toggle-switch">
+    <label class="switch-label">
+      <input type="checkbox" class="checkbox" id="dark-mode-toggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
   <br><br>
   <div class="container margin-top-5">
     <a href="index.html"
@@ -350,6 +413,25 @@ passwordInput.addEventListener("input", () => {
       </script>
       <script src="./src/js/navbar.js"></script>
       <script src="./src/js/utils.js"></script>
+      <script>
+        // Dark mode functionality - inherit theme from homepage
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const savedTheme = localStorage.getItem('theme');
+
+        // Apply theme immediately on page load to prevent flash
+        if (savedTheme === 'dark') {
+          document.body.classList.add('dark');
+          if (darkModeToggle) darkModeToggle.checked = true;
+        }
+
+        // Set up toggle functionality
+        if (darkModeToggle) {
+          darkModeToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+          });
+        }
+      </script>
 </body>
 
 </html>
