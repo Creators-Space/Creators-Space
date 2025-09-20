@@ -12,7 +12,7 @@
       "Professional networking guidance"
     ],
     "ctaText": "Get Started",
-    "ctaLink": "./contact.html"
+    "ctaLink": "https://www.coursera.org/browse/career-development" 
   },
   {
     "id": 2,
@@ -27,7 +27,7 @@
       "Community engagement strategies"
     ],
     "ctaText": "Start Contributing",
-    "ctaLink": "./contact.html"
+    "ctaLink": "https://github.com/Creators-Space/Creators-Space"
   },
   {
     "id": 3,
@@ -44,7 +44,7 @@
       "Portfolio project guidance"
     ],
     "ctaText": "Start Building",
-    "ctaLink": "./contact.html"
+    "ctaLink": "https://www.freecodecamp.org/learn"
   },
   {
     "id": 4,
@@ -61,7 +61,7 @@
       "LinkedIn profile optimization"
     ],
     "ctaText": "Improve Resume",
-    "ctaLink": "./contact.html"
+    "ctaLink": "https://www.overleaf.com/gallery/tagged/cv"
   },
   {
     "id": 5,
@@ -78,6 +78,6 @@
       "Confidence building techniques"
     ],
     "ctaText": "Book Session",
-    "ctaLink": "./contact.html"
+    "ctaLink": "https://www.pramp.com/#/"
   }
 ]
