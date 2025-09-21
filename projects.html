@@ -17,168 +17,165 @@
       referrerpolicy="no-referrer"
     />
     <style>
-    .main-cards {
- 
-      background: linear-gradient(to right, #87CEEB, #9370DB);
-      color: #1a237e; /* Very dark blue for maximum clarity */
-      padding: 15px 30px;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease-in-out;
-      cursor: pointer;
-    }
-    
-    .main-cards:hover {
-      transform: translateY(-5px); /* Adds a subtle lift on hover */
-    }
-    
-        </style>
-        <style>
-/* MAIN SECTION CARDS */
-.main-cards {
-  padding: 15px 30px;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 1.1rem;
-  font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-  cursor: pointer;
-}
+      .main-cards {
+        background: linear-gradient(to right, #87ceeb, #9370db);
+        color: #1a237e; /* Very dark blue for maximum clarity */
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+      }
 
-.main-cards:hover {
-  transform: translateY(-5px) scale(1.03); /* Slight lift and scale */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Stronger shadow */
-  filter: brightness(1.05); /* Slight brightness boost */
-}
+      .main-cards:hover {
+        transform: translateY(-5px); /* Adds a subtle lift on hover */
+      }
+    </style>
+    <style>
+      /* MAIN SECTION CARDS */
+      .main-cards {
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+        cursor: pointer;
+      }
 
-/* SHOW MORE BUTTON */
-.show-more-btn {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+      .main-cards:hover {
+        transform: translateY(-5px) scale(1.03); /* Slight lift and scale */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Stronger shadow */
+        filter: brightness(1.05); /* Slight brightness boost */
+      }
 
-.show-more-btn:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
+      /* SHOW MORE BUTTON */
+      .show-more-btn {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-/* BACK TO TOP BUTTON */
-#scrollTopBtn {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+      .show-more-btn:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
 
-#scrollTopBtn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
+      /* BACK TO TOP BUTTON */
+      #scrollTopBtn {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-/* FILTER TECH STACK TOGGLE BUTTON */
-.toggle-btn {
-  transition: transform 0.3s ease, color 0.3s ease;
-}
+      #scrollTopBtn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      }
 
-.toggle-btn:hover {
-  transform: rotate(15deg);
-}
+      /* FILTER TECH STACK TOGGLE BUTTON */
+      .toggle-btn {
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
 
-/* PROJECTS CONTAINER CARDS (if dynamically loaded) */
-.project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-}
+      .toggle-btn:hover {
+        transform: rotate(15deg);
+      }
 
-.project-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  filter: brightness(1.05);
-}
+      /* PROJECTS CONTAINER CARDS (if dynamically loaded) */
+      .project-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+      }
 
-/* ADD SUBTLE ANIMATION TO LOADING SPINNER */
-.loading-spinner .spinner {
-  animation: spin 1s linear infinite;
-}
+      .project-card:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        filter: brightness(1.05);
+      }
 
-@keyframes spin {
-  0% { transform: rotate(0deg);}
-  100% { transform: rotate(360deg);}
-}
+      /* ADD SUBTLE ANIMATION TO LOADING SPINNER */
+      .loading-spinner .spinner {
+        animation: spin 1s linear infinite;
+      }
 
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
 
-/* GENERAL LINK STYLES */
-a {
-  color: inherit; /* Keep default color */
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
+      /* GENERAL LINK STYLES */
+      a {
+        color: inherit; /* Keep default color */
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.2s ease;
+      }
 
-/* HOVER EFFECT */
-a:hover {
-  color: #9370DB; /* Slight highlight on hover */
-  transform: scale(1.05); /* Subtle grow effect */
-}
+      /* HOVER EFFECT */
+      a:hover {
+        color: #9370db; /* Slight highlight on hover */
+        transform: scale(1.05); /* Subtle grow effect */
+      }
 
-/* ACTIVE / CLICK EFFECT */
-a:active {
-  color: #87CEEB; /* Slight color change when clicked */
-  transform: scale(0.98); /* Slight shrink effect for click */
-}
+      /* ACTIVE / CLICK EFFECT */
+      a:active {
+        color: #87ceeb; /* Slight color change when clicked */
+        transform: scale(0.98); /* Slight shrink effect for click */
+      }
 
-/* NAVBAR LINKS */
-.nav-links a {
-  padding: 5px 10px;
-  border-radius: 5px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
+      /* NAVBAR LINKS */
+      .nav-links a {
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
 
-.nav-links a:hover {
-  background: rgba(147, 112, 219, 0.1); /* subtle background highlight */
-  color: #9370DB;
-}
+      .nav-links a:hover {
+        background: rgba(147, 112, 219, 0.1); /* subtle background highlight */
+        color: #9370db;
+      }
 
-.nav-links a:active {
-  background: rgba(135, 206, 235, 0.2); /* subtle active background */
-  color: #87CEEB;
-}
+      .nav-links a:active {
+        background: rgba(135, 206, 235, 0.2); /* subtle active background */
+        color: #87ceeb;
+      }
 
-/* DROPDOWN LINKS */
-.dropdown a {
-  display: block;
-  padding: 8px 15px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
+      /* DROPDOWN LINKS */
+      .dropdown a {
+        display: block;
+        padding: 8px 15px;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
 
-.dropdown a:hover {
-  background-color: rgba(147, 112, 219, 0.15);
-  color: #9370DB;
-}
+      .dropdown a:hover {
+        background-color: rgba(147, 112, 219, 0.15);
+        color: #9370db;
+      }
 
-.dropdown a:active {
-  background-color: rgba(135, 206, 235, 0.2);
-  color: #87CEEB;
-}
+      .dropdown a:active {
+        background-color: rgba(135, 206, 235, 0.2);
+        color: #87ceeb;
+      }
 
-/* FOOTER LINKS */
-.footer a {
-  color: #fff;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
+      /* FOOTER LINKS */
+      .footer a {
+        color: #fff;
+        transition: color 0.3s ease, transform 0.2s ease;
+      }
 
-.footer a:hover {
-  color: #87CEEB; /* subtle highlight */
-  transform: scale(1.05);
-}
+      .footer a:hover {
+        color: #87ceeb; /* subtle highlight */
+        transform: scale(1.05);
+      }
 
-.footer a:active {
-  color: #9370DB;
-  transform: scale(0.98);
-}
-
-
-</style>
-
-
+      .footer a:active {
+        color: #9370db;
+        transform: scale(0.98);
+      }
+    </style>
   </head>
 
   <body id="main-body" class="overflow-x-hidden">
@@ -201,50 +198,80 @@ a:active {
         <!-- dropDown 1 - About → About Us, Campus Ambassador-->
         <li class="nav-item">
           <a href="#" class="dropdown-toggle"
-            ><span data-translate="navbar.about">About</span> <i class="fa-solid fa-chevron-down arrow"></i
+            ><span data-translate="navbar.about">About</span>
+            <i class="fa-solid fa-chevron-down arrow"></i
           ></a>
           <div class="dropdown">
             <a href="about.html" data-translate="navbar.aboutUs">About Us</a>
-            <a href="campus-ambassador.html" data-translate="navbar.campusAmbassador">Campus Ambassador</a>
+            <a
+              href="campus-ambassador.html"
+              data-translate="navbar.campusAmbassador"
+              >Campus Ambassador</a
+            >
           </div>
         </li>
         <!--dropDown 2 - Programs → Courses, Internship, Services -->
         <li class="nav-item">
           <a href="#" class="dropdown-toggle"
-            ><span data-translate="navbar.programs">Programs</span> <i class="fa-solid fa-chevron-down arrow"></i
+            ><span data-translate="navbar.programs">Programs</span>
+            <i class="fa-solid fa-chevron-down arrow"></i
           ></a>
           <div class="dropdown">
             <a href="courses.html" data-translate="navbar.courses">Courses</a>
-            <a href="internship.html" data-translate="navbar.internship">Internship</a>
-            <a href="services.html" data-translate="navbar.services">Services</a>
-            <a href="freelancing.html" data-translate="navbar.freelance">Freelance</a>
+            <a href="internship.html" data-translate="navbar.internship"
+              >Internship</a
+            >
+            <a href="services.html" data-translate="navbar.services"
+              >Services</a
+            >
+            <a href="freelancing.html" data-translate="navbar.freelance"
+              >Freelance</a
+            >
           </div>
         </li>
         <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
         <li class="nav-item">
           <a href="#" class="dropdown-toggle"
-            ><span data-translate="navbar.resources">Resources</span> <i class="fa-solid fa-chevron-down arrow"></i
+            ><span data-translate="navbar.resources">Resources</span>
+            <i class="fa-solid fa-chevron-down arrow"></i
           ></a>
           <div class="dropdown">
             <a href="blog.html" data-translate="navbar.blog">Blog</a>
-            <a href="bookmarked.html" data-translate="navbar.bookmarks">BookMarks</a>
-            <a href="./certificate/" data-translate="navbar.certificates">Certificates</a>
-            <a href="quiz.html">Quiz</a> 
+            <a href="bookmarked.html" data-translate="navbar.bookmarks"
+              >BookMarks</a
+            >
+            <a href="./certificate/" data-translate="navbar.certificates"
+              >Certificates</a
+            >
+            <a href="quiz.html">Quiz</a>
           </div>
         </li>
         <a href="projects.html" data-translate="navbar.projects">Projects</a>
         <a href="contact.html" data-translate="navbar.contact">Contact</a>
         <!-- Navbar -->
         <div id="authSection">
-          <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
-          <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
+          <a href="./login.html" class="btn login" data-translate="navbar.login"
+            >Log In</a
+          >
+          <a
+            href="./signup.html"
+            class="btn signup"
+            data-translate="navbar.signup"
+            >Sign Up</a
+          >
         </div>
 
         <div
           id="userSection"
           style="display: none; align-items: center; gap: 10px"
         >
-          <button id="logoutBtn" class="btn login" data-translate="navbar.logout">Logout</button>
+          <button
+            id="logoutBtn"
+            class="btn login"
+            data-translate="navbar.logout"
+          >
+            Logout
+          </button>
           <a href="profile.html" title="Your Profile">
             <img
               id="profileImg"
@@ -307,16 +334,16 @@ a:active {
 
     <!-- MAIN SECTION -->
     <section class="main">
-       <h1  class="projects.title">Open Source Projects</h1>
+      <h1 class="projects.title">Open Source Projects</h1>
       <p class="projects.subtitle">
         Discover amazing projects and contribute to the open-source community.
       </p>
-           <i class="fa-solid fa-laptop-code"></i>
+      <i class="fa-solid fa-laptop-code"></i>
       <div class="main-content">
-  <div class="main-cards">Explore our projects</div>
-  <div class="main-cards">Join us and make an impact</div>
-  <div class="main-cards">Your contribution drives progress</div>
-</div>
+        <div class="main-cards">Explore our projects</div>
+        <div class="main-cards">Join us and make an impact</div>
+        <div class="main-cards">Your contribution drives progress</div>
+      </div>
     </section>
 
     <!-- FILTER SECTION -->
@@ -403,10 +430,17 @@ a:active {
     </div>
 
     <!-- Back to Top Button -->
-   <button id="scrollTopBtn" title="Back to Top">
+    <button id="scrollTopBtn" title="Back to Top">
       <!-- added svg of arrow up -->
-      <svg data-name="1-Arrow Up" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 32 32">
-        <path d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z" />
+      <svg
+        data-name="1-Arrow Up"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="white"
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z"
+        />
       </svg>
     </button>
 
@@ -500,9 +534,32 @@ a:active {
 
       <div class="form">
         <h3>Get In Touch</h3>
-        <input type="text" placeholder="Your name" />
-        <input type="email" placeholder="Your email" />
-        <textarea type="text" placeholder="Your message"></textarea>
+        <div class="form-group">
+          <label for="footer-name">Name</label>
+          <input
+            type="text"
+            id="footer-name"
+            placeholder="Enter name"
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="footer-email">Email</label>
+          <input
+            type="email"
+            id="footer-email"
+            placeholder="Enter email"
+            name="email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="footer-message">Message</label>
+          <textarea
+            id="footer-message"
+            placeholder="Enter message"
+            name="message"
+          ></textarea>
+        </div>
         <button>Send</button>
       </div>
     </footer>
