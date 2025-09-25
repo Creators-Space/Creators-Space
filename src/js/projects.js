@@ -13,6 +13,11 @@ class ProjectsManager {
     this.currentRows = this.initialRows;
     this.maxRows = 10; // Maximum rows to show
 
+    // Storage keys
+    this.likesStorageKey = 'cs_project_likes';
+    this.favoritesStorageKey = 'cs_project_favorites';
+    this.commentsStorageKey = 'cs_project_comments';
+
     this.init();
   }
 
@@ -27,6 +32,7 @@ class ProjectsManager {
     container.className = 'projects-container grid-view';
 
     this.renderProjects();
+    this.attachInteractionHandlers();
     this.updateShowMoreButton();
     this.updateLastUpdated();
     this.isInitialLoad = false;
@@ -326,6 +332,7 @@ class ProjectsManager {
   showMoreProjects() {
     this.currentRows++;
     this.renderProjects();
+    this.attachInteractionHandlers();
     this.updateShowMoreButton();
   }
 
@@ -411,6 +418,11 @@ class ProjectsManager {
       </div>
     ` : '';
 
+    const likeState = this.getLikes()[project.id] || 0;
+    const favorites = this.getFavorites();
+    const isFavorited = Boolean(favorites[project.id]);
+    const comments = this.getComments()[project.id] || [];
+
     return `
       <div class="project-card">
         <div class="project-header">
@@ -429,13 +441,36 @@ class ProjectsManager {
             <div class="tech-stack">
               ${techTags}
             </div>
-            <div class="project-actions">
+            <div class="project-actions" data-project-id="${project.id}">
+              <button class="btn-like" aria-label="Like project">
+                <span class="like-icon">❤️</span>
+                <span class="like-count">${likeState}</span>
+              </button>
+              <button class="btn-favorite ${isFavorited ? 'active' : ''}" aria-label="Favorite project" title="Toggle favorite">
+                <span class="favorite-icon">⭐</span>
+              </button>
               <a href="${project.url}" target="_blank" class="project-link">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                   <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                 </svg>
                 View Project
               </a>
+            </div>
+            <div class="comments" data-project-id="${project.id}">
+              <h4>Comments</h4>
+              <div class="comments-list">
+                ${comments.map(c => `
+                  <div class="comment-item">
+                    <div class="comment-meta">${this.escapeHtml(c.name)} • ${new Date(c.time).toLocaleString()}</div>
+                    <div class="comment-text">${this.escapeHtml(c.text)}</div>
+                  </div>
+                `).join('')}
+              </div>
+              <form class="comment-form">
+                <input type="text" name="name" placeholder="Your name" required />
+                <input type="text" name="text" placeholder="Add a comment..." required />
+                <button type="submit">Post</button>
+              </form>
             </div>
             ${githubStats}
           </div>
@@ -450,6 +485,99 @@ class ProjectsManager {
       const now = new Date();
       lastUpdatedElement.textContent = now.toLocaleTimeString();
     }
+  }
+
+  // ---------- Interaction handlers ----------
+  attachInteractionHandlers() {
+    // Likes & Favorites
+    document.querySelectorAll('.project-actions').forEach(actionsEl => {
+      const projectId = actionsEl.getAttribute('data-project-id');
+      const likeBtn = actionsEl.querySelector('.btn-like');
+      const likeCountEl = actionsEl.querySelector('.like-count');
+      const favBtn = actionsEl.querySelector('.btn-favorite');
+
+      if (likeBtn && likeCountEl) {
+        likeBtn.addEventListener('click', () => {
+          const likes = this.getLikes();
+          const current = Number(likes[projectId] || 0);
+          likes[projectId] = current + 1;
+          this.setLikes(likes);
+          likeCountEl.textContent = String(likes[projectId]);
+        });
+      }
+
+      if (favBtn) {
+        favBtn.addEventListener('click', () => {
+          const favorites = this.getFavorites();
+          if (favorites[projectId]) {
+            delete favorites[projectId];
+            favBtn.classList.remove('active');
+          } else {
+            favorites[projectId] = true;
+            favBtn.classList.add('active');
+          }
+          this.setFavorites(favorites);
+        });
+      }
+    });
+
+    // Comments
+    document.querySelectorAll('.comments').forEach(section => {
+      const projectId = section.getAttribute('data-project-id');
+      const form = section.querySelector('.comment-form');
+      const list = section.querySelector('.comments-list');
+
+      if (form && list) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const formData = new FormData(form);
+          const name = (formData.get('name') || '').toString().trim();
+          const text = (formData.get('text') || '').toString().trim();
+          if (!name || !text) return;
+
+          const allComments = this.getComments();
+          const projectComments = allComments[projectId] || [];
+          const newComment = { name, text, time: new Date().toISOString() };
+          projectComments.push(newComment);
+          allComments[projectId] = projectComments;
+          this.setComments(allComments);
+
+          const node = document.createElement('div');
+          node.className = 'comment-item';
+          node.innerHTML = `
+            <div class="comment-meta">${this.escapeHtml(newComment.name)} • ${new Date(newComment.time).toLocaleString()}</div>
+            <div class="comment-text">${this.escapeHtml(newComment.text)}</div>
+          `;
+          list.appendChild(node);
+          form.reset();
+        });
+      }
+    });
+  }
+
+  // ---------- Storage helpers ----------
+  getLikes() {
+    try { return JSON.parse(localStorage.getItem(this.likesStorageKey) || '{}'); } catch { return {}; }
+  }
+  setLikes(value) {
+    localStorage.setItem(this.likesStorageKey, JSON.stringify(value));
+  }
+  getFavorites() {
+    try { return JSON.parse(localStorage.getItem(this.favoritesStorageKey) || '{}'); } catch { return {}; }
+  }
+  setFavorites(value) {
+    localStorage.setItem(this.favoritesStorageKey, JSON.stringify(value));
+  }
+  getComments() {
+    try { return JSON.parse(localStorage.getItem(this.commentsStorageKey) || '{}'); } catch { return {}; }
+  }
+  setComments(value) {
+    localStorage.setItem(this.commentsStorageKey, JSON.stringify(value));
+  }
+
+  escapeHtml(text) {
+    const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+    return String(text).replace(/[&<>"']/g, m => map[m]);
   }
 }
 
