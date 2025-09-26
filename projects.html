@@ -12,11 +12,53 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
     <style>
+
+
+      /* Comment + Like styles */
+      .interaction-section {
+        margin-top: 10px;
+        padding: 10px;
+        border-top: 1px solid #ddd;
+      }
+      .like-btn, .fav-btn {
+        cursor: pointer;
+        margin-right: 10px;
+        color: #555;
+      }
+      .like-btn.liked { color: #e63946; }
+      .fav-btn.favorited { color: #facc15; }
+      .comments { margin-top: 10px; }
+      .comment {
+        background: #f5f5f5;
+        padding: 5px 8px;
+        margin: 4px 0;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .comment-actions button {
+        margin-left: 5px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+      .comment-input {
+        display: flex;
+        margin-top: 8px;
+      }
+      .comment-input input {
+        flex: 1;
+        padding: 5px;
+      }
+      .comment-input button {
+        padding: 5px 8px;
+      }
+    </style>
+
     .main-cards {
  
       background: linear-gradient(to right, #87CEEB, #9370DB);
@@ -179,6 +221,167 @@ a:active {
 </style>
 
 
+
+      .main-cards {
+        background: linear-gradient(to right, #87ceeb, #9370db);
+        color: #1a237e; /* Very dark blue for maximum clarity */
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+      }
+
+      .main-cards:hover {
+        transform: translateY(-5px); /* Adds a subtle lift on hover */
+      }
+    </style>
+    <style>
+      /* MAIN SECTION CARDS */
+      .main-cards {
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+        cursor: pointer;
+      }
+
+      .main-cards:hover {
+        transform: translateY(-5px) scale(1.03); /* Slight lift and scale */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Stronger shadow */
+        filter: brightness(1.05); /* Slight brightness boost */
+      }
+
+      /* SHOW MORE BUTTON */
+      .show-more-btn {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .show-more-btn:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* BACK TO TOP BUTTON */
+      #scrollTopBtn {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      #scrollTopBtn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      /* FILTER TECH STACK TOGGLE BUTTON */
+      .toggle-btn {
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      .toggle-btn:hover {
+        transform: rotate(15deg);
+      }
+
+      /* PROJECTS CONTAINER CARDS (if dynamically loaded) */
+      .project-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        filter: brightness(1.05);
+      }
+
+      /* ADD SUBTLE ANIMATION TO LOADING SPINNER */
+      .loading-spinner .spinner {
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* GENERAL LINK STYLES */
+      a {
+        color: inherit; /* Keep default color */
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.2s ease;
+      }
+
+      /* HOVER EFFECT */
+      a:hover {
+        color: #9370db; /* Slight highlight on hover */
+        transform: scale(1.05); /* Subtle grow effect */
+      }
+
+      /* ACTIVE / CLICK EFFECT */
+      a:active {
+        color: #87ceeb; /* Slight color change when clicked */
+        transform: scale(0.98); /* Slight shrink effect for click */
+      }
+
+      /* NAVBAR LINKS */
+      .nav-links a {
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        background: rgba(147, 112, 219, 0.1); /* subtle background highlight */
+        color: #9370db;
+      }
+
+      .nav-links a:active {
+        background: rgba(135, 206, 235, 0.2); /* subtle active background */
+        color: #87ceeb;
+      }
+
+      /* DROPDOWN LINKS */
+      .dropdown a {
+        display: block;
+        padding: 8px 15px;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+
+      .dropdown a:hover {
+        background-color: rgba(147, 112, 219, 0.15);
+        color: #9370db;
+      }
+
+      .dropdown a:active {
+        background-color: rgba(135, 206, 235, 0.2);
+        color: #87ceeb;
+      }
+
+      /* FOOTER LINKS */
+      .footer a {
+        color: #fff;
+        transition: color 0.3s ease, transform 0.2s ease;
+      }
+
+      .footer a:hover {
+        color: #87ceeb; /* subtle highlight */
+        transform: scale(1.05);
+      }
+
+      .footer a:active {
+        color: #9370db;
+        transform: scale(0.98);
+      }
+    </style>
+
   </head>
 
   <body id="main-body" class="overflow-x-hidden">
@@ -192,107 +395,101 @@ a:active {
             src="./assets/images/logo-nav-light.png"
             alt="logo Creators-Space"
           />
-          <br />Creators-Space</a
-        >
+          <br />Creators-Space</a>
       </h1>
       <div class="nav-links align-items-center">
         <a href="index.html" data-translate="navbar.home">Home</a>
 
-        <!-- dropDown 1 - About → About Us, Campus Ambassador-->
+        <!-- dropDown 1 - About -->
         <li class="nav-item">
-          <a href="#" class="dropdown-toggle"
-            ><span data-translate="navbar.about">About</span> <i class="fa-solid fa-chevron-down arrow"></i
-          ></a>
+
+          <a href="#" class="dropdown-toggle"><span data-translate="navbar.about">About</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
+
           <div class="dropdown">
             <a href="about.html" data-translate="navbar.aboutUs">About Us</a>
-            <a href="campus-ambassador.html" data-translate="navbar.campusAmbassador">Campus Ambassador</a>
+            <a
+              href="campus-ambassador.html"
+              data-translate="navbar.campusAmbassador"
+              >Campus Ambassador</a
+            >
           </div>
         </li>
-        <!--dropDown 2 - Programs → Courses, Internship, Services -->
+        <!-- dropDown 2 - Programs -->
         <li class="nav-item">
-          <a href="#" class="dropdown-toggle"
-            ><span data-translate="navbar.programs">Programs</span> <i class="fa-solid fa-chevron-down arrow"></i
-          ></a>
+
+          <a href="#" class="dropdown-toggle"><span data-translate="navbar.programs">Programs</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
+
           <div class="dropdown">
             <a href="courses.html" data-translate="navbar.courses">Courses</a>
-            <a href="internship.html" data-translate="navbar.internship">Internship</a>
-            <a href="services.html" data-translate="navbar.services">Services</a>
-            <a href="freelancing.html" data-translate="navbar.freelance">Freelance</a>
+            <a href="internship.html" data-translate="navbar.internship"
+              >Internship</a
+            >
+            <a href="services.html" data-translate="navbar.services"
+              >Services</a
+            >
+            <a href="freelancing.html" data-translate="navbar.freelance"
+              >Freelance</a
+            >
           </div>
         </li>
-        <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
+        <!-- dropDown 3 - Resources -->
         <li class="nav-item">
-          <a href="#" class="dropdown-toggle"
-            ><span data-translate="navbar.resources">Resources</span> <i class="fa-solid fa-chevron-down arrow"></i
-          ></a>
+
+          <a href="#" class="dropdown-toggle"><span data-translate="navbar.resources">Resources</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
+
           <div class="dropdown">
             <a href="blog.html" data-translate="navbar.blog">Blog</a>
-            <a href="bookmarked.html" data-translate="navbar.bookmarks">BookMarks</a>
-            <a href="./certificate/" data-translate="navbar.certificates">Certificates</a>
-            <a href="quiz.html">Quiz</a> 
+            <a href="bookmarked.html" data-translate="navbar.bookmarks"
+              >BookMarks</a
+            >
+            <a href="./certificate/" data-translate="navbar.certificates"
+              >Certificates</a
+            >
+            <a href="quiz.html">Quiz</a>
           </div>
         </li>
         <a href="projects.html" data-translate="navbar.projects">Projects</a>
         <a href="contact.html" data-translate="navbar.contact">Contact</a>
-        <!-- Navbar -->
         <div id="authSection">
-          <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
-          <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
+          <a href="./login.html" class="btn login" data-translate="navbar.login"
+            >Log In</a
+          >
+          <a
+            href="./signup.html"
+            class="btn signup"
+            data-translate="navbar.signup"
+            >Sign Up</a
+          >
         </div>
+
+        <div id="userSection" style="display: none; align-items: center; gap: 10px">
+          <button id="logoutBtn" class="btn login" data-translate="navbar.logout">Logout</button>
+
 
         <div
           id="userSection"
           style="display: none; align-items: center; gap: 10px"
         >
-          <button id="logoutBtn" class="btn login" data-translate="navbar.logout">Logout</button>
+          <button
+            id="logoutBtn"
+            class="btn login"
+            data-translate="navbar.logout"
+          >
+            Logout
+          </button>
+
           <a href="profile.html" title="Your Profile">
-            <img
-              id="profileImg"
-              src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
-              alt="Profile"
-              width="30"
-              style="border-radius: 50%"
-            />
+            <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30" style="border-radius: 50%" />
           </a>
         </div>
       </div>
-      <div
-        class="nav-toggle align-items-center justify-content-center"
-        onclick="toggleNav()"
-      >
+      <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
         <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
-          <polyline
-            id="globalnav-menutrigger-bread-bottom"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            points="2 12, 16 12"
-            class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"
-          ></polyline>
-          <polyline
-            id="globalnav-menutrigger-bread-top"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            points="2 5, 16 5"
-            class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"
-          ></polyline>
+          <polyline fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"></polyline>
+          <polyline fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"></polyline>
         </svg>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          id="navbar-x-logo"
-          class="bi bi-x-lg d-none"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
-          />
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navbar-x-logo" class="bi bi-x-lg d-none" viewBox="0 0 16 16">
+          <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
         </svg>
       </div>
     </div>
@@ -307,39 +504,27 @@ a:active {
 
     <!-- MAIN SECTION -->
     <section class="main">
-       <h1  class="projects.title">Open Source Projects</h1>
+
+       <h1 class="projects.title">Open Source Projects</h1>
+
       <p class="projects.subtitle">
         Discover amazing projects and contribute to the open-source community.
       </p>
-           <i class="fa-solid fa-laptop-code"></i>
+      <i class="fa-solid fa-laptop-code"></i>
       <div class="main-content">
-  <div class="main-cards">Explore our projects</div>
-  <div class="main-cards">Join us and make an impact</div>
-  <div class="main-cards">Your contribution drives progress</div>
-</div>
+        <div class="main-cards">Explore our projects</div>
+        <div class="main-cards">Join us and make an impact</div>
+        <div class="main-cards">Your contribution drives progress</div>
+      </div>
     </section>
 
     <!-- FILTER SECTION -->
     <div class="filter-section">
       <div class="filter-container">
         <div class="search-box">
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Search projects..."
-          />
+          <input type="text" id="searchInput" placeholder="Search projects..." />
           <button id="searchBtn">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <path d="m21 21-4.35-4.35"></path>
             </svg>
@@ -349,21 +534,12 @@ a:active {
           <div class="tech-stack-header">
             <span>Tech Stack</span>
             <button id="toggleTechFilters" class="toggle-btn">
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6,9 12,15 18,9"></polyline>
               </svg>
             </button>
           </div>
-          <div class="tech-stack-filters collapsed" id="techStackFilters">
-            <!-- Tech stack filters will be populated dynamically -->
-          </div>
+          <div class="tech-stack-filters collapsed" id="techStackFilters"></div>
         </div>
       </div>
     </div>
@@ -378,14 +554,7 @@ a:active {
     <div class="show-more-container">
       <button id="showMoreBtn" class="show-more-btn">
         <span>Show More</span>
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <polyline points="6,9 12,15 18,9"></polyline>
         </svg>
       </button>
@@ -397,16 +566,15 @@ a:active {
         <span class="status-dot"></span>
         <span class="status-text">GitHub API: Connected</span>
       </div>
-      <div class="last-updated">
-        Last updated: <span id="lastUpdated">Just now</span>
-      </div>
+      <div class="last-updated">Last updated: <span id="lastUpdated">Just now</span></div>
     </div>
 
     <!-- Back to Top Button -->
-   <button id="scrollTopBtn" title="Back to Top">
-      <!-- added svg of arrow up -->
+    <button id="scrollTopBtn" title="Back to Top">
+
       <svg data-name="1-Arrow Up" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 32 32">
         <path d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z" />
+
       </svg>
     </button>
 
@@ -500,41 +668,166 @@ a:active {
 
       <div class="form">
         <h3>Get In Touch</h3>
-        <input type="text" placeholder="Your name" />
-        <input type="email" placeholder="Your email" />
-        <textarea type="text" placeholder="Your message"></textarea>
+        <div class="form-group">
+          <label for="footer-name">Name</label>
+          <input
+            type="text"
+            id="footer-name"
+            placeholder="Enter name"
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="footer-email">Email</label>
+          <input
+            type="email"
+            id="footer-email"
+            placeholder="Enter email"
+            name="email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="footer-message">Message</label>
+          <textarea
+            id="footer-message"
+            placeholder="Enter message"
+            name="message"
+          ></textarea>
+        </div>
         <button>Send</button>
       </div>
     </footer>
-
+    <!-- Scripts -->
     <script src="./src/js/language.js"></script>
     <script src="./src/js/navbar.js"></script>
     <script src="./src/js/projects.js"></script>
-    <script>
-      // drop-down menu
-      document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
-        btn.addEventListener("click", function (e) {
-          e.stopPropagation(); // prevent auto close immediately
-          this.parentElement.classList.toggle("show");
-
-          // Close other dropdowns
-          document.querySelectorAll(".nav-item").forEach((drop) => {
-            if (drop !== this.parentElement) {
-              drop.classList.remove("show");
-            }
-          });
-        });
-      });
-
-      // Close dropdown if clicked outside
-      window.addEventListener("click", function (e) {
-        if (!e.target.closest(".nav-item")) {
-          document.querySelectorAll(".nav-item").forEach((drop) => {
-            drop.classList.remove("show");
-          });
-        }
-      });
-    </script>
     <script src="./src/js/scrollToTop.js"></script>
+
+    <!-- Interaction Logic -->
+    <script>
+function loadInteractions() {
+  document.querySelectorAll(".project-card").forEach((card, index) => {
+    if (card.querySelector(".interaction-section")) return;
+
+    const id = "project-" + index;
+
+    // create interaction section
+    const section = document.createElement("div");
+    section.classList.add("interaction-section");
+    section.innerHTML = `
+      <span class="like-btn"><i class="fa fa-heart"></i> Like</span>
+      <span class="fav-btn"><i class="fa fa-star"></i> Favorite</span>
+      <div class="comments"></div>
+      <div class="comment-input">
+        <input type="text" placeholder="Add a comment..." />
+        <button>Add</button>
+      </div>
+    `;
+    card.appendChild(section);
+
+    // load saved state
+    let data = JSON.parse(localStorage.getItem(id)) || {
+      likes: false,
+      fav: false,
+      comments: [], // [{ text: "hello", liked: false }]
+    };
+
+    const likeBtn = section.querySelector(".like-btn");
+    const favBtn = section.querySelector(".fav-btn");
+    const commentsDiv = section.querySelector(".comments");
+    const input = section.querySelector("input");
+    const addBtn = section.querySelector("button");
+
+    function renderComments() {
+      commentsDiv.innerHTML = "";
+      data.comments.forEach((c, i) => {
+        const div = document.createElement("div");
+        div.className = "comment";
+
+        const textSpan = document.createElement("span");
+        textSpan.textContent = c.text;
+
+        const actions = document.createElement("div");
+        actions.className = "comment-actions";
+
+        const likeCommentBtn = document.createElement("button");
+        likeCommentBtn.textContent = c.liked ? "❤️ Unlike" : "🤍 Like";
+        likeCommentBtn.addEventListener("click", () => {
+          data.comments[i].liked = !data.comments[i].liked;
+          save();
+          renderComments();
+        });
+
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
+        editBtn.addEventListener("click", () => {
+          const newText = prompt("Edit comment:", c.text);
+          if (newText !== null && newText.trim() !== "") {
+            data.comments[i].text = newText.trim();
+            save();
+            renderComments();
+          }
+        });
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.addEventListener("click", () => {
+          if (confirm("Delete this comment?")) {
+            data.comments.splice(i, 1);
+            save();
+            renderComments();
+          }
+        });
+
+        actions.appendChild(likeCommentBtn);
+        actions.appendChild(editBtn);
+        actions.appendChild(deleteBtn);
+
+        div.appendChild(textSpan);
+        div.appendChild(actions);
+        commentsDiv.appendChild(div);
+      });
+    }
+
+    likeBtn.addEventListener("click", () => {
+      data.likes = !data.likes;
+      likeBtn.classList.toggle("liked", data.likes);
+      save();
+    });
+
+    favBtn.addEventListener("click", () => {
+      data.fav = !data.fav;
+      favBtn.classList.toggle("favorited", data.fav);
+      save();
+    });
+
+    addBtn.addEventListener("click", () => {
+      if (input.value.trim()) {
+        data.comments.push({ text: input.value.trim(), liked: false });
+        input.value = "";
+        renderComments();
+        save();
+      }
+    });
+
+    function save() {
+      localStorage.setItem(id, JSON.stringify(data));
+    }
+
+    // initial state
+    likeBtn.classList.toggle("liked", data.likes);
+    favBtn.classList.toggle("favorited", data.fav);
+    renderComments();
+  });
+}
+
+// Run after projects load
+const observer = new MutationObserver(loadInteractions);
+observer.observe(document.getElementById("projectsContainer"), {
+  childList: true,
+  subtree: true,
+});
+
+    </script>
   </body>
 </html>
