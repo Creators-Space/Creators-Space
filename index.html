@@ -13,6 +13,146 @@
   <link rel="stylesheet" href="./src/css/responsive.css">
   <link rel="stylesheet" href="./src/css/newsletter.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+  <style>
+    #courses {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+#courses .course {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#courses .course:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+#courses .course img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+#courses .course-info {
+  padding: 1rem;
+  text-align: center;
+}
+
+#courses .course-info h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: #1b3a4b;
+}
+
+#courses .course-info span {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+#courses .course-info del {
+  color: #888;
+}
+
+#courses .course-info p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+#courses .course-info button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #1b3a4b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#courses .course-info button:hover {
+  background-color: #16324a;
+}
+
+/* Grid layout: 3 cards per row */
+#courses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Responsive for tablets */
+@media (max-width: 992px) {
+  #courses {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  #courses {
+    grid-template-columns: 1fr;
+  }
+}
+
+#courses .course img {
+  width: 150px;
+  height: 150px;      /* Adjust height as needed */
+  object-fit: cover;  /* Keeps aspect ratio and fills the container */
+  border-bottom: 1px solid #eee;
+  transition: transform 0.3s;
+}
+
+#courses .course:hover img {
+  transform: scale(1.05);  /* Slight zoom on hover for effect */
+}
+/* Tablets */
+@media (max-width: 992px) {
+  #our-course-h1 h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #our-course-h1 h1 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    padding: 0 1rem; /* Add some horizontal padding */
+  }
+}
+/* Tablets */
+@media (max-width: 992px) {
+  .main h1 {
+    font-size: 2rem;
+  }
+  .hero-section-imgs {
+    width: 200px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .main h1 {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+  .hero-section-imgs {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 1rem;
+  }
+  .images {
+    gap: 0.5rem;
+  }
+}
+  </style>
 </head>
 
 <body id="main-body" class="overflow-x-hidden">
