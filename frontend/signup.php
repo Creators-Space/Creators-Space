@@ -323,15 +323,33 @@ include './includes/header.php';
         margin-bottom: 1.5rem;
       }
     }
+      .back-btn {
+      background: linear-gradient(to right, #667eea, #764ba2); /* same as Sign In */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      transition: 0.3s ease;
+      }
+
+      .back-btn:hover {
+      opacity: 0.9; /* subtle hover effect like Sign In */
+      }
   </style>
 </head>
 
 <body>
   <div class="main-content">
     <div class="container">
-      <a href="index.php" class="back-link">
-        ← Back to Homepage
+      <a href="index.php">
+      <button type="button" class="back-btn"> Home </button>
       </a>
+      <!--<a href="index.php" class="back-link">
+        ← Back to Homepage
+      </a>-->
     
       <h2>Join Creators-Space</h2>
       <p class="subtitle">Create your account to start learning</p>
