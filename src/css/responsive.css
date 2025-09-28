@@ -1,9 +1,24 @@
 /* fixes navBar toggle when width becoms 1047px */
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Ensure they take up the full width */
+  height: 100%;
+}
 @media screen and (max-width: 1047px) {
   .navbar .nav-links {
     display: none;
   }
-
+  .navbar {
+    box-sizing: border-box; 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  }
   .navbar .nav-toggle {
     display: block !important;
     position: relative;
