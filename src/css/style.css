@@ -282,7 +282,7 @@ body.dark-mode #darkModeToggle .fa-sun {
 .dropdown a {
   display: block;
   padding: 0px 16px;
-  color: #333;
+  color:  #000;
   border: none !important;
   text-decoration: none;
   transition: all .2s ease;
@@ -291,8 +291,9 @@ body.dark-mode #darkModeToggle .fa-sun {
 
 /* Hover effect */
 .dropdown a:hover {
-  background-color: #b3abe6; /* light gray highlight */
-  padding-left: 20px;        /* slight indent */
+  background-color: #f0f0f0 !important;
+  color: #007bff !important; 
+  padding-left: 20px;        
   border: none !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
 }
