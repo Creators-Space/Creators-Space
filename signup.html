@@ -161,6 +161,171 @@
       white-space: nowrap;
       align-items: center;
     }
+
+    /* Invalid checklist item */
+.invalid {
+  color: #dc3545; /* red text */
+  background-color: #ffe5e5; /* light red background */
+  border-left: 4px solid #dc3545; /* red indicator bar */
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+/* Form Container */
+form#signup-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Form Group */
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
+}
+
+/* Toggle Password Eye */
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 38px;
+  cursor: pointer;
+  color: #555;
+}
+
+/* Password Checklist */
+#passwordChecklist p {
+  margin: 4px 0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.valid {
+  color: #28a745;
+  background-color: #e6f4ea;
+  border-left: 4px solid #28a745;
+}
+
+.invalid {
+  color: #dc3545;
+  background-color: #ffe5e5;
+  border-left: 4px solid #dc3545;
+}
+
+/* Inline Feedback */
+.inline-feedback {
+  font-size: 0.85rem;
+  color: red;
+  margin-top: 4px;
+}
+
+/* Checkbox */
+.form-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.form-group label[for="terms"] a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-group label[for="terms"] a:hover {
+  text-decoration: underline;
+}
+
+/* Submit Button */
+button.btn {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Spinner */
+.spinner {
+  display: none;
+  width: 24px;
+  height: 24px;
+  margin: 10px auto;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Login Link */
+.login-page {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.login-page a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-page a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .toggle-password {
+    top: 34px;
+  }
+}
+
+
   </style>
 </head>
 
@@ -239,12 +404,13 @@
         <span class="toggle-password" onclick="togglePassword('confirm-password')">👁️</span>
         <div id="matchFeedback" class="inline-feedback"></div>
       </div>
-      <div class="form-group">
-        <input type="checkbox" id="terms" required style="width:auto; margin-right:8px;" />
-        <label for="terms" style="display:inline;">
-          I agree to the <a href="tandc.html" target="_blank">Terms and Conditions</a>
-        </label>
-      </div>
+      <div class="form-group checkbox-group">
+  <input type="checkbox" id="terms" required />
+  <label for="terms">
+    I agree to the <a href="tandc.html" target="_blank">Terms and Conditions</a>
+  </label>
+</div>
+
 
       <button type="submit" class="btn">Sign Up</button>
       <div class="spinner" id="spinner"></div>

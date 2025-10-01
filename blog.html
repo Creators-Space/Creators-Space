@@ -57,6 +57,95 @@
       cursor: pointer;
       font-size: 12px;
     }
+
+    /* Resource Sharing Hub */
+.resource-hub {
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 900px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  background: #f9f9f9;
+}
+
+.resource-hub h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.resource-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.resource-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.resource-input button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #9370db;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.resource-input button:hover {
+  background: #7a52c4;
+}
+
+.resources-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.resource-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: calc(33% - 10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+}
+
+.resource-card span {
+  text-align: justify; /* JUSTIFIED TEXT */
+  flex: 1;
+}
+
+.resource-card button {
+  align-self: flex-end;
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: background 0.3s ease;
+}
+
+.resource-card button:hover {
+  background: #c12c3b;
+}
+
+@media (max-width: 768px) {
+  .resource-card { width: calc(50% - 10px); }
+}
+
+@media (max-width: 480px) {
+  .resource-card { width: 100%; }
+}
+
   </style>
 </head>
 
@@ -126,7 +215,7 @@
   </div>
 
   <div class="blog-header">
-    <h1 data-translate="blog.title">Explore Our Latest Blogs</h1>
+    <h1>Explore Our Latest Blogs</h1>
     <input type="text" id="blog-search" placeholder="Search blog titles...">
   </div>
 
@@ -189,6 +278,21 @@
       </div>
     </div>
   </section>
+
+  <!-- Resource Sharing Hub -->
+<section class="resource-hub">
+  <h2>Resource Sharing Hub</h2>
+  
+  <div class="resource-input">
+    <input type="text" id="resourceName" placeholder="Enter resource name or description">
+    <button id="addResourceBtn">Add</button>
+  </div>
+
+  <input type="text" id="resourceSearch" placeholder="Search resources..." style="width:100%; padding:8px; margin-bottom:20px; border-radius:5px; border:1px solid #ccc;">
+
+  <div class="resources-container" id="resourcesContainer"></div>
+</section>
+
 
   <footer class="footer">
     <div class="social">
@@ -253,6 +357,8 @@
 
   <!-- Blog search -->
   <script>
+
+    
     document.addEventListener("DOMContentLoaded", function () {
       const searchInput = document.getElementById("blog-search");
       const blogCards = document.querySelectorAll(".blog-card");
@@ -354,5 +460,61 @@
       location.reload();
     }
   </script>
+
+  <script>
+  const resourceInput = document.getElementById("resourceName");
+  const addResourceBtn = document.getElementById("addResourceBtn");
+  const resourcesContainer = document.getElementById("resourcesContainer");
+  const resourceSearch = document.getElementById("resourceSearch");
+
+  let resources = JSON.parse(localStorage.getItem("resources")) || [];
+
+  function renderResources(filter = "") {
+    resourcesContainer.innerHTML = "";
+    resources
+      .filter(r => r.toLowerCase().includes(filter.toLowerCase()))
+      .forEach((r, index) => {
+        const card = document.createElement("div");
+        card.className = "resource-card";
+
+        const span = document.createElement("span");
+        span.innerText = r;
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.innerText = "Delete";
+        deleteBtn.addEventListener("click", () => deleteResource(index));
+
+        card.appendChild(span);
+        card.appendChild(deleteBtn);
+        resourcesContainer.appendChild(card);
+      });
+  }
+
+  addResourceBtn.addEventListener("click", () => {
+    const val = resourceInput.value.trim();
+    if (!val) return alert("Enter a resource");
+    resources.push(val);
+    localStorage.setItem("resources", JSON.stringify(resources));
+    resourceInput.value = "";
+    renderResources(resourceSearch.value);
+  });
+
+  resourceInput.addEventListener("keypress", e => {
+    if (e.key === "Enter") addResourceBtn.click();
+  });
+
+  function deleteResource(index) {
+    resources.splice(index, 1);
+    localStorage.setItem("resources", JSON.stringify(resources));
+    renderResources(resourceSearch.value);
+  }
+
+  resourceSearch.addEventListener("input", () => {
+    renderResources(resourceSearch.value);
+  });
+
+  renderResources();
+</script>
+
 </body>
 </html>

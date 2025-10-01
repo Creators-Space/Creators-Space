@@ -11,9 +11,10 @@ body {
   background-color: white;
   transition: all 0.3s linear;
 }
+
 .search-bar-container {
   text-align: center;
-  margin: 2rem auto;
+  margin: 2.3rem auto 1.2rem;
   width: 90%;
   max-width: 600px;
 }
@@ -41,69 +42,13 @@ body.dark .dropdown a:hover {
   border-radius: 8px;
   outline: none;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+.search-bar-container input:focus{
+  border: 2px solid #6962BE;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* NavBar */
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: white;
-  padding: 10px;
-}
-
-.navbar h1 {
-  font-size: 24px;
-  font-weight: bold;
-  color: black;
-  margin-left: 10px;
-}
-
-.navbar a {
-  color: black;
-  text-decoration: none;
-  /* margin: 10px; */
-  transition: color 0.3s;
-  display: flex;
-}
-
-.navbar a.btn {
-  border: 1px solid black;
-  outline: none;
-  background-color: white;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.navbar a.btn:hover {
-  background-color: black;
-  color: white;
-}
-
-.navbar a.signup {
-  background-color: black;
-  color: white;
-}
-
-.navbar a.signup:hover {
-  background-color: white;
-  color: black;
-}
-
-.navbar .nav-links {
-  display: flex;
-  padding: 0 10px;
-  align-items: center;
-}
-
-.nav-links {
-  align-items: right;
-}
 
 /* Enhanced Main Section */
 .main {
@@ -126,6 +71,10 @@ body.dark .dropdown a:hover {
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="%23667eea" stop-opacity="0.1"/><stop offset="100%" stop-color="%23667eea" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="150" fill="url(%23a)"/><circle cx="800" cy="300" r="200" fill="url(%23a)"/><circle cx="400" cy="700" r="180" fill="url(%23a)"/></svg>')
     center/cover;
   pointer-events: none;
+}
+.dropdown-toggle::after{
+  content: none !important;
+  border: none !important;
 }
 
 .main h1 {
@@ -159,9 +108,9 @@ body.dark .dropdown a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 40px;
-  padding: 60px 40px;
+  padding: 20px 40px 30px;
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 0 auto 1rem;
 }
 
 .card {

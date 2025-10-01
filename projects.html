@@ -59,25 +59,9 @@
       }
     </style>
 
-    .main-cards {
- 
-      background: linear-gradient(to right, #87CEEB, #9370DB);
-      color: #1a237e; /* Very dark blue for maximum clarity */
-      padding: 15px 30px;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease-in-out;
-      cursor: pointer;
-    }
     
-    .main-cards:hover {
-      transform: translateY(-5px); /* Adds a subtle lift on hover */
-    }
     
-        </style>
+       
         <style>
 /* MAIN SECTION CARDS */
 .main-cards {
@@ -216,29 +200,101 @@ a:active {
   color: #9370DB;
   transform: scale(0.98);
 }
+  .resource-hub {
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 900px;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    background: #f9f9f9;
+  }
 
+  .resource-hub h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .resource-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .resource-input input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .resource-input button {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #9370db;
+    color: white;
+    border: none;
+    transition: background 0.3s ease;
+  }
+
+  .resource-input button:hover {
+    background: #7a52c4;
+  }
+
+  .resources-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .resource-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    width: calc(33% - 10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+  }
+
+  .resource-card .text-content {
+    flex: 1;
+    text-align: justify;
+    margin-bottom: 10px;
+  }
+
+  .resource-card button {
+    align-self: flex-end;
+    background: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background 0.3s ease;
+  }
+
+  .resource-card button:hover {
+    background: #c12c3b;
+  }
+
+  @media (max-width: 768px) {
+    .resource-card {
+      width: calc(50% - 10px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .resource-card {
+      width: 100%;
+    }
+  }
 
 </style>
 
 
-
-      .main-cards {
-        background: linear-gradient(to right, #87ceeb, #9370db);
-        color: #1a237e; /* Very dark blue for maximum clarity */
-        padding: 15px 30px;
-        border-radius: 50px;
-        text-align: center;
-        font-size: 1.1rem;
-        font-weight: bold;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease-in-out;
-        cursor: pointer;
-      }
-
-      .main-cards:hover {
-        transform: translateY(-5px); /* Adds a subtle lift on hover */
-      }
-    </style>
     <style>
       /* MAIN SECTION CARDS */
       .main-cards {
@@ -384,123 +440,53 @@ a:active {
 
   </head>
 
-  <body id="main-body" class="overflow-x-hidden">
-    <!-- Navbar -->
-    <div class="navbar">
-      <h1>
-        <a href="./">
-          <img
-            id="navbar-logo"
-            width="80px"
-            src="./assets/images/logo-nav-light.png"
-            alt="logo Creators-Space"
-          />
-          <br />Creators-Space</a>
-      </h1>
-      <div class="nav-links align-items-center">
-        <a href="index.html" data-translate="navbar.home">Home</a>
+<body id="main-body" class="overflow-x-hidden">
+  <!-- Navbar -->
+  <div id="navbar"></div>
 
-        <!-- dropDown 1 - About -->
-        <li class="nav-item">
+<script>
+function initDarkModeToggle() {
+  const darkToggleBtn = document.getElementById("darkModeToggle");
+  if (!darkToggleBtn) return; // exit if button not found
 
-          <a href="#" class="dropdown-toggle"><span data-translate="navbar.about">About</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
+  const body = document.body;
+  const moonIcon = darkToggleBtn.querySelector(".fa-moon");
+  const sunIcon = darkToggleBtn.querySelector(".fa-sun");
 
-          <div class="dropdown">
-            <a href="about.html" data-translate="navbar.aboutUs">About Us</a>
-            <a
-              href="campus-ambassador.html"
-              data-translate="navbar.campusAmbassador"
-              >Campus Ambassador</a
-            >
-          </div>
-        </li>
-        <!-- dropDown 2 - Programs -->
-        <li class="nav-item">
+  // Load saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+    moonIcon.style.display = "none";
+    sunIcon.style.display = "inline-block";
+  } else {
+    moonIcon.style.display = "inline-block";
+    sunIcon.style.display = "none";
+  }
 
-          <a href="#" class="dropdown-toggle"><span data-translate="navbar.programs">Programs</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
+  // Toggle theme
+  darkToggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    if (body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+      moonIcon.style.display = "none";
+      sunIcon.style.display = "inline-block";
+    } else {
+      localStorage.setItem("theme", "light");
+      moonIcon.style.display = "inline-block";
+      sunIcon.style.display = "none";
+    }
+  });
+}
 
-          <div class="dropdown">
-            <a href="courses.html" data-translate="navbar.courses">Courses</a>
-            <a href="internship.html" data-translate="navbar.internship"
-              >Internship</a
-            >
-            <a href="services.html" data-translate="navbar.services"
-              >Services</a
-            >
-            <a href="freelancing.html" data-translate="navbar.freelance"
-              >Freelance</a
-            >
-          </div>
-        </li>
-        <!-- dropDown 3 - Resources -->
-        <li class="nav-item">
+// Initialize after navbar loads
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+    initDarkModeToggle(); // initialize toggle here
+  });
+</script>
 
-          <a href="#" class="dropdown-toggle"><span data-translate="navbar.resources">Resources</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
-
-          <div class="dropdown">
-            <a href="blog.html" data-translate="navbar.blog">Blog</a>
-            <a href="bookmarked.html" data-translate="navbar.bookmarks"
-              >BookMarks</a
-            >
-            <a href="./certificate/" data-translate="navbar.certificates"
-              >Certificates</a
-            >
-            <a href="quiz.html">Quiz</a>
-          </div>
-        </li>
-        <a href="projects.html" data-translate="navbar.projects">Projects</a>
-        <a href="contact.html" data-translate="navbar.contact">Contact</a>
-        <div id="authSection">
-          <a href="./login.html" class="btn login" data-translate="navbar.login"
-            >Log In</a
-          >
-          <a
-            href="./signup.html"
-            class="btn signup"
-            data-translate="navbar.signup"
-            >Sign Up</a
-          >
-        </div>
-
-        <div id="userSection" style="display: none; align-items: center; gap: 10px">
-          <button id="logoutBtn" class="btn login" data-translate="navbar.logout">Logout</button>
-
-
-        <div
-          id="userSection"
-          style="display: none; align-items: center; gap: 10px"
-        >
-          <button
-            id="logoutBtn"
-            class="btn login"
-            data-translate="navbar.logout"
-          >
-            Logout
-          </button>
-
-          <a href="profile.html" title="Your Profile">
-            <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30" style="border-radius: 50%" />
-          </a>
-        </div>
-      </div>
-      <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
-        <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
-          <polyline fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"></polyline>
-          <polyline fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"></polyline>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navbar-x-logo" class="bi bi-x-lg d-none" viewBox="0 0 16 16">
-          <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-        </svg>
-      </div>
-    </div>
-
-    <!-- Dark Mode Toggle -->
-    <div class="toggle-switch">
-      <label class="switch-label">
-        <input type="checkbox" class="checkbox" id="dark-mode-toggle" />
-        <span class="slider"></span>
-      </label>
-    </div>
 
     <!-- MAIN SECTION -->
     <section class="main">
@@ -577,6 +563,24 @@ a:active {
 
       </svg>
     </button>
+
+    <!-- Resource Sharing Hub -->
+<section class="resource-hub">
+  <h2>Resource Sharing Hub</h2>
+  <p>Add and explore resources shared by creators.</p>
+
+  <div class="resource-input">
+    <input type="text" id="resourceName" placeholder="Enter resource name or link" />
+    <button id="addResourceBtn">Add Resource</button>
+  </div>
+
+  <div class="resource-search">
+    <input type="text" id="resourceSearch" placeholder="Search resources..." />
+  </div>
+
+  <div class="resources-container" id="resourcesContainer"></div>
+</section>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -827,6 +831,56 @@ observer.observe(document.getElementById("projectsContainer"), {
   childList: true,
   subtree: true,
 });
+
+// Resource Sharing Hub Logic
+const resourceInput = document.getElementById("resourceName");
+const addResourceBtn = document.getElementById("addResourceBtn");
+const resourcesContainer = document.getElementById("resourcesContainer");
+const resourceSearch = document.getElementById("resourceSearch");
+
+let resources = JSON.parse(localStorage.getItem("resources")) || [];
+
+// Function to render resources
+function renderResources(filter = "") {
+  resourcesContainer.innerHTML = "";
+  resources
+    .filter(r => r.toLowerCase().includes(filter.toLowerCase()))
+    .forEach((r, index) => {
+      const card = document.createElement("div");
+      card.className = "resource-card";
+      card.innerHTML = `
+        <span>${r}</span>
+        <button onclick="deleteResource(${index})">Delete</button>
+      `;
+      resourcesContainer.appendChild(card);
+    });
+}
+
+// Add resource
+addResourceBtn.addEventListener("click", () => {
+  const val = resourceInput.value.trim();
+  if (!val) return;
+  resources.push(val);
+  localStorage.setItem("resources", JSON.stringify(resources));
+  resourceInput.value = "";
+  renderResources();
+});
+
+// Delete resource
+function deleteResource(index) {
+  resources.splice(index, 1);
+  localStorage.setItem("resources", JSON.stringify(resources));
+  renderResources(resourceSearch.value);
+}
+
+// Search
+resourceSearch.addEventListener("input", () => {
+  renderResources(resourceSearch.value);
+});
+
+// Initial render
+renderResources();
+
 
     </script>
   </body>

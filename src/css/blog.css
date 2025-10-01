@@ -7,6 +7,22 @@
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
+body.dark {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark #blog-search {
+  color: #fff;
+  background-color: #333;
+}
+
+body.dark .footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+}
+
+
 
 #blog-search {
   padding: 10px 15px;
@@ -126,4 +142,47 @@ body.dark #blog-search {
   #blog-search {
     width: 100%;
   }
+}
+/* -------------------- NAVBAR DARK MODE -------------------- */
+body.dark .navbar {
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+body.dark .navbar h1 a {
+  color: #eee;
+}
+
+body.dark .navbar .nav-links a {
+  color: #ddd;
+}
+
+body.dark .navbar .nav-links a:hover {
+  color: #fff;
+}
+
+body.dark .navbar .dropdown {
+  background-color: #222;
+  border: 1px solid #333;
+}
+
+body.dark .navbar .dropdown a {
+  color: #ddd;
+}
+
+body.dark .navbar .dropdown a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark .navbar .btn.login,
+body.dark .navbar .btn.signup {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.dark .navbar .btn.login:hover,
+body.dark .navbar .btn.signup:hover {
+  background-color: #444;
 }
