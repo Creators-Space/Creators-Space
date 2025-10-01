@@ -250,7 +250,26 @@
   object-fit: contain; /* keep full image visible */
   background: #f9f9f9; /* optional: show background for transparent images */
 }
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .internship-search-container {
+    flex-direction: row;
+    gap: 15px;
+  }
 
+  .internship-search-input {
+    width: 280px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .internship-search-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
   </style>
 </head>
 
