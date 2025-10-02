@@ -215,3 +215,46 @@ body.dark .search-input::placeholder {
     right: 5px;
   }
 }
+body {
+  background: linear-gradient(135deg, #f0f0ff, #dcd0ff); /* Lightest lavender and soft periwinkle */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 80px;
+}
+.card {
+  /* Using a semi-transparent white with a very subtle cool purple tint */
+  background-color: rgba(255, 255, 255, 0.3); /* Slightly more opaque for better glassy look on light background */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  /* A subtle, light purple border */
+  border: 1px solid rgba(200, 180, 250, 0.7); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 15px;
+  transition: all 0.3s ease;
+}
+.card h3 {
+  color: #333; /* Dark grey for strong readability */
+}
+
+.card p {
+  color: #555; /* Slightly lighter dark grey for paragraph text */
+  font-size: 0.9em;
+}
+
+.card-buttons .button {
+  background-color: #7d4dff; 
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.card-buttons .button:hover {
+  background-color: #6a3edd; 
+  transform: scale(1.05);
+}

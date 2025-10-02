@@ -569,8 +569,71 @@ renderCourses(courses);
         } else {
           navbarLogo.src = "./assets/images/logo-nav-light.png"; // Light mode logo
         }
-      });
+    
   </script>
+      function filterCourses() {
+        const input = document
+          .getElementById("courseSearch")
+          .value.toLowerCase();
+        const cards = document.querySelectorAll(".courses-container .card");
+
+        cards.forEach((card) => {
+          const title = card.querySelector("h3").innerText.toLowerCase();
+          const desc = card.querySelector("p").innerText.toLowerCase();
+          if (title.includes(input) || desc.includes(input)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+
+      document.querySelectorAll(".info-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const courseId = btn.getAttribute("data-id");
+          window.location.href = `course-detail.html?id=${courseId}`;
+        });
+      });
+    </script>
+    <script>
+      const infoButtons = document.querySelectorAll(".info-btn");
+
+      infoButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const box = this.parentElement;
+          box.classList.toggle("active");
+
+          this.textContent = box.classList.contains("active")
+            ? "Hide Info"
+            : "More Info";
+        });
+      });
+    </script>
+
+    <script>
+      // Handle Enroll Now buttons
+      document.querySelectorAll('.button').forEach((btn, index) => {
+        if (btn.textContent.trim() === 'Enroll Now') {
+          btn.addEventListener('click', function() {
+            const courseNames = [
+              'web-development',
+              'c-programming', 
+              'python-programming',
+              'ui-ux-design',
+              'graphic-design',
+              'data-analytics'
+            ];
+            
+            const courseParam = courseNames[index] || 'general';
+            window.location.href = `./enroll.html?course=${courseParam}`;
+          });
+        }
+      });
+    </script>
+
+    <script src="./src/js/auth.js"></script>
+    <script src="script.js" defer></script>
 
 </body>
 </html>

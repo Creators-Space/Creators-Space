@@ -45,6 +45,47 @@
           box-shadow: 0 0 0 rgba(124, 77, 255, 0.7);
         }
       }
+
+      /* Selected Course Info Styling */
+      .selected-course-info {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin: 1rem 0;
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        animation: slideIn 0.5s ease-out;
+      }
+
+      .selected-course-info h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+
+      .selected-course-info p {
+        margin: 0;
+        font-size: 0.95rem;
+        opacity: 0.9;
+        line-height: 1.5;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Dark mode support */
+      body.dark-mode .selected-course-info {
+        background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+        box-shadow: 0 8px 25px rgba(45, 55, 72, 0.4);
+      }
     </style>
   </head>
 
@@ -195,7 +236,15 @@
             <option value="Python Programming">Python Programming</option>
             <option value="UI/UX Design">UI/UX Design</option>
             <option value="Graphic Design">Graphic Design</option>
+            <option value="Data Science">Data Science</option>
+            <option value="Data Analytics">Data Analytics & Visualization</option>
           </select>
+
+          <!-- Course info display -->
+          <div id="selectedCourseInfo" class="selected-course-info" style="display: none;">
+            <h3>Enrolling for: <span id="selectedCourseName"></span></h3>
+            <p id="selectedCourseDescription"></p>
+          </div>
 
           <button type="submit">Submit</button>
         </form>
@@ -255,6 +304,72 @@
     </footer>
 
     <script>
+      // Course mapping for URL parameters to display names
+      const courseMapping = {
+        'web-development': 'Web Development',
+        'c-programming': 'C Programming',
+        'python-programming': 'Python Programming', 
+        'ui-ux-design': 'UI/UX Design',
+        'graphic-design': 'Graphic Design',
+        'data-science': 'Data Science',
+        'data-analytics': 'Data Analytics & Visualization'
+      };
+
+      // Course descriptions
+      const courseDescriptions = {
+        'Web Development': '🚀 Learn HTML, CSS, JavaScript, React, Node.js, MongoDB & more. Perfect for beginners & professionals!',
+        'C Programming': 'Master C programming from scratch with data types, pointers, memory management, and algorithms.',
+        'Python Programming': 'Learn Python fundamentals, OOP, data analysis, and automation through hands-on projects.',
+        'UI/UX Design': 'Explore design thinking, wireframing, prototyping, and usability testing for digital experiences.',
+        'Graphic Design': 'Gain expertise in Photoshop, Illustrator, and digital design principles for stunning visuals.',
+        'Data Science': 'Advanced data science with machine learning, statistics, and big data technologies.',
+        'Data Analytics & Visualization': 'Learn Excel, SQL, Power BI, and Python to analyze data and generate insights.'
+      };
+
+      // Get course from URL parameter
+      function getCourseFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const courseParam = urlParams.get('course');
+        
+        if (courseParam && courseMapping[courseParam]) {
+          return courseMapping[courseParam];
+        }
+        return null;
+      }
+
+      // Pre-fill course selection and show course info
+      function preSelectCourse() {
+        const selectedCourse = getCourseFromURL();
+        
+        if (selectedCourse) {
+          const courseSelect = document.getElementById('course');
+          const courseInfo = document.getElementById('selectedCourseInfo');
+          const courseName = document.getElementById('selectedCourseName');
+          const courseDesc = document.getElementById('selectedCourseDescription');
+          
+          // Pre-select the course
+          courseSelect.value = selectedCourse;
+          
+          // Disable the dropdown so user can see but not change the selection
+          courseSelect.disabled = true;
+          courseSelect.style.backgroundColor = '#f8f9fa';
+          courseSelect.style.cursor = 'not-allowed';
+          
+          // Show course information
+          courseName.textContent = selectedCourse;
+          courseDesc.textContent = courseDescriptions[selectedCourse] || '';
+          courseInfo.style.display = 'block';
+          
+          // Scroll to form section smoothly
+          setTimeout(() => {
+            courseInfo.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 500);
+        }
+      }
+
+      // Initialize when page loads
+      document.addEventListener('DOMContentLoaded', preSelectCourse);
+
       document
         .getElementById("enrollForm")
         .addEventListener("submit", function (e) {

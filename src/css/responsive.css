@@ -1,3 +1,13 @@
+/* changes the navbar for fixing and removing spaces */
+.navbar {
+  width: 100vw; /* Sets the width to 100% of the viewport width */
+  position: fixed; /* Makes the navbar stick to the top */
+  top: 0; /* Aligns the navbar to the very top */
+  left: 0; /* Aligns the navbar to the very left */
+  z-index: 1000; /* Ensures the navbar is on top of other content */
+  /* You may need to add padding-top to the body or main content to prevent it from being hidden behind the fixed navbar */
+}
+
 /* fixes navBar toggle when width becoms 1047px */
 @media screen and (max-width: 1047px) {
   .navbar .nav-links {
