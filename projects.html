@@ -436,6 +436,14 @@ a:active {
         color: #9370db;
         transform: scale(0.98);
       }
+
+      .filter-section {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff; /* optional, for better overlay */
+}
+
     </style>
 
   </head>
@@ -701,6 +709,7 @@ fetch("navbar.html")
         <button>Send</button>
       </div>
     </footer>
+
     <!-- Scripts -->
     <script src="./src/js/language.js"></script>
     <script src="./src/js/navbar.js"></script>
