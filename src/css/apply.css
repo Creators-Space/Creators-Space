@@ -1,0 +1,132 @@
+/* Apply page specific styles */
+
+body {
+  background: linear-gradient(135deg, #e0f7fa, #fff3e0);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 2.5rem 2rem;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.form-container:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.3rem;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+  border-color: #2196f3;
+  outline: none;
+}
+
+.form-container button {
+  background-color: #2196f3;
+  color: #fff;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #1976d2;
+}
+
+.success-message {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  display: none;
+}
+
+/* Dark mode support */
+body.dark {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+}
+
+body.dark .form-container {
+  background-color: #2a2a2a;
+}
+
+body.dark .form-container h2 {
+  color: #fff;
+}
+
+body.dark .form-container label {
+  color: #ddd;
+}
+
+body.dark .form-container input,
+body.dark .form-container select,
+body.dark .form-container textarea {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark .form-container input:focus,
+body.dark .form-container select:focus,
+body.dark .form-container textarea:focus {
+  border-color: #2196f3;
+}
+
+/* Utility classes for hidden elements and profile image */
+.user-section-hidden {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-img {
+  border-radius: 50%;
+}
+
+.success-message-hidden {
+  display: none;
+}

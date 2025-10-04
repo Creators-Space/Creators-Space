@@ -1,0 +1,210 @@
+/* Course Detail Page Styles */
+
+body {
+  font-family: "SF Pro Display", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.course-detail {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: "SF Pro Display", sans-serif;
+}
+
+.course-detail:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.course-banner {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 25px;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.course-banner:hover {
+  transform: scale(1.05);
+}
+
+#course-title {
+  font-size: 3rem;
+  font-weight: 900;
+  font-family: "SF Pro Display", sans-serif;
+  text-align: center;
+  margin-bottom: 25px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#course-description {
+  font-size: 1.25rem;
+  font-family: "SF Pro Display", sans-serif;
+  margin-bottom: 30px;
+  color: #444;
+  line-height: 1.6;
+}
+
+#course-syllabus {
+  list-style: none;
+  text-align: left;
+  margin: 25px auto;
+  padding-left: 0;
+  max-width: 600px;
+}
+
+#course-syllabus li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  font-weight: 500;
+  font-family: "SF Pro Display", sans-serif;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+#course-syllabus li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.instructor {
+  margin: 30px 0;
+}
+
+.instructor img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 3px solid #667eea;
+  transition: transform 0.3s ease;
+}
+
+.instructor img:hover {
+  transform: scale(1.05);
+}
+
+.instructor p {
+  margin: 5px 0;
+  color: #333;
+  font-size: 1rem;
+  font-family: "SF Pro Display", sans-serif;
+}
+
+.price {
+  font-size: 1.7rem;
+  font-weight: 900;
+  font-family: "SF Pro Display", sans-serif;
+  color: #e74c3c;
+}
+
+.old-price {
+  font-size: 1.2rem;
+  font-family: "SF Pro Display", sans-serif;
+  text-decoration: line-through;
+  color: #95a5a6;
+  margin-left: 12px;
+}
+
+.enroll button {
+  margin-top: 25px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: "SF Pro Display", sans-serif;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.enroll button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.5);
+}
+
+/* General text elements */
+h3 {
+  font-family: "SF Pro Display", sans-serif;
+  font-weight: 700;
+  color: #333;
+  margin: 20px 0 15px 0;
+}
+
+p {
+  font-family: "SF Pro Display", sans-serif;
+  line-height: 1.6;
+}
+
+strong {
+  font-family: "SF Pro Display", sans-serif;
+  font-weight: 600;
+}
+
+/* Dark mode support */
+body.dark .course-detail {
+  background: rgba(42, 42, 42, 0.95);
+  color: #f5f5f5;
+}
+
+body.dark #course-description,
+body.dark .instructor p,
+body.dark #course-syllabus li {
+  color: #ddd;
+}
+
+body.dark h3 {
+  color: #f5f5f5;
+}
+
+body.dark p,
+body.dark strong {
+  color: #ddd;
+}
+
+body.dark #course-title {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.dark #course-syllabus li {
+  border-bottom-color: #555;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .course-detail {
+    padding: 30px 20px;
+  }
+  
+  .course-banner {
+    width: 140px;
+    height: 140px;
+  }
+  
+  #course-title {
+    font-size: 2.2rem;
+  }
+}

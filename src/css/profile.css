@@ -549,3 +549,470 @@ a.certificate-link:hover {
     border: 2px solid #555;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Profile Section Styles */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 350px;
+    width: 100%;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #282828;
+}
+
+.change-photo-btn {
+    background: black;
+    border: none;
+    color: #f1f1f3;
+    font-size: 14px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.profile-name {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.profile-email {
+    color: #656667;
+    font-size: 16px;
+}
+
+.detail-section {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.detail-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.detail-content {
+    color: #333;
+}
+
+.profile-input,
+.profile-textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.action-button {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    color: white;
+}
+
+.edit-button {
+    background: #101010;
+}
+
+.save-button {
+    background: #10b981;
+}
+
+.profile-avatar-container {
+    position: relative;
+}
+
+.profile-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.change-photo-btn {
+    margin-top: 8px;
+    background: #050505;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Skills Section */
+.detail-section {
+    text-align: left;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #ffffff, #f9fafb);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease-in-out;
+}
+
+.detail-section:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.detail-title {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: #1e293b;
+    margin-bottom: 15px;
+    border-left: 4px solid #363636;
+    padding-left: 10px;
+}
+
+/* Skills list */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.skill-item {
+    background: #e0f2fe;
+    color: #313232;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 8px rgba(3, 105, 161, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.skill-item:hover {
+    background: #646565;
+    transform: translateY(-2px);
+}
+
+.remove-skill {
+    background: none;
+    border: none;
+    color: #dc2626;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.remove-skill:hover {
+    color: #b91c1c;
+}
+
+/* Add skill form */
+.add-skill-container {
+    display: flex;
+    gap: 8px;
+}
+
+.profile-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    background: #f9fafb;
+    transition: border 0.2s ease, background 0.2s ease;
+}
+
+.profile-input:focus {
+    border: 1px solid #666667;
+    background: #ffffff;
+    outline: none;
+}
+
+/* Add Button */
+.add-skill-btn {
+    background: linear-gradient(90deg, #333333, #505051);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.add-skill-btn:hover {
+    background: linear-gradient(90deg, #adaeae, #5d5d5eb9);
+}
+
+.profile-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Certificates Section */
+.certificates-section {
+    flex: 1;
+    background: linear-gradient(135deg, #ffffff, #f9fafb);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.certificates-section:hover {
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+}
+
+.certificates-section h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1e293b;
+    border-left: 4px solid #252525;
+    padding-left: 10px;
+    margin-bottom: 18px;
+}
+
+/* Certificates List */
+.certificates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.certificate-item {
+    background: #ffffff;
+    padding: 14px 16px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.certificate-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+}
+
+.certificate-item span {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: #334155;
+}
+
+/* Remove Button */
+.remove-certificate {
+    background: #fee2e2;
+    border: none;
+    cursor: pointer;
+    color: #dc2626;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.remove-certificate:hover {
+    background: #fecaca;
+}
+
+/* Add Certificate Form */
+.add-certificate-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.add-certificate-container input {
+    flex: 1;
+    min-width: 180px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    background: #f9fafb;
+    transition: border 0.2s ease;
+}
+
+.add-certificate-container input:focus {
+    border: 1px solid #535454;
+    outline: none;
+    background: #ffffff;
+}
+
+/* Add Button */
+.add-certificate-btn {
+    background: linear-gradient(90deg, #2f2f2f, #464747);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.add-certificate-btn:hover {
+    background: linear-gradient(90deg, #adaeae, #5d5d5eb9);
+}
+
+/* Layout Fix */
+.content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.content-center {
+    display: block;
+    padding-left: 100px;
+}
+
+/* Courses Section */
+.courses-section {
+    flex: 1;
+    background: linear-gradient(135deg, #ffffff, #f9fafb);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.courses-section:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.courses-section h2 {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: #1e293b;
+    margin-bottom: 15px;
+    border-left: 4px solid #232323;
+    padding-left: 10px;
+}
+
+/* Course list */
+.courses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 15px;
+}
+
+.course-item {
+    background: #ffffff;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+}
+
+.course-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #334155;
+    margin-bottom: 8px;
+}
+
+/* Progress bar container */
+.progress-container {
+    background: #f1f5f9;
+    border-radius: 8px;
+    height: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 10px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #3e3e3e, #424243);
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+/* Add course form */
+.add-course-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.add-course-container input {
+    flex: 1;
+    min-width: 160px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    background: #f9fafb;
+    transition: border 0.2s ease, background 0.2s ease;
+}
+
+.add-course-container input:focus {
+    border: 1px solid #212222;
+    background: #ffffff;
+    outline: none;
+}
+
+/* Add button */
+.add-course-btn {
+    background: linear-gradient(90deg, #222223, #525252);
+    color: rgb(250, 246, 246);
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.add-course-btn:hover {
+    background: linear-gradient(90deg, #adaeae, #5d5d5eb9);
+}

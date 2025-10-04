@@ -80,21 +80,7 @@
     background: #fff;
     box-shadow: 0 4px 12px #020202;
   }
-  body.dark .dropdown {
-  background-color: #333;
-  border: 1px solid #555;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-}
-
-body.dark .dropdown a {
-  color: #fff;
-  border-bottom-color: #555;
-}
-
-body.dark .dropdown a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
+  /* Duplicate dropdown styles removed - handled in style.css */
 
   .nav-menu.active {
     display: flex !important;
@@ -504,4 +490,82 @@ h2:hover::after {
   .social-icons {
     justify-content: center;
   }
+}
+
+/* Additional enroll page styles */
+.enroll-title {
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  color: #6c5ce7;
+  transition: all 3s ease;
+  animation: beat 1.5s infinite ease-in-out;
+}
+
+@keyframes beat {
+  0% {
+    box-shadow: 0 0 0 rgba(124, 77, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(124, 77, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(124, 77, 255, 0.7);
+  }
+}
+
+/* Selected Course Info Styling */
+.selected-course-info {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  animation: slideIn 0.5s ease-out;
+}
+
+.selected-course-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.selected-course-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode support */
+body.dark-mode .selected-course-info {
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  box-shadow: 0 8px 25px rgba(45, 55, 72, 0.4);
+}
+
+/* Utility classes for inline styles */
+.user-section-hidden {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-img {
+  border-radius: 50%;
+}
+
+.course-info-hidden {
+  display: none;
 }

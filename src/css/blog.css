@@ -22,8 +22,6 @@ body.dark .footer {
   color: #ccc;
 }
 
-
-
 #blog-search {
   padding: 10px 15px;
   width: 300px;
@@ -32,21 +30,7 @@ body.dark .footer {
   font-size: 1rem;
   transition: border-color 0.3s ease;
 }
-body.dark .dropdown {
-  background-color: #333;
-  border: 1px solid #555;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-}
-
-body.dark .dropdown a {
-  color: #fff;
-  border-bottom-color: #555;
-}
-
-body.dark .dropdown a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
+/* Duplicate dropdown styles removed - handled in style.css */
 
 #blog-search:focus {
   outline: none;
@@ -185,4 +169,201 @@ body.dark .navbar .btn.signup {
 body.dark .navbar .btn.login:hover,
 body.dark .navbar .btn.signup:hover {
   background-color: #444;
+}
+
+/* Blog interaction styles */
+.interaction-box {
+  margin-top: 10px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.like-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.comment-section {
+  margin-top: 10px;
+}
+
+.comment-section textarea {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 6px;
+  box-sizing: border-box;
+}
+
+.comment {
+  background: #f0f0f0;
+  padding: 6px;
+  margin: 4px 0;
+  border-radius: 5px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment span {
+  flex: 1;
+}
+
+.comment-actions button {
+  margin-left: 5px;
+  padding: 2px 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* Resource Sharing Hub */
+.resource-hub {
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 900px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  background: #f9f9f9;
+}
+
+.resource-hub h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.resource-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.resource-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.resource-input button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #9370db;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.resource-input button:hover {
+  background: #7a52c4;
+}
+
+.resources-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.resource-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: calc(33% - 10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+}
+
+.resource-card span {
+  text-align: justify;
+  flex: 1;
+}
+
+.resource-card button {
+  align-self: flex-end;
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: background 0.3s ease;
+}
+
+.resource-card button:hover {
+  background: #c12c3b;
+}
+
+/* Dark mode for blog interactions and resources */
+body.dark .interaction-box {
+  border-top-color: #555;
+}
+
+body.dark .comment {
+  background: #333;
+  color: #fff;
+}
+
+body.dark .resource-hub {
+  background: #222;
+  border-color: #555;
+}
+
+body.dark .resource-hub h2 {
+  color: #fff;
+}
+
+body.dark .resource-input input {
+  background: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark .resource-card {
+  background: #333;
+  color: #fff;
+}
+
+/* Resource responsive design */
+@media (max-width: 768px) {
+  .resource-card { 
+    width: calc(50% - 10px); 
+  }
+}
+
+@media (max-width: 480px) {
+  .resource-card { 
+    width: 100%; 
+  }
+}
+
+/* Utility classes */
+.user-section-hidden {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-img {
+  border-radius: 50%;
+}
+
+.resource-search {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+body.dark .resource-search {
+  background: #333;
+  color: #fff;
+  border-color: #555;
 }

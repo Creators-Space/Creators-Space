@@ -130,7 +130,7 @@
 
   #courses {
     width: 100%;
-
+    grid-template-columns: 1fr !important;
     flex-direction: column !important;
     flex-wrap: wrap !important;
   }
@@ -205,5 +205,51 @@
 @media screen and (max-width: 1090px) {
   #testimonial-card-3 {
     display: none;
+  }
+}
+
+/* Additional responsive styles for courses and hero section */
+@media (max-width: 992px) {
+  #courses {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  #our-course-h1 h1 {
+    font-size: 2rem;
+  }
+  
+  .main h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section-imgs {
+    width: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  #courses {
+    grid-template-columns: 1fr;
+  }
+  
+  #our-course-h1 h1 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    padding: 0 1rem;
+  }
+  
+  .main h1 {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .hero-section-imgs {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 1rem;
+  }
+  
+  .images {
+    gap: 0.5rem;
   }
 }

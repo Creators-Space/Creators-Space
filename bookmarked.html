@@ -14,46 +14,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
     integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-      .main_content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  /* size */
-  max-width: 600px;
-  margin: 60px auto; /* centers horizontally */
-  padding: 40px 20px;
-  border-radius: 16px;
-
-  /* colors */
-  background: linear-gradient(135deg, #9ec6d9 0%, #ffffff 50%, #96b6c9 100%);
-  color: #2c3e50;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
-.main_content h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #1b3a4b;
-}
-
-.main_content h1 .icon {
-  color: #1b3a4b; /* emoji color */
-}h1 i {
-  color: #1b3a4b;
-}
-/* Hover effect */
-.main_content:hover {
-  transform: translateY(-5px); /* slightly lift the card */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* deeper shadow */
-  background-color: #f0f8ff; /* subtle background change */
-}
-
-
-
-    </style>
 </head>
 <!-- <link rel = "stylesheet" href = "./src/css/bookmarked.css"/> -->
 
@@ -123,11 +83,11 @@
         <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
       </div>
 
-      <div id="userSection" style="display: none; align-items: center; gap: 10px;">
+      <div id="userSection" class="user-section-hidden">
         <button id="logoutBtn" class="btn login" data-translate="navbar.logout">Logout</button>
         <a href="profile.html" title="Your Profile">
           <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
-            style="border-radius: 50%;" />
+            class="profile-img" />
         </a>
       </div>
 
