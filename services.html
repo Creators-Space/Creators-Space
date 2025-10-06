@@ -12,6 +12,233 @@
   <link rel="stylesheet" href="./src/css/internship.css">
   <link rel="stylesheet" href="./src/css/responsive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  /* ===== FOOTER STYLES ===== */
+  footer {
+    background: #111827;
+    color: #fff;
+    padding: 2rem;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+
+  .footer-col h3 {
+    margin-bottom: 1rem;
+    color: #0077b6;
+    font-size: 1.2rem;
+  }
+
+  .footer-col a {
+    display: block;
+    color: #d1d5db;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .footer-col a:hover {
+    color: #0077b6;
+  }
+
+  .footer-col p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #0077b6;
+  }
+
+  .footer-credit {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #9ca3af;
+  }
+
+  /* ===== MEDIA QUERIES ===== */
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 1.5rem;
+    }
+.footer-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .social-icons {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-col p {
+      text-align: center;
+      justify-content: center;
+    }
+  } /* ===== HERO SECTION ===== */
+    .services-hero {
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .services-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    .services-hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ===== SEARCH BAR ===== */
+    .service-search {
+      text-align: center;
+      margin: 40px 0 20px 0;
+    }
+    .service-search input {
+      width: 300px;
+      max-width: 90%;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 2px solid #0072ff;
+      outline: none;
+      transition: 0.3s;
+    }
+    .service-search input:focus {
+      border-color: #00c6ff;
+      box-shadow: 0 0 10px rgba(0, 198, 255, 0.3);
+    }
+
+    /* ===== CARDS CONTAINER ===== */
+    .services-cards-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding: 40px 20px 80px 20px;
+    }
+    @media(max-width:992px){
+      .services-cards-container { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width:768px){
+      .services-cards-container { grid-template-columns: 1fr; }
+    }
+
+    /* ===== SERVICE CARD ===== */
+    .service-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      padding: 40px 30px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+    .service-icon {
+      font-size: 60px;
+      color: #0072ff;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .service-card:hover .service-icon {
+      transform: scale(1.2) rotate(10deg);
+      color: #00c6ff;
+    }
+    .service-card h3 {
+      font-size: 1.7rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    .service-card p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .service-extra-info {
+      display: none;
+      text-align: left;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .service-card.expanded .service-extra-info { display: block; }
+    .service-card ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin-top: 5px;
+    }
+
+    /* BUTTONS */
+    .button {
+      background-color: #0072ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 10px;
+      display: inline-block;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .button:hover {
+      background-color: #00c6ff;
+      transform: translateY(-2px);
+    }
+
+    /* ENROLL ALERT */
+    .enroll-alert {
+      position: fixed;
+      top: 200px;
+      left: 30%;
+      transform: translateX(-50%);
+      background-color: #e6f0ff;
+      border: 2px solid #0072ff;
+      color: #0072ff;
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .enroll-alert.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+</style>
 </head>
 
 <body id="main-body" class="overflow-x-hidden">
@@ -94,21 +321,215 @@
     </label>
   </div>
 
-  <!-- MAIN SECTION -->
-  <section class="main">
-    <h1 data-translate="services.title">Our Services</h1>
-    <p data-translate="services.subtitle">Empowering your journey with comprehensive career and technical guidance.</p>
+ 
+<!-- HERO SECTION -->
+  <section class="services-hero">
+    <div class="hero-content">
+      <h1>Our Services</h1>
+      <p>Explore our professional services designed to help you grow and succeed.</p>
+    </div>
   </section>
+
+  <!-- SEARCH BAR -->
+  <div class="service-search">
+    <input type="text" id="serviceSearch" placeholder="Search services...">
+  </div>
+
+  <!-- SERVICES CARDS -->
+  <section class="services-cards-container" id="servicesContainer">
+
+    <!-- Card 1 -->
+    <div class="service-card">
+      <i class="fa-solid fa-laptop-code service-icon"></i>
+      <h3>Web Development</h3>
+      <p>Build responsive and interactive websites with modern technologies.</p>
+      <div class="service-extra-info">
+        <p>Hands-on projects, portfolio guidance, tutorials for HTML, CSS, JavaScript, React, and more.</p>
+        <ul>
+          <li>Responsive design projects</li>
+          <li>SEO & performance optimization</li>
+          <li>Portfolio building guidance</li>
+        </ul>
+      </div>
+      <button class="button toggle-btn">Learn More</button>
+      <a href="#" class="button enroll-btn">Enroll Now</a>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="service-card">
+      <i class="fa-solid fa-paintbrush service-icon"></i>
+      <h3>Graphic Design</h3>
+      <p>Create visually appealing graphics for web and print media.</p>
+      <div class="service-extra-info">
+        <p>Learn Photoshop, Illustrator, and Canva with real-life projects and portfolio guidance.</p>
+        <ul>
+          <li>Logo & Branding design</li>
+          <li>Social media graphics</li>
+          <li>Portfolio projects</li>
+        </ul>
+      </div>
+      <button class="button toggle-btn">Learn More</button>
+      <a href="#" class="button enroll-btn">Enroll Now</a>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="service-card">
+      <i class="fa-solid fa-bullhorn service-icon"></i>
+      <h3>Digital Marketing</h3>
+      <p>Master online marketing strategies to promote brands effectively.</p>
+      <div class="service-extra-info">
+        <p>Learn SEO, social media marketing, and campaign analytics with practical projects.</p>
+        <ul>
+          <li>SEO & SEM Techniques</li>
+          <li>Social Media Marketing</li>
+          <li>Campaign Analytics</li>
+        </ul>
+      </div>
+      <button class="button toggle-btn">Learn More</button>
+      <a href="#" class="button enroll-btn">Enroll Now</a>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="service-card">
+      <i class="fa-solid fa-pen-nib service-icon"></i>
+      <h3>Content Writing</h3>
+      <p>Enhance your writing skills to create compelling content for web and social media.</p>
+      <div class="service-extra-info">
+        <p>SEO-friendly writing, blogs, and copywriting for marketing and social media.</p>
+        <ul>
+          <li>SEO-friendly writing</li>
+          <li>Blog & Article creation</li>
+          <li>Copywriting techniques</li>
+        </ul>
+      </div>
+      <button class="button toggle-btn">Learn More</button>
+      <a href="#" class="button enroll-btn">Enroll Now</a>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="service-card">
+      <i class="fa-solid fa-magnifying-glass-chart service-icon"></i>
+      <h3>SEO Services</h3>
+      <p>Improve website rankings and visibility on search engines.</p>
+      <div class="service-extra-info">
+        <p>Complete SEO services including keyword research, on-page & off-page optimization.</p>
+        <ul>
+          <li>Keyword research</li>
+          <li>On-page & Off-page SEO</li>
+          <li>Website analysis & reporting</li>
+        </ul>
+      </div>
+      <button class="button toggle-btn">Learn More</button>
+      <a href="#" class="button enroll-btn">Enroll Now</a>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="service-card">
+      <i class="fa-solid fa-video service-icon"></i>
+      <h3>Video Editing</h3>
+      <p>Create professional videos for social media, marketing campaigns, or personal projects.</p>
+      <div class="service-extra-info">
+        <p>Learn Adobe Premiere, After Effects, color grading, and sound design.</p>
+        <ul>
+          <li>Adobe Premiere & After Effects</li>
+          <li>Color grading & sound design</li>
+          <li>Marketing & social media videos</li>
+        </ul>
+      </div>
+      <button class="button toggle-btn">Learn More</button>
+      <a href="#" class="button enroll-btn">Enroll Now</a>
+    </div>
+
+  </section>
+
+  <!-- ENROLL ALERT -->
+  <div id="enrollAlert" class="enroll-alert">Enroll Successfully!</div>
 
   <!-- INTERNSHIP CARDS -->
   <div class="services-container" id="services-list">
     <p>Loading services...</p>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    ...
-  </footer>
+  
+  <!-- ===== FOOTER ===== -->
+
+<footer>
+
+  <div class="footer-container">
+
+    <div class="footer-col">
+
+      <h3><I class="fa-solid fa-briefcase"></I> Creators-Space</h3>
+
+<img
+
+            width="80px"
+
+            src="./assets/images/logo.png"
+
+            alt="logo Anurag Vishwakarma's Creators-Space"
+
+          />
+
+</p>
+
+    </div>
+
+    <div class="footer-col">
+
+      <h3>Important Links</h3>
+
+      <a href="index.html"><I class="fa-solid fa-house"></I> Home</a>
+
+      <a href="about.html"><I class="fa-solid fa-building"></I> About Us</a>
+
+      <a href="services.html"><I class="fa-solid fa-laptop-code"></I> Services</a>
+
+      <a href="internship.html"><I class="fa-solid fa-graduation-cap"></I> Internship</a>
+
+      <a href="contact.html"><I class="fa-solid fa-clock"></I>Contact</a>
+
+
+
+    </div>
+
+    <div class="footer-col">
+
+      <h3>Contact</h3>
+
+      <p><I class="fa-solid fa-phone"></I>+91 88xxxxxx89</p>
+
+      <p><I class="fa-solid fa-envelope"></I> mailto:21brac0401@polygwalior.ac.in</p>
+
+    </div>
+
+    <div class="footer-col">
+
+      <h3>Follow Us</h3>
+
+      <div class="social-icons">
+
+        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></I> Facebook</a>
+
+        <a href="https://x.com/"><i class="fa-brands fa-twitter"></I> Twitter</a>
+
+        <a href="https://linkedin.com/in/anuragvishwakarma"><i class="fa-brands fa-linkedin"></I> LinkedIn</a>
+
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-Instagram"></I> Instagram</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer-credit">
+
+    &copy; © 2025 Creators-Space. All rights reserved.
+
+  </div>
+
+</footer>
 
   <script src="./src/js/language.js"></script>
   <script src="./src/js/navbar.js"></script>
@@ -166,6 +587,35 @@
     }
 
     window.addEventListener("DOMContentLoaded", loadServices);
+     // Learn More toggle
+    document.querySelectorAll(".toggle-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const card = btn.closest(".service-card");
+        card.classList.toggle("expanded");
+        btn.textContent = card.classList.contains("expanded") ? "Show Less" : "Learn More";
+      });
+    });
+
+    // Enroll Now alert
+    document.querySelectorAll(".enroll-btn").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const alertBox = document.getElementById("enrollAlert");
+        alertBox.classList.add("show");
+        setTimeout(() => alertBox.classList.remove("show"), 3000);
+      });
+    });
+
+    // Search functionality
+    const searchInput = document.getElementById("serviceSearch");
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+      document.querySelectorAll(".service-card").forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const desc = card.querySelector("p").textContent.toLowerCase();
+        card.style.display = (title.includes(query) || desc.includes(query)) ? "block" : "none";
+      });
+    });
   </script>
   <script src="./src/js/auth.js"></script>
 </body>
