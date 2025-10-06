@@ -31,6 +31,22 @@
       --radius-2xl: 26px;
     }
 
+    /* Light Mode Variables */
+    :root[data-theme="light"] {
+      --bg: #f8fafc;
+      --bg-elev: #ffffff;
+      --card: #ffffff;
+      --muted: #64748b;
+      --text: #1e293b;
+      --accent: #0d9488;
+      --accent-2: #7c3aed;
+      --ring: #e2e8f0;
+      --ok: #059669;
+      --warn: #d97706;
+      --danger: #dc2626;
+      --shadow: 0 10px 25px rgba(0,0,0,.08), 0 6px 12px rgba(0,0,0,.05);
+    }
+
     * { box-sizing: border-box; }
     html, body { height: 100%; }
     body {
@@ -41,9 +57,53 @@
                   var(--bg);
       color: var(--text);
       line-height: 1.55;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    
+    /* Light mode background adjustments */
+    :root[data-theme="light"] body {
+      background: radial-gradient(1200px 800px at 10% -20%, rgba(13,148,136,.08), transparent 40%),
+                  radial-gradient(1000px 600px at 110% -10%, rgba(124,58,237,.06), transparent 45%),
+                  var(--bg);
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      background: var(--bg-elev);
+      border: 1px solid var(--ring);
+      border-radius: 12px;
+      padding: 8px 12px;
+      cursor: pointer;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+    }
+
+    .theme-toggle i {
+      font-size: 16px;
+    }
+
+    /* Navbar adjustments for theme toggle */
+    .navbar {
+      position: relative;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
     .hero {
       position: relative;
       padding: clamp(28px, 5vw, 64px) 18px 24px;
@@ -64,6 +124,11 @@
       animation: spin 28s linear infinite;
       pointer-events: none;
     }
+
+    :root[data-theme="light"] .glow {
+      opacity: .12;
+    }
+
     @keyframes spin { to { transform: rotate(360deg); } }
 
     .title {
@@ -82,6 +147,11 @@
       background: linear-gradient(180deg, rgba(11,15,20,.85), rgba(11,15,20,.60));
       border-bottom: 1px solid var(--ring);
     }
+
+    :root[data-theme="light"] .toolbar {
+      background: linear-gradient(180deg, rgba(248,250,252,.85), rgba(248,250,252,.60));
+    }
+
     .toolbar-inner{
       max-width: 1150px; margin: 0 auto; padding: 12px 16px; display: grid; gap: 12px; align-items: center;
       grid-template-columns: 1fr auto; 
@@ -94,8 +164,15 @@
       transition: transform .15s ease, background .2s ease, border-color .2s ease;
       user-select: none;
     }
+
+    :root[data-theme="light"] .chip {
+      background: rgba(0,0,0,.02);
+    }
+
     .chip:hover { transform: translateY(-1px) scale(1.02); border-color: rgba(93,214,201,.45); }
+    :root[data-theme="light"] .chip:hover { border-color: rgba(13,148,136,.45); }
     .chip.active { background: linear-gradient(180deg, rgba(93,214,201,.20), rgba(154,123,255,.18)); border-color: rgba(93,214,201,.55); }
+    :root[data-theme="light"] .chip.active { background: linear-gradient(180deg, rgba(13,148,136,.15), rgba(124,58,237,.12)); border-color: rgba(13,148,136,.55); }
 
     .search {
       display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--bg-elev); border: 1px solid var(--ring);
@@ -116,6 +193,11 @@
       transform: translateY(10px) scale(.98); opacity: 0; 
       transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease, opacity .6s ease;
     }
+
+    :root[data-theme="light"] .card {
+      background: linear-gradient(180deg, rgba(0,0,0,.01), rgba(0,0,0,.005)), var(--card);
+    }
+
     .card.revealed { transform: translateY(0) scale(1); opacity: 1; }
 
     .card:hover {
@@ -124,14 +206,22 @@
       border-color: rgba(93,214,201,.65);
     }
 
+    :root[data-theme="light"] .card:hover {
+      box-shadow: 0 16px 32px rgba(0,0,0,.15), 0 8px 16px rgba(0,0,0,.1);
+      border-color: rgba(13,148,136,.65);
+    }
+
     .card-header { padding: 18px 18px 8px; display:flex; gap: 12px; align-items:center; }
     .logo { width: 36px; height: 36px; border-radius: 10px; display:grid; place-items:center; font-weight:800; background: linear-gradient(135deg, rgba(93,214,201,.15), rgba(154,123,255,.15)); border: 1px solid var(--ring); }
+    :root[data-theme="light"] .logo { background: linear-gradient(135deg, rgba(13,148,136,.15), rgba(124,58,237,.15)); }
     .name { font-size: 18px; font-weight: 700; letter-spacing: -.01em; }
     .tag { font-size: 12px; padding: 4px 8px; border-radius: 999px; border: 1px solid var(--ring); color: var(--muted); }
     .card-body { padding: 0 18px 18px; color: #c9d8ec; }
+    :root[data-theme="light"] .card-body { color: #475569; }
 
     .meta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
     .meta .pill { background: rgba(255,255,255,.03); border: 1px solid var(--ring); border-radius: 10px; padding: 8px 10px; font-size: 12px; color: var(--muted); }
+    :root[data-theme="light"] .meta .pill { background: rgba(0,0,0,.03); }
     .meta strong { display:block; color: var(--text); font-size: 13px; margin-bottom: 2px; }
 
     .card-footer { display:flex; align-items:center; justify-content: flex-start; gap: 12px; padding: 14px 18px 18px; }
@@ -140,13 +230,104 @@
       background: linear-gradient(180deg, rgba(93,214,201,.16), rgba(154,123,255,.12)); color: var(--text); font-weight: 700; cursor: pointer; text-decoration:none;
       transition: transform .15s ease, filter .2s ease, border-color .2s ease; box-shadow: var(--shadow);
     }
+    :root[data-theme="light"] .btn {
+      background: linear-gradient(180deg, rgba(13,148,136,.12), rgba(124,58,237,.08));
+    }
     .btn:hover { transform: translateY(-1px); border-color: rgba(93,214,201,.55); }
+    :root[data-theme="light"] .btn:hover { border-color: rgba(13,148,136,.55); }
 
     .ext { font-size: 12px; color: var(--muted); }
 
-    /* Footer */
-    footer { color: var(--muted); text-align: center; padding: 32px 16px 64px; }
-    footer .small { font-size: 12px; opacity: .9; }
+  
+    /* ===== FOOTER STYLES ===== */
+  footer {
+    background: #111827;
+    color: #fff;
+    padding: 2rem;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+
+  .footer-col h3 {
+    margin-bottom: 1rem;
+    color: #0077b6;
+    font-size: 1.2rem;
+  }
+
+  .footer-col a {
+    display: block;
+    color: #d1d5db;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .footer-col a:hover {
+    color: #0077b6;
+  }
+
+  .footer-col p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #0077b6;
+  }
+
+  .footer-credit {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #9ca3af;
+  }
+
+  /* ===== MEDIA QUERIES ===== */
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 1.5rem;
+    }
+.footer-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .social-icons {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-col p {
+      text-align: center;
+      justify-content: center;
+    }
+  }
   </style>
 </head>
 <body>
@@ -189,6 +370,13 @@
        </li> 
       <a href="projects.html" data-translate="navbar.projects">Projects</a>
       <a href="contact.html" data-translate="navbar.contact">Contact</a>
+      
+      <!-- Theme Toggle Button -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+        <span>Dark</span>
+      </button>
+
       <!-- Navbar -->
       <div id="authSection">
         <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
@@ -244,11 +432,124 @@
     <section id="grid" class="grid" aria-live="polite"></section>
   </main>
 
-  <footer>
-    <p class="small">Tips: Beginner platforms are great to build reviews quickly. Intermediate sites suit sustained projects and higher rates. Advanced networks are curated and pay top-tier rates but require vetting.</p>
-  </footer>
+  <!-- ===== FOOTER ===== -->
+
+<footer>
+
+  <div class="footer-container">
+
+    <div class="footer-col">
+
+      <h3><I class="fa-solid fa-briefcase"></I> Creators-Space</h3>
+
+<img
+
+            width="80px"
+
+            src="./assets/images/logo.png"
+
+            alt="logo Anurag Vishwakarma's Creators-Space"
+
+          />
+
+</p>
+
+    </div>
+
+    <div class="footer-col">
+
+      <h3>Important Links</h3>
+
+      <a href="index.html"><I class="fa-solid fa-house"></I> Home</a>
+
+      <a href="about.html"><I class="fa-solid fa-building"></I> About Us</a>
+
+      <a href="services.html"><I class="fa-solid fa-laptop-code"></I> Services</a>
+
+      <a href="internship.html"><I class="fa-solid fa-graduation-cap"></I> Internship</a>
+
+      <a href="contact.html"><I class="fa-solid fa-clock"></I>Contact</a>
+
+
+
+    </div>
+
+    <div class="footer-col">
+
+      <h3>Contact</h3>
+
+      <p><I class="fa-solid fa-phone"></I>+91 88xxxxxx89</p>
+
+      <p><I class="fa-solid fa-envelope"></I> mailto:21brac0401@polygwalior.ac.in</p>
+
+    </div>
+
+    <div class="footer-col">
+
+      <h3>Follow Us</h3>
+
+      <div class="social-icons">
+
+        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></I> Facebook</a>
+
+        <a href="https://x.com/"><i class="fa-brands fa-twitter"></I> Twitter</a>
+
+        <a href="https://linkedin.com/in/anuragvishwakarma"><i class="fa-brands fa-linkedin"></I> LinkedIn</a>
+
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-Instagram"></I> Instagram</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer-credit">
+
+    &copy; © 2025 Creators-Space. All rights reserved.
+
+  </div>
+
+</footer>
   <script src="./src/js/navbar.js"></script>
   <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle.querySelector('i');
+    const themeText = themeToggle.querySelector('span');
+    
+    // Check for saved theme preference or respect OS preference
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const currentTheme = localStorage.getItem('theme');
+    
+    if (currentTheme === 'light' || (!currentTheme && prefersDarkScheme.matches)) {
+      setLightMode();
+    } else {
+      setDarkMode();
+    }
+    
+    themeToggle.addEventListener('click', function() {
+      if (document.documentElement.getAttribute('data-theme') === 'light') {
+        setDarkMode();
+      } else {
+        setLightMode();
+      }
+    });
+
+    function setLightMode() {
+      document.documentElement.setAttribute('data-theme', 'light');
+      themeIcon.className = 'fas fa-sun';
+      themeText.textContent = 'Light';
+      localStorage.setItem('theme', 'light');
+    }
+
+    function setDarkMode() {
+      document.documentElement.removeAttribute('data-theme');
+      themeIcon.className = 'fas fa-moon';
+      themeText.textContent = 'Dark';
+      localStorage.setItem('theme', 'dark');
+    }
+
     const platforms = [
       // BEGINNER
       {
@@ -275,7 +576,7 @@
         name: 'PeoplePerHour',
         url: 'https://www.peopleperhour.com/',
         category: 'beginner',
-        summary: 'UK-based marketplace with “offers” (fixed-price services) and project bidding.',
+        summary: 'UK-based marketplace with "offers" (fixed-price services) and project bidding.',
         fees: 'Service fee tiered',
         vetting: 'Basic application',
         payment: 'Escrow with invoices',
@@ -307,7 +608,7 @@
         name: 'Guru',
         url: 'https://www.guru.com/',
         category: 'intermediate',
-        summary: 'Flexible agreements and “WorkRooms” for collaboration.',
+        summary: 'Flexible agreements and "WorkRooms" for collaboration.',
         fees: 'Tiered fees by membership',
         vetting: 'Open signup',
         payment: 'SafePay escrow',

@@ -2,7 +2,6 @@
 // This script can be run to update all pages at once
 
 const pages = [
-  'blog.html',
   'bookmarked.html',
   'freelancing.html',
   'internship.html',
@@ -104,7 +103,8 @@ function addTranslationAttributes() {
     'Contact': 'navbar.contact',
     'Log In': 'navbar.login',
     'Sign Up': 'navbar.signup',
-    'Logout': 'navbar.logout'
+    'Logout': 'navbar.logout',
+    'Explore Our Latest Blogs':'blog.title'
   };
 
   // Add translation attributes to elements with matching text

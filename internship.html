@@ -1,24 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Internships | Creators-Space</title>
-    <link rel="stylesheet" href="./src/css/courses.css" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internships | Creators-Space</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" 
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="./src/css/courses.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="stylesheet" href="./src/css/utils.css" />
     <link rel="stylesheet" href="./src/css/internship.css" />
     <link rel="stylesheet" href="./src/css/responsive.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
+  <style>
+    /* General Styles */
+    body { margin:0; font-family: 'Arial', sans-serif; overflow-x:hidden; background:#f9f9f9; color:#333; }
+    a { text-decoration:none; color: inherit; }
 
-  <body id="main-body" class="overflow-x-hidden">
-    <!-- Navbar -->
+    /* Hero Section */
+    .internship-hero {
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      color: #fff;
+      padding: 120px 20px 60px 20px;
+      text-align: center;
+      border-radius: 0 0 50% 50% / 20%;
+    }
+    .internship-hero-title { font-size:3rem; font-weight:700; margin-bottom:20px; animation: slideInTop 1s ease-out; }
+    .internship-hero-subtitle { font-size:1.3rem; margin-bottom:30px; animation: slideInBottom 1s ease-out; }
+    .internship-hero-btn {
+      display:inline-block; background:#fff; color:#0077b6; padding:12px 28px; border-radius:50px; font-weight:600;
+      transition: all 0.3s ease;
+    }
+    .internship-hero-btn:hover { background:#0077b6; color:#fff; transform:translateY(-3px); }
+
+    @keyframes slideInTop { 0% {opacity:0; transform:translateY(-50px);} 100% {opacity:1; transform:translateY(0);} }
+    @keyframes slideInBottom { 0% {opacity:0; transform:translateY(50px);} 100% {opacity:1; transform:translateY(0);} }
+
+    /* Search Bar */
+    .internship-search-container { display:flex; justify-content:center; margin-top:40px; gap:10px; flex-wrap:wrap; }
+    .internship-search-input {
+      padding:12px 20px; width:300px; max-width:90%; border-radius:50px; border:1px solid #0077b6; font-size:1rem; outline:none;
+      transition: all 0.3s ease;
+    }
+    .internship-search-input:focus { border-color:#00b4d8; box-shadow:0 4px 15px rgba(0,180,216,0.3); }
+    .internship-search-btn { padding:12px 18px; border:none; background:#0077b6; color:#fff; font-size:1.1rem; border-radius:50%; cursor:pointer; transition: all 0.3s ease; }
+    .internship-search-btn:hover { background:#023e8a; transform:translateY(-2px); }
+
+    /* Cards Section */
+    .internship-cards-container {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:30px; padding:40px 20px 60px 20px; justify-items:center;
+    }
+    .internship-card {
+      background:#fff; border-radius:20px; box-shadow:0 6px 20px rgba(0,0,0,0.1); overflow:hidden;
+      width:100%; max-width:360px; transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .internship-card:hover { transform: translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.15); }
+    .internship-card-content { padding:25px 20px; text-align:center; }
+    .internship-card-content img { width:90px; height:90px; object-fit:cover; margin-bottom:15px; }
+    .internship-card h3 { font-size:1.5rem; margin-bottom:10px; color:#0077b6; }
+    .internship-card p { font-size:1rem; margin-bottom:10px; color:#333; }
+    .internship-card-buttons { margin:15px 0; display:flex; justify-content:center; gap:15px; flex-wrap:wrap; }
+    .toggle-btn, .apply-btn { padding:10px 22px; border:none; border-radius:50px; cursor:pointer; font-weight:600; transition: all 0.3s ease; }
+    .toggle-btn { background:#eee; color:#0077b6; }
+    .toggle-btn:hover { background:#0077b6; color:#fff; }
+    .apply-btn { background:#0077b6; color:#fff; }
+    .apply-btn:hover { background:#023e8a; }
+
+    /* Hidden Extra Details */
+    .internship-card-syllabus { display:none; text-align:left; margin-top:15px; color:#555; }
+    .internship-card.expanded .internship-card-syllabus { display:block; animation: slideDown 0.4s ease-in-out; }
+    @keyframes slideDown { 0% {opacity:0; transform:translateY(-10px);} 100% {opacity:1; transform:translateY(0);} }
+
+    /* Responsive */
+    @media (max-width:1024px) { .internship-cards-container { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:768px) { 
+      .internship-cards-container { grid-template-columns:1fr; }
+      .internship-card h3 { font-size:1.3rem; }
+      .internship-card p { font-size:0.95rem; }
+      .internship-hero-title { font-size:2.2rem; }
+      .internship-hero-subtitle { font-size:1.1rem; }
+      .internship-search-container { flex-direction:column; gap:15px; margin-top:-20px; }
+    }
+
+    /* ===== FOOTER STYLES ===== */
+  footer {
+    background: #111827;
+    color: #fff;
+    padding: 2rem;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+
+  .footer-col h3 {
+    margin-bottom: 1rem;
+    color: #0077b6;
+    font-size: 1.2rem;
+  }
+
+  .footer-col a {
+    display: block;
+    color: #d1d5db;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .footer-col a:hover {
+    color: #0077b6;
+  }
+
+  .footer-col p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #0077b6;
+  }
+
+  .footer-credit {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #9ca3af;
+  }
+
+  /* ===== MEDIA QUERIES ===== */
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 1.5rem;
+    }
+.footer-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .social-icons {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-col p {
+      text-align: center;
+      justify-content: center;
+    }
+  }
+
+  </style>
+</head>
+
+<body>
+<!-- Navbar -->
     <div class="navbar">
       <h1>
         <a href="./">
@@ -170,316 +330,179 @@
         <span class="slider"></span>
       </label>
     </div>
-
-    <!-- MAIN SECTION -->
-    <section class="main">
-      <h1 data-translate="internship.title">
-        Exciting Internship Opportunities
-      </h1>
-      <p data-translate="internship.subtitle">
-        Launch your career with hands-on experience from top organizations.
-      </p>
-    </section>
-
-    <!--Search Bar-->
-    <div class="search-container">
-      <form id="searchbar" class="search-form">
-        <div class="search-input-wrapper">
-          <input
-            type="search"
-            placeholder="Search for Internships..."
-            id="searchinput"
-            class="search-input"
-          />
-          <button type="submit" id="searchBtn" class="search-button">
-            <i class="fa-solid fa-search"></i>
-          </button>
-        </div>
-      </form>
+  <!-- Hero -->
+  <section class="internship-hero">
+    <div class="internship-hero-content">
+      <h1 class="internship-hero-title">Exciting Internship Opportunities</h1>
+      <p class="internship-hero-subtitle">Launch your career with hands-on experience from top organizations.</p>
+      <a href="#internship-listings" class="internship-hero-btn">Explore Internships</a>
     </div>
+  </section>
 
-    <!-- INTERNSHIP CARDS -->
-    <div class="courses-container">
-      <!-- <div class="card">
-    <div class="card-content">
-      <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" alt="Web Development" />
-      <h3>Web Development Intern</h3>
-      <p>Duration: 3 Months | Location: Remote</p>
-      <button class="button toggle-btn">View More</button>
-      <div class="syllabus">
-        <h4>Responsibilities:</h4>
-        <ul>
-          <li>Build and optimize web applications</li>
-          <li>Collaborate with frontend/backend team</li>
-          <li>Deploy scalable features</li>
-        </ul>
-      </div>
-      <div class="enroll">
-        <a href="./apply.html" class="button">Apply Now</a>
-      </div>
-    </div>
+  <!-- Search -->
+  <div class="internship-search-container">
+    <input type="search" placeholder="Search for Internships..." class="internship-search-input" id="search-input">
+    <button class="internship-search-btn" id="search-btn"><i class="fa-solid fa-search"></i></button>
   </div>
 
-  <div class="card">
-    <div class="card-content">
-      <img src="https://abctrainings.in/media/thumbnails/machine_learning.jpeg" alt="ml" />
-      <h3>Machine Learning Intern</h3>
-      <p>Duration: 6 Months | Location: Hybrid</p>
-      <button class="button toggle-btn">View More</button>
-      <div class="syllabus">
-        <h4>Responsibilities:</h4>
-        <ul>
-          <li>Work on ML model training and tuning</li>
-          <li>Analyze large data sets</li>
-          <li>Deploy predictive analytics</li>
-        </ul>
-      </div>
-      <div class="enroll">
-        <a href="./apply.html" class="button">Apply Now</a>
-      </div>
-    </div>
-  </div>
+  <!-- Cards Container -->
+  <section id="internship-listings" class="internship-cards-container">
+    <!-- Cards will be loaded here dynamically -->
+  </section>
 
-  <div class="card">
-    <div class="card-content">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="50" height="50" alt="UI/UX Design" />
-      <h3>UI/UX Design Intern</h3>
-      <p>Duration: 2 Months | Location: Remote</p>
-      <button class="button toggle-btn">View More</button>
-      <div class="syllabus">
-        <h4>Responsibilities:</h4>
-        <ul>
-          <li>Design clean and engaging UIs in Figma</li>
-          <li>Conduct user testing</li>
-          <li>Document and prototype wireframes</li>
-        </ul>
-      </div>
-      <div class="enroll">
-        <a href="./apply.html" class="button">Apply Now</a>
-      </div>
-    </div>
-  </div> -->
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="social">
-        <h1>
-          <img
+  
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3><i class="fa-solid fa-briefcase"></i> Creators-Space</h3>
+<img
             width="80px"
             src="./assets/images/logo.png"
             alt="logo Anurag Vishwakarma's Creators-Space"
           />
-          <br />Creators-Space
-        </h1>
-        <h3>Social Media</h3>
-        <div class="all-social-links">
-          <a target="_blank" href="https://linkedin.com/in/anuragvishwakarma">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              data-name="Layer 1"
-              viewBox="0 0 100 100"
-              id="linkedin"
-            >
-              <path
-                d="M55.35,44.17h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11ZM50.8,3.77A45.67,45.67,0,1,0,96.47,49.44,45.72,45.72,0,0,0,50.8,3.77ZM39.38,70a.77.77,0,0,1-.77.76h-8.8a.76.76,0,0,1-.76-.76V40.43a.76.76,0,0,1,.76-.77h8.8a.77.77,0,0,1,.77.77ZM33.9,35.71a5.53,5.53,0,1,1,5.53-5.53A5.52,5.52,0,0,1,33.9,35.71ZM76.62,70a.77.77,0,0,1-.77.76h-8.8a.76.76,0,0,1-.76-.76V54.11c0-4.18-1.49-7-5.23-7a5.65,5.65,0,0,0-5.3,3.78,7.12,7.12,0,0,0-.34,2.52V70a.77.77,0,0,1-.77.77h-8.8a.76.76,0,0,1-.76-.77c0-4.22.11-24.71,0-29.53a.76.76,0,0,1,.76-.77h8.78a.76.76,0,0,1,.77.77v3.63a10.26,10.26,0,0,1,9.31-5.13c6.79,0,11.89,4.44,11.89,14Zm-21.2-25.8v-.11l-.07.11Zm-.07,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Z"
-              ></path>
-            </svg>
-          </a>
-          <a target="_blank" href="https://www.instagram.com/">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              data-name="Instagram w/circle"
-              viewBox="0 0 19.2 19.2"
-              id="instagram"
-            >
-              <path
-                d="M13.498 6.651a1.656 1.656 0 0 0-.95-.949 2.766 2.766 0 0 0-.928-.172c-.527-.024-.685-.03-2.02-.03s-1.493.006-2.02.03a2.766 2.766 0 0 0-.929.172 1.656 1.656 0 0 0-.949.95 2.766 2.766 0 0 0-.172.928c-.024.527-.03.685-.03 2.02s.006 1.493.03 2.02a2.766 2.766 0 0 0 .172.929 1.656 1.656 0 0 0 .95.949 2.766 2.766 0 0 0 .928.172c.527.024.685.03 2.02.03s1.493-.006 2.02-.03a2.766 2.766 0 0 0 .929-.172 1.656 1.656 0 0 0 .949-.95 2.766 2.766 0 0 0 .172-.928c.024-.527.03-.685.03-2.02s-.006-1.493-.03-2.02a2.766 2.766 0 0 0-.172-.929zM9.6 12.168A2.568 2.568 0 1 1 12.168 9.6 2.568 2.568 0 0 1 9.6 12.168zm2.669-4.637a.6.6 0 1 1 .6-.6.6.6 0 0 1-.6.6z"
-              ></path>
-              <circle cx="9.6" cy="9.6" r="1.667"></circle>
-              <path
-                d="M9.6 0a9.6 9.6 0 1 0 9.6 9.6A9.6 9.6 0 0 0 9.6 0zm4.97 11.662a3.67 3.67 0 0 1-.233 1.213 2.556 2.556 0 0 1-1.462 1.462 3.67 3.67 0 0 1-1.213.233c-.534.024-.704.03-2.062.03s-1.528-.006-2.062-.03a3.67 3.67 0 0 1-1.213-.233 2.556 2.556 0 0 1-1.462-1.462 3.67 3.67 0 0 1-.233-1.213c-.024-.534-.03-.704-.03-2.062s.006-1.528.03-2.062a3.67 3.67 0 0 1 .233-1.213 2.556 2.556 0 0 1 1.462-1.462 3.67 3.67 0 0 1 1.213-.233c.534-.024.704-.03 2.062-.03s1.528.006 2.062.03a3.67 3.67 0 0 1 1.213.233 2.556 2.556 0 0 1 1.462 1.462 3.67 3.67 0 0 1 .233 1.213c.024.534.03.704.03 2.062s-.006 1.528-.03 2.062z"
-              ></path>
-            </svg>
-          </a>
-          <a target="_blank" href="https://www.facebook.com/">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              data-name="Layer 1"
-              viewBox="0 0 100 100"
-              id="facebook"
-            >
-              <path
-                d="M50.8,3.57A45.75,45.75,0,1,0,96.54,49.32,45.8,45.8,0,0,0,50.8,3.57ZM63.49,30.71a.69.69,0,0,1-.69.69H57.3a2.45,2.45,0,0,0-2.45,2.44V39.6h7.83a.69.69,0,0,1,.68.75l-.68,8.12a.69.69,0,0,1-.69.63H54.85V76.05a.69.69,0,0,1-.69.69H44.31a.69.69,0,0,1-.69-.69V49.1H38.7a.69.69,0,0,1-.69-.69V40.29a.69.69,0,0,1,.69-.69h4.92V31.78A9.88,9.88,0,0,1,53.5,21.9h9.3a.69.69,0,0,1,.69.69Z"
-              ></path>
-            </svg>
-          </a>
-          <a target="_blank" href="https://x.com/">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="512"
-              height="512"
-              fill="none"
-              viewBox="0 0 512 512"
-              id="twitter"
-            >
-              <g clip-path="url(#clip0_84_15697)">
-                <rect width="512" height="512" fill="#000" rx="60"></rect>
-                <path
-                  fill="#fff"
-                  d="M355.904 100H408.832L293.2 232.16L429.232 412H322.72L239.296 302.928L143.84 412H90.8805L214.56 270.64L84.0645 100H193.28L268.688 199.696L355.904 100ZM337.328 380.32H366.656L177.344 130.016H145.872L337.328 380.32Z"
-                ></path>
-              </g>
-              <defs>
-                <clipPath id="clip0_84_15697">
-                  <rect width="512" height="512" fill="#fff"></rect>
-                </clipPath>
-              </defs>
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div class="contact">
-        <h3>Contact Us</h3>
-        <p>
-          <a href="mailto:21brac0401@polygwalior.ac.in"
-            ><i class="fa-solid fa-envelope" id="envelope-icon"></i
-            >21brac0401@polygwalior.ac.in</a
-          >
-        </p>
-        <br />
-        <p>
-          <a href="tel:+9188xxxxxx89"
-            ><i class="fa-solid fa-phone" id="call-icon"></i>+91 88xxxxxx89</a
-          >
-        </p>
-      </div>
+</p>
+    </div>
+    <div class="footer-col">
+      <h3>Important Links</h3>
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="about.html"><i class="fa-solid fa-building"></i> About Us</a>
+      <a href="services.html"><i class="fa-solid fa-laptop-code"></i> Services</a>
+      <a href="internship.html"><i class="fa-solid fa-graduation-cap"></i> Internship</a>
+      <a href="contact.html"><i class="fa-solid fa-clock"></i>Contact</a>
 
-      <div class="form">
-        <h3>Get In Touch</h3>
-        <div class="form-group">
-          <label for="footer-name">Name</label>
-          <input
-            type="text"
-            id="footer-name"
-            placeholder="Enter name"
-            name="name"
-          />
-        </div>
-        <div class="form-group">
-          <label for="footer-email">Email</label>
-          <input
-            type="email"
-            id="footer-email"
-            placeholder="Enter email"
-            name="email"
-          />
-        </div>
-        <div class="form-group">
-          <label for="footer-message">Message</label>
-          <textarea
-            id="footer-message"
-            placeholder="Enter message"
-            name="message"
-          ></textarea>
-        </div>
-        <button>Send</button>
+    </div>
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p><i class="fa-solid fa-phone"></i>+91 88xxxxxx89</p>
+      <p><i class="fa-solid fa-envelope"></i> mailto:21brac0401@polygwalior.ac.in</p>
+    </div>
+    <div class="footer-col">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i> Facebook</a>
+        <a href="https://x.com/"><i class="fa-brands fa-twitter"></i> Twitter</a>
+        <a href="https://linkedin.com/in/anuragvishwakarma"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i> Instagram</a>
       </div>
-      <div class="copy">
-        <p>Copyright &copy; 2024 - 2025 Creators-Space. All rights reserved.</p>
-      </div>
-    </footer>
+    </div>
+  </div>
+  <div class="footer-credit">
+    &copy; © 2025 Creators-Space. All rights reserved.
+  </div>
+</footer>
 
-    <script src="./src/js/language.js"></script>
-    <script src="./src/js/navbar.js"></script>
-    <script src="./src/js/utils.js"></script>
+  <script>
+    const container = document.querySelector(".internship-cards-container");
 
-    <!-- Loading Internship dynamically from data/internship.json -->
-    <script>
-      var container = document.querySelector(".courses-container");
-      function renderInternships(internships) {
-        container.innerHTML = "";
-        internships.forEach((item) => {
-          const responsibilitiesHTML = item.responsibilities
-            .map((task) => `<li>${task}</li>`)
-            .join("");
+    const internships = [
+      {
+        title: "Web Development Intern",
+        company: "Creators-Space",
+        duration: "3 Months",
+        type: "Remote",
+        stipend: "$200/month",
+        image: "https://cdn-icons-png.flaticon.com/512/919/919827.png",
+        responsibilities: ["Build and optimize web applications", "Collaborate with frontend/backend teams", "Deploy scalable features"],
+        applyLink: "#"
+      },
+      {
+        title: "Machine Learning Intern",
+        company: "Tech Solutions",
+        duration: "6 Months",
+        type: "Hybrid",
+        stipend: "$300/month",
+        image: "https://abctrainings.in/media/thumbnails/machine_learning.jpeg",
+        responsibilities: ["Work on ML model training and tuning", "Analyze large datasets", "Deploy predictive analytics"],
+        applyLink: "#"
+      },
+      {
+        title: "UI/UX Design Intern",
+        company: "DesignPro",
+        duration: "4 Months",
+        type: "Remote",
+        stipend: "$250/month",
+        image: "https://cdn-icons-png.flaticon.com/512/1006/1006771.png",
+        responsibilities: ["Create interactive UI designs", "Conduct user research and testing", "Collaborate with developers for implementation"],
+        applyLink: "#"
+      },
+      {
+        title: "Digital Marketing Intern",
+        company: "MarketGurus",
+        duration: "3 Months",
+        type: "Onsite",
+        stipend: "$180/month",
+        image: "https://cdn-icons-png.flaticon.com/512/2504/2504928.png",
+        responsibilities: ["Manage social media campaigns", "Perform SEO analysis", "Track and report campaign performance"],
+        applyLink: "#"
+      }
+    ];
 
-          const card = document.createElement("div");
-          card.className = "card";
-          card.innerHTML = `
-          <div class="card-content">
-            <img src="${item.image}" alt="${item.title}" />
-            <h3>${item.title}</h3>
-            <p>Company: ${item.company}</p>
-            <p>Duration: ${item.duration} | Location: ${item.type}</p>
-            <p>Stipend: ${item.stipend}</p>
-            <div class="card-buttons">
-            <button class="button toggle-btn">View More</button>
-            <a href="${item.applyLink}" class="button">Apply Now</a>
-          </div>
-          
-            <div class="syllabus">
-              <h4>Responsibilities:</h4>
-              <ul>${responsibilitiesHTML}</ul>
+    function renderInternships(list) {
+      container.innerHTML = ""; // clear container
+      if(list.length === 0){
+        const msg = document.createElement("p");
+        msg.id = "no-results";
+        msg.style.color = "red";
+        msg.style.fontSize = "20px";
+        msg.style.textAlign = "center";
+        msg.textContent = "No available Internships";
+        container.appendChild(msg);
+        return;
+      }
+
+      list.forEach(intern => {
+        const card = document.createElement("div");
+        card.className = "internship-card";
+
+        card.innerHTML = `
+          <div class="internship-card-content">
+            <img src="${intern.image}" alt="${intern.title}">
+            <h3>${intern.title}</h3>
+            <p class="company"><strong>Company:</strong> ${intern.company}</p>
+            <p class="duration"><strong>Duration:</strong> ${intern.duration} | <strong>Type:</strong> ${intern.type}</p>
+            <p class="stipend"><strong>Stipend:</strong> ${intern.stipend}</p>
+            <div class="internship-card-buttons">
+              <button class="toggle-btn">View Details</button>
+              <a href="${intern.applyLink}" class="apply-btn">Apply Now</a>
+            </div>
+            <div class="internship-card-syllabus">
+              <ul>
+                ${intern.responsibilities.map(item => `<li>${item}</li>`).join("")}
+              </ul>
             </div>
           </div>
         `;
-          container.appendChild(card);
-        });
-      }
-      async function loadInternships() {
-        try {
-          const res = await fetch("./src/data/internship.json");
-          if (!res.ok) throw new Error("Failed to fetch");
+        container.appendChild(card);
 
-          const internships = await res.json();
+        const toggleBtn = card.querySelector(".toggle-btn");
+        toggleBtn.addEventListener("click", () => card.classList.toggle("expanded"));
+      });
+    }
 
-          container.innerHTML = "";
-          renderInternships(internships);
+    renderInternships(internships);
 
-          document
-            .querySelector("#searchbar")
-            .addEventListener("submit", (e) => {
-              e.preventDefault();
-              let search = document
-                .querySelector("#searchinput")
-                .value.trim()
-                .toLowerCase();
-              const filtered = internships.filter(
-                (item) =>
-                  item.title.toLowerCase().includes(search) ||
-                  item.company.toLowerCase().includes(search) ||
-                  item.type.toLowerCase().includes(search)
-              );
+    // Search functionality
+    const searchInput = document.getElementById("search-input");
+    const searchBtn = document.getElementById("search-btn");
 
-              if (filtered.length === 0)
-                container.innerHTML =
-                  "<p style='color:red;text-align:center;font-size:20px;'>No available Internships</p>";
-              else renderInternships(filtered);
-            });
+    function filterInternships() {
+      const query = searchInput.value.trim().toLowerCase();
+      const filtered = internships.filter(intern => 
+        intern.title.toLowerCase().includes(query) ||
+        intern.company.toLowerCase().includes(query) ||
+        intern.type.toLowerCase().includes(query)
+      );
+      renderInternships(filtered);
+    }
 
-          document.querySelectorAll(".toggle-btn").forEach((btn) => {
-            btn.addEventListener("click", () => {
-              const card = btn.closest(".card");
-              card.classList.toggle("expanded");
-              btn.textContent = card.classList.contains("expanded")
-                ? "View Less"
-                : "View More";
-            });
-          });
-        } catch (err) {
-          container.innerHTML =
-            "<p style='color:red;text-align:center;font-size:20px;'>Couldn't load the internships.</p>";
-          console.error("Error loading internships:", err);
-        }
-      }
+    searchBtn.addEventListener("click", filterInternships);
+    searchInput.addEventListener("keypress", (e) => { if(e.key === "Enter") filterInternships(); });
 
-      document.addEventListener("DOMContentLoaded", loadInternships());
-    </script>
 
-    <!-- Dark Mode JS -->
-    <script>
-      const toggle = document.getElementById("dark-mode-toggle");
+    //dark mode
+
+        const toggle = document.getElementById("dark-mode-toggle");
       const body = document.body;
       const navbarLogo = document.getElementById("navbar-logo");
 
@@ -493,19 +516,7 @@
           navbarLogo.src = "./assets/images/logo-nav-light.png"; // Light mode logo
         }
       });
-    </script>
+  </script>
 
-    <script>
-      document.querySelectorAll(".toggle-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const card = btn.closest(".card");
-          card.classList.toggle("expanded");
-          btn.textContent = card.classList.contains("expanded")
-            ? "View Less"
-            : "View More";
-        });
-      });
-    </script>
-    <script src="./src/js/auth.js"></script>
-  </body>
+</body>
 </html>

@@ -38,7 +38,7 @@ body {
 .navbar a {
   color: black;
   text-decoration: none;
-  margin: 10px 2px;
+  margin: 5px 2px;
   transition: color 0.3s;
   display: flex;
   position: relative;
@@ -354,23 +354,55 @@ body.dark-mode #darkModeToggle .fa-sun {
   transition: transform 0.3s ease;
 }
 
-/* ================= DARK MODE DROPDOWN ================= */
+/* Dark Mode Dropdown - No Scrollbar Version */
 body.dark-mode .dropdown {
-  background-color: #1e1e1e;
+  background-color: #1f1f1f;
   border: 1px solid #333;
+  border-radius: 8px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  padding: 5px 0;
+  min-width: 180px;
+  overflow: hidden; /* prevents overflow */
+  transition: all 0.3s ease;
 }
 
 body.dark-mode .dropdown a {
   color: #f0f0f0;
+  padding: 10px 16px;
+  display: block;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  position: relative; /* allows pseudo-element for hover effect */
+}
+
+/* Hover effect without increasing width */
+body.dark-mode .dropdown a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;           /* small indicator on hover */
+  height: 100%;
+  background-color: white; /* gold indicator */
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: 4px 0 0 4px;
+}
+
+body.dark-mode .dropdown a:hover::before {
+  opacity: 1; /* show indicator without expanding the link */
 }
 
 body.dark-mode .dropdown a:hover {
-  background-color: #333;
-  color: #fff;
-  padding-left: 20px; /* preserve hover effect */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7) !important;
+  background-color: #2a2a2a;
+  color: white;
+  box-shadow: inset 0 0 8px rgba(255, 215, 0, 0.2);
+  padding-left: 16px; /* same as normal, no increase */
 }
+
+
 
 /* ========== Mobile view ========== */
 @media (max-width: 768px) {
@@ -630,23 +662,27 @@ body.dark-mode .dropdown a:hover {
   font-size: 20px;
   margin-bottom: 10px;
   font-weight: 600;
-  color: #fff;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .course-info span {
   font-size: 20px;
-  color: #ff4d4d;
+  color: #ff6b6b;
   font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .course-info del {
-  color: #ccc;
+  color: #cccccc;
   margin-left: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .course-info p {
   margin-top: 8px;
-  color: #aaa;
+  color: #e0e0e0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Enroll button */
@@ -674,6 +710,41 @@ body.dark-mode .dropdown a:hover {
   50% {
     box-shadow: 0 0 40px rgba(27, 83, 129, 0.6);
   }
+}
+
+@keyframes lavaPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(255, 80, 0, 0.4),
+      0 0 30px rgba(255, 0, 0, 0.3), inset 0 0 5px rgba(255, 150, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 120, 0, 0.6),
+      0 0 50px rgba(255, 60, 0, 0.4), inset 0 0 10px rgba(255, 180, 0, 0.3);
+  }
+}
+
+/* Dark mode improvements for course cards */
+body.dark-mode .course {
+  background: linear-gradient(to right, #1a1a1a, #2d2d2d, #1a1a1a);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .course-info h3 {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode .course-info span {
+  color: #ff7b7b;
+}
+
+body.dark-mode .course-info del {
+  color: #bbbbbb;
+}
+
+body.dark-mode .course-info p {
+  color: #d0d0d0;
 }
 
 .course-info button:hover {
@@ -1226,4 +1297,133 @@ body.dark-mode .main {
 body.dark-mode .hero-section h1,
 body.dark-mode .main h1 {
   color: #f5f5f5 !important; /* Ensure headings are white */
+}
+/* ==================== */
+/* Dark Mode Base Styles */
+/* ==================== */
+body.dark {
+    background-color: #121212 !important;
+    color: #f5f5f5 !important;
+}
+
+/* Navbar Dark Mode */
+body.dark .navbar {
+    background-color: #1e1e1e !important;
+    border-bottom: 1px solid #333;
+}
+
+body.dark .navbar a,
+body.dark .navbar h1 {
+    color: #f5f5f5 !important;
+}
+
+
+/* Campus Ambassador Section Dark Mode */
+body.dark .campus-ambassador-section {
+    background-color: #1a1a1a !important;
+}
+
+body.dark .benefit-card,
+body.dark .cta-section {
+    background: #2c2c2c !important;
+    border-color: #444 !important;
+    color: #f5f5f5 !important;
+}
+
+body.dark .benefit-card h3,
+body.dark .cta-section h3 {
+    color: #ffffff !important;
+}
+
+body.dark .benefit-card p,
+body.dark .cta-section p {
+    color: #cccccc !important;
+}
+
+/* About Campus Section Dark Mode */
+body.dark .about-campus {
+    background: #1a1a1a !important;
+}
+
+body.dark .why-content,
+body.dark .container {
+    background: #2c2c2c !important;
+    color: #f5f5f5 !important;
+}
+
+body.dark .left {
+    background: #333 !important;
+    color: #f5f5f5 !important;
+}
+
+body.dark .right h3 {
+    color: #f5f5f5 !important;
+}
+
+/* Responsibilities Section Dark Mode */
+body.dark .responsibilities {
+    background: #1a1a1a !important;
+}
+
+body.dark .card {
+    background: #2c2c2c !important;
+    color: #f5f5f5 !important;
+}
+
+body.dark .card h3 {
+    color: #ffffff !important;
+}
+
+body.dark .card p {
+    color: #cccccc !important;
+}
+
+body.dark .section-subtitle {
+    color: #cccccc !important;
+}
+
+/* Footer Dark Mode */
+body.dark .footer {
+    background-color: #1e1e1e !important;
+    color: #f5f5f5 !important;
+}
+
+body.dark .footer a {
+    color: #f5f5f5 !important;
+}
+
+/* Buttons Dark Mode */
+body.dark .btn.login {
+    border: 1px solid #f5f5f5 !important;
+    color: #f5f5f5 !important;
+}
+
+body.dark .btn.login:hover {
+    background-color: #f5f5f5 !important;
+    color: #121212 !important;
+}
+
+body.dark .btn.signup {
+    background-color: #f5f5f5 !important;
+    color: #121212 !important;
+    border: 1px solid #f5f5f5 !important;
+}
+
+body.dark .btn.signup:hover {
+    background-color: #121212 !important;
+    color: #f5f5f5 !important;
+}
+
+/* Dropdown Dark Mode */
+body.dark .dropdown {
+    background-color: #2c2c2c !important;
+    border: 1px solid #444 !important;
+}
+
+body.dark .dropdown a {
+    color: #f5f5f5 !important;
+}
+
+body.dark .dropdown a:hover {
+    background-color: #3c3c3c !important;
 }

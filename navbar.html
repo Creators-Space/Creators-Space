@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./src/css/utils.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/responsive.css">
+    <link rel="stylesheet" href="./src/css/newsletter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <title>Document</title>
+    <style>
+        
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+  height: 85px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  margin-left: 10px;
+}
+
+.navbar a {
+  color: black;
+  text-decoration: none;
+  margin: -10px 2px;
+  transition: color 0.3s;
+  display: flex;
+  position: relative;
+}
+
+.navbar .nav-links a {
+  /* color: #2c3e50; */
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-links a:nth-child(-n + 9)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1.5px;
+  width: 0%;
+  background-color: rgba(0, 0, 0, 0.889);
+  transition: width 0.3s ease;
+}
+
+/* Dark mode underline */
+body.dark-mode .navbar .nav-links a:nth-child(-n + 9)::after {
+  background-color: rgba(255, 255, 255, 0.9); /* white underline in dark mode */
+}
+
+.navbar .nav-links a:nth-child(-n + 9):hover::after {
+  width: 100%;
+}
+
+.navbar .btn.login {
+  border: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+  background-color: transparent;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .btn.login:hover {
+  background-color: black;
+  color: white;
+}
+
+.navbar .btn.signup {
+  border: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+  background-color: black;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: 500;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .btn.signup:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Logout Button */
+.navbar .btn.logout {
+  border: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+  background-color: transparent;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: 500;
+  color: black;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s ease;
+}
+
+.navbar .btn.logout:hover {
+  background-color: black;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Dark Mode for Logout Button */
+body.dark-mode .navbar .btn.logout {
+  border: 1px solid white;
+  color: white;
+}
+
+body.dark-mode .navbar .btn.logout:hover {
+  background-color: white;
+  color: black;
+}
+
+/* ==================== */
+/* Default (Light Mode) */
+/* ==================== */
+body {
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #ffffff;
+}
+.navbar a {
+  color: #333;
+}
+
+/* Buttons */
+.btn.signup {
+  background-color: rgb(218, 32, 32);
+  color: #fff;
+}
+.btn.signup:hover {
+  background-color: rgb(200, 30, 30);
+}
+
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* directly below parent */
+  left: 0;
+  background-color: #ffffff; /* white background */
+  min-width: 200px;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  flex-direction: column; /* stack like list */
+  z-index: auto;
+  max-height: none;
+  line-height: 1.2;
+  gap: 2px;
+  margin: 0px;
+}
+
+/* Dropdown items */
+.dropdown a {
+  display: block;
+  padding: 0px 16px;
+  color: #333;
+  border: none !important;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin: 0px;
+}
+
+/* Hover effect */
+.dropdown a:hover {
+  background-color: #b3abe6; /* light gray highlight */
+  padding-left: 20px; /* slight indent */
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown,
+.nav-item.show .dropdown {
+  display: flex;
+}
+
+/* Arrow rotation when active */
+.nav-item.show .arrow {
+  transform: rotate(180deg);
+}
+
+/* Arrow */
+.arrow {
+  font-size: 14px;
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+/* ================= DARK MODE DROPDOWN ================= */
+body.dark-mode .dropdown {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .dropdown a {
+  color: #f0f0f0;
+}
+
+body.dark-mode .dropdown a:hover {
+  background-color: #333;
+  color: #fff;
+  padding-left: 20px; /* preserve hover effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* ========== Mobile view ========== */
+@media (max-width: 768px) {
+  .dropdown {
+    position: static;
+    min-width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    display: none;
+  }
+
+  .nav-item.show .dropdown {
+    display: flex;
+  }
+
+  .dropdown a {
+    border-bottom: 1px solid #eee;
+  }
+}
+
+/* #navbar-x-logo {} */
+/* } */
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+  background: linear-gradient(
+    45deg,
+    rgba(158, 198, 217, 0.4) 20%,
+    white 70%,
+    rgb(150, 182, 201, 0.1) 10%
+  );
+  margin-top: 20px;
+}
+
+.main h1 {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main p {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.main .images {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.main img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 10px;
+}
+
+.hero-section-imgs#hero-img-center {
+  animation: animate-center-image 3s infinite;
+}
+
+.hero-section-imgs.hero-imgs-muted {
+  animation: animate-muted-images 3s infinite;
+}
+
+@keyframes animate-center-image {
+  50% {
+    width: 320px;
+    height: 320px;
+  }
+
+  100% {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@keyframes animate-muted-images {
+  50% {
+    width: 130;
+    height: 130;
+  }
+
+  100% {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+    <h1><a href="./">
+        <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
+
+        <br>Creators-Space</a>
+    </h1>
+    <div class="nav-links align-items-center">
+      
+      <a href="index.html" data-translate="navbar.home">Home</a>
+
+      <!-- dropDown 1 - About → About Us, Campus Ambassador-->
+      <li class="nav-item">
+        <a href="#" class="dropdown-toggle"><span data-translate="navbar.about">About</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="about.html" data-translate="navbar.aboutUs">About Us</a>
+          <a href="campus-ambassador.html" data-translate="navbar.campusAmbassador">Campus Ambassador</a>
+        </div>
+      </li> 
+      <!--dropDown 2 - Programs → Courses, Internship, Services -->
+      <li class="nav-item">
+        <a href="#" class="dropdown-toggle"><span data-translate="navbar.programs">Programs</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="courses.html" data-translate="navbar.courses">Courses</a>
+          <a href="internship.html" data-translate="navbar.internship">Internship</a>
+          <a href="services.html" class="active" data-translate="navbar.services">Services</a>
+          <a href="freelancing.html" data-translate="navbar.freelance">Freelance</a>
+        </div>
+      </li>
+       <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
+       <li class="nav-item">
+  <a href="#" class="dropdown-toggle">
+    <span data-translate="navbar.resources">Resources</span> 
+    <i class="fa-solid fa-chevron-down arrow"></i>
+  </a>
+  <div class="dropdown">
+    <a href="blog.html" data-translate="navbar.blog">Blog</a>
+    <a href="bookmarked.html" data-translate="navbar.bookmarks">BookMarks</a>
+    <a href="./certificate/" data-translate="navbar.certificates">Certificates</a>
+    <a href="quiz.html">Quiz</a> <!-- ✅ New Quiz Link -->
+  </div>
+</li>
+ 
+      <a href="projects.html" data-translate="navbar.projects">Projects</a>
+      <a href="contact.html" data-translate="navbar.contact">Contact</a>
+      <!-- Navbar -->
+        <div id="authSection">
+    <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
+    <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
+    
+  </div>      
+      <div id="userSection" style="display: none; align-items: center; gap: 10px;">
+        <button id="logoutBtn" class="btn logout" data-translate="navbar.logout">Logout</button>
+        <a href="profile.html" title="Your Profile">
+          <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
+            style="border-radius: 50%; margin-right: 10px" />
+        </a>
+      </div>
+      <button id="darkModeToggle" class="dark-toggle-btn" style="margin-right: 10px;">
+      <i class="fa fa-moon"></i>
+      <i class="fa fa-sun"></i>
+    </button>
+    </div>
+    <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
+      <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
+        <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
+          stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"
+          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"></polyline>
+        <polyline id="globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2"
+          stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"
+          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"></polyline>
+      </svg>
+
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navbar-x-logo" class="bi bi-x-lg d-none"
+        viewBox="0 0 16 16">
+        <path
+          d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+      </svg>
+
+
+    </div>
+  </div>
+
+
+</body>
+</html>

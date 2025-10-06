@@ -13,6 +13,154 @@
   <link rel="stylesheet" href="./src/css/responsive.css">
   <link rel="stylesheet" href="./src/css/newsletter.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+  <style>
+    #courses {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+#courses .course {
+  /* Remove conflicting background - let main CSS handle it */
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#courses .course:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+}
+
+#courses .course img {
+  width: 120px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+#courses .course-info {
+  padding: 1rem;
+  text-align: center;
+}
+
+#courses .course-info h3 {
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#courses .course-info span {
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: #ff6b6b;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#courses .course-info del {
+  color: #cccccc;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#courses .course-info p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#courses .course-info button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #1b3a4b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#courses .course-info button:hover {
+  background-color: #16324a;
+}
+
+/* Grid layout: 3 cards per row */
+#courses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Responsive for tablets */
+@media (max-width: 992px) {
+  #courses {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  #courses {
+    grid-template-columns: 1fr;
+  }
+}
+
+#courses .course img {
+  width: 150px;
+  height: 150px;      /* Adjust height as needed */
+  object-fit: cover;  /* Keeps aspect ratio and fills the container */
+  border-bottom: 1px solid #eee;
+  transition: transform 0.3s;
+}
+
+#courses .course:hover img {
+  transform: scale(1.05);  /* Slight zoom on hover for effect */
+}
+/* Tablets */
+@media (max-width: 992px) {
+  #our-course-h1 h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #our-course-h1 h1 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    padding: 0 1rem; /* Add some horizontal padding */
+  }
+}
+/* Tablets */
+@media (max-width: 992px) {
+  .main h1 {
+    font-size: 2rem;
+  }
+  .hero-section-imgs {
+    width: 200px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .main h1 {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+  .hero-section-imgs {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 1rem;
+  }
+  .images {
+    gap: 0.5rem;
+  }
+}
+  </style>
 </head>
 
 <body id="main-body" class="overflow-x-hidden">
@@ -21,95 +169,51 @@
     <div class="loader-dot"></div>
   </div>
 </div>
+   <div id="navbar"></div>
 
-  <div class="navbar">
-    <h1><a href="./">
-        <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
+<script>
+function initDarkModeToggle() {
+  const darkToggleBtn = document.getElementById("darkModeToggle");
+  if (!darkToggleBtn) return; // exit if button not found
 
-        <br>Creators-Space</a>
-    </h1>
-    <div class="nav-links align-items-center">
-      
-      <a href="index.html" data-translate="navbar.home">Home</a>
+  const body = document.body;
+  const moonIcon = darkToggleBtn.querySelector(".fa-moon");
+  const sunIcon = darkToggleBtn.querySelector(".fa-sun");
 
-      <!-- dropDown 1 - About → About Us, Campus Ambassador-->
-      <li class="nav-item">
-        <a href="#" class="dropdown-toggle"><span data-translate="navbar.about">About</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
-        <div class="dropdown">
-          <a href="about.html" data-translate="navbar.aboutUs">About Us</a>
-          <a href="campus-ambassador.html" data-translate="navbar.campusAmbassador">Campus Ambassador</a>
-        </div>
-      </li> 
-      <!--dropDown 2 - Programs → Courses, Internship, Services -->
-      <li class="nav-item">
-        <a href="#" class="dropdown-toggle"><span data-translate="navbar.programs">Programs</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
-        <div class="dropdown">
-          <a href="courses.html" data-translate="navbar.courses">Courses</a>
-          <a href="internship.html" data-translate="navbar.internship">Internship</a>
-          <a href="services.html" class="active" data-translate="navbar.services">Services</a>
-          <a href="freelancing.html" data-translate="navbar.freelance">Freelance</a>
-        </div>
-      </li>
-       <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
-       <li class="nav-item">
-  <a href="#" class="dropdown-toggle">
-    <span data-translate="navbar.resources">Resources</span> 
-    <i class="fa-solid fa-chevron-down arrow"></i>
-  </a>
-  <div class="dropdown">
-    <a href="blog.html" data-translate="navbar.blog">Blog</a>
-    <a href="bookmarked.html" data-translate="navbar.bookmarks">BookMarks</a>
-    <a href="./certificate/" data-translate="navbar.certificates">Certificates</a>
-    <a href="quiz.html">Quiz</a> <!-- ✅ New Quiz Link -->
-  </div>
-</li>
- 
-      <a href="projects.html" data-translate="navbar.projects">Projects</a>
-      <a href="contact.html" data-translate="navbar.contact">Contact</a>
-      <!-- Navbar -->
-        <div id="authSection">
-    <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
-    <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
-    
-  </div>      
-      <div id="userSection" style="display: none; align-items: center; gap: 10px;">
-        <button id="logoutBtn" class="btn logout" data-translate="navbar.logout">Logout</button>
-        <a href="profile.html" title="Your Profile">
-          <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
-            style="border-radius: 50%; margin-right: 10px" />
-        </a>
-      </div>
-      <button id="darkModeToggle" class="dark-toggle-btn" style="margin-right: 10px;">
-      <i class="fa fa-moon"></i>
-      <i class="fa fa-sun"></i>
-    </button>
-    </div>
-    <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
-      <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
-        <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
-          stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"
-          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"></polyline>
-        <polyline id="globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2"
-          stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"
-          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"></polyline>
-      </svg>
+  // Load saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+    moonIcon.style.display = "none";
+    sunIcon.style.display = "inline-block";
+  } else {
+    moonIcon.style.display = "inline-block";
+    sunIcon.style.display = "none";
+  }
 
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navbar-x-logo" class="bi bi-x-lg d-none"
-        viewBox="0 0 16 16">
-        <path
-          d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-      </svg>
+  // Toggle theme
+  darkToggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    if (body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+      moonIcon.style.display = "none";
+      sunIcon.style.display = "inline-block";
+    } else {
+      localStorage.setItem("theme", "light");
+      moonIcon.style.display = "inline-block";
+      sunIcon.style.display = "none";
+    }
+  });
+}
 
+// Initialize after navbar loads
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+    initDarkModeToggle(); // initialize toggle here
+  });
+</script>
 
-    </div>
-  </div>
-
-  <!-- <div class="toggle-switch">
-    <label class="switch-label">
-      <input onclick="toggleDarkMode()" type="checkbox" class="checkbox">
-      <span class="slider"></span>
-    </label>
-  </div> -->
 
 
   <div class="main margin-top-mv-3">
@@ -158,10 +262,10 @@
       <div class="course">
         <img src="./assets/images/full-stack-web-developer.png" alt="Web Development">
         <div class="course-info">
-          <h3 data-translate="homepage.webDevelopment">Web Development</h3>
+          <h3 >Web Development</h3>
           <span>₹12,999</span><del>₹49,999</del>
           <p data-translate="homepage.duration">Duration: 6 Months</p>
-          <a href="./enroll.html"><button data-translate="homepage.enrollNow">Enroll Now</button></a>
+          <a href="./enroll.html?course=web-development"><button >Enroll Now</button></a>
         </div>
       </div>
 
@@ -174,7 +278,7 @@
           <h3>C Programming</h3>
           <span>₹2,999</span><del>₹12,999</del>
           <p data-translate="homepage.duration3Months">Duration: 3 Months</p>
-          <a href="./enroll.html"><button data-translate="homepage.enrollNow">Enroll Now</button></a>
+          <a href="./enroll.html?course=c-programming"><button >Enroll Now</button></a>
         </div>
       </div>
       <div class="course alter-course">
@@ -185,17 +289,17 @@
           <h3>Python Programming</h3>
           <span>₹2,999</span><del>₹12,999</del>
           <p data-translate="homepage.duration3Months">Duration: 3 Months</p>
-          <a href="./enroll.html"><button data-translate="homepage.enrollNow">Enroll Now</button></a>
+          <a href="./enroll.html?course=python-programming"><button >Enroll Now</button></a>
         </div>
       </div>
       <div class="course alter-course">
         <img src="https://cdn.dribbble.com/users/41543/screenshots/8954776/figma_logo_template_4x.png"
           alt="ui/ux design">
         <div class="course-info">
-          <h3 data-translate="homepage.uiUxDesign">UI/UX Design</h3>
+          <h3>UI/UX Design</h3>
           <span>₹4,999</span><del>₹19,999</del>
           <p data-translate="homepage.duration3Months">Duration: 3 Months</p>
-          <a href="./enroll.html"><button data-translate="homepage.enrollNow">Enroll Now</button></a>
+          <a href="./enroll.html?course=ui-ux-design"><button>Enroll Now</button></a>
         </div>
       </div>
       <div class="course">
@@ -204,21 +308,20 @@
           <h3>Graphic Design</h3>
           <span>₹7,999</span><del>₹29,999</del>
           <p data-translate="homepage.duration3Months">Duration: 3 Months</p>
-          <a href="./enroll.html"><button data-translate="homepage.enrollNow">Enroll Now</button></a>
+          <a href="./enroll.html?course=graphic-design"><button >Enroll Now</button></a>
         </div>
       </div>
       <div class="course">
         <img src="./Screenshots/data-research.png" alt="Data Analyst">
         <div class="course-info">
-          <h3 data-translate="homepage.dataScience">Data Analyst</h3>
+          <h3>Data Science</h3>
           <span>₹14,999</span><del>₹59,999</del>
           <p data-translate="homepage.duration">Duration: 6 Months</p>
-          <button data-translate="homepage.enrollNow">Enroll Now</button>
+          <a href="./enroll.html?course=data-science"><button>Enroll Now</button></a>
         </div>
       </div>
-  </div>
-  </div>
-  </section>
+   
+    </section>
 
   </div>
   <!-- Why Learn With Us Section -->
@@ -455,37 +558,6 @@
   });
 </script>
 
-      <script>
-  const darkToggleBtn = document.getElementById("darkModeToggle");
-  const body = document.body;
-  const moonIcon = darkToggleBtn.querySelector(".fa-moon");
-  const sunIcon = darkToggleBtn.querySelector(".fa-sun");
-
-  // Load saved preference
-  if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark-mode");
-    moonIcon.style.display = "none";
-    sunIcon.style.display = "inline-block";
-  } else {
-    moonIcon.style.display = "inline-block";
-    sunIcon.style.display = "none";
-  }
-
-  // Toggle on click
-  darkToggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-
-    if (body.classList.contains("dark-mode")) {
-      localStorage.setItem("theme", "dark");
-      moonIcon.style.display = "none";
-      sunIcon.style.display = "inline-block";
-    } else {
-      localStorage.setItem("theme", "light");
-      moonIcon.style.display = "inline-block";
-      sunIcon.style.display = "none";
-    }
-  });
-</script>
 
 
 

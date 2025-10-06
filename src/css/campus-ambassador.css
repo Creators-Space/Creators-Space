@@ -641,4 +641,22 @@ body.dark .benefit-card:hover {
   font-size: 0.95rem;
   line-height: 1.5;
 }
- 
+/* Dark mode for the extra info section */
+body.dark .extra-info {
+    background: linear-gradient(
+        135deg,
+        rgba(60, 60, 80, 0.8),
+        rgba(80, 80, 100, 0.9)
+    ) !important;
+    color: #f5f5f5 !important;
+}
+
+/* Ensure all text in dark mode stays readable */
+body.dark .why-subtitle,
+body.dark .section-title,
+body.dark .benefits-title {
+    color: #f5f5f5 !important;
+    background: linear-gradient(90deg, #a78bfa, #6a5acd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
