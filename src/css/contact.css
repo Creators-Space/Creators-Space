@@ -1,50 +1,61 @@
 /* Contact Page Styles */
 
 .contact-section {
-  min-height: calc(100vh - 85px);
-  padding: 2rem 1rem;
+  height:200vh;
+  width:100vw;
+  padding-top:20px;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.contact-section .container {
-  max-width: 1200px;
-  margin: 0 auto;
+.container{
+  height:100%;
+  width:100vw;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
 .contact-header {
   text-align: center;
-  padding: 3rem 2rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  /* padding: 3rem 2rem 2rem; */
+  
 }
 
 .contact-header h1 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   margin-bottom: 1rem;
   font-weight: 700;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.contact-header h1:hover 
+{
+  text-shadow: 2px 2px 5px linear-gradient(to right, #e1af27,pink, rgb(112, 66, 238));
 }
 
 .contact-header p {
   font-size: 1.1rem;
-  opacity: 0.9;
-  max-width: 600px;
+  /* opacity: 0.9; */
+  color:grey;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
-  min-height: 600px;
+  gap: 15px;
+  margin-top:100px;
 }
 
 .contact-info {
   padding: 3rem 2rem;
-  background: #f8f9fc;
+  background:white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -90,6 +101,21 @@
 .contact-form-container {
   padding: 3rem 2rem;
   position: relative;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.get-touch{
+  text-align:left;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.head-text{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:18px;
+  margin-top:20px;
+  margin-bottom:20px;
 }
 
 .contact-form {
