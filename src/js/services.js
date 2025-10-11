@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     userSection.style.display = "none";
   }
 
-  logoutBtn?.addEventListener("click", () => {
+    logoutBtn?.addEventListener("click", () => {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("loggedInUser");
-    window.location.href = "index.html";
+    if (location.pathname.split('/').pop() === 'index.html' || location.pathname.endsWith('/')) location.href = 'index.html'; else location.href = '../index.html';
   });
 });

@@ -4,30 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Newsletter Popup Demo - Creators-Space</title>
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./src/css/utils.css">
-    <link rel="stylesheet" href="./src/css/style.css">
-    <link rel="stylesheet" href="./src/css/responsive.css">
-    <link rel="stylesheet" href="./src/css/newsletter-demo.css">
-    <link rel="stylesheet" href="./src/css/newsletter-demo.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/src/css/utils.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/responsive.css">
+    <link rel="stylesheet" href="/src/css/newsletter-demo.css">
 </head>
 <body id="main-body" class="overflow-x-hidden">
-    <div class="navbar">
-        <h1><a href="./">
-            <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
-            <br>Creators-Space</a></h1>
-        <div class="nav-links align-items-center">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="courses.html">Courses</a>
-            <a href="services.html">Services</a>
-            <a href="internship.html">Internship</a>
-            <a href="blog.html">Blog</a>
-            <a href="bookmarked.html">BookMarks</a>
-            <a href="./login.html" class="btn login">Log In</a>
-            <a href="./signup.html" class="btn signup">Sign Up</a>
-        </div>
-    </div>
+        <div id="navbar"></div>
+        <script>
+            fetch('/navbar.html')
+                .then(r => r.text())
+                .then(html => {
+                    document.getElementById('navbar').innerHTML = html;
+                    if (typeof initDarkModeToggle === 'function') initDarkModeToggle();
+                    if (window.getLanguageManager) { try { window.getLanguageManager().initLanguageSelector(); } catch (e) {} }
+                })
+                .catch(err => console.error('Failed to load navbar:', err));
+        </script>
 
     <div class="toggle-switch">
         <label class="switch-label">
@@ -119,8 +113,8 @@
         <span>Newsletter</span>
     </button>
 
-    <script src="./src/js/utils.js"></script>
-    <script src="./src/js/newsletter.js"></script>
+    <script src="/src/js/utils.js"></script>
+    <script src="/src/js/newsletter.js"></script>
     <script>
         // Demo helper functions
         function testEmailValidation() {

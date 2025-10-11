@@ -16,46 +16,46 @@ const pages = [
 // Standard navbar HTML with translation attributes
 const translatedNavbarHTML = `
 <div class="nav-links align-items-center">
-  <a href="index.html" data-translate="navbar.home">Home</a>
+  <a href="/index.html" data-translate="navbar.home">Home</a>
 
   <!-- dropDown 1 - About → About Us, Campus Ambassador-->
   <li class="nav-item">
     <a href="#" class="dropdown-toggle"><span data-translate="navbar.about">About</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
     <div class="dropdown">
-      <a href="about.html" data-translate="navbar.aboutUs">About Us</a>
-      <a href="campus-ambassador.html" data-translate="navbar.campusAmbassador">Campus Ambassador</a>
+  <a href="/src/pages/about.html" data-translate="navbar.aboutUs">About Us</a>
+  <a href="/src/pages/campus-ambassador.html" data-translate="navbar.campusAmbassador">Campus Ambassador</a>
     </div>
   </li> 
   <!--dropDown 2 - Programs → Courses, Internship, Services -->
   <li class="nav-item">
     <a href="#" class="dropdown-toggle"><span data-translate="navbar.programs">Programs</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
     <div class="dropdown">
-      <a href="courses.html" data-translate="navbar.courses">Courses</a>
-      <a href="internship.html" data-translate="navbar.internship">Internship</a>
-      <a href="services.html" data-translate="navbar.services">Services</a>
-      <a href="freelancing.html" data-translate="navbar.freelance">Freelance</a>
+  <a href="/src/pages/courses.html" data-translate="navbar.courses">Courses</a>
+  <a href="/src/pages/internship.html" data-translate="navbar.internship">Internship</a>
+  <a href="/src/pages/services.html" data-translate="navbar.services">Services</a>
+  <a href="/src/pages/freelancing.html" data-translate="navbar.freelance">Freelance</a>
     </div>
   </li>
    <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
    <li class="nav-item">
     <a href="#" class="dropdown-toggle"><span data-translate="navbar.resources">Resources</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
     <div class="dropdown">
-      <a href="blog.html" data-translate="navbar.blog">Blog</a>
-      <a href="bookmarked.html" data-translate="navbar.bookmarks">BookMarks</a>
-      <a href="./certificate/" data-translate="navbar.certificates">Certificates</a>
+  <a href="/src/pages/blog.html" data-translate="navbar.blog">Blog</a>
+  <a href="/src/pages/bookmarked.html" data-translate="navbar.bookmarks">BookMarks</a>
+  <a href="/src/pages/certificate.html" data-translate="navbar.certificates">Certificates</a>
     </div>
    </li> 
-  <a href="projects.html" data-translate="navbar.projects">Projects</a>
-  <a href="contact.html" data-translate="navbar.contact">Contact</a>
+  <a href="/src/pages/projects.html" data-translate="navbar.projects">Projects</a>
+  <a href="/src/pages/contact.html" data-translate="navbar.contact">Contact</a>
   <!-- Navbar -->
   <div id="authSection">
-    <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
-    <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
+  <a href="/src/pages/login.html" class="btn login" data-translate="navbar.login">Log In</a>
+  <a href="/src/pages/signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
   </div>
 
   <div id="userSection" style="display: none; align-items: center; gap: 10px;">
     <button id="logoutBtn" class="btn login" data-translate="navbar.logout">Logout</button>
-    <a href="profile.html" title="Your Profile">
+  <a href="/src/pages/profile.html" title="Your Profile">
       <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
         style="border-radius: 50%;" />
     </a>
@@ -69,7 +69,7 @@ To manually update each page with language support:
 
 1. Add language script to each HTML file:
    Add this line before other script tags:
-   <script src="./src/js/language.js"></script>
+  <script src="/src/js/language.js"></script>
 
 2. Replace navbar content with translated version (see translatedNavbarHTML above)
 

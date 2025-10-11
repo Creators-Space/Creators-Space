@@ -5,12 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | Creators-Space</title>
-  <link rel="stylesheet" href="./src/css/courses.css">
-  <link rel="stylesheet" href="./src/css/services.css">
-  <link rel="stylesheet" href="./src/css/style.css">
-  <link rel="stylesheet" href="./src/css/utils.css">
-  <link rel="stylesheet" href="./src/css/internship.css">
-  <link rel="stylesheet" href="./src/css/responsive.css">
+  <link rel="stylesheet" href="/src/css/courses.css">
+  <link rel="stylesheet" href="/src/css/services.css">
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/utils.css">
+  <link rel="stylesheet" href="/src/css/internship.css">
+  <link rel="stylesheet" href="/src/css/responsive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -53,11 +53,14 @@ function initDarkModeToggle() {
 }
 
 // Initialize after navbar loads
-fetch("navbar.html")
+fetch('/navbar.html')
   .then(res => res.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
     initDarkModeToggle(); // initialize toggle here
+    if (window.getLanguageManager) {
+      try { window.getLanguageManager().initLanguageSelector(); } catch (e) { }
+    }
   });
 </script>
 
@@ -86,7 +89,7 @@ fetch("navbar.html")
 
             width="80px"
 
-            src="./assets/images/logo.png"
+            src="/assets/images/logo.png"
 
             alt="logo Anurag Vishwakarma's Creators-Space"
 
@@ -100,15 +103,15 @@ fetch("navbar.html")
 
       <h3>Important Links</h3>
 
-      <a href="index.html"><I class="fa-solid fa-house"></I> Home</a>
+  <a href="/index.html"><I class="fa-solid fa-house"></I> Home</a>
 
-      <a href="about.html"><I class="fa-solid fa-building"></I> About Us</a>
+  <a href="/src/pages/about.html"><I class="fa-solid fa-building"></I> About Us</a>
 
-      <a href="services.html"><I class="fa-solid fa-laptop-code"></I> Services</a>
+  <a href="/src/pages/services.html"><I class="fa-solid fa-laptop-code"></I> Services</a>
 
-      <a href="internship.html"><I class="fa-solid fa-graduation-cap"></I> Internship</a>
+  <a href="/src/pages/internship.html"><I class="fa-solid fa-graduation-cap"></I> Internship</a>
 
-      <a href="contact.html"><I class="fa-solid fa-clock"></I>Contact</a>
+  <a href="/src/pages/contact.html"><I class="fa-solid fa-clock"></I>Contact</a>
 
 
 
@@ -118,9 +121,9 @@ fetch("navbar.html")
 
       <h3>Contact</h3>
 
-      <p><I class="fa-solid fa-phone"></I>+91 88xxxxxx89</p>
+  <p><I class="fa-solid fa-phone"></I> <a href="tel:+9188xxxxxx89">+91 88xxxxxx89</a></p>
 
-      <p><I class="fa-solid fa-envelope"></I> mailto:21brac0401@polygwalior.ac.in</p>
+  <p><I class="fa-solid fa-envelope"></I> <a href="mailto:21brac0401@polygwalior.ac.in">21brac0401@polygwalior.ac.in</a></p>
 
     </div>
 
@@ -152,16 +155,16 @@ fetch("navbar.html")
 
 </footer>
 
-  <script src="./src/js/language.js"></script>
-  <script src="./src/js/navbar.js"></script>
-  <script src="./src/js/utils.js"></script>
+  <script src="/src/js/language.js"></script>
+  <script src="/src/js/navbar.js"></script>
+  <script src="/src/js/utils.js"></script>
 
   <!-- Dark Mode JS -->
   <script>
     async function loadServices() {
       const container = document.getElementById("services-list");
       try {
-        const res = await fetch("./src/data/services.json");
+  const res = await fetch("/src/data/services.json");
         if (!res.ok) throw new Error("Failed to fetch");
 
         const services = await res.json();
@@ -209,6 +212,6 @@ fetch("navbar.html")
 
     window.addEventListener("DOMContentLoaded", loadServices);
   </script>
-  <script src="./src/js/auth.js"></script>
+  <script src="/src/js/auth.js"></script>
 </body>
 </html>

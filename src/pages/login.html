@@ -5,20 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | Creators-Space</title>
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="./src/css/style.css">
-  <link rel="stylesheet" href="./src/css/utils.css">
-  <link rel="stylesheet" href="./src/css/responsive.css">
-  <link rel="stylesheet" href="./src/css/login.css">
-  <title>Login</title>
+  <link rel="stylesheet" href="/src/css/login.css">
 </head>
 
 <body>
   <div class="login-wrapper">
     <!-- Left Branding Section -->
     <div class="brand-section">
-      <img src="./assets/images/logo.png" alt="Creators-Space Logo">
+  <img src="/assets/images/logo.png" alt="Creators-Space Logo">
       <h1>Creators-Space</h1>
       <p>Empowering learners to grow their skills and creativity through courses, internships, and opportunities.</p>
     </div>
@@ -42,7 +38,7 @@
   <label>
     <input type="checkbox" id="remember"> Remember Me
   </label>
-  <a href="forgot-password.html" class="forgot-password" style="margin-top: 8px;">Forgot Password?</a>
+  <a href="/src/pages/forgot-password.html" class="forgot-password" style="margin-top: 8px;">Forgot Password?</a>
 </div>
 
 
@@ -56,15 +52,15 @@
 
         <div class="social-buttons">
   <a href="https://www.instagram.com/" target="_blank" class="social-btn">
-    <img src="./assets/images/instagram.png" width="20"> Instagram
+    <img src="/assets/images/instagram.png" width="20"> Instagram
   </a>
   <a href="https://twitter.com/" target="_blank" class="social-btn">
-    <img src="./assets/images/twitter.png" width="20"> Twitter
+    <img src="/assets/images/twitter.png" width="20"> Twitter
   </a>
 </div>
 
 
-        <p style="text-align:center;margin-top:15px;">Don't have an account? <a href="signup.html">Sign Up</a></p>
+  <p style="text-align:center;margin-top:15px;">Don't have an account? <a href="/src/pages/signup.html">Sign Up</a></p>
       </form>
     </div>
   </div>
@@ -114,10 +110,9 @@
           }
           localStorage.setItem("isLoggedIn","true");
           alert("Login successful!");
-          window.location.href="index.html";
+          window.location.href="/index.html";
         } else { alert("Invalid email or password."); }
       },1000);
     });
   </script>
 </body>
-</html>

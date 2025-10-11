@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Career Guidance",
     "description": "Personalized career counseling and roadmap planning",
-    "icon": "./assets/images/icons/career-guidance.svg",
+  "icon": "/assets/images/icons/career-guidance.svg",
     "features": [
       "One-on-one career counseling sessions",
       "Industry trend analysis and insights",
@@ -18,7 +18,7 @@
     "id": 2,
     "title": "Open-Source Mentorship",
     "description": "Learn to contribute to open-source projects effectively",
-    "icon": "./assets/images/icons/opensource.svg",
+  "icon": "/assets/images/icons/opensource.svg",
     "features": [
       "Git and GitHub mastery",
       "Finding the right projects to contribute",
@@ -33,7 +33,7 @@
     "id": 3,
     "title": "Project-Based Learning",
     "description": "Hands-on experience through real-world projects",
-    "icon": "./assets/images/icons/project-learning.svg",
+  "icon": "/assets/images/icons/project-learning.svg",
     "features": [
       "End-to-end project development",
       "Industry-standard coding practices",
@@ -50,7 +50,7 @@
     "id": 4,
     "title": "Resume Building Tips",
     "description": "Craft compelling resumes that get noticed by recruiters",
-    "icon": "./assets/images/icons/resume-tips.svg",
+  "icon": "/assets/images/icons/resume-tips.svg",
     "features": [
       "ATS-optimized resume templates",
       "Technical skills presentation",
@@ -67,7 +67,7 @@
     "id": 5,
     "title": "Mock Interviews",
     "description": "Practice interviews with industry professionals",
-    "icon": "./assets/images/icons/mock-interviews.svg",
+  "icon": "/assets/images/icons/mock-interviews.svg",
     "features": [
       "Technical interview preparation",
       "Behavioral question practice",

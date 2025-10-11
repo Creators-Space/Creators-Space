@@ -65,14 +65,21 @@ if (translatableElements.length > 0) {
 }
 
 // Check if language data loaded
-fetch('./src/data/languages.json')
-    .then(response => response.json())
-    .then(data => {
+{
+    const paths = ['./src/data/languages.json','../src/data/languages.json','/src/data/languages.json'];
+    (async () => {
+        let resp;
+        for (const p of paths) {
+            try { resp = await fetch(p); if (resp.ok) break; } catch(e) { }
+        }
+        if (!resp || !resp.ok) {
+            console.log('❌ Error loading language data: languages.json not found');
+            return;
+        }
+        const data = await resp.json();
         console.log('✅ Language data loaded successfully');
         console.log('Available languages:', Object.keys(data));
-    })
-    .catch(error => {
-        console.log('❌ Error loading language data:', error);
-    });
+    })();
+}
 
 console.log('Language functionality test completed. Check results above.');

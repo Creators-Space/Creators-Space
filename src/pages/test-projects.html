@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Projects Page</title>
-    <link rel="stylesheet" href="./src/css/test-projects.css">
+    <link rel="stylesheet" href="/src/css/test-projects.css">
 </head>
 <body>
     <h1>Projects Page Test</h1>
@@ -24,7 +24,7 @@
         }
 
         // Test 1: Check if projects.json exists
-        fetch('./src/data/projects.json')
+    fetch('/src/data/projects.json')
             .then(response => {
                 if (response.ok) {
                     addResult('✅ projects.json file found and accessible', 'success');
@@ -58,7 +58,7 @@
             });
 
         // Test 3: Check if CSS files exist
-        fetch('./src/css/projects.css')
+    fetch('/src/css/projects.css')
             .then(response => {
                 if (response.ok) {
                     addResult('✅ projects.css file found', 'success');
@@ -71,7 +71,7 @@
             });
 
         // Test 4: Check if JavaScript file exists
-        fetch('./src/js/projects.js')
+    fetch('/src/js/projects.js')
             .then(response => {
                 if (response.ok) {
                     addResult('✅ projects.js file found', 'success');
@@ -84,7 +84,7 @@
             });
 
         // Test 5: Check if projects.html exists
-        fetch('./projects.html')
+    fetch('/src/pages/projects.html')
             .then(response => {
                 if (response.ok) {
                     addResult('✅ projects.html file found', 'success');

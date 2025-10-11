@@ -5,7 +5,7 @@
     <meta name="author" content="Anurag Vishwakarma Creators-Space" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us - Creators-Space</title>
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <meta
       name="description"
       content="Contact Creators-Space - Get in touch with us for any queries or support"
@@ -14,10 +14,10 @@
       name="keywords"
       content="Creators-Space, contact, support, help, gwalior, technology"
     />
-    <link rel="stylesheet" href="./src/css/utils.css" />
-    <link rel="stylesheet" href="./src/css/style.css" />
-    <link rel="stylesheet" href="./src/css/responsive.css" />
-    <link rel="stylesheet" href="./src/css/contact.css" />
+  <link rel="stylesheet" href="/src/css/utils.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/responsive.css" />
+    <link rel="stylesheet" href="/src/css/contact.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
@@ -65,12 +65,16 @@ function initDarkModeToggle() {
 }
 
 // Initialize after navbar loads
-fetch("navbar.html")
+fetch('/navbar.html')
   .then(res => res.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
     initDarkModeToggle(); // initialize toggle here
-  });
+    if (window.getLanguageManager) {
+      try { window.getLanguageManager().initLanguageSelector(); } catch (e) { }
+    }
+  })
+  .catch(err => console.error('Failed to load navbar:', err));
 </script>
 
 
@@ -199,7 +203,7 @@ fetch("navbar.html")
         <h1>
           <img
             width="80px"
-            src="./assets/images/logo.png"
+            src="/assets/images/logo.png"
             alt="logo Anurag Vishwakarma's Creators-Space"
           />
           <br />Creators-Space
@@ -277,7 +281,7 @@ fetch("navbar.html")
           <a href="mailto:21brac0401@polygwalior.ac.in"
             ><i class="fa-solid fa-envelope" id="envelope-icon"></i
             >21brac0401@polygwalior.ac.in</a
-          >
+        <img width="80px" src="/assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
         </p>
         <br />
         <p>
@@ -323,10 +327,10 @@ fetch("navbar.html")
     </footer>
 
   <!-- Scripts -->
-  <script src="./src/js/navbar.js"></script>
-  <script src="./src/js/utils.js"></script>
-  <script src="./src/js/contact.js"></script>
-  <script src="./src/js/auth.js" defer type="module"></script>
-  <script src="./src/js/language.js"></script>
+  <script src="/src/js/navbar.js"></script>
+  <script src="/src/js/utils.js"></script>
+  <script src="/src/js/contact.js"></script>
+  <script src="/src/js/auth.js" defer type="module"></script>
+  <script src="/src/js/language.js"></script>
 </body>
 </html>

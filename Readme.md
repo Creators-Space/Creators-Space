@@ -1,7 +1,7 @@
 # 🌐 Creators-Space
 
 <p align="center">
-  <img src="./assets/images/logo.png" alt="Creators-Space Logo" height="120px" />
+  <img src="/assets/images/logo.png" alt="Creators-Space Logo" height="120px" />
   <br/>
   <em>Empowering the next generation of tech creators</em>
 </p>
@@ -67,48 +67,52 @@ We welcome and encourage contributions from participants and the entire open-sou
 
 ---
 
-## 📁 Project Structure
+## 📁 Project structure
 
 ```
-Creators-Space/
-├── assets/
-│   ├── animations/ 
-│   └── images/
-│        ├── aboutpage/
-│        ├── blogpage/
-│        ├── icons/
-│        ├── Certificate/
-│        └── other-images
-│
-├── certificate/      
-├── Screenshots
-├── src/
-├── about.html
-├── apply.html
-├── blog.html
-├── bookmarked.html
-├── campus-ambassador.html
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── courses.html
-├── enroll.html
-├── favicon.ico
-├── freelancing.html
-├── index.html
-├── internship.html
+Creators-Space/                # repository root
+├── assets/                    # public assets served at /assets/
+│   ├── animations/
+│   └── images/                # logos, icons, page-specific images
+│       ├── aboutpage/
+│       ├── blogpage/
+│       └── icons/
+├── Screenshots/               # project screenshots used in README
+├── navbar.html               
+├── index.html                 # root landing page
+├── Readme.md                  
 ├── LICENSE
-├── login.html
-├── newsletter-demo.html
-├── profile.html
-├── projects.html
-├── README.md
-├── script.js
-├── services.html
-├── signup.html
-├── style.css
-├── tandc.html
-└── test-projects.html
+├── CONTRIBUTING.md
+└── src/                     # source folder for page assets and app code
+  ├── css/                   # all stylesheet files
+  ├── js/                    # frontend JavaScript
+  ├── data/                  # JSON data files
+  └── pages/                 
+    ├── about.html
+    ├── courses.html
+    ├── services.html
+    ├── internship.html
+    ├── blog.html
+    ├── profile.html
+    ├── login.html
+    └── ... (other pages)
 ```
+
+Quick local preview
+- Start a simple static server from the project root and open the site in your browser:
+
+```powershell
+# from repository root
+python -m http.server 8000
+# then open http://localhost:8000/index.html or http://localhost:8000/src/pages/profile.html
+```
+
+If you use Node you can also run:
+
+```powershell
+npx http-server -p 8000
+```
+
 ---
 ## Screenshots
 <table>

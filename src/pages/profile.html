@@ -6,28 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Profile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="./src/css/profile.css">
+    <link rel="stylesheet" href="/src/css/profile.css">
 </head>
 
 <body>
     <header>
-        <div class="navbar">
-            <h1><a href="./">
-                    <img width="80px" src="./assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
-                    <br>Creators-Space</a></h1>
-            <div class="nav-links align-items-center">
-                <a href="index.html">Home</a>
-                <a href="courses.html">Courses</a>
-                <a href="#">Services</a>
-                <a href="internship.html">Internship</a>
-                <a href="#">Campus Ambassador</a>
-                <a href="blog.html">Blog</a>
-                <a href="bookmarked.html">BookMarks</a>
-                <a href="quiz.html">Quiz</a> 
-                <button id="logoutBtn" class="btn login">Logout</button>
-            </div>
-        </div>
-
+        <div id="navbar"></div>
+        <script>
+                    fetch('/navbar.html')
+                        .then(r => r.text())
+                        .then(html => {
+                            document.getElementById('navbar').innerHTML = html;
+                            if (typeof initDarkModeToggle === 'function') initDarkModeToggle();
+                            if (window.getLanguageManager) { try { window.getLanguageManager().initLanguageSelector(); } catch (e) {} }
+                        })
+                        .catch(err => console.error('Failed to load navbar:', err));
+        </script>
     </header>
     <div class="content">
         <aside class="sidebar">
@@ -126,7 +120,7 @@
 
     <footer class="footer">
         <div class="social">
-            <h1><img width="80px" src="./assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
+            <h1><img width="80px" src="/assets/images/logo.png" alt="Creators-Space logo">
                 <br>Creators-Space
             </h1>
             <h3>Social Media</h3>
@@ -195,10 +189,10 @@
 
 
   
-    <script src="./src/js/auth.js"></script>
+    <script src="/src/js/auth.js"></script>
 
 
-    <script src="./src/js/profile.js"></script>
+    <script src="/src/js/profile.js"></script>
 </body>
 
 </html>

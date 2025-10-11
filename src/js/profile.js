@@ -12,7 +12,8 @@
 
             if (!loggedInUser) {
                 alert("Please log in first.");
-                window.location.href = "login.html";
+                // redirect to absolute login page path so nested pages resolve correctly
+                location.href = '/src/pages/login.html';
                 return;
             }
 

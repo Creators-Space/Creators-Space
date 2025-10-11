@@ -1,6 +1,6 @@
 // START
 // This script is writtern for changing the three images of the hero section of webpage...
-const heroImagesLinks = ['./assets/images/hero-img-left.png', './assets/images/hero-img-center.png', './assets/images/hero-img-right.png'];
+const heroImagesLinks = ['/assets/images/hero-img-left.png', '/assets/images/hero-img-center.png', '/assets/images/hero-img-right.png'];
 let heroImgLeft = document.getElementById('hero-img-left');
 let heroImgCenter = document.getElementById('hero-img-center');
 let heroImgRight = document.getElementById('hero-img-right');

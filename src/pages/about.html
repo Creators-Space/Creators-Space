@@ -10,12 +10,12 @@
     />
     <!-- Mission and Vision Section -->
     <title>About Us – Creators-Space</title>
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="./src/css/utils.css" />
-    <link rel="stylesheet" href="./src/css/style.css" />
-    <link rel="stylesheet" href="./src/css/responsive.css" />
-    <link rel="stylesheet" href="./src/css/about.css" />
-    <link rel="stylesheet" href="./src/css/newsletter-demo.css" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/src/css/utils.css" />
+  <link rel="stylesheet" href="/src/css/style.css" />
+  <link rel="stylesheet" href="/src/css/responsive.css" />
+  <link rel="stylesheet" href="/src/css/about.css" />
+  <link rel="stylesheet" href="/src/css/newsletter-demo.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
@@ -191,7 +191,7 @@ function initDarkModeToggle() {
 }
 
 // Initialize after navbar loads
-fetch("navbar.html")
+  fetch("/navbar.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
@@ -251,7 +251,7 @@ fetch("navbar.html")
             </div>
             <div class="mv-image">
               <img
-                src="./assets/images/aboutpage/mission.gif"
+                src="/assets/images/aboutpage/mission.gif"
                 alt="Mission Animation"
               />
             </div>
@@ -261,7 +261,7 @@ fetch("navbar.html")
           <div class="mv-row vision-row">
             <div class="mv-image">
               <img
-                src="./assets/images/aboutpage/vision.webp"
+                src="/assets/images/aboutpage/vision.webp"
                 alt="Vision Animation"
               />
             </div>
@@ -425,7 +425,7 @@ fetch("navbar.html")
               <h3>No matching questions found</h3>
               <p>
                 Try adjusting your search terms or
-                <a href="contact.html">contact us</a> directly.
+                <a href="/src/pages/contact.html">contact us</a> directly.
               </p>
             </div>
           </div>
@@ -464,7 +464,7 @@ fetch("navbar.html")
         <h1>
           <img
             width="80px"
-            src="./assets/images/logo.png"
+            src="/assets/images/logo.png"
             alt="logo Anurag Vishwakarma's Creators-Space"
           />
           <br />Creators-Space
@@ -719,15 +719,12 @@ fetch("navbar.html")
       <span>Newsletter</span>
     </button>
 
-    <!-- Shared JavaScript Files -->
-    <script src="./src/js/navbar.js"></script>
-    <script src="./src/js/auth.js"></script>
-    <script src="./src/js/utils.js"></script>
-    <script src="./src/js/slider.js"></script>
-    <script src="./src/js/language.js"></script>
-    
-    <script src="./src/js/newsletter.js"></script>
-    <script src="./src/js/about.js"></script>
-    <script src="./src/js/scrollToTop.js"></script>
-  </body>
-</html>
+  <!-- Shared JavaScript Files -->
+  <script src="/src/js/navbar.js"></script>
+  <script src="/src/js/auth.js"></script>
+  <script src="/src/js/utils.js"></script>
+  <script src="/src/js/slider.js"></script>
+  <script src="/src/js/language.js"></script>
+  <script src="/src/js/newsletter.js"></script>
+  <script src="/src/js/about.js"></script>
+  <script src="/src/js/scrollToTop.js"></script>

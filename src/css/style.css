@@ -516,7 +516,7 @@ body.dark-mode .dropdown a:hover {
   background-color: #ffffff;
   padding: 30px;
   height: 500px;
-  background-image: url("../../assets/images/webdev.png");
+  background-image: url("/assets/images/webdev.png");
   background-position-x: center;
   background-position-y: bottom;
   background-size: 80%;

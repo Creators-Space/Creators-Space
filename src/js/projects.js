@@ -112,7 +112,15 @@ class ProjectsManager {
 
     try {
       // Load projects from JSON file
-      const jsonResponse = await fetch('./src/data/projects.json');
+      const possible = ['./src/data/projects.json', '../src/data/projects.json', '/src/data/projects.json'];
+      let jsonResponse;
+      for (const p of possible) {
+        try {
+          const r = await fetch(p);
+          if (r.ok) { jsonResponse = r; break; }
+        } catch(e) { continue; }
+      }
+      if (!jsonResponse) throw new Error('projects.json not found');
       const jsonProjects = await jsonResponse.json();
 
       // Load additional projects from GitHub API

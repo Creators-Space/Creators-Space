@@ -8,10 +8,10 @@ const toggleNav = () => {
     bargerLogo.classList.toggle('d-none');
 //  if (element.classList.contains("dark")) {
 //         localStorage.setItem("theme", "dark");
-//         logo.src = "./assets/images/logo-nav-dark.png"; // Dark mode logo
+//         logo.src = "/assets/images/logo-nav-dark.png"; // Dark mode logo
 //     } else {
 //         localStorage.setItem("theme", "light");
-//         logo.src = "./assets/images/logo-nav-light.png"; // Light mode logo
+//         logo.src = "/assets/images/logo-nav-light.png"; // Light mode logo
 //     }
 
 }

@@ -15,7 +15,7 @@ body {
 }
 
 .bg-certificate-template {
-    background-image: url('../../assets/images/Certificate/Creators-Sapce-Certificate Template.png') !important;
+    background-image: url('/assets/images/Certificate/Creators-Sapce-Certificate Template.png') !important;
 }
 body.dark .dropdown {
   background-color: #333;
@@ -34,7 +34,7 @@ body.dark .dropdown a:hover {
 }
 
 #captureArea {
-    /* background-image: url('../../assets/images/Creators-Sapce-Certificate Template.png') !important; */
+    /* background-image: url('/assets/images/Creators-Sapce-Certificate Template.png') !important; */
     height: 620px;
     width: 880px;
     background-size: cover !important;

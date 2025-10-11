@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Enroll Now - Creators-Space</title>
-    <link rel="stylesheet" href="./src/css/utils.css" />
-    <!-- <link rel="stylesheet" href="./src/css/style.css" /> -->
-    <link rel="stylesheet" href="./src/css/responsive.css" />
-    <link rel="stylesheet" href="./src/css/enroll.css" />
+  <link rel="stylesheet" href="/src/css/utils.css" />
+  <!-- <link rel="stylesheet" href="/src/css/style.css" /> -->
+  <link rel="stylesheet" href="/src/css/responsive.css" />
+  <link rel="stylesheet" href="/src/css/enroll.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
@@ -15,98 +15,29 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./src/css/style.css" />
-    <link rel="stylesheet" href="./src/css/enroll.css" />
+  <link rel="stylesheet" href="/src/css/style.css" />
+  <link rel="stylesheet" href="/src/css/enroll.css" />
   </head>
 
   <body>
-    <div class="navbar">
-      <h1>
-        <a href="./">
-          <img
-            id="navbar-logo"
-            width="80px"
-            src="./assets/images/logo-nav-light.png"
-            alt="logo Creators-Space"
-          />
-
-          <br />Creators-Space</a
-        >
-      </h1>
-      <div class="nav-menu align-items-center">
-        <li class="nav-item">
-          <a href="index.html">Home</a>
-        </li>
-
-        <!-- dropDown 1 - About → About Us, Campus Ambassador-->
-        <li class="nav-item">
-          <a href="#" class="dropdown-toggle"
-            >About <i class="fa-solid fa-chevron-down arrow"></i
-          ></a>
-          <div class="dropdown">
-            <a href="about.html">About Us</a>
-            <a href="campus-ambassador.html">Campus Ambassador</a>
-
-            <a href="projects.html">Projects</a>
-          </div>
-        </li>
-        <!--dropDown 2 - Programs → Courses, Internship, Services -->
-        <li class="nav-item">
-          <a href="#" class="dropdown-toggle"
-            >Programs <i class="fa-solid fa-chevron-down arrow"></i
-          ></a>
-          <div class="dropdown">
-            <a href="courses.html">Courses</a>
-            <a href="internship.html">Internship</a>
-            <a href="services.html" >Services</a>
-            <a href="freelancing.html">Freelance</a>
-          </div>
-        </li>
-        <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
-        <li class="nav-item">
-          <a href="#" class="dropdown-toggle"
-            >Resources <i class="fa-solid fa-chevron-down arrow"></i
-          ></a>
-          <div class="dropdown">
-            <a href="blog.html">Blog</a>
-            <a href="bookmarked.html">BookMarks</a>
-            <a href="./certificate/">Certificates</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html">Contact</a>
-        </li>
-        <!-- Navbar -->
-        <div id="authSection">
-          <a href="./login.html" class="btn login">Log In</a>
-          <a href="./signup.html" class="btn signup">Sign Up</a>
-        </div>
-
-        <div
-          id="userSection"
-          class="user-section-hidden"
-        >
-          <button id="logoutBtn" class="btn login">Logout</button>
-          <a href="profile.html" title="Your Profile">
-            <img
-              id="profileImg"
-              src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
-              alt="Profile"
-              width="30"
-              class="profile-img"
-            />
-          </a>
-        </div>
-      </div>
-      <div class="hamburger">
-        <i class="fas fa-bars"></i>
-      </div>
-    </div>
+    <div id="navbar"></div>
+    <script>
+      fetch('/navbar.html')
+        .then(r => r.text())
+        .then(html => {
+          document.getElementById('navbar').innerHTML = html;
+          if (typeof initDarkModeToggle === 'function') initDarkModeToggle();
+          if (window.getLanguageManager) {
+            try { window.getLanguageManager().initLanguageSelector(); } catch (e) { }
+          }
+        })
+        .catch(err => console.error('Failed to load navbar:', err));
+    </script>
 
     <div class="enroll-section">
       <div class="intro">
         <img
-          src="assets/images/illustrationimg.webp"
+          src="/assets/images/illustrationimg.webp"
           alt="Learning illustration"
           class="intro-img"
         />
@@ -186,7 +117,7 @@
         <!-- Left: Logo + Social -->
         <div class="footer-left">
           <div class="footer-logo">
-            <img src="assets/images/logo.png" alt="Creators-Space Logo" />
+            <img src="/assets/images/logo.png" alt="Creators-Space Logo" />
             <h2>Creators-Space</h2>
           </div>
           <h3 class="footer-title">Social Media</h3>
@@ -331,7 +262,7 @@
           }
 
           alert("Form submitted successfully!");
-          window.location.href = "index.html";
+          location.href = '/index.html';
         });
     </script>
     <script>
@@ -359,14 +290,6 @@
         }
       });
     </script>
-    <script>
-      const hamburger = document.querySelector(".hamburger");
-      const mobileMenu = document.querySelector(".nav-menu");
-
-      hamburger.addEventListener("click", () => {
-        mobileMenu.classList.toggle("active");
-        hamburger.classList.toggle("open");
-      });
-    </script>
+    <!-- Removed hamburger script because the page uses the shared navbar injection -->
   </body>
 </html>

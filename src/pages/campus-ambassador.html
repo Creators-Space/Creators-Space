@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Ambassador | Creators-Space</title>
-    <link rel="stylesheet" href="./src/css/utils.css">
-    <link rel="stylesheet" href="./src/css/style.css">
-    <link rel="stylesheet" href="./src/css/responsive.css">
-    <link rel="stylesheet" href="./src/css/campus-ambassador.css">
+  <link rel="stylesheet" href="/src/css/utils.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/responsive.css">
+    <link rel="stylesheet" href="/src/css/campus-ambassador.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <script>
@@ -33,132 +33,16 @@
 </head>
 
 <body id="main-body" class="overflow-x-hidden">
-    <div class="navbar">
-        <h1><a href="./">
-                <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
-                <br>Creators-Space</a>
-        </h1>
-        <div class="nav-links align-items-center">
-            <a href="index.html">Home</a>
-
-            <!-- dropDown 1 - About → About Us, Campus Ambassador-->
-            <li class="nav-item">
-                <a href="#" class="dropdown-toggle">About <i class="fa-solid fa-chevron-down arrow"></i></a>
-                <div class="dropdown">
-                <a href="about.html">About Us</a>
-                <a href="campus-ambassador.html">Campus Ambassador</a>
-                </div>
-            </li> 
-            <!--dropDown 2 - Programs → Courses, Internship, Services -->
-            <li class="nav-item">
-                <a href="#" class="dropdown-toggle">Programs <i class="fa-solid fa-chevron-down arrow"></i></a>
-                <div class="dropdown">
-                <a href="courses.html">Courses</a>
-                <a href="internship.html">Internship</a>
-                <a href="services.html" >Services</a>
-                </div>
-            </li>
-            <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
-            <li class="nav-item">
-                <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-chevron-down arrow"></i></a>
-                <div class="dropdown">
-                <a href="blog.html">Blog</a>
-                <a href="bookmarked.html">BookMarks</a>
-                <a href="./certificate/">Certificates</a>
-                <a href="roadmap.html">Roadmap</a>
-                <a href="quiz.html">Quiz</a> 
-                </div>
-            </li> 
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-            <!-- Navbar -->
-            <div id="authSection">
-                <a href="./login.html" class="btn login">Log In</a>
-                <a href="./signup.html" class="btn signup">Sign Up</a>
-            </div>
-
-            <div id="userSection" style="display: none; align-items: center; gap: 10px;">
-                <button id="logoutBtn" class="btn login">Logout</button>
-                <a href="profile.html" title="Your Profile">
-                    <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile"
-                        width="30" style="border-radius: 50%;" />
-                </a>
-            </div>
-
-
-
-        </div>
-        <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
-            <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
-                <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
-                    stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"
-                    class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"></polyline>
-                <polyline id="globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2"
-                    stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"
-                    class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"></polyline>
-            </svg>
-
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navbar-x-logo" class="bi bi-x-lg d-none"
-                viewBox="0 0 16 16">
-                <path
-                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-            </svg>
-        </div>
-    </div>
-    <!-- Dark Mode Toggle -->
-    <div class="toggle-switch">
-        <label class="switch-label">
-            <input onclick="toggleDarkMode()" type="checkbox" class="checkbox">
-            <span class="slider"></span>
-        </label>
-    </div>
-
-    <!-- Hero Section with Animation -->
-    <div class="main">
-        <h1>Campus Ambassador Program</h1>
-        <p>
-            Join the Creators-Space Campus Ambassador Program and become a bridge between innovation and education at
-            your institution. As an ambassador, you'll lead initiatives, inspire peers, and shape the future of tech
-            learning in your community.
-        </p>
-    </div>
-
-    <main class="margin-top-3 padding-inline-lg">
-        <!-- <section class="project-overview">
-            <div class="container">
-                <h2 class="section-title">Campus Ambassador Program</h2>
-                <p class="overview-text">
-                    Join the Creators-Space Campus Ambassador Program and become a bridge between innovation and education at your institution. As an ambassador, you'll lead initiatives, inspire peers, and shape the future of tech learning in your community.
-                </p>
-            </div>
-        </section> -->
-
-        </div>
-        </div>
-        </section>
-
-        <section class="about-campus">
-          <div class="why">
-            <div class="why-head">
-              <img src="assets/aminations/why.gif" alt="why?" class="why-icon">
-              <h1 class="why-subtitle">
-                Why Become a Campus Ambassador?
-              </h1>
-            </div>
-            <div class="why-content">
-              <div class="content">
-                <div class="left">
-                  <i class="fa-solid fa-star"></i>
-                  <h1> Networking Opportunities</h1>
-                </div>
-                <div class="right">
-                  <h3>Connect with industry experts, mentors, and fellow ambassadors across the country.</h3>
-                </div>
-              </div>
-              <div class="content">
-                <div class="left">
-                  <i class="fa-solid fa-laptop-code"></i>
-                  <h1>Skill Development</h1>
+    <div id="navbar"></div>
+    <script>
+      fetch('/navbar.html')
+        .then(r => r.text())
+        .then(html => {
+          document.getElementById('navbar').innerHTML = html;
+          if (typeof initDarkModeToggle === 'function') initDarkModeToggle();
+        })
+        .catch(err => console.error('Failed to load navbar:', err));
+    </script>
                 </div>
                 <div class="right">
                   <h3>Enhance leadership, communication, and event-management skillsConnect with industry experts, mentors, and fellow ambassadors across the country.</h3>
@@ -257,7 +141,7 @@
                 <div class="cta-section">
                     <h3>Ready to lead the change?</h3>
                     <p>Join thousands of student leaders who are already making an impact in their communities!</p>
-                    <a href="signup.html" class="btn btn-primary">Apply Now</a>
+                    <a href="/src/pages/signup.html" class="btn btn-primary">Apply Now</a>
                 </div>
             </div>
         </section>
@@ -266,7 +150,7 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="social">
-        <h1><img width="80px" src="./assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
+  <h1><img width="80px" src="/assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
           <br>Creators-Space
         </h1>
         <h3>Social Media</h3>
@@ -342,9 +226,9 @@
         <p>Copyright &copy; 2024 - 2025 Creators-Space. All rights reserved.</p>
       </div>
     </footer>
-    <script src="./src/js/auth.js"></script> 
-    <script src="./src/js/utils.js"></script>
-    <script src="./src/js/language.js"></script>
+  <script src="/src/js/auth.js"></script> 
+  <script src="/src/js/utils.js"></script>
+  <script src="/src/js/language.js"></script>
 </body>
 
 </html>

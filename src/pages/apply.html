@@ -4,61 +4,68 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Apply Now | Creators-Space</title>
-  <link rel="stylesheet" href="./src/css/style.css">
-  <link rel="stylesheet" href="./src/css/utils.css">
-  <link rel="stylesheet" href="./src/css/responsive.css">
-  <link rel="stylesheet" href="./src/css/apply.css">
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/utils.css">
+  <link rel="stylesheet" href="/src/css/responsive.css">
+  <link rel="stylesheet" href="/src/css/apply.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-   <div class="navbar">
-    <h1><a href="./">
-        <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
-
-        <br>Creators-Space</a>
-    </h1>
-    <div class="nav-links align-items-center">
+  <div id="navbar"></div>
+  <script>
+    fetch('/navbar.html')
+      .then(r => r.text())
+      .then(html => {
+          document.getElementById('navbar').innerHTML = html;
+          if (typeof initDarkModeToggle === 'function') initDarkModeToggle();
+          if (window.getLanguageManager) {
+            try { window.getLanguageManager().initLanguageSelector(); } catch (e) { }
+          }
+        })
+      .catch(err => console.error('Failed to load navbar:', err));
+  </script>
+  <div class="nav-links align-items-center">
       
-      <a href="index.html">Home</a>
+  <a href="/index.html">Home</a>
 
       <!-- dropDown 1 - About → About Us, Campus Ambassador-->
       <li class="nav-item">
         <a href="#" class="dropdown-toggle">About <i class="fa-solid fa-chevron-down arrow"></i></a>
         <div class="dropdown">
-          <a href="about.html">About Us</a>
-          <a href="campus-ambassador.html">Campus Ambassador</a>
+          <a href="/src/pages/about.html">About Us</a>
+          <a href="/src/pages/campus-ambassador.html">Campus Ambassador</a>
         </div>
       </li> 
       <!--dropDown 2 - Programs → Courses, Internship, Services -->
       <li class="nav-item">
         <a href="#" class="dropdown-toggle">Programs <i class="fa-solid fa-chevron-down arrow"></i></a>
         <div class="dropdown">
-          <a href="courses.html">Courses</a>
-          <a href="internship.html">Internship</a>
-          <a href="services.html" >Services</a>
-          <a href="freelancing.html">Freelance</a>
+          <a href="/src/pages/courses.html">Courses</a>
+          <a href="/src/pages/internship.html">Internship</a>
+          <a href="/src/pages/services.html">Services</a>
+          <a href="/src/pages/freelancing.html">Freelance</a>
         </div>
       </li>
        <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
        <li class="nav-item">
         <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-chevron-down arrow"></i></a>
         <div class="dropdown">
-          <a href="blog.html">Blog</a>
-          <a href="bookmarked.html">BookMarks</a>
-          <a href="./certificate/">Certificates</a>
+          <a href="/src/pages/blog.html">Blog</a>
+          <a href="/src/pages/bookmarked.html">BookMarks</a>
+          <a href="/src/pages/certificate.html">Certificates</a>
         </div>
        </li> 
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+  <a href="/src/pages/projects.html">Projects</a>
+  <a href="/src/pages/contact.html">Contact</a>
       <!-- Navbar -->
       <div id="authSection">
-        <a href="./login.html" class="btn login">Log In</a>
-        <a href="./signup.html" class="btn signup">Sign Up</a>
+  <a href="/src/pages/login.html" class="btn login">Log In</a>
+  <a href="/src/pages/signup.html" class="btn signup">Sign Up</a>
       </div>
 
       <div id="userSection" class="user-section-hidden">
         <button id="logoutBtn" class="btn login">Logout</button>
-        <a href="profile.html" title="Your Profile">
+  <a href="/src/pages/profile.html" title="Your Profile">
           <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
             class="profile-img" />
         </a>
@@ -184,17 +191,17 @@
       if (valid) {
         document.getElementById("success-msg").style.display = "block";
         setTimeout(() => {
-          window.location.href = "index.html";
+          if (location.pathname.split('/').pop() === 'index.html' || location.pathname.endsWith('/')) location.href = 'index.html'; else location.href = '../index.html';
         }, 2000);
       }
     });
 
     window.addEventListener("DOMContentLoaded", loadCourses);
   </script>
-      <script src="./src/js/hero-section.js"></script>
-    <script src="./src/js/navbar.js"></script>
-    <script src="./src/js/slider.js"></script>
-    <script src="./src/js/scrollToTop.js"></script>
-    <script src="./src/js/utils.js"></script>
+      <script src="/src/js/hero-section.js"></script>
+    <script src="/src/js/navbar.js"></script>
+    <script src="/src/js/slider.js"></script>
+    <script src="/src/js/scrollToTop.js"></script>
+    <script src="/src/js/utils.js"></script>
 </body>
 </html>

@@ -27,7 +27,12 @@ googleLogin.addEventListener("click", function () {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const user = result.user;
       console.log(user);
-      window.location.href = "./index.html"; // Redirect to home page after successful login
+      // Redirect to home page; try both paths to be resilient when called from pages moved into src/pages
+      if (location.pathname.split('/').pop() === 'index.html' || location.pathname.endsWith('/')) {
+        window.location.href = 'index.html';
+      } else {
+        window.location.href = '../index.html';
+      }
     })
     .catch((error) => {
       const errorCode = error.code;

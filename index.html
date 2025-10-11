@@ -5,13 +5,13 @@
   <meta name="author" content="Anurag Vishwakarma Creators-Space">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Creators-Space</title>
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <meta name="description" content="Creators-Space - Welcome to the future of tech learning...">
   <meta name="keywords" content="Creators-Space, coding, gwalior, technology">
-  <link rel="stylesheet" href="./src/css/utils.css">
-  <link rel="stylesheet" href="./src/css/style.css">
-  <link rel="stylesheet" href="./src/css/responsive.css">
-  <link rel="stylesheet" href="./src/css/newsletter-demo.css">
+  <link rel="stylesheet" href="/src/css/utils.css">
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/responsive.css">
+  <link rel="stylesheet" href="/src/css/newsletter-demo.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -58,7 +58,7 @@ function initDarkModeToggle() {
 }
 
 // Initialize after navbar loads
-fetch("navbar.html")
+fetch("/navbar.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
@@ -71,12 +71,12 @@ fetch("navbar.html")
   <div class="main margin-top-mv-3">
     <h1 data-translate="homepage.welcomeTitle">Welcome to the future of tech learning...</h1>
     <div class="images overflow-x-hidden">
-      <img class="hero-section-imgs hero-imgs-muted rounded" id="hero-img-left" src="./assets/images/hero-img-left.png"
+  <img class="hero-section-imgs hero-imgs-muted rounded" id="hero-img-left" src="/assets/images/hero-img-left.png"
         alt="laptop1">
-      <img class="hero-section-imgs  rounded" id="hero-img-center" src="./assets/images/hero-img-center.png"
+  <img class="hero-section-imgs  rounded" id="hero-img-center" src="/assets/images/hero-img-center.png"
         alt="desktop">
       <img class="hero-section-imgs hero-imgs-muted rounded" id="hero-img-right"
-        src="./assets/images/hero-img-right.png" alt="laptop2">
+  src="/assets/images/hero-img-right.png" alt="laptop2">
     </div>
   </div>
 
@@ -90,7 +90,7 @@ fetch("navbar.html")
     <!-- <section id="webdev">
           <div class="webdev-container">
           <img class="webdev-img" 
-                src="./assets/images/full-stack-web-developer.png" alt="laptop2"> -->
+                src="/assets/images/full-stack-web-developer.png" alt="laptop2"> -->
     <!-- <img src="webdev.png" alt="web development"> -->
     <!-- <div class="icons"></div>
             <div class="course-overlay">
@@ -112,12 +112,12 @@ fetch("navbar.html")
 
     <section id="courses">
       <div class="course">
-        <img src="./assets/images/full-stack-web-developer.png" alt="Web Development">
+  <img src="/assets/images/full-stack-web-developer.png" alt="Web Development">
         <div class="course-info">
           <h3 >Web Development</h3>
           <span>₹12,999</span><del>₹49,999</del>
           <p data-translate="homepage.duration">Duration: 6 Months</p>
-          <a href="./enroll.html?course=web-development"><button >Enroll Now</button></a>
+          <a href="/src/pages/enroll.html?course=web-development"><button >Enroll Now</button></a>
         </div>
       </div>
 
@@ -130,7 +130,7 @@ fetch("navbar.html")
           <h3>C Programming</h3>
           <span>₹2,999</span><del>₹12,999</del>
           <p data-translate="homepage.duration3Months">Duration: 3 Months</p>
-          <a href="./enroll.html?course=c-programming"><button >Enroll Now</button></a>
+          <a href="/src/pages/enroll.html?course=c-programming"><button >Enroll Now</button></a>
         </div>
       </div>
       <div class="course alter-course">
@@ -141,7 +141,7 @@ fetch("navbar.html")
           <h3>Python Programming</h3>
           <span>₹2,999</span><del>₹12,999</del>
           <p data-translate="homepage.duration3Months">Duration: 3 Months</p>
-          <a href="./enroll.html?course=python-programming"><button >Enroll Now</button></a>
+          <a href="/src/pages/enroll.html?course=python-programming"><button >Enroll Now</button></a>
         </div>
       </div>
       <div class="course alter-course">
@@ -151,7 +151,7 @@ fetch("navbar.html")
           <h3>UI/UX Design</h3>
           <span>₹4,999</span><del>₹19,999</del>
           <p data-translate="homepage.duration3Months">Duration: 3 Months</p>
-          <a href="./enroll.html?course=ui-ux-design"><button>Enroll Now</button></a>
+          <a href="/src/pages/enroll.html?course=ui-ux-design"><button>Enroll Now</button></a>
         </div>
       </div>
       <div class="course">
@@ -160,16 +160,16 @@ fetch("navbar.html")
           <h3>Graphic Design</h3>
           <span>₹7,999</span><del>₹29,999</del>
           <p data-translate="homepage.duration3Months">Duration: 3 Months</p>
-          <a href="./enroll.html?course=graphic-design"><button >Enroll Now</button></a>
+          <a href="/src/pages/enroll.html?course=graphic-design"><button >Enroll Now</button></a>
         </div>
       </div>
       <div class="course">
-        <img src="./Screenshots/data-research.png" alt="Data Analyst">
+  <img src="/Screenshots/data-research.png" alt="Data Analyst">
         <div class="course-info">
           <h3>Data Science</h3>
           <span>₹14,999</span><del>₹59,999</del>
           <p data-translate="homepage.duration">Duration: 6 Months</p>
-          <a href="./enroll.html?course=data-science"><button>Enroll Now</button></a>
+          <a href="/src/pages/enroll.html?course=data-science"><button>Enroll Now</button></a>
         </div>
       </div>
    
@@ -271,7 +271,7 @@ fetch("navbar.html")
       <!-- footer-left -->
       <div class="footer-left">
         <div class="social">
-          <h1><img width="80px" src="./assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
+          <h1><img width="80px" src="/assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
             <br>Creators-Space
           </h1>
           <h3>Social Media</h3>
@@ -360,11 +360,11 @@ fetch("navbar.html")
 
 
 
-    <script src="./src/js/hero-section.js"></script>
-    <script src="./src/js/navbar.js"></script>
-    <script src="./src/js/slider.js"></script>
-    <script src="./src/js/scrollToTop.js"></script>
-    <script src="./src/js/utils.js"></script>
+  <script src="/src/js/hero-section.js"></script>
+  <script src="/src/js/navbar.js"></script>
+  <script src="/src/js/slider.js"></script>
+  <script src="/src/js/scrollToTop.js"></script>
+  <script src="/src/js/utils.js"></script>
 
     <!-- Newsletter Subscription Popup -->
     <div id="newsletter-popup" class="newsletter-popup">
@@ -414,9 +414,9 @@ fetch("navbar.html")
       <span data-translate="homepage.subscribe">Newsletter</span>
     </button>
 
-    <script src="./src/js/language.js"></script>
-    <script src="./src/js/newsletter.js"></script>
-    <script src="./src/js/auth.js"></script> 
+  <script src="/src/js/language.js"></script>
+  <script src="/src/js/newsletter.js"></script>
+  <script src="/src/js/auth.js"></script> 
     <script>
   window.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {

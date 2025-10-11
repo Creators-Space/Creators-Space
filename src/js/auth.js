@@ -18,5 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 logoutBtn.addEventListener("click", () => {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("loggedInUser");
-    window.location.href = "index.html";
+    // redirect helper
+    const redirect = (p) => { try { location.href = p; } catch(e){} };
+    if (location.pathname.split('/').pop() === 'index.html' || location.pathname.endsWith('/')) redirect('index.html'); else redirect('../index.html');
 });

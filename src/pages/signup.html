@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./src/css/style.css">
-  <link rel="stylesheet" href="./src/css/utils.css">
-  <link rel="stylesheet" href="./src/css/responsive.css">
-  <link rel="stylesheet" href="./src/css/signup.css">
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/utils.css">
+  <link rel="stylesheet" href="/src/css/responsive.css">
+  <link rel="stylesheet" href="/src/css/signup.css">
   <title>Sign Up</title>
 </head>
 
@@ -15,14 +15,14 @@
   <div class="main-container">
     <!-- Left Branding Section -->
     <div class="brand-section">
-      <img src="./assets/images/logo.png" alt="Creators-Space Logo">
+  <img src="/assets/images/logo.png" alt="Creators-Space Logo">
       <h1>Creators-Space</h1>
       <p>Empowering learners to grow their skills and creativity through courses, internships, and opportunities.</p>
     </div>
 
     <!-- Right Signup Form Section -->
     <div class="form-section">
-      <a href="index.html" style="font-size: 14px; color: #555; text-decoration: none;">← Back to Homepage</a>
+  <a href="/index.html" style="font-size: 14px; color: #555; text-decoration: none;">← Back to Homepage</a>
       <h2>Create Account</h2>
 
       <form id="signup-form">
@@ -63,16 +63,16 @@
 
         <div class="social-buttons">
   <a href="https://www.instagram.com/" target="_blank" class="social-btn">
-    <img src="./assets/images/instagram.png" width="20"> Instagram
+    <img src="/assets/images/instagram.png" width="20"> Instagram
   </a>
   <a href="https://twitter.com/" target="_blank" class="social-btn">
-    <img src="./assets/images/twitter.png" width="20"> Twitter
+    <img src="/assets/images/twitter.png" width="20"> Twitter
   </a>
 </div>
 
 
         <div class="signup-text">
-          Already have an account? <a href="login.html">Login</a>
+          Already have an account? <a href="/src/pages/login.html">Login</a>
         </div>
       </form>
     </div>
@@ -169,7 +169,8 @@
     localStorage.setItem("email", email.value);
     localStorage.setItem("password", password.value);
     alert("Account created successfully!");
-    window.location.href = "login.html";
+  // redirect to absolute login page so path resolution is consistent
+  location.href = '/src/pages/login.html';
   });
 </script>
 
