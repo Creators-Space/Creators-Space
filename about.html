@@ -156,7 +156,7 @@
     <!-- Reused Navbar from index.html -->
       <div id="navbar"></div>
 
-<script>
+<!-- <script>
 function initDarkModeToggle() {
   const darkToggleBtn = document.getElementById("darkModeToggle");
   if (!darkToggleBtn) return; // exit if button not found
@@ -197,6 +197,71 @@ fetch("navbar.html")
     document.getElementById("navbar").innerHTML = data;
     initDarkModeToggle(); // initialize toggle here
   });
+</script> -->
+
+<script>
+// Function to update the logo image source based on the current theme
+window.updateLogo = function() {
+  const body = document.body;
+  // NOTE: This assumes your navbar.html template contains an element with id="navbar-logo"
+  const logo = document.getElementById('navbar-logo'); 
+  const footerLogo = document.getElementById('footer-logo'); 
+
+  if (logo) {
+    if (body.classList.contains('dark')) {
+      logo.src = './assets/images/logo-nav-dark.png';
+    } else {
+      logo.src = './assets/images/logo-nav-light.png';
+    }
+  }
+  
+  // Update footer logo if you added an id="footer-logo" to it
+  if (footerLogo) {
+      if (body.classList.contains('dark')) {
+          // You need a dark version for the main logo, e.g., 'logo-dark.png'
+          // Assuming logo.png is the light version, swap it here if available:
+          // footerLogo.src = './assets/images/logo-dark.png'; 
+          // OR, if you just want to use the CSS filter:
+          footerLogo.style.filter = 'invert(1)';
+      } else {
+          footerLogo.style.filter = 'none';
+      }
+  }
+};
+
+// Function to attach the event listener to the actual toggle button
+window.initToggleListener = function() {
+    // NOTE: This ID must match the toggle input in your navbar.html template
+    const toggleBtn = document.getElementById("dark-mode-toggle");
+    if (!toggleBtn) return;
+
+    const body = document.body;
+    
+    // Set the initial state of the checkbox based on the FOUC fix
+    toggleBtn.checked = body.classList.contains('dark'); 
+
+    // Event listener to toggle the theme
+    toggleBtn.addEventListener("change", () => {
+        body.classList.toggle("dark"); // Using the correct class '.dark'
+        if (body.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+        window.updateLogo(); // Swap logo image immediately on toggle
+    });
+};
+
+
+// Initialize after navbar loads using fetch
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+    window.updateLogo();      
+    window.initToggleListener(); 
+  })
+  .catch(error => console.error('Error fetching navbar:', error));
 </script>
 
 

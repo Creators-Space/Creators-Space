@@ -15,6 +15,72 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
+<script>
+  // Quick script to apply the theme class immediately
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+</script>
+
+<script>
+// 1. Function to update the logo image source based on the current theme
+window.updateLogo = function() {
+  const body = document.body;
+  // NOTE: This assumes your navbar.html template contains an element with id="navbar-logo"
+  const logo = document.getElementById('navbar-logo'); 
+  const footerLogo = document.getElementById('footer-logo'); // For the footer logo
+
+  if (logo) {
+    // The CSS uses the 'dark' class, so we check for it here
+    if (body.classList.contains('dark')) {
+      logo.src = './assets/images/logo-nav-dark.png';
+    } else {
+      logo.src = './assets/images/logo-nav-light.png';
+    }
+  }
+
+  // Handle the footer logo image (if you want it swapped too)
+  // You would need to add an ID to the footer image, e.g., id="footer-logo"
+  if (footerLogo) {
+      // NOTE: You must provide a separate dark image for the footer logo if needed
+  }
+};
+
+// 2. Function to attach the event listener to the actual toggle button
+window.initToggleListener = function() {
+    // NOTE: This ID must match the toggle input in your navbar.html template
+    const toggleBtn = document.getElementById("dark-mode-toggle");
+    if (!toggleBtn) return;
+
+    const body = document.body;
+    
+    // Set the initial state of the checkbox based on the FOUC fix
+    toggleBtn.checked = body.classList.contains('dark'); 
+
+    // Event listener to toggle the theme
+    toggleBtn.addEventListener("change", () => {
+        body.classList.toggle("dark");
+        if (body.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+        window.updateLogo(); // Swap logo image immediately on toggle
+    });
+};
+
+
+// 3. Initialize after navbar loads using fetch
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+    window.updateLogo();      // A. Set the correct logo source now that the HTML is in the DOM
+    window.initToggleListener(); // B. Attach the toggle listener to the button
+  })
+  .catch(error => console.error('Error fetching navbar:', error)); // Good practice for debugging
+</script>
+
 <body id="main-body" class="overflow-x-hidden">
   <div class="loader-track" id="loader-track">
   <div class="loader-circle">
@@ -23,51 +89,7 @@
 </div>
    <div id="navbar"></div>
 
-<script>
-function initDarkModeToggle() {
-  const darkToggleBtn = document.getElementById("darkModeToggle");
-  if (!darkToggleBtn) return; // exit if button not found
-
-  const body = document.body;
-  const moonIcon = darkToggleBtn.querySelector(".fa-moon");
-  const sunIcon = darkToggleBtn.querySelector(".fa-sun");
-
-  // Load saved theme
-  if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark-mode");
-    moonIcon.style.display = "none";
-    sunIcon.style.display = "inline-block";
-  } else {
-    moonIcon.style.display = "inline-block";
-    sunIcon.style.display = "none";
-  }
-
-  // Toggle theme
-  darkToggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-    if (body.classList.contains("dark-mode")) {
-      localStorage.setItem("theme", "dark");
-      moonIcon.style.display = "none";
-      sunIcon.style.display = "inline-block";
-    } else {
-      localStorage.setItem("theme", "light");
-      moonIcon.style.display = "inline-block";
-      sunIcon.style.display = "none";
-    }
-  });
-}
-
-// Initialize after navbar loads
-fetch("navbar.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
-    initDarkModeToggle(); // initialize toggle here
-  });
-</script>
-
-
-
+  
   <div class="main margin-top-mv-3">
     <h1 data-translate="homepage.welcomeTitle">Welcome to the future of tech learning...</h1>
     <div class="images overflow-x-hidden">
