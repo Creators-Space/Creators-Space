@@ -33,49 +33,6 @@
   <body id="main-body" class="overflow-x-hidden">
     <!-- Navbar -->
     <div id="navbar"></div>
-    <!-- script for navBar -->
-     <script>
-      function initDarkModeToggle() {
-        const darkToggleBtn = document.getElementById("darkModeToggle");
-        if (!darkToggleBtn) return; // exit if button not found
-
-        const body = document.body;
-        const moonIcon = darkToggleBtn.querySelector(".fa-moon");
-        const sunIcon = darkToggleBtn.querySelector(".fa-sun");
-
-        // Load saved theme
-        if (localStorage.getItem("theme") === "dark") {
-          body.classList.add("dark-mode");
-          moonIcon.style.display = "none";
-          sunIcon.style.display = "inline-block";
-        } else {
-          moonIcon.style.display = "inline-block";
-          sunIcon.style.display = "none";
-        }
-
-        // Toggle theme
-        darkToggleBtn.addEventListener("click", () => {
-          body.classList.toggle("dark-mode");
-          if (body.classList.contains("dark-mode")) {
-            localStorage.setItem("theme", "dark");
-            moonIcon.style.display = "none";
-            sunIcon.style.display = "inline-block";
-          } else {
-            localStorage.setItem("theme", "light");
-            moonIcon.style.display = "inline-block";
-            sunIcon.style.display = "none";
-          }
-        });
-      }
-
-      // Initialize after navbar loads
-      fetch("navbar.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("navbar").innerHTML = data;
-          initDarkModeToggle(); // initialize toggle here
-        });
-    </script>
 
     <!-- Enhanced Main Section -->
     <div class="main">
@@ -446,45 +403,10 @@
       </div>
     </footer>
 
-    <script src="./src/js/language.js"></script>
     <script src="./src/js/navbar.js"></script>
     <script src="./src/js/coursebm.js"></script>
     <script src="./src/js/utils.js"></script>
-
     <script>
-      function toggleDarkMode() {
-        const element = document.getElementById("main-body");
-        const navbarLogo = document.getElementById("navbar-logo");
-
-        element.classList.toggle("dark");
-
-        // Change logo based on theme
-        if (element.classList.contains("dark")) {
-          navbarLogo.src = "./assets/images/logo-nav-dark.png";
-          localStorage.setItem("theme", "dark");
-        } else {
-          navbarLogo.src = "./assets/images/logo-nav-light.png";
-          localStorage.setItem("theme", "light");
-        }
-      }
-
-      // Apply saved theme & logo on page load
-      document.addEventListener("DOMContentLoaded", function () {
-        const savedTheme = localStorage.getItem("theme");
-        const element = document.getElementById("main-body");
-        const navbarLogo = document.getElementById("navbar-logo");
-        const toggleCheckbox = document.querySelector(".toggle-switch input");
-
-        if (savedTheme === "dark") {
-          element.classList.add("dark");
-          navbarLogo.src = "./assets/images/logo-nav-dark.png";
-          toggleCheckbox.checked = true;
-        } else {
-          element.classList.remove("dark");
-          navbarLogo.src = "./assets/images/logo-nav-light.png";
-          toggleCheckbox.checked = false;
-        }
-      });
       function filterCourses() {
         const input = document
           .getElementById("courseSearch")
@@ -546,6 +468,9 @@
       });
     </script>
 
+    <script src="./src/js/language.js"></script>
+    <script src="./src/js/theme.js"></script>
+    <script src="./src/js/auth.js"></script>
     <script src="./src/js/auth.js"></script>
     <script src="script.js" defer></script>
 

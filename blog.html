@@ -69,14 +69,6 @@
     </div>
   </div>
 
-  <!--Dark mode switch -->
-  <div class="toggle-switch">
-    <label class="switch-label">
-      <input type="checkbox" class="checkbox" id="dark-mode-toggle" />
-      <span class="slider"></span>
-    </label>
-  </div>
-
   <div class="blog-header">
     <h1>Explore Our Latest Blogs</h1>
     <input type="text" id="blog-search" placeholder="Search blog titles...">
@@ -192,31 +184,11 @@
     </div>
   </footer>
 
-  <script src="./src/js/language.js"></script>
   <script src="./src/js/navbar.js"></script>
   <script src="./src/js/auth.js"></script>
   <script src="./src/js/utils.js"></script>
-
-  <!-- Dark mode + logo switch -->
-  <script>
-    const toggle = document.getElementById('dark-mode-toggle');
-    const body = document.body;
-    const logo = document.getElementById('navbar-logo');
-    function updateLogo() {
-      if (body.classList.contains('dark')) {
-        logo.src = './assets/images/logo-nav-dark.png';
-      } else {
-        logo.src = './assets/images/logo-nav-light.png';
-      }
-    }
-    toggle.addEventListener('change', () => {
-      body.classList.toggle('dark');
-      updateLogo();
-    });
-    document.addEventListener('DOMContentLoaded', () => {
-      updateLogo();
-    });
-  </script>
+  <script src="./src/js/language.js"></script>
+  <script src="./src/js/theme.js"></script>
 
   <!-- Blog search -->
   <script>

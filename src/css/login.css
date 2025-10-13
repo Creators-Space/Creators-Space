@@ -224,3 +224,47 @@ input[type="text"] {
   white-space: nowrap;
   align-items: center;
 }
+
+/* Dark Mode Styles */
+body.dark {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+body.dark .login-wrapper {
+  background-color: #08090a;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid #2c3e50;
+}
+
+body.dark .brand-section h1,
+body.dark .brand-section p,
+body.dark .form-container h2,
+body.dark .form-group label,
+body.dark .checkbox-remember label,
+body.dark .forgot-password,
+body.dark .divider span,
+body.dark .social-btn,
+body.dark .form-container p,
+body.dark .form-container p a {
+  color: #e0e0e0;
+}
+
+body.dark .toggle-password {
+  color: #a0a0e0;
+}
+
+body.dark .form-group input {
+  background-color: #0f3460;
+  color: #e0e0e0;
+  border: 1px solid #4a4a6a;
+}
+
+body.dark .form-group input::placeholder {
+  color: #888;
+}
+
+body.dark .social-btn {
+  background-color: #0f3460;
+  border-color: #4a4a6a;
+}
