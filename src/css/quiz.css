@@ -99,3 +99,37 @@ body {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Dark Mode Styles */
+body.dark {
+  background: #1a1a2e;
+}
+
+body.dark .quiz-box {
+  background: #16213e;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .quiz-box h1 {
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+  color: #e0e0e0;
+}
+
+body.dark .quiz-box h2 {
+  color: #e0e0e0;
+}
+
+body.dark #options button {
+  background: #0f3460;
+  color: #e0e0e0;
+  border-color: #4a4a6a;
+}
+
+body.dark #options button:hover {
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+body.dark #score {
+  color: #e0e0e0;
+}

@@ -86,6 +86,12 @@
         </li>
         <a href="projects.html" data-translate="navbar.projects">Projects</a>
         <a href="contact.html" data-translate="navbar.contact">Contact</a>
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+          <span>Dark</span>
+        </button>
+
         <!-- Navbar -->
         <div id="authSection">
           <a href="./login.html" class="btn login" data-translate="navbar.login"
@@ -162,13 +168,6 @@
       </div>
     </div>
 
-    <!-- Dark Mode Toggle -->
-    <div class="toggle-switch">
-      <label class="switch-label">
-        <input type="checkbox" class="checkbox" id="dark-mode-toggle" />
-        <span class="slider"></span>
-      </label>
-    </div>
   <!-- Hero -->
   <section class="internship-hero">
     <div class="internship-hero-content">
@@ -231,6 +230,9 @@
   </div>
 </footer>
 
+  <script src="./src/js/navbar.js"></script>
+  <script src="./src/js/theme.js"></script>
+  <script src="./src/js/language.js"></script>
   <script>
     const container = document.querySelector(".internship-cards-container");
 
@@ -338,23 +340,6 @@
     searchBtn.addEventListener("click", filterInternships);
     searchInput.addEventListener("keypress", (e) => { if(e.key === "Enter") filterInternships(); });
 
-
-    //dark mode
-
-        const toggle = document.getElementById("dark-mode-toggle");
-      const body = document.body;
-      const navbarLogo = document.getElementById("navbar-logo");
-
-      toggle.addEventListener("change", () => {
-        body.classList.toggle("dark");
-
-        // Change navbar logo based on theme
-        if (body.classList.contains("dark")) {
-          navbarLogo.src = "./assets/images/logo-nav-dark.png"; // Dark mode logo
-        } else {
-          navbarLogo.src = "./assets/images/logo-nav-light.png"; // Light mode logo
-        }
-      });
   </script>
 
 </body>
