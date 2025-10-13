@@ -882,4 +882,289 @@ body.dark .error-message, body.dark .no-results {
     width: 45px;
     height: 45px;
   }
+}
+
+/* Comment + Like styles */
+.interaction-section {
+  margin-top: 10px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.like-btn, .fav-btn {
+  cursor: pointer;
+  margin-right: 10px;
+  color: #555;
+}
+
+.like-btn.liked { 
+  color: #e63946; 
+}
+
+.fav-btn.favorited { 
+  color: #facc15; 
+}
+
+.comments { 
+  margin-top: 10px; 
+}
+
+.comment {
+  background: #f5f5f5;
+  padding: 5px 8px;
+  margin: 4px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-actions button {
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.comment-input {
+  display: flex;
+  margin-top: 8px;
+}
+
+.comment-input input {
+  flex: 1;
+  padding: 5px;
+}
+
+.comment-input button {
+  padding: 5px 8px;
+}
+
+/* MAIN SECTION CARDS */
+.main-cards {
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.main-cards:hover {
+  transform: translateY(-5px) scale(1.03); /* Slight lift and scale */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Stronger shadow */
+  filter: brightness(1.05); /* Slight brightness boost */
+}
+
+/* SHOW MORE BUTTON */
+.show-more-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.show-more-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* BACK TO TOP BUTTON */
+#scrollTopBtn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* FILTER TECH STACK TOGGLE BUTTON */
+.toggle-btn {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  transform: rotate(15deg);
+}
+
+/* PROJECTS CONTAINER CARDS (if dynamically loaded) */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.05);
+}
+
+/* ADD SUBTLE ANIMATION TO LOADING SPINNER */
+.loading-spinner .spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+/* GENERAL LINK STYLES */
+a {
+  color: inherit; /* Keep default color */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* HOVER EFFECT */
+a:hover {
+  color: #9370DB; /* Slight highlight on hover */
+  transform: scale(1.05); /* Subtle grow effect */
+}
+
+/* ACTIVE / CLICK EFFECT */
+a:active {
+  color: #87CEEB; /* Slight color change when clicked */
+  transform: scale(0.98); /* Slight shrink effect for click */
+}
+
+/* NAVBAR LINKS */
+.nav-links a {
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(147, 112, 219, 0.1); /* subtle background highlight */
+  color: #9370DB;
+}
+
+.nav-links a:active {
+  background: rgba(135, 206, 235, 0.2); /* subtle active background */
+  color: #87CEEB;
+}
+
+/* DROPDOWN LINKS */
+.dropdown a {
+  display: block;
+  padding: 8px 15px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown a:hover {
+  background-color: rgba(147, 112, 219, 0.15);
+  color: #9370DB;
+}
+
+.dropdown a:active {
+  background-color: rgba(135, 206, 235, 0.2);
+  color: #87CEEB;
+}
+
+/* FOOTER LINKS */
+.footer a {
+  color: #fff;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer a:hover {
+  color: #87CEEB; /* subtle highlight */
+  transform: scale(1.05);
+}
+
+.footer a:active {
+  color: #9370DB;
+  transform: scale(0.98);
+}
+
+/* Resource Hub Styles */
+.resource-hub {
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 900px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  background: #f9f9f9;
+}
+
+.resource-hub h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.resource-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.resource-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.resource-input button {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #9370db;
+  color: white;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+.resource-input button:hover {
+  background: #7a52c4;
+}
+
+.resources-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.resource-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: calc(33% - 10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+}
+
+.resource-card .text-content {
+  flex: 1;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.resource-card button {
+  align-self: flex-end;
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: background 0.3s ease;
+}
+
+.resource-card button:hover {
+  background: #c12c3b;
+}
+
+@media (max-width: 768px) {
+  .resource-card {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .resource-card {
+    width: 100%;
+  }
 } 

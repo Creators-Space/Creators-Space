@@ -11,143 +11,10 @@
   <link rel="stylesheet" href="./src/css/style.css">
   <link rel="stylesheet" href="./src/css/responsive.css">
   <link rel="stylesheet" href="./src/css/newsletter.css">
+  <link rel="stylesheet" href="./src/css/freelancing.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0b0f14;
-      --bg-elev: #0f141b;
-      --card: #121821;
-      --muted: #8b9bb0;
-      --text: #e6edf6;
-      --accent: #5dd6c9;
-      --accent-2: #9a7bff;
-      --ring: #2c3a4c;
-      --ok: #58d38c;
-      --warn: #ffd066;
-      --danger: #ff6b6b;
-      --shadow: 0 10px 25px rgba(0,0,0,.35), 0 6px 12px rgba(0,0,0,.25);
-      --radius-xl: 18px;
-      --radius-2xl: 26px;
-    }
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 800px at 10% -20%, rgba(93,214,201,.18), transparent 40%),
-                  radial-gradient(1000px 600px at 110% -10%, rgba(154,123,255,.14), transparent 45%),
-                  var(--bg);
-      color: var(--text);
-      line-height: 1.55;
-    }
-
-    
-    .hero {
-      position: relative;
-      padding: clamp(28px, 5vw, 64px) 18px 24px;
-      display: grid;
-      gap: 20px;
-      place-items: center;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .glow {
-      position: absolute;
-      inset: -10% -20% auto -20%;
-      height: 360px;
-      background: conic-gradient(from 180deg at 50% 50%, var(--accent), var(--accent-2), var(--accent));
-      filter: blur(70px) saturate(130%);
-      opacity: .18;
-      animation: spin 28s linear infinite;
-      pointer-events: none;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    .title {
-      font-weight: 800;
-      font-size: clamp(28px, 4.6vw, 56px);
-      letter-spacing: -0.02em;
-      margin: 16px 0 6px;
-    }
-    .subtitle { color: var(--muted); max-width: 900px; margin: 0 auto; font-size: clamp(14px, 2.2vw, 18px); }
-
-    .toolbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(8px);
-      background: linear-gradient(180deg, rgba(11,15,20,.85), rgba(11,15,20,.60));
-      border-bottom: 1px solid var(--ring);
-    }
-    .toolbar-inner{
-      max-width: 1150px; margin: 0 auto; padding: 12px 16px; display: grid; gap: 12px; align-items: center;
-      grid-template-columns: 1fr auto; 
-    }
-
-    .filters { display: flex; gap: 8px; flex-wrap: wrap; }
-    .chip {
-      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; border: 1px solid var(--ring);
-      background: rgba(255,255,255,.02); color: var(--text); font-weight: 600; font-size: 14px; cursor: pointer;
-      transition: transform .15s ease, background .2s ease, border-color .2s ease;
-      user-select: none;
-    }
-    .chip:hover { transform: translateY(-1px) scale(1.02); border-color: rgba(93,214,201,.45); }
-    .chip.active { background: linear-gradient(180deg, rgba(93,214,201,.20), rgba(154,123,255,.18)); border-color: rgba(93,214,201,.55); }
-
-    .search {
-      display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--bg-elev); border: 1px solid var(--ring);
-      border-radius: 12px; min-width: 260px; box-shadow: var(--shadow);
-    }
-    .search input { background: transparent; border: none; outline: none; color: var(--text); width: 200px; font-size: 14px; }
-
-    /* Grid */
-    .container { max-width: 1150px; margin: 0 auto; padding: 22px 16px 80px; }
-    .grid { display: grid; gap: 16px; grid-template-columns: repeat(1, minmax(0, 1fr)); }
-    @media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-
-    /* Card */
-    .card {
-      position: relative; overflow: hidden; border-radius: var(--radius-xl); background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)), var(--card);
-      border: 1px solid var(--ring); box-shadow: var(--shadow);
-      transform: translateY(10px) scale(.98); opacity: 0; 
-      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease, opacity .6s ease;
-    }
-    .card.revealed { transform: translateY(0) scale(1); opacity: 1; }
-
-    .card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 16px 32px rgba(0,0,0,.45), 0 8px 16px rgba(0,0,0,.35);
-      border-color: rgba(93,214,201,.65);
-    }
-
-    .card-header { padding: 18px 18px 8px; display:flex; gap: 12px; align-items:center; }
-    .logo { width: 36px; height: 36px; border-radius: 10px; display:grid; place-items:center; font-weight:800; background: linear-gradient(135deg, rgba(93,214,201,.15), rgba(154,123,255,.15)); border: 1px solid var(--ring); }
-    .name { font-size: 18px; font-weight: 700; letter-spacing: -.01em; }
-    .tag { font-size: 12px; padding: 4px 8px; border-radius: 999px; border: 1px solid var(--ring); color: var(--muted); }
-    .card-body { padding: 0 18px 18px; color: #c9d8ec; }
-
-    .meta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-    .meta .pill { background: rgba(255,255,255,.03); border: 1px solid var(--ring); border-radius: 10px; padding: 8px 10px; font-size: 12px; color: var(--muted); }
-    .meta strong { display:block; color: var(--text); font-size: 13px; margin-bottom: 2px; }
-
-    .card-footer { display:flex; align-items:center; justify-content: flex-start; gap: 12px; padding: 14px 18px 18px; }
-    .btn {
-      display:inline-flex; align-items:center; gap:10px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--ring);
-      background: linear-gradient(180deg, rgba(93,214,201,.16), rgba(154,123,255,.12)); color: var(--text); font-weight: 700; cursor: pointer; text-decoration:none;
-      transition: transform .15s ease, filter .2s ease, border-color .2s ease; box-shadow: var(--shadow);
-    }
-    .btn:hover { transform: translateY(-1px); border-color: rgba(93,214,201,.55); }
-
-    .ext { font-size: 12px; color: var(--muted); }
-
-    /* Footer */
-    footer { color: var(--muted); text-align: center; padding: 32px 16px 64px; }
-    footer .small { font-size: 12px; opacity: .9; }
-  </style>
+  
 </head>
 <body>
   <div class="navbar">
@@ -189,6 +56,13 @@
        </li> 
       <a href="projects.html" data-translate="navbar.projects">Projects</a>
       <a href="contact.html" data-translate="navbar.contact">Contact</a>
+      
+      <!-- Theme Toggle Button -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+        <span>Dark</span>
+      </button>
+
       <!-- Navbar -->
       <div id="authSection">
         <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
@@ -236,7 +110,7 @@
   </div>
   <header class="hero">
     <div class="glow" aria-hidden="true"></div>
-    <h1 class="title">Find Your Next Gig — Fast ⚡</h1>
+    <h1 class="title">Find Your Next Gig - Fast ⚡</h1>
     <p class="subtitle">Creators-Space guide to top freelance platforms with direct links and key details. Filter by experience level and search by name or niche.</p>
   </header>
 
@@ -244,11 +118,124 @@
     <section id="grid" class="grid" aria-live="polite"></section>
   </main>
 
-  <footer>
-    <p class="small">Tips: Beginner platforms are great to build reviews quickly. Intermediate sites suit sustained projects and higher rates. Advanced networks are curated and pay top-tier rates but require vetting.</p>
-  </footer>
+  <!-- ===== FOOTER ===== -->
+
+<footer>
+
+  <div class="footer-container">
+
+    <div class="footer-col">
+
+      <h3><I class="fa-solid fa-briefcase"></I> Creators-Space</h3>
+
+<img
+
+            width="80px"
+
+            src="./assets/images/logo.png"
+
+            alt="logo Anurag Vishwakarma's Creators-Space"
+
+          />
+
+</p>
+
+    </div>
+
+    <div class="footer-col">
+
+      <h3>Important Links</h3>
+
+      <a href="index.html"><I class="fa-solid fa-house"></I> Home</a>
+
+      <a href="about.html"><I class="fa-solid fa-building"></I> About Us</a>
+
+      <a href="services.html"><I class="fa-solid fa-laptop-code"></I> Services</a>
+
+      <a href="internship.html"><I class="fa-solid fa-graduation-cap"></I> Internship</a>
+
+      <a href="contact.html"><I class="fa-solid fa-clock"></I>Contact</a>
+
+
+
+    </div>
+
+    <div class="footer-col">
+
+      <h3>Contact</h3>
+
+      <p><I class="fa-solid fa-phone"></I>+91 88xxxxxx89</p>
+
+      <p><I class="fa-solid fa-envelope"></I> mailto:21brac0401@polygwalior.ac.in</p>
+
+    </div>
+
+    <div class="footer-col">
+
+      <h3>Follow Us</h3>
+
+      <div class="social-icons">
+
+        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></I> Facebook</a>
+
+        <a href="https://x.com/"><i class="fa-brands fa-twitter"></I> Twitter</a>
+
+        <a href="https://linkedin.com/in/anuragvishwakarma"><i class="fa-brands fa-linkedin"></I> LinkedIn</a>
+
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-Instagram"></I> Instagram</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer-credit">
+
+    &copy; © 2025 Creators-Space. All rights reserved.
+
+  </div>
+
+</footer>
   <script src="./src/js/navbar.js"></script>
   <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle.querySelector('i');
+    const themeText = themeToggle.querySelector('span');
+    
+    // Check for saved theme preference or respect OS preference
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const currentTheme = localStorage.getItem('theme');
+    
+    if (currentTheme === 'light' || (!currentTheme && prefersDarkScheme.matches)) {
+      setLightMode();
+    } else {
+      setDarkMode();
+    }
+    
+    themeToggle.addEventListener('click', function() {
+      if (document.documentElement.getAttribute('data-theme') === 'light') {
+        setDarkMode();
+      } else {
+        setLightMode();
+      }
+    });
+
+    function setLightMode() {
+      document.documentElement.setAttribute('data-theme', 'light');
+      themeIcon.className = 'fas fa-sun';
+      themeText.textContent = 'Light';
+      localStorage.setItem('theme', 'light');
+    }
+
+    function setDarkMode() {
+      document.documentElement.removeAttribute('data-theme');
+      themeIcon.className = 'fas fa-moon';
+      themeText.textContent = 'Dark';
+      localStorage.setItem('theme', 'dark');
+    }
+
     const platforms = [
       // BEGINNER
       {
@@ -275,7 +262,7 @@
         name: 'PeoplePerHour',
         url: 'https://www.peopleperhour.com/',
         category: 'beginner',
-        summary: 'UK-based marketplace with “offers” (fixed-price services) and project bidding.',
+        summary: 'UK-based marketplace with "offers" (fixed-price services) and project bidding.',
         fees: 'Service fee tiered',
         vetting: 'Basic application',
         payment: 'Escrow with invoices',
@@ -307,7 +294,7 @@
         name: 'Guru',
         url: 'https://www.guru.com/',
         category: 'intermediate',
-        summary: 'Flexible agreements and “WorkRooms” for collaboration.',
+        summary: 'Flexible agreements and "WorkRooms" for collaboration.',
         fees: 'Tiered fees by membership',
         vetting: 'Open signup',
         payment: 'SafePay escrow',

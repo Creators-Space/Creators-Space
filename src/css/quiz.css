@@ -1,0 +1,101 @@
+/* Quiz Page Styles */
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #f9f9fc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Quiz card */
+.quiz-box {
+  width: 90%;
+  max-width: 650px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden; /* for header bar */
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Gradient header */
+.quiz-box h1 {
+  font-size: 26px;
+  margin: 0;
+  padding: 18px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: #fff;
+  font-weight: 600;
+  border-bottom: 2px solid #f1f1f1;
+}
+
+/* Question text */
+.quiz-box h2 {
+  font-size: 20px;
+  margin: 25px 0 15px;
+  color: #333;
+}
+
+/* Options */
+#options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 20px;
+}
+
+#options button {
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fdfdfd;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.25s ease;
+}
+
+#options button:hover {
+  background: #007bff;
+  color: #fff;
+  border-color: #007bff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Next button */
+#next-btn {
+  padding: 12px 28px;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s;
+  display: none;
+  margin: 15px auto 25px;
+}
+
+#next-btn:hover {
+  background: #1e7e34;
+  transform: scale(1.05);
+}
+
+/* Score / results */
+#score {
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #444;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

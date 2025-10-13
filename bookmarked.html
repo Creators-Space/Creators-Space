@@ -83,11 +83,11 @@
         <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
       </div>
 
-      <div id="userSection" style="display: none; align-items: center; gap: 10px;">
+      <div id="userSection" class="user-section-hidden">
         <button id="logoutBtn" class="btn login" data-translate="navbar.logout">Logout</button>
         <a href="profile.html" title="Your Profile">
           <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
-            style="border-radius: 50%;" />
+            class="profile-img" />
         </a>
       </div>
 
@@ -118,9 +118,10 @@
   </div>
 
   <!-- Enhanced Main Section -->
-  <div class="main">
-    <h1>📌 Bookmarked Courses</h1>
-  </div>
+ <div class="main_content">
+<h1><i class="fas fa-thumbtack"></i> Bookmarked Courses</h1>
+</div>
+
 
   <!--    <h1> Bookmarked Courses</h1>Enhanced Courses Section -->
 
@@ -133,7 +134,7 @@
         <p class="price">₹12,999 <del>₹49,999</del></p>
         <p>6 Months • Complete Bootcamp</p>
       </div>
-      <div class="syllabus hidden">
+      <div class="syllabus">
         <h4>What You'll Master:</h4>
         <ul>
           <li>HTML5, CSS3 & Modern JavaScript</li>
@@ -143,7 +144,7 @@
           <li>Real-world Project Portfolio</li>
         </ul>
       </div>
-      <div class="enroll hidden">
+      <div class="enroll">
         <button class="button">Enroll Now</button>
       </div>
 
@@ -158,7 +159,7 @@
         <p class="price">₹2,999 <del>₹12,999</del></p>
         <p>3 Months • Foundation Course</p>
       </div>
-      <div class="syllabus hidden">
+      <div class="syllabus">
         <h4>What You'll Master:</h4>
         <ul>
           <li>C Language Fundamentals & Syntax</li>
@@ -168,7 +169,7 @@
           <li>System Programming Concepts</li>
         </ul>
       </div>
-      <div class="enroll hidden">
+      <div class="enroll">
         <button class="button">Enroll Now</button>
       </div>
 

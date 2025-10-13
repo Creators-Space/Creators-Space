@@ -1,0 +1,333 @@
+/* Navbar Component Styles */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+  height: 85px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  margin-left: 10px;
+}
+
+.navbar a {
+  color: black;
+  text-decoration: none;
+  margin: -10px 2px;
+  transition: color 0.3s;
+  display: flex;
+  position: relative;
+}
+
+.navbar .nav-links a {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-links a:nth-child(-n + 9)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1.5px;
+  width: 0%;
+  background-color: rgba(0, 0, 0, 0.889);
+  transition: width 0.3s ease;
+}
+
+/* Dark mode underline */
+body.dark-mode .navbar .nav-links a:nth-child(-n + 9)::after {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar .nav-links a:nth-child(-n + 9):hover::after {
+  width: 100%;
+}
+
+.navbar .btn.login {
+  border: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+  background-color: transparent;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .btn.login:hover {
+  background-color: black;
+  color: white;
+}
+
+.navbar .btn.signup {
+  border: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+  background-color: black;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: 500;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .btn.signup:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Logout Button */
+.navbar .btn.logout {
+  border: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+  background-color: transparent;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: 500;
+  color: black;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s ease;
+}
+
+.navbar .btn.logout:hover {
+  background-color: black;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Dark Mode for Logout Button */
+body.dark-mode .navbar .btn.logout {
+  border: 1px solid white;
+  color: white;
+}
+
+body.dark-mode .navbar .btn.logout:hover {
+  background-color: white;
+  color: black;
+}
+
+/* ==================== */
+/* Default (Light Mode) */
+/* ==================== */
+body {
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #ffffff;
+}
+
+.navbar a {
+  color: #333;
+}
+
+/* Buttons */
+.btn.signup {
+  background-color: rgb(218, 32, 32);
+  color: #fff;
+}
+
+.btn.signup:hover {
+  background-color: rgb(200, 30, 30);
+}
+
+/* Dropdown Styles */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 200px;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+  z-index: auto;
+  max-height: none;
+  line-height: 1.2;
+  gap: 2px;
+  margin: 0px;
+}
+
+/* Dropdown items */
+.dropdown a {
+  display: block;
+  padding: 0px 16px;
+  color: #333;
+  border: none !important;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin: 0px;
+}
+
+/* Hover effect */
+.dropdown a:hover {
+  background-color: #b3abe6;
+  padding-left: 20px;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown,
+.nav-item.show .dropdown {
+  display: flex;
+}
+
+/* Arrow rotation when active */
+.nav-item.show .arrow {
+  transform: rotate(180deg);
+}
+
+/* Arrow */
+.arrow {
+  font-size: 14px;
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+/* ================= DARK MODE DROPDOWN ================= */
+body.dark-mode .dropdown {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .dropdown a {
+  color: #f0f0f0;
+}
+
+body.dark-mode .dropdown a:hover {
+  background-color: #333;
+  color: #fff;
+  padding-left: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* ========== Mobile view ========== */
+@media (max-width: 768px) {
+  .dropdown {
+    position: static;
+    min-width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    display: none;
+  }
+
+  .nav-item.show .dropdown {
+    display: flex;
+  }
+
+  .dropdown a {
+    border-bottom: 1px solid #eee;
+  }
+}
+
+/* Main Section Styles */
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+  background: linear-gradient(
+    45deg,
+    rgba(158, 198, 217, 0.4) 20%,
+    white 70%,
+    rgb(150, 182, 201, 0.1) 10%
+  );
+  margin-top: 20px;
+}
+
+.main h1 {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main p {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.main .images {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.main img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 10px;
+}
+
+.hero-section-imgs#hero-img-center {
+  animation: animate-center-image 3s infinite;
+}
+
+.hero-section-imgs.hero-imgs-muted {
+  animation: animate-muted-images 3s infinite;
+}
+
+@keyframes animate-center-image {
+  50% {
+    width: 320px;
+    height: 320px;
+  }
+
+  100% {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@keyframes animate-muted-images {
+  50% {
+    width: 130px;
+    height: 130px;
+  }
+
+  100% {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* Navigation List Items */
+.nav-item {
+  position: relative;
+  display: inline-block;
+}

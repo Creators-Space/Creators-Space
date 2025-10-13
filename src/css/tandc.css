@@ -1,0 +1,73 @@
+/* Terms and Conditions Page Styles */
+
+body {
+  background: #fdfdfd;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 640px;
+  margin: 48px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+p, li {
+  color: #444;
+  font-size: 1rem;
+}
+
+ul {
+  margin-left: 1.5em;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #277af6;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Additional styling for links */
+a {
+  color: #277af6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+}

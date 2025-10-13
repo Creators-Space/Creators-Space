@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Courses - Creators-Space</title>
     <!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-<!-- Bootstrap JS (optional, for dropdowns/tooltips etc.) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- Bootstrap JS (optional, for dropdowns/tooltips etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <link
       href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700;800&display=swap"
@@ -25,168 +27,55 @@
       integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-
     />
-
-    <script>
-     function toggleDarkMode() {
-  const element = document.getElementById("main-body");
-  const navbarLogo = document.getElementById("navbar-logo");
-
-  element.classList.toggle("dark");
-
-  // Change logo based on theme
-  if (element.classList.contains("dark")) {
-    navbarLogo.src = "./assets/images/logo-nav-dark.png";
-    localStorage.setItem("theme", "dark");
-  } else {
-    navbarLogo.src = "./assets/images/logo-nav-light.png";
-    localStorage.setItem("theme", "light");
-  }
-}
-
-// Apply saved theme & logo on page load
-document.addEventListener("DOMContentLoaded", function () {
-  const savedTheme = localStorage.getItem("theme");
-  const element = document.getElementById("main-body");
-  const navbarLogo = document.getElementById("navbar-logo");
-  const toggleCheckbox = document.querySelector(".toggle-switch input");
-
-  if (savedTheme === "dark") {
-    element.classList.add("dark");
-    navbarLogo.src = "./assets/images/logo-nav-dark.png";
-    toggleCheckbox.checked = true;
-  } else {
-    element.classList.remove("dark");
-    navbarLogo.src = "./assets/images/logo-nav-light.png";
-    toggleCheckbox.checked = false;
-  }
-});
-  
-    </script>
   </head>
 
   <body id="main-body" class="overflow-x-hidden">
     <!-- Navbar -->
-    <div class="navbar">
-      <h1>
-        <a href="./">
-          <img
-            id="navbar-logo"
-            width="80px"
-            src="./assets/images/logo-nav-light.png"
-            alt="logo Creators-Space"
-          />
-          <br />Creators-Space</a
-        >
-      </h1>
-      <div class="nav-links align-items-center">
-        <a href="index.html" data-translate="navbar.home">Home</a>
+    <div id="navbar"></div>
+    <!-- script for navBar -->
+     <script>
+      function initDarkModeToggle() {
+        const darkToggleBtn = document.getElementById("darkModeToggle");
+        if (!darkToggleBtn) return; // exit if button not found
 
-        <!-- dropDown 1 - About → About Us, Campus Ambassador-->
-        <li class="nav-item">
-          <a href="#" class="dropdown-toggle"
-            ><span data-translate="navbar.about">About</span> <i class="fa-solid fa-chevron-down arrow"></i
-          ></a>
-          <div class="dropdown">
-            <a href="about.html" data-translate="navbar.aboutUs">About Us</a>
-            <a href="campus-ambassador.html" data-translate="navbar.campusAmbassador">Campus Ambassador</a>
-          </div>
-        </li>
-        <!--dropDown 2 - Programs → Courses, Internship, Services -->
-        <li class="nav-item">
-          <a href="#" class="dropdown-toggle"
-            ><span data-translate="navbar.programs">Programs</span> <i class="fa-solid fa-chevron-down arrow"></i
-          ></a>
-          <div class="dropdown">
-            <a href="courses.html" data-translate="navbar.courses">Courses</a>
-            <a href="internship.html" data-translate="navbar.internship">Internship</a>
-            <a href="services.html" class="active" data-translate="navbar.services">Services</a>
-            <a href="freelancing.html" data-translate="navbar.freelance">Freelance</a>
-          </div>
-        </li>
-        <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
-        <li class="nav-item">
-          <a href="#" class="dropdown-toggle"
-            ><span data-translate="navbar.resources">Resources</span> <i class="fa-solid fa-chevron-down arrow"></i
-          ></a>
-          <div class="dropdown">
-            <a href="blog.html" data-translate="navbar.blog">Blog</a>
-            <a href="bookmarked.html" data-translate="navbar.bookmarks">BookMarks</a>
-            <a href="./certificate/" data-translate="navbar.certificates">Certificates</a>
-            <a href="quiz.html">Quiz</a> 
-          </div>
-        </li>
-        <a href="projects.html" data-translate="navbar.projects">Projects</a>
-        <a href="contact.html" data-translate="navbar.contact">Contact</a>
-        <!-- Navbar -->
-        <div id="authSection">
-          <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
-          <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
-        </div>
+        const body = document.body;
+        const moonIcon = darkToggleBtn.querySelector(".fa-moon");
+        const sunIcon = darkToggleBtn.querySelector(".fa-sun");
 
-        <div
-          id="userSection"
-          style="display: none; align-items: center; gap: 10px"
-        >
-          <button id="logoutBtn" class="btn login" data-translate="navbar.logout">Logout</button>
-          <a href="profile.html" title="Your Profile">
-            <img
-              id="profileImg"
-              src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
-              alt="Profile"
-              width="30"
-              style="border-radius: 50%"
-            />
-          </a>
-        </div>
-      </div>
-      <div
-        class="nav-toggle align-items-center justify-content-center"
-        onclick="toggleNav()"
-      >
-        <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
-          <polyline
-            id="globalnav-menutrigger-bread-bottom"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            points="2 12, 16 12"
-            class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"
-          ></polyline>
-          <polyline
-            id="globalnav-menutrigger-bread-top"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            points="2 5, 16 5"
-            class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"
-          ></polyline>
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          id="navbar-x-logo"
-          class="bi bi-x-lg d-none"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
-          />
-        </svg>
-      </div>
-    </div>
+        // Load saved theme
+        if (localStorage.getItem("theme") === "dark") {
+          body.classList.add("dark-mode");
+          moonIcon.style.display = "none";
+          sunIcon.style.display = "inline-block";
+        } else {
+          moonIcon.style.display = "inline-block";
+          sunIcon.style.display = "none";
+        }
 
-    <div class="toggle-switch">
-      <label class="switch-label">
-        <input onclick="toggleDarkMode()" type="checkbox" class="checkbox" />
-        <span class="slider"></span>
-      </label>
-    </div>
+        // Toggle theme
+        darkToggleBtn.addEventListener("click", () => {
+          body.classList.toggle("dark-mode");
+          if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            moonIcon.style.display = "none";
+            sunIcon.style.display = "inline-block";
+          } else {
+            localStorage.setItem("theme", "light");
+            moonIcon.style.display = "inline-block";
+            sunIcon.style.display = "none";
+          }
+        });
+      }
+
+      // Initialize after navbar loads
+      fetch("navbar.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+          initDarkModeToggle(); // initialize toggle here
+        });
+    </script>
 
     <!-- Enhanced Main Section -->
     <div class="main">
@@ -207,544 +96,227 @@ document.addEventListener("DOMContentLoaded", function () {
       />
     </div>
 
+    <!--courses section-->
 
-    <!-- Enhanced Courses Section-->
-<div class="compare-toggle-container">
-<p id="compareMsg" style="color:red; display:none;">
-  Select at least 2 courses to compare.
-</p>
-
-</div>
-
-
-<!-- Table view (hidden by default) -->
-<table id="coursesTable" class="hidden">
-  <thead>
-    <tr>
-      <th>Course Name</th>
-      <th>Price</th>
-      <th>Duration</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Full Stack Web Development</td>
-      <td>₹12,999</td>
-      <td>6 Months</td>
-    </tr>
-    <tr>
-      <td>C Programming Mastery</td>
-      <td>₹2,999</td>
-      <td>3 Months</td>
-    </tr>
-    <tr>
-      
-      <td>Python Programming Pro</td>
-      <td>₹2,999</td>
-      <td>3 Months</td>
-      
-
-    </tr>
-    <tr>
-      
-      <td>UI/UX Design Essentials</td>
-      <td>₹5,999</td>
-      <td>4 Months</td>
-      
-
-    </tr>
-    <tr>
-      
-      <td>Graphic Designing Masterclass</td>
-      <td>₹4,499</td>
-      <td>3 Months</td>
-     
-    </tr>
-    <tr>
-     
-       <td>Data Analytics & Visualization</td>
-      <td>₹7,999</td>
-      <td>4 Months</td>
-      
-
-    </tr>
-  </tbody>
-</table>
-<div class="compare-controls">
-  <button id="compareBtn">Compare Selected</button>
-</div>
-  <!-- Course Comparison Panel (hidden by default) -->
-<div id="comparePanel" class="hidden">
-  <h3>Course Comparison</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Course</th>
-        <th>Price</th>
-        <th>Duration</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody id="compareTableBody"></tbody>
-  </table>
-  <button id="closeCompare">Close</button>
-</div>
-<!-- View Toggle Buttons -->
-<div class="view-toggle">
-  <button id="gridViewBtn" class="active">Grid View</button>
-  <button id="tableViewBtn">Table View</button>
-</div>
-  <!--courses section-->
-=======
-    <!-- Enhanced Courses Section -->
-
+    <!-- Enhanced Courses Section --> 
     <section class="courses-container" id="courses-container">
-     <div class="card">
-  <div class="discount-badge">74% OFF</div>
-  <div class="card-content">
-    <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" alt="Web Development"/>
-    <h3>Full Stack Web Development</h3>
-    <p class="price">₹12,999 <del>₹49,999</del></p>
-    <p>6 Months • Complete Bootcamp</p>
-    <p class="desc">
-      Master modern web technologies and build real-world projects to become a complete full-stack developer.
-    </p>
-  </div>
-
-  <!-- More Info Button -->
-  <div class="info-container">
-    <button class="info-btn" data-id="1">More Info</button>
-  </div>
-
-    <section class="courses-container">
-      <div class="card">
-        <div class="discount-badge">74% OFF</div>
-        <div class="card-content">
-
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/919/919827.png"
-            alt="Web Development"
-          />
-          <h3 data-translate="courses.webDev.title">Full Stack Web Development</h3>
-          <p class="price">₹12,999 <del>₹49,999</del></p>
-          <p><span data-translate="courses.webDev.duration">6 Months</span> • Complete Bootcamp</p>
-        </div>
-        <!-- Hover Button -->
-        <div class="expandable-box">
-          <button class="info-btn" id="toggle-info">More Info</button>
-          <div class="syllabus hidden">
+      <section class="courses-container">
+        <div class="card" onclick="toggleSyllabus(this)">
+          <div class="discount-badge">74% OFF</div>
+          <div class="card-content">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/919/919827.png"
+              alt="Web Development"
+            />
+            <h3 data-translate="courses.webDev.title">
+              Full Stack Web Development
+            </h3>
+            <p class="price">₹12,999 <del>₹49,999</del></p>
+            <p>
+              <span data-translate="courses.webDev.duration">6 Months</span> •
+              Complete Bootcamp
+            </p>
+            <p class="desc"> 
             🚀 Learn HTML, CSS, JavaScript, React, Node.js, MongoDB & more.
             Perfect for beginners & professionals to become full-stack
-            developers!
+            developers! 
+            </p>
+          </div> 
+          <!-- More Info Button -->
+          <button class="info-btn" data-id="1">More Info</button>
+
+          <div class="syllabus hidden">
+            <h4>What You'll Master:</h4>
+            <ul>
+              <li>HTML5, CSS3 & Modern JavaScript</li>
+              <li>React.js & Node.js Development</li>
+              <li>Database Design & Management</li>
+              <li>Cloud Deployment & DevOps</li>
+              <li>Real-world Project Portfolio</li>
+            </ul>
+          </div>
+          <div class="enroll hidden">
+            <button class="button">Enroll Now</button>
+          </div>
+        </div> 
+
+        <div class="card" onclick="toggleSyllabus(this)">
+          <div class="discount-badge">77% OFF</div>
+          <div class="card-content">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png"
+              alt="C Programming"
+            />
+            <h3>C Programming Mastery</h3>
+            <p class="price">₹2,999 <del>₹12,999</del></p>
+            <p>3 Months • Foundation Course</p>
+            <p class="desc">
+              Master C programming from scratch, learn data types, pointers,
+              memory management, file handling, and algorithms for a strong
+              software foundation.
+            </p>
+          </div>
+
+          <!-- More Info Button -->
+          <button class="info-btn" data-id="2">More Info</button>
+
+          <div class="syllabus hidden">
+            <h4>What You'll Master:</h4>
+            <ul>
+              <li>C Language Fundamentals & Syntax</li>
+              <li>Advanced Functions & Control Flow</li>
+              <li>Pointers & Memory Management</li>
+              <li>Data Structures Implementation</li>
+              <li>System Programming Concepts</li>
+            </ul>
+          </div>
+          <div class="enroll hidden">
+            <button class="button">Enroll Now</button>
           </div>
         </div>
-      
-         <!-- Compare checkbox added here -->
-      <div class="form-check mt-2">
-  <input class="form-check-input compare-checkbox" type="checkbox" value="Full Stack Web Development" id="compare1">
-  <label class="form-check-label" for="compare1">Compare</label>
-</div>
 
-        <div class="syllabus hidden">
-          <h4>What You'll Master:</h4>
-          <ul>
-            <li>HTML5, CSS3 & Modern JavaScript</li>
-            <li>React.js & Node.js Development</li>
-            <li>Database Design & Management</li>
-            <li>Cloud Deployment & DevOps</li>
-            <li>Real-world Project Portfolio</li>
-          </ul>
-        </div>
-        <div class="enroll hidden">
-          <button class="button">Enroll Now</button>
-        </div>
-      </div>
+        <div class="card" onclick="toggleSyllabus(this)">
+          <div class="discount-badge">77% OFF</div>
+          <div class="card-content">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
+              alt="Python Programming"
+            />
+            <h3>Python Programming Pro</h3>
+            <p class="price">₹2,999 <del>₹12,999</del></p>
+            <p>3 Months • Beginner to Advanced</p>
+            <p class="desc">
+              Learn Python fundamentals, OOP, data analysis, and automation
+              through hands-on coding challenges and projects.
+            </p>
+          </div>
 
-      <div class="card">
-        <div class="discount-badge">77% OFF</div>
-        <div class="card-content">
-          
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png"
-            alt="C Programming"
-          />
-          <h3>C Programming Mastery</h3>
-          <p class="price">₹2,999 <del>₹12,999</del></p>
-          <p>3 Months • Foundation Course</p>
-        </div>
-        <div class="expandable-box">
-          <button class="info-btn" id="toggle-info">More Info</button>
-          <div class="info-content">
-            Master the C programming language from scratch! Learn data types,
-            pointers, memory management, file handling, and algorithms to build
-            a solid foundation in software development.
+          <!-- More Info Button -->
+          <button class="info-btn" data-id="3">More Info</button>
+
+          <div class="syllabus hidden">
+            <h4>What You'll Master:</h4>
+            <ul>
+              <li>Python Syntax & Control Structures</li>
+              <li>Object-Oriented Programming</li>
+              <li>Web Development with Django</li>
+              <li>Data Science & Machine Learning</li>
+              <li>Automation & Scripting Projects</li>
+            </ul>
+          </div>
+          <div class="enroll hidden">
+            <button class="button">Enroll Now</button>
           </div>
         </div>
-         <!-- Compare checkbox added here -->
-        <div class="form-check mt-2">
-  <input class="form-check-input compare-checkbox" type="checkbox" value="C Programming Mastery" id="compare1">
-  <label class="form-check-label" for="compare1">Compare</label>
-</div>
 
+        <div class="card" onclick="toggleSyllabus(this)">
+          <div class="discount-badge">70% OFF</div>
+          <div class="card-content">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+              width="20"
+              height="20"
+              alt="UI/UX Design"
+            />
+            <h3>UI/UX Design Essentials</h3>
+            <p class="price">₹5,999 <del>₹19,999</del></p>
+            <p>4 Months • Design Thinking & Prototyping</p>
+            <p class="desc">
+              Explore design thinking, wireframing, prototyping, and usability
+              testing to create user-friendly digital experiences.
+            </p>
+          </div>
 
-  <div class="syllabus hidden">
-    <h4>What You'll Master:</h4>
-    <ul>
-      <li>HTML5, CSS3 & Modern JavaScript</li>
-      <li>React.js & Node.js Development</li>
-      <li>Database Design & Management</li>
-      <li>Cloud Deployment & DevOps</li>
-      <li>Real-world Project Portfolio</li>
-    </ul>
-  </div>
+          <!-- More Info Button -->
+          <button class="info-btn" data-id="4">More Info</button>
 
-
-  <div class="enroll hidden">
-    <button class="button">Enroll Now</button>
-  </div>
-</div>
-
-
-  <div class="card" onclick="toggleSyllabus(this)">
-  <div class="discount-badge">77% OFF</div>
-  <div class="card-content">
-    <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="C Programming" />
-    <h3>C Programming Mastery</h3>
-    <p class="price">₹2,999 <del>₹12,999</del></p>
-    <p>3 Months • Foundation Course</p>
-    <p class="desc">
-      Master C programming from scratch, learn data types, pointers, memory management, file handling, and algorithms for a strong software foundation.
-    </p>
-  </div>
-
-  <!-- More Info Button -->
-  <button class="info-btn" data-id="2">More Info</button>
-
-  <div class="syllabus hidden">
-    <h4>What You'll Master:</h4>
-    <ul>
-      <li>C Language Fundamentals & Syntax</li>
-      <li>Advanced Functions & Control Flow</li>
-      <li>Pointers & Memory Management</li>
-      <li>Data Structures Implementation</li>
-      <li>System Programming Concepts</li>
-    </ul>
-  </div>
-  <div class="enroll hidden">
-    <button class="button">Enroll Now</button>
-  </div>
-</div>
-
-      <div class="card" onclick="toggleSyllabus(this)">
-  <div class="discount-badge">77% OFF</div>
-  <div class="card-content">
-    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python Programming" />
-    <h3>Python Programming Pro</h3>
-    <p class="price">₹2,999 <del>₹12,999</del></p>
-    <p>3 Months • Beginner to Advanced</p>
-    <p class="desc">
-      Learn Python fundamentals, OOP, data analysis, and automation through hands-on coding challenges and projects.
-    </p>
-  </div>
-
-  <!-- More Info Button -->
-  <button class="info-btn" data-id="3">More Info</button>
-
-  <div class="syllabus hidden">
-    <h4>What You'll Master:</h4>
-    <ul>
-      <li>Python Syntax & Control Structures</li>
-      <li>Object-Oriented Programming</li>
-      <li>Web Development with Django</li>
-      <li>Data Science & Machine Learning</li>
-      <li>Automation & Scripting Projects</li>
-    </ul>
-  </div>
-  <div class="enroll hidden">
-    <button class="button">Enroll Now</button>
-  </div>
-</div>
-
-
-      <div class="card" onclick="toggleSyllabus(this)">
-  <div class="discount-badge">70% OFF</div>
-  <div class="card-content">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="20" height="20" alt="UI/UX Design" />
-    <h3>UI/UX Design Essentials</h3>
-    <p class="price">₹5,999 <del>₹19,999</del></p>
-    <p>4 Months • Design Thinking & Prototyping</p>
-    <p class="desc">
-      Explore design thinking, wireframing, prototyping, and usability testing to create user-friendly digital experiences.
-    </p>
-  </div>
-
-  <!-- More Info Button -->
-  <button class="info-btn" data-id="4">More Info</button>
-
-  <div class="syllabus hidden">
-    <h4>What You'll Master:</h4>
-    <ul>
-      <li>User Research & Personas</li>
-      <li>Wireframing & Prototyping (Figma)</li>
-      <li>Visual Design Principles</li>
-      <li>Usability Testing</li>
-      <li>Portfolio Project</li>
-    </ul>
-  </div>
-  <div class="enroll hidden">
-    <button class="button">Enroll Now</button>
-  </div>
-</div>
-
-
-     <div class="card" onclick="toggleSyllabus(this)">
-  <div class="discount-badge">65% OFF</div>
-  <div class="card-content">
-    <img
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"
-      width="32"
-      height="32"
-      alt="Graphic Designing"
-    />
-    <h3>Graphic Designing Masterclass</h3>
-    <p class="price">₹4,499 <del>₹12,999</del></p>
-    <p>3 Months • Creative Suite Training</p>
-    <p class="desc">
-      Gain expertise in Photoshop, Illustrator, and digital design principles to craft stunning visuals and branding.
-    </p>
-  </div>
-
-  <!-- More Info Button -->
-  <button class="info-btn" data-id="5">More Info</button>
-
-  <div class="syllabus hidden">
-    <h4>What You'll Master:</h4>
-    <ul>
-      <li>Adobe Photoshop & Illustrator</li>
-      <li>Branding & Logo Design</li>
-      <li>Social Media Graphics</li>
-      <li>Print & Digital Media</li>
-      <li>Portfolio Development</li>
-    </ul>
-  </div>
-  <div class="enroll hidden">
-    <button class="button">Enroll Now</button>
-  </div>
-</div>
-
-      <div class="card" onclick="toggleSyllabus(this)">
-  <div class="discount-badge">60% OFF</div>
-  <div class="card-content">
-    <img
-      src="assets/images/google-looker-seeklogo.svg"
-      alt="Data Analytics"
-    />
-    <h3>Data Analytics & Visualization</h3>
-    <p class="price">₹7,999 <del>₹19,999</del></p>
-    <p>4 Months • Excel, Power BI & Tableau</p>
-    <p class="desc">
-      Learn Excel, SQL, Power BI, and Python to analyze data, generate insights, and make data-driven decisions.
-    </p>
-  </div>
-
-  <!-- More Info Button -->
-  <button class="info-btn" data-id="6">More Info</button>
-
-  <div class="syllabus hidden">
-    <h4>What You'll Master:</h4>
-    <ul>
-      <li>Data Cleaning & Preparation</li>
-      <li>Excel for Analytics</li>
-      <li>Power BI & Tableau Dashboards</li>
-      <li>Storytelling with Data</li>
-      <li>Capstone Analytics Project</li>
-    </ul>
-  </div>
-  <div class="enroll hidden">
-    <button class="button">Enroll Now</button>
-  </div>
-</div>
-
-
-      <div class="card">
-        <div class="discount-badge">77% OFF</div>
-        <div class="card-content">
-        
-
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
-            alt="Python Programming"
-          />
-          <h3>Python Programming Pro</h3>
-          <p class="price">₹2,999 <del>₹12,999</del></p>
-          <p>3 Months • Beginner to Advanced</p>
-        </div>
-        <div class="expandable-box">
-          <button class="info-btn" id="toggle-info">More Info</button>
-          <div class="info-content">
-            Become a Python expert! Learn Python from basics to advanced
-            concepts: data structures, OOP, file handling, libraries, web
-            development, automation, and data science essentials for career
-            growth.
+          <div class="syllabus hidden">
+            <h4>What You'll Master:</h4>
+            <ul>
+              <li>User Research & Personas</li>
+              <li>Wireframing & Prototyping (Figma)</li>
+              <li>Visual Design Principles</li>
+              <li>Usability Testing</li>
+              <li>Portfolio Project</li>
+            </ul>
+          </div>
+          <div class="enroll hidden">
+            <button class="button">Enroll Now</button>
           </div>
         </div>
-           <!-- Compare checkbox added here -->
-      <div class="form-check mt-2">
-  <input class="form-check-input compare-checkbox" type="checkbox" value="Python Programming Pro" id="compare1">
-  <label class="form-check-label" for="compare1">Compare</label>
-</div>
 
-        <div class="syllabus hidden">
-          <h4>What You'll Master:</h4>
-          <ul>
-            <li>Python Syntax & Control Structures</li>
-            <li>Object-Oriented Programming</li>
-            <li>Web Development with Django</li>
-            <li>Data Science & Machine Learning</li>
-            <li>Automation & Scripting Projects</li>
-          </ul>
-        </div>
-        <div class="enroll hidden">
-          <button class="button">Enroll Now</button>
-        </div>
-      </div>
+        <div class="card" onclick="toggleSyllabus(this)">
+          <div class="discount-badge">65% OFF</div>
+          <div class="card-content">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"
+              width="32"
+              height="32"
+              alt="Graphic Designing"
+            />
+            <h3>Graphic Designing Masterclass</h3>
+            <p class="price">₹4,499 <del>₹12,999</del></p>
+            <p>3 Months • Creative Suite Training</p>
+            <p class="desc">
+              Gain expertise in Photoshop, Illustrator, and digital design
+              principles to craft stunning visuals and branding.
+            </p>
+          </div>
 
-      <div class="card">
-        <div class="discount-badge">70% OFF</div>
-        <div class="card-content">
-       
+          <!-- More Info Button -->
+          <button class="info-btn" data-id="5">More Info</button>
 
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-            width="20"
-            height="20"
-            alt="UI/UX Design"
-          />
-          <h3>UI/UX Design Essentials</h3>
-          <p class="price">₹5,999 <del>₹19,999</del></p>
-          <p>4 Months • Design Thinking & Prototyping</p>
-        </div>
-        <div class="expandable-box">
-          <button class="info-btn" id="toggle-info">More Info</button>
-          <div class="info-content">
-            Learn to design stunning, user-friendly interfaces and create
-            seamless user experiences. Master wireframing, prototyping,
-            typography, color theory, and industry design tools like Figma and
-            Adobe XD.
+          <div class="syllabus hidden">
+            <h4>What You'll Master:</h4>
+            <ul>
+              <li>Adobe Photoshop & Illustrator</li>
+              <li>Branding & Logo Design</li>
+              <li>Social Media Graphics</li>
+              <li>Print & Digital Media</li>
+              <li>Portfolio Development</li>
+            </ul>
+          </div>
+          <div class="enroll hidden">
+            <button class="button">Enroll Now</button>
           </div>
         </div>
-            <!-- Compare checkbox added here -->
-           <div class="form-check mt-2">
-  <input class="form-check-input compare-checkbox" type="checkbox" value="UI/UX Design Essentials" id="compare1">
-  <label class="form-check-label" for="compare1">Compare</label>
-</div>
 
-        <div class="syllabus hidden">
-          <h4>What You'll Master:</h4>
-          <ul>
-            <li>User Research & Personas</li>
-            <li>Wireframing & Prototyping (Figma)</li>
-            <li>Visual Design Principles</li>
-            <li>Usability Testing</li>
-            <li>Portfolio Project</li>
-          </ul>
-        </div>
-        <div class="enroll hidden">
-          <button class="button">Enroll Now</button>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="discount-badge">65% OFF</div>
-        <div class="card-content">
-     
-
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"
-            width="32"
-            height="32"
-            alt="Graphic Designing"
-          />
-          <h3>Graphic Designing Masterclass</h3>
-          <p class="price">₹4,499 <del>₹12,999</del></p>
-          <p>3 Months • Creative Suite Training</p>
-        </div>
-        <div class="expandable-box">
-          <button class="info-btn" id="toggle-info">More Info</button>
-          <div class="info-content">
-            Learn the fundamentals of graphic design: typography, color theory,
-            layout, branding, and digital illustration. Perfect for beginners
-            who want to create beautiful designs for social media, marketing,
-            and more.
+        <div class="card" onclick="toggleSyllabus(this)">
+          <div class="discount-badge">60% OFF</div>
+          <div class="card-content">
+            <img
+              src="assets/images/google-looker-seeklogo.svg"
+              alt="Data Analytics"
+            />
+            <h3>Data Analytics & Visualization</h3>
+            <p class="price">₹7,999 <del>₹19,999</del></p>
+            <p>4 Months • Excel, Power BI & Tableau</p>
+            <p class="desc">
+              Learn Excel, SQL, Power BI, and Python to analyze data, generate
+              insights, and make data-driven decisions.
+            </p>
           </div>
-        </div>
-              <!-- Compare checkbox added here -->
-            <div class="form-check mt-2">
-  <input class="form-check-input compare-checkbox" type="checkbox" value="Graphic Designing Masterclass" id="compare1">
-  <label class="form-check-label" for="compare1">Compare</label>
-</div>
 
-        <div class="syllabus hidden">
-          <h4>What You'll Master:</h4>
-          <ul>
-            <li>Adobe Photoshop & Illustrator</li>
-            <li>Branding & Logo Design</li>
-            <li>Social Media Graphics</li>
-            <li>Print & Digital Media</li>
-            <li>Portfolio Development</li>
-          </ul>
-        </div>
-        <div class="enroll hidden">
-          <button class="button">Enroll Now</button>
-        </div>
-      </div>
+          <!-- More Info Button -->
+          <button class="info-btn" data-id="6">More Info</button>
 
-      <div class="card">
-        <div class="discount-badge">60% OFF</div>
-        <div class="card-content">
-     
-
-          <img
-            src="assets/images/google-looker-seeklogo.svg"
-            alt="Data Analytics"
-          />
-          <h3>Data Analytics & Visualization</h3>
-          <p class="price">₹7,999 <del>₹19,999</del></p>
-          <p>4 Months • Excel, Power BI & Tableau</p>
-        </div>
-        <div class="expandable-box">
-          <button class="info-btn" id="toggle-info">More Info</button>
-          <div class="info-content">
-            Become a professional graphic designer! Master Adobe Photoshop,
-            Illustrator, InDesign, branding, packaging, UI assets, digital
-            illustrations, and client projects to build a strong design
-            portfolio.
+          <div class="syllabus hidden">
+            <h4>What You'll Master:</h4>
+            <ul>
+              <li>Data Cleaning & Preparation</li>
+              <li>Excel for Analytics</li>
+              <li>Power BI & Tableau Dashboards</li>
+              <li>Storytelling with Data</li>
+              <li>Capstone Analytics Project</li>
+            </ul>
           </div>
-        </div>
-              <!-- Compare checkbox added here -->
-      <div class="form-check mt-2">
-  <input class="form-check-input compare-checkbox" type="checkbox" value="Data Analytics & Visualization" id="compare1">
-  <label class="form-check-label" for="compare1">Compare</label>
-</div>
-
-        <div class="syllabus hidden">
-          <h4>What You'll Master:</h4>
-          <ul>
-            <li>Data Cleaning & Preparation</li>
-            <li>Excel for Analytics</li>
-            <li>Power BI & Tableau Dashboards</li>
-            <li>Storytelling with Data</li>
-            <li>Capstone Analytics Project</li>
-          </ul>
-        </div>
-        <div class="enroll hidden">
-          <button class="button">Enroll Now</button>
-        </div>
-      </div>
-
+          <div class="enroll hidden">
+            <button class="button">Enroll Now</button>
+          </div>
+        </div> 
+ 
+      </section>
     </section>
-    
-
 
     <!-- Enhanced Footer -->
     <footer class="footer">
@@ -842,16 +414,30 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="form">
         <h3>Get In Touch</h3>
         <div class="form-group">
-            <label for="footer-name">Name</label>
-            <input type="text" id="footer-name" placeholder="Enter name" name="name">
+          <label for="footer-name">Name</label>
+          <input
+            type="text"
+            id="footer-name"
+            placeholder="Enter name"
+            name="name"
+          />
         </div>
         <div class="form-group">
-            <label for="footer-email">Email</label>
-            <input type="email" id="footer-email" placeholder="Enter email" name="email">
+          <label for="footer-email">Email</label>
+          <input
+            type="email"
+            id="footer-email"
+            placeholder="Enter email"
+            name="email"
+          />
         </div>
         <div class="form-group">
-            <label for="footer-message">Message</label>
-            <textarea id="footer-message" placeholder="Enter message" name="message"></textarea>
+          <label for="footer-message">Message</label>
+          <textarea
+            id="footer-message"
+            placeholder="Enter message"
+            name="message"
+          ></textarea>
         </div>
         <button>Send</button>
       </div>
@@ -917,30 +503,53 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       document.querySelectorAll(".info-btn").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const courseId = btn.getAttribute("data-id");
-    window.location.href = `course-detail.html?id=${courseId}`;
-  });
-});
-
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const courseId = btn.getAttribute("data-id");
+          window.location.href = `course-detail.html?id=${courseId}`;
+        });
+      });
     </script>
     <script>
-  const infoButtons = document.querySelectorAll(".info-btn");
+      const infoButtons = document.querySelectorAll(".info-btn");
 
-  infoButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const box = this.parentElement;
-      box.classList.toggle("active");
+      infoButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const box = this.parentElement;
+          box.classList.toggle("active");
 
-      this.textContent = box.classList.contains("active") ? "Hide Info" : "More Info";
-    });
-  });
-</script>
+          this.textContent = box.classList.contains("active")
+            ? "Hide Info"
+            : "More Info";
+        });
+      });
+    </script>
+
+    <script>
+      // Handle Enroll Now buttons
+      document.querySelectorAll('.button').forEach((btn, index) => {
+        if (btn.textContent.trim() === 'Enroll Now') {
+          btn.addEventListener('click', function() {
+            const courseNames = [
+              'web-development',
+              'c-programming', 
+              'python-programming',
+              'ui-ux-design',
+              'graphic-design',
+              'data-analytics'
+            ];
+            
+            const courseParam = courseNames[index] || 'general';
+            window.location.href = `./enroll.html?course=${courseParam}`;
+          });
+        }
+      });
+    </script>
+
     <script src="./src/js/auth.js"></script>
     <script src="script.js" defer></script>
-    <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

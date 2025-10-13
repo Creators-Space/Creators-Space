@@ -10,54 +10,6 @@
   <link rel="stylesheet" href="./src/css/responsive.css" />
   <link rel="stylesheet" href="./src/css/blog.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    /* Extra styling for comments & likes */
-    .interaction-box {
-      margin-top: 10px;
-      padding: 10px;
-      border-top: 1px solid #ddd;
-    }
-
-    .like-btn {
-      cursor: pointer;
-      background: none;
-      border: none;
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
-
-    .comment-section {
-      margin-top: 10px;
-    }
-
-    .comment-section textarea {
-      width: 100%;
-      padding: 6px;
-      margin-bottom: 6px;
-    }
-
-    .comment {
-      background: #f0f0f0;
-      padding: 6px;
-      margin: 4px 0;
-      border-radius: 5px;
-      font-size: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .comment span {
-      flex: 1;
-    }
-
-    .comment-actions button {
-      margin-left: 5px;
-      padding: 2px 6px;
-      cursor: pointer;
-      font-size: 12px;
-    }
-  </style>
 </head>
 
 <body id="main-body" class="overflow-x-hidden">
@@ -99,10 +51,10 @@
         <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
         <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
       </div>
-      <div id="userSection" style="display: none; align-items: center; gap: 10px;">
+      <div id="userSection" class="user-section-hidden">
         <button id="logoutBtn" class="btn login" data-translate="navbar.logout">Logout</button>
         <a href="profile.html" title="Your Profile">
-          <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30" style="border-radius: 50%;" />
+          <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30" class="profile-img" />
         </a>
       </div>
     </div>
@@ -126,7 +78,7 @@
   </div>
 
   <div class="blog-header">
-    <h1 data-translate="blog.title">Explore Our Latest Blogs</h1>
+    <h1>Explore Our Latest Blogs</h1>
     <input type="text" id="blog-search" placeholder="Search blog titles...">
   </div>
 
@@ -175,9 +127,9 @@
       <img src="assets/images/blogpage/techstartup.jpeg" alt="Blog thumbnail" />
       <div class="blog-content">
         <span class="blog-category">StartUp</span>
-        <div class="blog-title">How to Launch Your Tech Startup</div>
+        <div class="blog-title">How to Launch Your Tech Startup in distinct countries as we have more countries</div>
         <div class="blog-meta">By Raghav | March 15, 2025</div>
-        <div class="blog-excerpt">Step-by-step guide to launching your startup — from ideation to product-market fit and fundraising.</div>
+        <div class="blog-excerpt">Step-by-step guide to launching your startup — from ideation to product-market fit and fundraising. Step-by-step guide to launching your startup — from ideation to product-market fit and fundraising.</div>
       </div>
       <div class="interaction-box">
         <button class="like-btn">🤍 Like (<span class="like-count">0</span>)</button>
@@ -189,6 +141,21 @@
       </div>
     </div>
   </section>
+
+  <!-- Resource Sharing Hub -->
+<section class="resource-hub">
+  <h2>Resource Sharing Hub</h2>
+  
+  <div class="resource-input">
+    <input type="text" id="resourceName" placeholder="Enter resource name or description">
+    <button id="addResourceBtn">Add</button>
+  </div>
+
+  <input type="text" id="resourceSearch" placeholder="Search resources..." class="resource-search">
+
+  <div class="resources-container" id="resourcesContainer"></div>
+</section>
+
 
   <footer class="footer">
     <div class="social">
@@ -253,6 +220,8 @@
 
   <!-- Blog search -->
   <script>
+
+    
     document.addEventListener("DOMContentLoaded", function () {
       const searchInput = document.getElementById("blog-search");
       const blogCards = document.querySelectorAll(".blog-card");
@@ -354,5 +323,127 @@
       location.reload();
     }
   </script>
+
+  <script>
+  const resourceInput = document.getElementById("resourceName");
+  const addResourceBtn = document.getElementById("addResourceBtn");
+  const resourcesContainer = document.getElementById("resourcesContainer");
+  const resourceSearch = document.getElementById("resourceSearch");
+
+  let resources = JSON.parse(localStorage.getItem("resources")) || [];
+
+  function renderResources(filter = "") {
+    resourcesContainer.innerHTML = "";
+    resources
+      .filter(r => r.toLowerCase().includes(filter.toLowerCase()))
+      .forEach((r, index) => {
+        const card = document.createElement("div");
+        card.className = "resource-card";
+
+        const span = document.createElement("span");
+        span.innerText = r;
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.innerText = "Delete";
+        deleteBtn.addEventListener("click", () => deleteResource(index));
+
+        card.appendChild(span);
+        card.appendChild(deleteBtn);
+        resourcesContainer.appendChild(card);
+      });
+  }
+
+  addResourceBtn.addEventListener("click", () => {
+    const val = resourceInput.value.trim();
+    if (!val) return alert("Enter a resource");
+    resources.push(val);
+    localStorage.setItem("resources", JSON.stringify(resources));
+    resourceInput.value = "";
+    renderResources(resourceSearch.value);
+  });
+
+  resourceInput.addEventListener("keypress", e => {
+    if (e.key === "Enter") addResourceBtn.click();
+  });
+
+  function deleteResource(index) {
+    resources.splice(index, 1);
+    localStorage.setItem("resources", JSON.stringify(resources));
+    renderResources(resourceSearch.value);
+  }
+
+  resourceSearch.addEventListener("input", () => {
+    renderResources(resourceSearch.value);
+  });
+
+  renderResources();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const limitLines = {
+    "blog-title": 2,
+    "blog-excerpt": 3
+  };
+
+  document.querySelectorAll(".blog-title, .blog-excerpt").forEach(el => {
+    const lineClamp = parseInt(getComputedStyle(el).getPropertyValue("-webkit-line-clamp"));
+    const fullText = el.textContent.trim();
+
+    // Clone element to measure text height
+    const clone = el.cloneNode(true);
+    clone.style.display = "block";
+    clone.style.position = "absolute";
+    clone.style.visibility = "hidden";
+    clone.style.webkitLineClamp = "unset";
+    clone.style.maxHeight = "none";
+    document.body.appendChild(clone);
+
+    const isOverflowing = clone.scrollHeight > el.clientHeight;
+    document.body.removeChild(clone);
+
+    if (isOverflowing) {
+      const btn = document.createElement("button");
+      btn.textContent = "Read more ↓";
+      btn.classList.add("read-more-btn");
+
+      btn.addEventListener("click", () => {
+        const expanded = el.classList.toggle("expanded");
+
+        if (expanded) {
+          el.style.webkitLineClamp = "unset";
+          el.style.overflow = "visible";
+          btn.textContent = "Read less ↑";
+        } else {
+          el.style.webkitLineClamp = limitLines[el.classList.contains("blog-title") ? "blog-title" : "blog-excerpt"];
+          el.style.overflow = "hidden";
+          btn.textContent = "Read more ↓";
+        }
+      });
+
+      el.insertAdjacentElement("afterend", btn);
+    }
+  });
+});
+
+document.querySelectorAll('.blog-card').forEach(card => {
+  const excerpt = card.querySelector('.blog-excerpt');
+  if (!excerpt) return;
+
+  const btn = document.createElement('button');
+  btn.className = 'read-more-btn';
+  btn.textContent = 'Read more';
+  excerpt.after(btn);
+
+  btn.addEventListener('click', () => {
+    const expanded = btn.textContent === 'Read less';
+    excerpt.style['-webkit-line-clamp'] = expanded ? 3 : 'unset';
+    btn.textContent = expanded ? 'Read more' : 'Read less';
+  });
+});
+
+
+</script>
+
 </body>
 </html>

@@ -1,3 +1,13 @@
+/* changes the navbar for fixing and removing spaces */
+.navbar {
+  width: 100vw; /* Sets the width to 100% of the viewport width */
+  position: fixed; /* Makes the navbar stick to the top */
+  top: 0; /* Aligns the navbar to the very top */
+  left: 0; /* Aligns the navbar to the very left */
+  z-index: 1000; /* Ensures the navbar is on top of other content */
+  /* You may need to add padding-top to the body or main content to prevent it from being hidden behind the fixed navbar */
+}
+
 /* fixes navBar toggle when width becoms 1047px */
 @media screen and (max-width: 1047px) {
   .navbar .nav-links {
@@ -120,7 +130,7 @@
 
   #courses {
     width: 100%;
-
+    grid-template-columns: 1fr !important;
     flex-direction: column !important;
     flex-wrap: wrap !important;
   }
@@ -142,6 +152,10 @@
 
   .footer {
     flex-direction: column;
+    gap: 2rem;
+  }
+  .footer-left{
+    border-bottom: 2px solid white;
   }
 
   .footer h3 {
@@ -191,9 +205,73 @@
     transform: translateX(250px);
   }
 }
+@media screen and (max-width: 677px) {
+  .footer-left{
+    flex-direction: column;
+    align-items: start;
+    gap: .8rem;
+    border-bottom: none;
+  }
+  .social ,.contact{
+    padding-bottom: 1.5rem;
+  }
+  .social ,.contact , .form{
+    border-bottom: 2px solid white;
+    margin-bottom: 1.5rem;
+  }
+  .contact{
+    gap: .8rem;
+  }
+}
 
 @media screen and (max-width: 1090px) {
   #testimonial-card-3 {
     display: none;
+  }
+}
+
+/* Additional responsive styles for courses and hero section */
+@media (max-width: 992px) {
+  #courses {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  #our-course-h1 h1 {
+    font-size: 2rem;
+  }
+  
+  .main h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section-imgs {
+    width: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  #courses {
+    grid-template-columns: 1fr;
+  }
+  
+  #our-course-h1 h1 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    padding: 0 1rem;
+  }
+  
+  .main h1 {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .hero-section-imgs {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 1rem;
+  }
+  
+  .images {
+    gap: 0.5rem;
   }
 }

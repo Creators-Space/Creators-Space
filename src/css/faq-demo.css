@@ -1,0 +1,71 @@
+/* FAQ Demo Page Styles */
+
+body {
+    padding: 20px;
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+.demo-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.demo-header h1 {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #333; /* Fallback for browsers that don't support background-clip */
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background: #667eea;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.back-link:hover {
+    background: #5a6fd8;
+}
+
+/* Dark mode support */
+body.dark-mode .demo-header h1 {
+    background: linear-gradient(45deg, #7c8df0, #8a6db8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #f0f0f0; /* Fallback for dark mode */
+}
+
+body.dark-mode .back-link {
+    background: #5a6fd8;
+}
+
+body.dark-mode .back-link:hover {
+    background: #667eea;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .demo-header {
+        margin-bottom: 30px;
+    }
+    
+    .demo-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .back-link {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

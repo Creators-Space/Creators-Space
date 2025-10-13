@@ -79,6 +79,9 @@ class LanguageManager {
                         login: 'Log In',
                         signup: 'Sign Up',
                         logout: 'Logout'
+                    },
+                    blogheader: {
+                        title: 'Explore Our Latest Blogs'
                     }
                 }
             };

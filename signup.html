@@ -7,349 +7,172 @@
   <link rel="stylesheet" href="./src/css/style.css">
   <link rel="stylesheet" href="./src/css/utils.css">
   <link rel="stylesheet" href="./src/css/responsive.css">
+  <link rel="stylesheet" href="./src/css/signup.css">
   <title>Sign Up</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-    #passwordChecklist p {
-  margin: 3px 0;
-  padding: 2px 6px;
-  border-radius: 4px;
-  transition: 0.3s;
-}
-
-.valid {
-  color: green;
-}
-
-.invalid {
-  color: red;
-}
-
-    body {
-      background: white;
-      /*       display: flex; */
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      /*       padding: 20px; */
-      overflow-x: hidden;
-    }
-
-    .container {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      width: 100%;
-      max-width: 400px;
-      box-shadow: 0 8px 150px rgba(0, 0, 0, 0.15);
-      border: 1px solid #ccc;
-      font-weight: 500;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .form-group {
-      margin-bottom: 1rem;
-      position: relative;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    input[type="email"],
-    input[type="password"],
-    input[type="text"] {
-      width: 100%;
-      padding: 10px;
-      padding-right: 40px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .toggle-password {
-      position: absolute;
-      right: 10px;
-      top: 38px;
-      cursor: pointer;
-      color: #555;
-    }
-
-    .inline-feedback {
-      font-size: 0.85rem;
-      color: red;
-      margin-top: 5px;
-    }
-
-    .btn {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 6px;
-      background-color: #0d0d0d;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .btn:disabled {
-      background-color: #999;
-    }
-
-    .spinner {
-      display: none;
-      width: 24px;
-      height: 24px;
-      margin: 0 auto;
-      border: 3px solid #f3f3f3;
-      border-top: 3px solid black;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin-top: 1rem;
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .login-page {
-      display: block;
-      text-align: center;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      color: black;
-      text-decoration: none;
-    }
-
-    .social-buttons {
-      display: flex;
-      gap: 10px;
-      margin-top: 1rem;
-    }
-
-    .social-btn {
-      flex: 1;
-      padding: 8px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      text-align: center;
-      cursor: pointer;
-      font-size: 0.85rem;
-    }
-        .logo-container{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-left: 12px;
-      margin: 10px 2px;
-      
-    }
-    #navbar-links{
-      display: flex;
-      align-items: center;
-      gap: 2px;
-      justify-content: space-between;
-      white-space: nowrap;
-      align-items: center;
-    }
-  </style>
 </head>
 
 <body>
-  <div id="navbar-links" class="navbar">
-    <div class="logo-container">
-        <a href="./">
-        <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space"></a>
-        <h1><a href="./">Creators-Space</a></h1>
+  <div class="main-container">
+    <!-- Left Branding Section -->
+    <div class="brand-section">
+      <img src="./assets/images/logo.png" alt="Creators-Space Logo">
+      <h1>Creators-Space</h1>
+      <p>Empowering learners to grow their skills and creativity through courses, internships, and opportunities.</p>
     </div>
-    <div class="nav-links align-items-center">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="courses.html">Courses</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="internship.html">Internship</a>
-      <a href="campus-ambassador.html">Campus Ambassador</a>
-      <a href="blog.html">Blog</a>
-      <a href="bookmarked.html">BookMarks</a>
-      <a href="./login.html" class="btn login">Log In</a>
-      <a href="./signup.html" class="btn signup">Sign Up</a>
-    </div>
-    <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
-      <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
-        <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
-          stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"
-          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"></polyline>
-        <polyline id="globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2"
-          stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"
-          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"></polyline>
-      </svg>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navbar-x-logo" class="bi bi-x-lg d-none"
-        viewBox="0 0 16 16">
-        <path
-          d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-      </svg>
-    </div>
-  </div>
-  <br><br>
-  <div class="container margin-top-5">
-    <a href="index.html"
-      style="display: inline-block; margin-bottom: 10px; font-size: 14px; color: #555; text-decoration: none;">
-      ← Back to Homepage
-    </a>
-    <h2>Sign Up</h2>
-    <form id="signup-form">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Enter name" required />
-        <div id="name" class="name"></div>
-      </div>
 
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Enter email" required />
-        <div id="emailFeedback" class="inline-feedback"></div>
-      </div>
+    <!-- Right Signup Form Section -->
+    <div class="form-section">
+      <a href="index.html" style="font-size: 14px; color: #555; text-decoration: none;">← Back to Homepage</a>
+      <h2>Create Account</h2>
 
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Create a password" required />
-        <div id="passwordChecklist" style="margin-top: 10px; font-size: 0.9rem;">
-  <p id="length" class="invalid">Minimum 8 characters</p>
-  <p id="uppercase" class="invalid"> At least 1 uppercase letter</p>
-  <p id="lowercase" class="invalid"> At least 1 lowercase letter</p>
-  <p id="number" class="invalid"> At least 1 number</p>
-  <p id="special" class="invalid"> At least 1 special character</p>
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+          <div id="emailFeedback" class="inline-feedback"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Create password" required>
+          <span class="toggle-password" onclick="togglePassword('password')"><i class="fa fa-eye"></i></span>
+          <div id="passwordChecklist" style="margin-top:10px;">
+            <p id="length" class="invalid">Minimum 8 characters</p>
+            <p id="uppercase" class="invalid">At least 1 uppercase letter</p>
+            <p id="lowercase" class="invalid">At least 1 lowercase letter</p>
+            <p id="number" class="invalid">At least 1 number</p>
+            <p id="special" class="invalid">At least 1 special character</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" placeholder="Re-enter password" required>
+          <span class="toggle-password" onclick="togglePassword('confirm-password')"><i class="fa fa-eye"></i></span>
+          <div id="matchFeedback" class="inline-feedback"></div>
+        </div>
+
+        <button type="submit" class="btn">Sign Up</button>
+
+        <div class="divider"><span>or</span></div>
+
+        <div class="social-buttons">
+  <a href="https://www.instagram.com/" target="_blank" class="social-btn">
+    <img src="./assets/images/instagram.png" width="20"> Instagram
+  </a>
+  <a href="https://twitter.com/" target="_blank" class="social-btn">
+    <img src="./assets/images/twitter.png" width="20"> Twitter
+  </a>
 </div>
 
-        <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
-      </div>
 
-      <div class="form-group">
-        <label for="confirm-password">Confirm Password</label>
-        <input type="password" id="confirm-password" placeholder="Re-enter your password" required />
-        <span class="toggle-password" onclick="togglePassword('confirm-password')">👁️</span>
-        <div id="matchFeedback" class="inline-feedback"></div>
-      </div>
-      <div class="form-group">
-        <input type="checkbox" id="terms" required style="width:auto; margin-right:8px;" />
-        <label for="terms" style="display:inline;">
-          I agree to the <a href="tandc.html" target="_blank">Terms and Conditions</a>
-        </label>
-      </div>
+        <div class="signup-text">
+          Already have an account? <a href="login.html">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
 
-      <button type="submit" class="btn">Sign Up</button>
-      <div class="spinner" id="spinner"></div>
+  <script>
+  function togglePassword(id) {
+    const input = document.getElementById(id);
+    const icon = event.target;
+    if (input.type === "password") {
+      input.type = "text";
+      icon.classList.replace("fa-eye", "fa-eye-slash");
+    } else {
+      input.type = "password";
+      icon.classList.replace("fa-eye-slash", "fa-eye");
+    }
+  }
 
-      <div class="login-page">
-        <p>Already have an account? <a href="login.html">Login</a></p>
-      </div>
+  const form = document.getElementById("signup-form");
+  const password = document.getElementById("password");
+  const confirmPassword = document.getElementById("confirm-password");
+  const email = document.getElementById("email");
+  const matchFeedback = document.getElementById("matchFeedback");
+  const emailFeedback = document.getElementById("emailFeedback");
+  const passwordChecklist = document.getElementById("passwordChecklist");
 
-      <script>
-        function togglePassword(id) {
-          const input = document.getElementById(id);
-          input.type = input.type === "password" ? "text" : "password";
-        }
+  // Initially hide checklist
+  passwordChecklist.style.display = "none";
 
-        const form = document.getElementById("signup-form");
-        const password = document.getElementById("password");
-        const confirmPassword = document.getElementById("confirm-password");
-        const email = document.getElementById("email");
-        const matchFeedback = document.getElementById("matchFeedback");
-        const emailFeedback = document.getElementById("emailFeedback");
-        const spinner = document.getElementById("spinner");
-        const passwordInput = document.getElementById("password");
-const checklist = {
-  length: document.getElementById("length"),
-  uppercase: document.getElementById("uppercase"),
-  lowercase: document.getElementById("lowercase"),
-  number: document.getElementById("number"),
-  special: document.getElementById("special"),
-};
+  password.addEventListener("focus", () => {
+    passwordChecklist.style.display = "block";
+  });
 
-passwordInput.addEventListener("input", () => {
-  const value = passwordInput.value;
+  password.addEventListener("blur", () => {
+    passwordChecklist.style.display = "none";
+  });
 
-  checklist.length.className = value.length >= 8 ? "valid" : "invalid";
-  checklist.uppercase.className = /[A-Z]/.test(value) ? "valid" : "invalid";
-  checklist.lowercase.className = /[a-z]/.test(value) ? "valid" : "invalid";
-  checklist.number.className = /[0-9]/.test(value) ? "valid" : "invalid";
-  checklist.special.className = /[!@#$%^&*(),.?":{}|<>]/.test(value)
-    ? "valid"
-    : "invalid";
-});
-        confirmPassword.addEventListener("input", () => {
-          matchFeedback.textContent = confirmPassword.value !== password.value
-            ? "Passwords do not match"
-            : "";
-        });
+  password.addEventListener("input", () => {
+    const value = password.value;
+    const validLength = value.length >= 8;
+    const hasUppercase = /[A-Z]/.test(value);
+    const hasLowercase = /[a-z]/.test(value);
+    const hasNumber = /[0-9]/.test(value);
+    const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(value);
 
-        email.addEventListener("input", () => {
-          const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          emailFeedback.textContent = regex.test(email.value)
-            ? ""
-            : "Enter a valid email address";
-        });
+    document.getElementById("length").className = validLength ? "valid" : "invalid";
+    document.getElementById("uppercase").className = hasUppercase ? "valid" : "invalid";
+    document.getElementById("lowercase").className = hasLowercase ? "valid" : "invalid";
+    document.getElementById("number").className = hasNumber ? "valid" : "invalid";
+    document.getElementById("special").className = hasSpecial ? "valid" : "invalid";
+  });
 
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
+  confirmPassword.addEventListener("input", () => {
+    matchFeedback.textContent =
+      confirmPassword.value !== password.value ? "Passwords do not match" : "";
+  });
 
-          if (password.value.length < 6) {
-            alert("Password must be at least 6 characters.");
-            return;
-          }
+  email.addEventListener("input", () => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    emailFeedback.textContent = regex.test(email.value)
+      ? ""
+      : "Enter a valid email address";
+  });
 
-          if (password.value !== confirmPassword.value) {
-            alert("Passwords do not match.");
-            return;
-          }
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-          // Save credentials for login
-          localStorage.setItem("email", email.value);
-          localStorage.setItem("password", password.value);
+    const value = password.value;
+    const valid =
+      value.length >= 8 &&
+      /[A-Z]/.test(value) &&
+      /[a-z]/.test(value) &&
+      /[0-9]/.test(value) &&
+      /[!@#$%^&*(),.?":{}|<>]/.test(value);
 
-          // Create user profile object
-          const newUser = {
-            name: document.getElementById("name").value,
-            email: email.value,
-            skills: [],
-            courses: [],
-            certificates: [],
-            profileImage: ""
-          };
+    if (!valid) {
+      alert(
+        "Password should be at least 8 characters, include uppercase, lowercase, number, and special character."
+      );
+      return;
+    }
 
-          localStorage.setItem("loggedInUser", JSON.stringify(newUser));
+    if (confirmPassword.value !== password.value) {
+      alert("Passwords do not match!");
+      return;
+    }
 
-          spinner.style.display = "block";
+    if (emailFeedback.textContent) {
+      alert("Enter a valid email address!");
+      return;
+    }
 
-          setTimeout(() => {
-            spinner.style.display = "none";
-            alert("Account created successfully!");
-            form.reset();
+    localStorage.setItem("name", document.getElementById("name").value);
+    localStorage.setItem("email", email.value);
+    localStorage.setItem("password", password.value);
+    alert("Account created successfully!");
+    window.location.href = "login.html";
+  });
+</script>
 
-            // Redirect to login page AFTER signup success
-            window.location.href = "login.html";
-          }, 1500);
-        });
-
-
-
-
-
-
-
-
-      </script>
-      <script src="./src/js/navbar.js"></script>
-      <script src="./src/js/utils.js"></script>
 </body>
 
 </html>
