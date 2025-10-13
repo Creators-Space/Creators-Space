@@ -1,6 +1,6 @@
 .blog-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin: 6rem 2rem;
 }
 
 .blog-header h1 {
@@ -50,8 +50,9 @@ body.dark .footer {
   border: 1px solid #ddd;
   border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height:60vh;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit , minmax(250px , 1fr)); 
 }
 
 .blog-card:hover {
@@ -97,7 +98,20 @@ body.dark .footer {
   font-size: 1rem;
   color: #444;
 }
-
+.read-more-btn{
+  margin: 1rem .4rem;
+  font-size: 1rem;
+  padding: 13px 18px;
+  border: none;
+  outline: none;
+  box-shadow: 2px 4x 12px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+.read-more-btn:hover{
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
 /* Dark mode styles */
 body.dark .blog-card {
   background-color: #222;

@@ -1,391 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Freelance Platforms Guide</title>
-  <meta name="description" content="A dark, responsive, animated guide to top freelance platforms with direct links, categorized for Beginner, Intermediate, and Advanced users." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="./src/css/utils.css">
-  <link rel="stylesheet" href="./src/css/style.css">
-  <link rel="stylesheet" href="./src/css/responsive.css">
-  <link rel="stylesheet" href="./src/css/newsletter.css">
-  <link rel="stylesheet" href="./src/css/freelancing.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-</head>
-<body>
-  <div class="navbar">
-    <h1><a href="./">
-        <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
-        <br>Creators-Space</a>
-    </h1>
-    <div class="nav-links align-items-center">
-      
-      <a href="index.html" data-translate="navbar.home">Home</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Freelance Platforms Guide</title>
+    <meta
+      name="description"
+      content="A dark, responsive, animated guide to top freelance platforms with direct links, categorized for Beginner, Intermediate, and Advanced users."
+    />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./src/css/utils.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/responsive.css" />
+    <link rel="stylesheet" href="./src/css/newsletter-demo.css" />
+    <link rel="stylesheet" href="./src/css/freelancing.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="main-body" class="overflow-x-hidden">
+    <div id="navbar"></div>
+    <!-- script for navBar loading  -->
+    <script>
+      function initDarkModeToggle() {
+        const darkToggleBtn = document.getElementById("darkModeToggle");
+        if (!darkToggleBtn) return; // exit if button not found
 
-      <!-- dropDown 1 - About → About Us, Campus Ambassador-->
-      <li class="nav-item">
-        <a href="#" class="dropdown-toggle"><span data-translate="navbar.about">About</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
-        <div class="dropdown">
-          <a href="about.html" data-translate="navbar.aboutUs">About Us</a>
-          <a href="campus-ambassador.html" data-translate="navbar.campusAmbassador">Campus Ambassador</a>
+        const body = document.body;
+        const moonIcon = darkToggleBtn.querySelector(".fa-moon");
+        const sunIcon = darkToggleBtn.querySelector(".fa-sun");
+
+        // Load saved theme
+        if (localStorage.getItem("theme") === "dark") {
+          body.classList.add("dark-mode");
+          moonIcon.style.display = "none";
+          sunIcon.style.display = "inline-block";
+        } else { 
+          moonIcon.style.display = "inline-block";
+          sunIcon.style.display = "none";
+        }
+
+        // Toggle theme
+        darkToggleBtn.addEventListener("click", () => {
+          body.classList.toggle("dark-mode");
+          if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            moonIcon.style.display = "none";
+            sunIcon.style.display = "inline-block";
+          } else {
+            localStorage.setItem("theme", "light");
+            moonIcon.style.display = "inline-block";
+            sunIcon.style.display = "none";
+          }
+        });
+      }
+
+      // Initialize after navbar loads
+      fetch("navbar.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+          initDarkModeToggle(); // initialize toggle here
+        });
+    </script>
+
+    <div class="toolbar">
+      <div class="toolbar-inner">
+        <div class="filters" role="tablist" aria-label="Experience filters">
+          <button
+            class="chip active"
+            data-filter="all"
+            role="tab"
+            aria-selected="true"
+          >
+            All
+          </button>
+          <button
+            class="chip"
+            data-filter="beginner"
+            role="tab"
+            aria-selected="false"
+          >
+            Beginner
+          </button>
+          <button
+            class="chip"
+            data-filter="intermediate"
+            role="tab"
+            aria-selected="false"
+          >
+            Intermediate
+          </button>
+          <button
+            class="chip"
+            data-filter="advanced"
+            role="tab"
+            aria-selected="false"
+          >
+            Advanced
+          </button>
         </div>
-      </li> 
-      <!--dropDown 2 - Programs → Courses, Internship, Services -->
-      <li class="nav-item">
-        <a href="#" class="dropdown-toggle"><span data-translate="navbar.programs">Programs</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
-        <div class="dropdown">
-          <a href="courses.html" data-translate="navbar.courses">Courses</a>
-          <a href="internship.html" data-translate="navbar.internship">Internship</a>
-          <a href="services.html" class="active" data-translate="navbar.services">Services</a>
-          <a href="freelancing.html" data-translate="navbar.freelance">Freelance</a>
-        </div>
-      </li>
-       <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
-       <li class="nav-item">
-        <a href="#" class="dropdown-toggle"><span data-translate="navbar.resources">Resources</span> <i class="fa-solid fa-chevron-down arrow"></i></a>
-        <div class="dropdown">
-          <a href="blog.html" data-translate="navbar.blog">Blog</a>
-          <a href="bookmarked.html" data-translate="navbar.bookmarks">BookMarks</a>
-          <a href="./certificate/" data-translate="navbar.certificates">Certificates</a>
-          <a href="quiz.html">Quiz</a> 
-        </div>
-       </li> 
-      <a href="projects.html" data-translate="navbar.projects">Projects</a>
-      <a href="contact.html" data-translate="navbar.contact">Contact</a>
-      
-      <!-- Theme Toggle Button -->
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <i class="fas fa-moon"></i>
-        <span>Dark</span>
-      </button>
-
-      <!-- Navbar -->
-      <div id="authSection">
-        <a href="./login.html" class="btn login" data-translate="navbar.login">Log In</a>
-        <a href="./signup.html" class="btn signup" data-translate="navbar.signup">Sign Up</a>
-      </div>
-
-      <div id="userSection" style="display: none; align-items: center; gap: 10px;">
-        <button id="logoutBtn" class="btn login" data-translate="navbar.logout">Logout</button>
-        <a href="profile.html" title="Your Profile">
-          <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
-            style="border-radius: 50%;" />
-        </a>
-      </div>
-    </div>
-    <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
-      <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
-        <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
-          stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"
-          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"></polyline>
-        <polyline id="globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2"
-          stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"
-          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"></polyline>
-      </svg>
-
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navbar-x-logo" class="bi bi-x-lg d-none"
-        viewBox="0 0 16 16">
-        <path
-          d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-      </svg>
-    </div>
-  </div>
-  <div class="toolbar">
-    <div class="toolbar-inner">
-      <div class="filters" role="tablist" aria-label="Experience filters">
-        <button class="chip active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button class="chip" data-filter="beginner" role="tab" aria-selected="false">Beginner</button>
-        <button class="chip" data-filter="intermediate" role="tab" aria-selected="false">Intermediate</button>
-        <button class="chip" data-filter="advanced" role="tab" aria-selected="false">Advanced</button>
-      </div>
-      <label class="search" aria-label="Search platforms">
-        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-        <input id="search" type="search" placeholder="Search platform or niche…" />
-      </label>
-    </div>
-  </div>
-  <header class="hero">
-    <div class="glow" aria-hidden="true"></div>
-    <h1 class="title">Find Your Next Gig - Fast ⚡</h1>
-    <p class="subtitle">Creators-Space guide to top freelance platforms with direct links and key details. Filter by experience level and search by name or niche.</p>
-  </header>
-
-  <main class="container">
-    <section id="grid" class="grid" aria-live="polite"></section>
-  </main>
-
-  <!-- ===== FOOTER ===== -->
-
-<footer>
-
-  <div class="footer-container">
-
-    <div class="footer-col">
-
-      <h3><I class="fa-solid fa-briefcase"></I> Creators-Space</h3>
-
-<img
-
-            width="80px"
-
-            src="./assets/images/logo.png"
-
-            alt="logo Anurag Vishwakarma's Creators-Space"
-
+        <label class="search" aria-label="Search platforms">
+          <svg
+            aria-hidden="true"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M21 21l-4.3-4.3"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <circle
+              cx="11"
+              cy="11"
+              r="7"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+            />
+          </svg>
+          <input
+            id="search"
+            type="search"
+            placeholder="Search platform or niche…"
           />
-
-</p>
-
-    </div>
-
-    <div class="footer-col">
-
-      <h3>Important Links</h3>
-
-      <a href="index.html"><I class="fa-solid fa-house"></I> Home</a>
-
-      <a href="about.html"><I class="fa-solid fa-building"></I> About Us</a>
-
-      <a href="services.html"><I class="fa-solid fa-laptop-code"></I> Services</a>
-
-      <a href="internship.html"><I class="fa-solid fa-graduation-cap"></I> Internship</a>
-
-      <a href="contact.html"><I class="fa-solid fa-clock"></I>Contact</a>
-
-
-
-    </div>
-
-    <div class="footer-col">
-
-      <h3>Contact</h3>
-
-      <p><I class="fa-solid fa-phone"></I>+91 88xxxxxx89</p>
-
-      <p><I class="fa-solid fa-envelope"></I> mailto:21brac0401@polygwalior.ac.in</p>
-
-    </div>
-
-    <div class="footer-col">
-
-      <h3>Follow Us</h3>
-
-      <div class="social-icons">
-
-        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></I> Facebook</a>
-
-        <a href="https://x.com/"><i class="fa-brands fa-twitter"></I> Twitter</a>
-
-        <a href="https://linkedin.com/in/anuragvishwakarma"><i class="fa-brands fa-linkedin"></I> LinkedIn</a>
-
-        <a href="https://www.instagram.com/"><i class="fa-brands fa-Instagram"></I> Instagram</a>
-
+        </label>
       </div>
-
     </div>
+    <header class="hero">
+      <div class="glow" aria-hidden="true"></div>
+      <h1 class="title">Find Your Next Gig - Fast ⚡</h1>
+      <p class="subtitle">
+        Creators-Space guide to top freelance platforms with direct links and
+        key details. Filter by experience level and search by name or niche.
+      </p>
+    </header>
 
-  </div>
+    <main class="container">
+      <section id="grid" class="grid" aria-live="polite"></section>
+    </main>
 
-  <div class="footer-credit">
+    <!-- ===== FOOTER ===== -->
 
-    &copy; © 2025 Creators-Space. All rights reserved.
+    <footer class="footer">
+      <!-- footer-left -->
+      <div class="footer-left">
+        <div class="social">
+          <h1><img width="80px" src="./assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
+            <br>Creators-Space
+          </h1>
+          <h3>Social Media</h3>
+          <div class="all-social-links">
+            <a target="_blank" href="https://linkedin.com/in/anuragvishwakarma">
+              <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" id="linkedin">
+                <path
+                  d="M55.35,44.17h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11ZM50.8,3.77A45.67,45.67,0,1,0,96.47,49.44,45.72,45.72,0,0,0,50.8,3.77ZM39.38,70a.77.77,0,0,1-.77.76h-8.8a.76.76,0,0,1-.76-.76V40.43a.76.76,0,0,1,.76-.77h8.8a.77.77,0,0,1,.77.77ZM33.9,35.71a5.53,5.53,0,1,1,5.53-5.53A5.52,5.52,0,0,1,33.9,35.71ZM76.62,70a.77.77,0,0,1-.77.76h-8.8a.76.76,0,0,1-.76-.76V54.11c0-4.18-1.49-7-5.23-7a5.65,5.65,0,0,0-5.3,3.78,7.12,7.12,0,0,0-.34,2.52V70a.77.77,0,0,1-.77.77h-8.8a.76.76,0,0,1-.76-.77c0-4.22.11-24.71,0-29.53a.76.76,0,0,1,.76-.77h8.78a.76.76,0,0,1,.77.77v3.63a10.26,10.26,0,0,1,9.31-5.13c6.79,0,11.89,4.44,11.89,14Zm-21.2-25.8v-.11l-.07.11Zm-.07,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Zm0,0h.07v-.11Z">
+                </path>
+              </svg>
+            </a>
+            <a target="_blank" href="https://www.instagram.com/">
+              <svg xmlns="http://www.w3.org/2000/svg" data-name="Instagram w/circle" viewBox="0 0 19.2 19.2"
+                id="instagram">
+                <path
+                  d="M13.498 6.651a1.656 1.656 0 0 0-.95-.949 2.766 2.766 0 0 0-.928-.172c-.527-.024-.685-.03-2.02-.03s-1.493.006-2.02.03a2.766 2.766 0 0 0-.929.172 1.656 1.656 0 0 0-.949.95 2.766 2.766 0 0 0-.172.928c-.024.527-.03.685-.03 2.02s.006 1.493.03 2.02a2.766 2.766 0 0 0 .172.929 1.656 1.656 0 0 0 .95.949 2.766 2.766 0 0 0 .928.172c.527.024.685.03 2.02.03s1.493-.006 2.02-.03a2.766 2.766 0 0 0 .929-.172 1.656 1.656 0 0 0 .949-.95 2.766 2.766 0 0 0 .172-.928c.024-.527.03-.685.03-2.02s-.006-1.493-.03-2.02a2.766 2.766 0 0 0-.172-.929zM9.6 12.168A2.568 2.568 0 1 1 12.168 9.6 2.568 2.568 0 0 1 9.6 12.168zm2.669-4.637a.6.6 0 1 1 .6-.6.6.6 0 0 1-.6.6z">
+                </path>
+                <circle cx="9.6" cy="9.6" r="1.667"></circle>
+                <path
+                  d="M9.6 0a9.6 9.6 0 1 0 9.6 9.6A9.6 9.6 0 0 0 9.6 0zm4.97 11.662a3.67 3.67 0 0 1-.233 1.213 2.556 2.556 0 0 1-1.462 1.462 3.67 3.67 0 0 1-1.213.233c-.534.024-.704.03-2.062.03s-1.528-.006-2.062-.03a3.67 3.67 0 0 1-1.213-.233 2.556 2.556 0 0 1-1.462-1.462 3.67 3.67 0 0 1-.233-1.213c-.024-.534-.03-.704-.03-2.062s.006-1.528.03-2.062a3.67 3.67 0 0 1 .233-1.213 2.556 2.556 0 0 1 1.462-1.462 3.67 3.67 0 0 1 1.213-.233c.534-.024.704-.03 2.062-.03s1.528.006 2.062.03a3.67 3.67 0 0 1 1.213.233 2.556 2.556 0 0 1 1.462 1.462 3.67 3.67 0 0 1 .233 1.213c.024.534.03.704.03 2.062s-.006 1.528-.03 2.062z">
+                </path>
+              </svg>
+            </a>
+            <a target="_blank" href="https://www.facebook.com/">
+              <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" id="facebook">
+                <path
+                  d="M50.8,3.57A45.75,45.75,0,1,0,96.54,49.32,45.8,45.8,0,0,0,50.8,3.57ZM63.49,30.71a.69.69,0,0,1-.69.69H57.3a2.45,2.45,0,0,0-2.45,2.44V39.6h7.83a.69.69,0,0,1,.68.75l-.68,8.12a.69.69,0,0,1-.69.63H54.85V76.05a.69.69,0,0,1-.69.69H44.31a.69.69,0,0,1-.69-.69V49.1H38.7a.69.69,0,0,1-.69-.69V40.29a.69.69,0,0,1,.69-.69h4.92V31.78A9.88,9.88,0,0,1,53.5,21.9h9.3a.69.69,0,0,1,.69.69Z">
+                </path>
+              </svg>
+            </a>
+            <a target="_blank" href="https://x.com/">
+              <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" fill="none" viewBox="0 0 512 512"
+                id="twitter">
+                <g clip-path="url(#clip0_84_15697)">
+                  <rect width="512" height="512" fill="#000" rx="60"></rect>
+                  <path fill="#fff"
+                    d="M355.904 100H408.832L293.2 232.16L429.232 412H322.72L239.296 302.928L143.84 412H90.8805L214.56 270.64L84.0645 100H193.28L268.688 199.696L355.904 100ZM337.328 380.32H366.656L177.344 130.016H145.872L337.328 380.32Z">
+                  </path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_84_15697">
+                    <rect width="512" height="512" fill="#fff"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="contact">
+          <h3>Contact Us</h3>
+          <p><a href="mailto:21brac0401@polygwalior.ac.in"><i class="fa-solid fa-envelope" id="envelope-icon"></i>21brac0401@polygwalior.ac.in</a></p>
+          <br>
+          <p><a href="tel:+9188xxxxxx89"><i class="fa-solid fa-phone" id="call-icon"></i>+91 88xxxxxx89</a></p>
+        </div>
+      </div>
+      <!-- footer right -->
+      <div class="footer-right">
+        <div class="form">
+          <h3>Get In Touch</h3>
+          <div class="form-group">
+              <label for="footer-name">Name</label>
+              <input type="text" id="footer-name" placeholder="Enter name" name="name">
+          </div>
+          <div class="form-group">
+              <label for="footer-email">Email</label>
+              <input type="email" id="footer-email" placeholder="Enter email" name="email">
+          </div>
+          <div class="form-group">
+              <label for="footer-message">Message</label>
+              <textarea id="footer-message" placeholder="Enter message" name="message"></textarea>
+          </div>
+          <button>Send</button>
+        </div>
+      </div>
+      <div class="copy">
+        <p>Copyright &copy; 2024 - 2025 Creators-Space. All rights reserved.</p>
+      </div>
+    </footer>
+    <script> 
+      const platforms = [
+        // BEGINNER
+        {
+          name: "Fiverr",
+          url: "https://www.fiverr.com/",
+          category: "beginner",
+          summary:
+            "Gig-style marketplace for quick services across creative, dev, marketing, and more.",
+          fees: "20% seller fee (varies)",
+          vetting: "Open signup",
+          payment: "Escrow-like; milestone/payout after delivery",
+          bestFor: "Fast gigs, building initial reviews",
+        },
+        {
+          name: "Freelancer.com",
+          url: "https://www.freelancer.com/",
+          category: "beginner",
+          summary:
+            "Large marketplace with contests and projects across most categories.",
+          fees: "10% project fee (or min $5)",
+          vetting: "Open signup",
+          payment: "Milestones via escrow",
+          bestFor: "Contests, broad project types",
+        },
+        {
+          name: "PeoplePerHour",
+          url: "https://www.peopleperhour.com/",
+          category: "beginner",
+          summary:
+            'UK-based marketplace with "offers" (fixed-price services) and project bidding.',
+          fees: "Service fee tiered",
+          vetting: "Basic application",
+          payment: "Escrow with invoices",
+          bestFor: "Fixed-price micro-services",
+        },
+        {
+          name: "Workana",
+          url: "https://www.workana.com/",
+          category: "beginner",
+          summary:
+            "Popular in LATAM; broad categories with bid-based projects.",
+          fees: "Tiered commission",
+          vetting: "Open signup",
+          payment: "Escrow releases",
+          bestFor: "Writers, devs, VA, design",
+        },
 
-  </div>
+        // INTERMEDIATE
+        {
+          name: "Upwork",
+          url: "https://www.upwork.com/",
+          category: "intermediate",
+          summary:
+            "Massive marketplace with hourly + fixed projects and robust client base.",
+          fees: "Sliding service fee",
+          vetting: "Profile review; Job Success matters",
+          payment: "Hourly protection + escrow",
+          bestFor: "Longer engagements, higher rates over time",
+        },
+        {
+          name: "Guru",
+          url: "https://www.guru.com/",
+          category: "intermediate",
+          summary: 'Flexible agreements and "WorkRooms" for collaboration.',
+          fees: "Tiered fees by membership",
+          vetting: "Open signup",
+          payment: "SafePay escrow",
+          bestFor: "Agencies & experienced freelancers",
+        },
+        {
+          name: "99designs",
+          url: "https://99designs.com/",
+          category: "intermediate",
+          summary:
+            "Design-only marketplace with contests and one-to-one projects.",
+          fees: "Platform & client fees apply",
+          vetting: "Design portfolio review",
+          payment: "Escrow via Stripe",
+          bestFor: "Logo, brand, web, packaging design",
+        },
+        {
+          name: "Turing (Jobs)",
+          url: "https://www.turing.com/",
+          category: "intermediate",
+          summary:
+            "Remote dev placements for long-term roles (tests + screenings).",
+          fees: "Employer-side; freelancers as contractors",
+          vetting: "Skill tests + interviews",
+          payment: "Monthly payouts",
+          bestFor: "Mid-senior software engineers",
+        },
 
-</footer>
-  <script src="./src/js/navbar.js"></script>
-  <script>
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = themeToggle.querySelector('i');
-    const themeText = themeToggle.querySelector('span');
-    
-    // Check for saved theme preference or respect OS preference
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    const currentTheme = localStorage.getItem('theme');
-    
-    if (currentTheme === 'light' || (!currentTheme && prefersDarkScheme.matches)) {
-      setLightMode();
-    } else {
-      setDarkMode();
-    }
-    
-    themeToggle.addEventListener('click', function() {
-      if (document.documentElement.getAttribute('data-theme') === 'light') {
-        setDarkMode();
-      } else {
-        setLightMode();
-      }
-    });
+        // ADVANCED
+        {
+          name: "Toptal",
+          url: "https://www.toptal.com/",
+          category: "advanced",
+          summary:
+            "Elite network for developers, designers, finance experts, PMs.",
+          fees: "Client-side; premium rates to talent",
+          vetting: "Rigorous multi-stage screening",
+          payment: "On time via invoice",
+          bestFor: "Senior experts and niche specialists",
+        },
+        {
+          name: "Gun.io",
+          url: "https://www.gun.io/",
+          category: "advanced",
+          summary:
+            "Curated network connecting senior engineers with vetted clients.",
+          fees: "Client-side; strong rates",
+          vetting: "Technical screening + interviews",
+          payment: "Weekly invoice cycles",
+          bestFor: "Senior backend, full-stack, DevOps",
+        },
+        {
+          name: "Braintrust",
+          url: "https://www.usebraintrust.com/",
+          category: "advanced",
+          summary:
+            "Talent-owned network with 0% talent fees; high-quality clients.",
+          fees: "0% to talent",
+          vetting: "Application + screening",
+          payment: "Direct client payments",
+          bestFor: "Senior product, design, engineering",
+        },
+        {
+          name: "Hired",
+          url: "https://hired.com/",
+          category: "advanced",
+          summary:
+            "Tech hiring marketplace; candidates get matched with vetted companies.",
+          fees: "Client-side",
+          vetting: "Profile curation + assessments",
+          payment: "Contract or full-time",
+          bestFor: "Senior engineers & data professionals",
+        },
+        {
+          name: "Catalant",
+          url: "https://gocatalant.com/",
+          category: "advanced",
+          summary:
+            "Independent consultants for strategy, ops, finance; enterprise clients.",
+          fees: "Client-side",
+          vetting: "Experience-based screening",
+          payment: "Invoice per engagement",
+          bestFor: "Consultants & ex-MBB/FAANG",
+        },
+      ];
 
-    function setLightMode() {
-      document.documentElement.setAttribute('data-theme', 'light');
-      themeIcon.className = 'fas fa-sun';
-      themeText.textContent = 'Light';
-      localStorage.setItem('theme', 'light');
-    }
+      // --- DOM Helpers ---
+      const $grid = document.getElementById("grid");
+      const $search = document.getElementById("search");
+      const $chips = document.querySelectorAll(".chip");
 
-    function setDarkMode() {
-      document.documentElement.removeAttribute('data-theme');
-      themeIcon.className = 'fas fa-moon';
-      themeText.textContent = 'Dark';
-      localStorage.setItem('theme', 'dark');
-    }
+      function createCard(p) {
+        const card = document.createElement("article");
+        card.className = "card";
+        card.setAttribute("data-category", p.category);
+        card.setAttribute("tabindex", "0");
 
-    const platforms = [
-      // BEGINNER
-      {
-        name: 'Fiverr',
-        url: 'https://www.fiverr.com/',
-        category: 'beginner',
-        summary: 'Gig-style marketplace for quick services across creative, dev, marketing, and more.',
-        fees: '20% seller fee (varies)',
-        vetting: 'Open signup',
-        payment: 'Escrow-like; milestone/payout after delivery',
-        bestFor: 'Fast gigs, building initial reviews'
-      },
-      {
-        name: 'Freelancer.com',
-        url: 'https://www.freelancer.com/',
-        category: 'beginner',
-        summary: 'Large marketplace with contests and projects across most categories.',
-        fees: '10% project fee (or min $5)',
-        vetting: 'Open signup',
-        payment: 'Milestones via escrow',
-        bestFor: 'Contests, broad project types'
-      },
-      {
-        name: 'PeoplePerHour',
-        url: 'https://www.peopleperhour.com/',
-        category: 'beginner',
-        summary: 'UK-based marketplace with "offers" (fixed-price services) and project bidding.',
-        fees: 'Service fee tiered',
-        vetting: 'Basic application',
-        payment: 'Escrow with invoices',
-        bestFor: 'Fixed-price micro-services'
-      },
-      {
-        name: 'Workana',
-        url: 'https://www.workana.com/',
-        category: 'beginner',
-        summary: 'Popular in LATAM; broad categories with bid-based projects.',
-        fees: 'Tiered commission',
-        vetting: 'Open signup',
-        payment: 'Escrow releases',
-        bestFor: 'Writers, devs, VA, design'
-      },
-
-      // INTERMEDIATE
-      {
-        name: 'Upwork',
-        url: 'https://www.upwork.com/',
-        category: 'intermediate',
-        summary: 'Massive marketplace with hourly + fixed projects and robust client base.',
-        fees: 'Sliding service fee',
-        vetting: 'Profile review; Job Success matters',
-        payment: 'Hourly protection + escrow',
-        bestFor: 'Longer engagements, higher rates over time'
-      },
-      {
-        name: 'Guru',
-        url: 'https://www.guru.com/',
-        category: 'intermediate',
-        summary: 'Flexible agreements and "WorkRooms" for collaboration.',
-        fees: 'Tiered fees by membership',
-        vetting: 'Open signup',
-        payment: 'SafePay escrow',
-        bestFor: 'Agencies & experienced freelancers'
-      },
-      {
-        name: '99designs',
-        url: 'https://99designs.com/',
-        category: 'intermediate',
-        summary: 'Design-only marketplace with contests and one-to-one projects.',
-        fees: 'Platform & client fees apply',
-        vetting: 'Design portfolio review',
-        payment: 'Escrow via Stripe',
-        bestFor: 'Logo, brand, web, packaging design'
-      },
-      {
-        name: 'Turing (Jobs)',
-        url: 'https://www.turing.com/',
-        category: 'intermediate',
-        summary: 'Remote dev placements for long-term roles (tests + screenings).',
-        fees: 'Employer-side; freelancers as contractors',
-        vetting: 'Skill tests + interviews',
-        payment: 'Monthly payouts',
-        bestFor: 'Mid-senior software engineers'
-      },
-
-      // ADVANCED
-      {
-        name: 'Toptal',
-        url: 'https://www.toptal.com/',
-        category: 'advanced',
-        summary: 'Elite network for developers, designers, finance experts, PMs.',
-        fees: 'Client-side; premium rates to talent',
-        vetting: 'Rigorous multi-stage screening',
-        payment: 'On time via invoice',
-        bestFor: 'Senior experts and niche specialists'
-      },
-      {
-        name: 'Gun.io',
-        url: 'https://www.gun.io/',
-        category: 'advanced',
-        summary: 'Curated network connecting senior engineers with vetted clients.',
-        fees: 'Client-side; strong rates',
-        vetting: 'Technical screening + interviews',
-        payment: 'Weekly invoice cycles',
-        bestFor: 'Senior backend, full-stack, DevOps'
-      },
-      {
-        name: 'Braintrust',
-        url: 'https://www.usebraintrust.com/',
-        category: 'advanced',
-        summary: 'Talent-owned network with 0% talent fees; high-quality clients.',
-        fees: '0% to talent',
-        vetting: 'Application + screening',
-        payment: 'Direct client payments',
-        bestFor: 'Senior product, design, engineering'
-      },
-      {
-        name: 'Hired',
-        url: 'https://hired.com/',
-        category: 'advanced',
-        summary: 'Tech hiring marketplace; candidates get matched with vetted companies.',
-        fees: 'Client-side',
-        vetting: 'Profile curation + assessments',
-        payment: 'Contract or full-time',
-        bestFor: 'Senior engineers & data professionals'
-      },
-      {
-        name: 'Catalant',
-        url: 'https://gocatalant.com/',
-        category: 'advanced',
-        summary: 'Independent consultants for strategy, ops, finance; enterprise clients.',
-        fees: 'Client-side',
-        vetting: 'Experience-based screening',
-        payment: 'Invoice per engagement',
-        bestFor: 'Consultants & ex-MBB/FAANG'
-      }
-    ];
-
-    // --- DOM Helpers ---
-    const $grid = document.getElementById('grid');
-    const $search = document.getElementById('search');
-    const $chips = document.querySelectorAll('.chip');
-
-    function createCard(p) {
-      const card = document.createElement('article');
-      card.className = 'card';
-      card.setAttribute('data-category', p.category);
-      card.setAttribute('tabindex', '0');
-
-      card.innerHTML = `
+        card.innerHTML = `
         <div class="card-header">
           <div class="logo" aria-hidden="true">${p.name[0]}</div>
           <div style="flex:1 1 auto">
@@ -400,76 +410,100 @@
             <div class="pill"><strong>Fees</strong>${p.fees}</div>
             <div class="pill"><strong>Vetting</strong>${p.vetting}</div>
             <div class="pill"><strong>Payments</strong>${p.payment}</div>
-            <div class="pill"><strong>Category</strong>${capitalize(p.category)}</div>
+            <div class="pill"><strong>Category</strong>${capitalize(
+              p.category
+            )}</div>
           </div>
         </div>
         <div class="card-footer">
-          <a class="btn" href="${p.url}" target="_blank" rel="noopener noreferrer" aria-label="Visit ${p.name} (opens in new tab)">
+          <a class="btn" href="${
+            p.url
+          }" target="_blank" rel="noopener noreferrer" aria-label="Visit ${
+          p.name
+        } (opens in new tab)">
             Visit ${p.name}
             <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 7h9v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </a>
         </div>
       `;
 
-      return card;
-    }
-
-    function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
-
-    function render(filter = 'all', query = '') {
-      $grid.innerHTML = '';
-      const q = query.trim().toLowerCase();
-      const items = platforms.filter(p => (filter === 'all' || p.category === filter) && (!q || (p.name.toLowerCase().includes(q) || p.summary.toLowerCase().includes(q) || p.bestFor.toLowerCase().includes(q))));
-
-      if (!items.length) {
-        const empty = document.createElement('div');
-        empty.className = 'card revealed';
-        empty.innerHTML = `<div class="card-header"><div class="logo">😅</div><div class="name">No matches</div></div><div class="card-body"><p>Try clearing filters or searching a broader term.</p></div>`;
-        $grid.appendChild(empty);
-        return;
+        return card;
       }
 
-      items.forEach(p => $grid.appendChild(createCard(p)));
-      revealOnScroll();
-    }
-
-    // Filter chip interactions
-    $chips.forEach(chip => chip.addEventListener('click', () => {
-      $chips.forEach(c => { c.classList.remove('active'); c.setAttribute('aria-selected', 'false'); });
-      chip.classList.add('active');
-      chip.setAttribute('aria-selected', 'true');
-      render(chip.dataset.filter, $search.value);
-    }));
-
-    // Search interaction
-    $search.addEventListener('input', (e) => {
-      const active = document.querySelector('.chip.active')?.dataset.filter || 'all';
-      render(active, e.target.value);
-    });
-
-    // Reveal on scroll animation
-    function revealOnScroll(){
-      const cards = document.querySelectorAll('.card');
-      const io = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: .12 });
-      cards.forEach(c => io.observe(c));
-    }
-
-    
-    render('all', '');
-
-    document.addEventListener('focusin', (e) => {
-      if (e.target.classList.contains('card')) {
-        e.target.classList.add('revealed');
+      function capitalize(s) {
+        return s.charAt(0).toUpperCase() + s.slice(1);
       }
-    });
-  </script>
-  <script src="./src/js/language.js"></script>
-</body>
+
+      function render(filter = "all", query = "") {
+        $grid.innerHTML = "";
+        const q = query.trim().toLowerCase();
+        const items = platforms.filter(
+          (p) =>
+            (filter === "all" || p.category === filter) &&
+            (!q ||
+              p.name.toLowerCase().includes(q) ||
+              p.summary.toLowerCase().includes(q) ||
+              p.bestFor.toLowerCase().includes(q))
+        );
+
+        if (!items.length) {
+          const empty = document.createElement("div");
+          empty.className = "card revealed";
+          empty.innerHTML = `<div class="card-header"><div class="logo">😅</div><div class="name">No matches</div></div><div class="card-body"><p>Try clearing filters or searching a broader term.</p></div>`;
+          $grid.appendChild(empty);
+          return;
+        }
+
+        items.forEach((p) => $grid.appendChild(createCard(p)));
+        revealOnScroll();
+      }
+
+      // Filter chip interactions
+      $chips.forEach((chip) =>
+        chip.addEventListener("click", () => {
+          $chips.forEach((c) => {
+            c.classList.remove("active");
+            c.setAttribute("aria-selected", "false");
+          });
+          chip.classList.add("active");
+          chip.setAttribute("aria-selected", "true");
+          render(chip.dataset.filter, $search.value);
+        })
+      );
+
+      // Search interaction
+      $search.addEventListener("input", (e) => {
+        const active =
+          document.querySelector(".chip.active")?.dataset.filter || "all";
+        render(active, e.target.value);
+      });
+
+      // Reveal on scroll animation
+      function revealOnScroll() {
+        const cards = document.querySelectorAll(".card");
+        const io = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("revealed");
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+        cards.forEach((c) => io.observe(c));
+      }
+
+      render("all", "");
+
+      document.addEventListener("focusin", (e) => {
+        if (e.target.classList.contains("card")) {
+          e.target.classList.add("revealed");
+        }
+      });
+    </script> 
+    <script src="./src/js/language.js"></script> 
+    <script src="./src/js/navbar.js"></script>
+  </body>
 </html>
