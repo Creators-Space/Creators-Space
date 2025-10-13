@@ -24,6 +24,9 @@
       referrerpolicy="no-referrer"
     />
     <style>
+      body, nav, footer, main {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
       .hero-section {
     background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
     padding: 80px 20px;
@@ -148,6 +151,25 @@
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
 
     </style>
   </head>
@@ -198,7 +220,6 @@ fetch("navbar.html")
     initDarkModeToggle(); // initialize toggle here
   });
 </script>
-
 
     <!-- Hero Section with Animation -->
 <div class="hero-section">
