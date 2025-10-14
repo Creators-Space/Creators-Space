@@ -21,36 +21,33 @@
 <script>
 function initDarkModeToggle() {
   const darkToggleBtn = document.getElementById("darkModeToggle");
-  if (!darkToggleBtn) return; // exit if button not found
+  if (!darkToggleBtn) return;
 
   const body = document.body;
   const moonIcon = darkToggleBtn.querySelector(".fa-moon");
   const sunIcon = darkToggleBtn.querySelector(".fa-sun");
 
-  // Load saved theme
-  if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark-mode");
-    moonIcon.style.display = "none";
-    sunIcon.style.display = "inline-block";
-  } else {
-    moonIcon.style.display = "inline-block";
-    sunIcon.style.display = "none";
-  }
+  const applyTheme = (theme) => {
+    const isDark = theme === "dark";
+    body.classList.toggle("dark-mode", isDark);
+    moonIcon.style.display = isDark ? "none" : "inline-block";
+    sunIcon.style.display = isDark ? "inline-block" : "none";
+    localStorage.setItem("theme", theme);
+  };
 
-  // Toggle theme
+  // Load saved theme
+  const savedTheme = localStorage.getItem("theme") || "light";
+  applyTheme(savedTheme);
+
+  // Toggle on click
   darkToggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-    if (body.classList.contains("dark-mode")) {
-      localStorage.setItem("theme", "dark");
-      moonIcon.style.display = "none";
-      sunIcon.style.display = "inline-block";
-    } else {
-      localStorage.setItem("theme", "light");
-      moonIcon.style.display = "inline-block";
-      sunIcon.style.display = "none";
-    }
+    const newTheme = body.classList.contains("dark-mode") ? "light" : "dark";
+    applyTheme(newTheme);
   });
 }
+
+document.addEventListener("DOMContentLoaded", initDarkModeToggle);
+
 
 // Initialize after navbar loads
 fetch('/navbar.html')
