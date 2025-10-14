@@ -126,7 +126,7 @@
 }
 
 .heading-sm {
-  color: rgb(82, 16, 1);
+  color: rgb(11, 33, 121);
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.4;
@@ -166,16 +166,14 @@
   position: relative;
   display: inline-block;
   padding: 0.5rem 1rem;
-  border: 2px solid #8bd69c;
-  background: rgba(75, 159, 95,0.3);
+  border: 2px solid #36a9bd;
+  background: rgba(120, 180, 255); /* soft blue tint */
   border-radius: 12px;
   height: 15vh;
-  font-style: italic;
-  color: rgb(95, 93, 93);
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  font-style: italic ;
+  color: rgb(41, 55, 71); /* dark muted blue text */
+  font-size: 2.75vh;
 }
-
-
 
 .text-base {
   font-size: 1rem;
