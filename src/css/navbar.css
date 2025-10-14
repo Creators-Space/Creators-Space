@@ -86,7 +86,7 @@ body.dark-mode .navbar .nav-links a:nth-child(-n + 9)::after {
   box-sizing: border-box;
   outline: none;
   background-color: black;
-  padding: 8px 16px;
+  padding: 12px 16px;
   cursor: pointer;
   border-radius: 5px;
   margin-left: 5px;
