@@ -423,7 +423,44 @@ fetch("/navbar.html")
       document.getElementById('loader-track').style.display = 'none';
     }, 1000); // 1 second delay
   });
+  // Load navbar dynamically
+fetch("/navbar.html")
+  .then(res => {
+    if (!res.ok) throw new Error(`Navbar fetch failed: ${res.status}`);
+    return res.text();
+  })
+  .then(html => {
+    document.getElementById("navbar").innerHTML = html;
+    initDarkModeToggle(); // after navbar loads
+  })
+  .catch(err => console.error(err));
+
+// Dark mode logic
+function initDarkModeToggle() {
+  const toggle = document.getElementById("darkModeToggle");
+  const body = document.body;
+  const savedTheme = localStorage.getItem("theme");
+
+  // Apply stored theme
+  if (savedTheme === "dark") {
+    body.classList.add("dark-mode");
+    if (toggle) toggle.checked = true;
+  }
+
+  // Handle toggle
+  if (toggle) {
+    toggle.addEventListener("change", () => {
+      const isDark = toggle.checked;
+      body.classList.toggle("dark-mode", isDark);
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+  } else {
+    console.warn("Dark mode toggle not found in navbar");
+  }
+}
+
 </script>
+
 
 
 
