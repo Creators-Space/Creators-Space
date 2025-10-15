@@ -11,6 +11,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .faq-search {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .faq-search input {
+            width: 80%;
+            max-width: 500px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border-radius: 25px;
+            border: 2px solid #ddd;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-search input:focus {
+            border-color: #007bff; /* Or your theme color */
+        }
+    </style>
 </head>
 <body>
     <a href="/src/pages/about.html" class="back-link">← Back to About Page</a>
@@ -20,12 +42,15 @@
         <p>This is a standalone demo of the FAQ accordion functionality implemented for Creators-Space</p>
     </div>
 
-    <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
             <h2>❓ Frequently Asked Questions</h2>
             <p class="faq-intro">Find answers to the most common questions about Creators-Space</p>
             
+            <div class="faq-search">
+                <input type="text" id="faq-search-input" onkeyup="searchFaq()" placeholder="🔍 Search for questions...">
+            </div>
+
             <div class="faq-container">
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFaq(this)">
@@ -81,10 +106,35 @@
     </section>
 
     <script>
+        // ✨ NEW: Search Functionality ✨
+        function searchFaq() {
+            // Get the input element and the search query (in lowercase)
+            const input = document.getElementById('faq-search-input');
+            const filter = input.value.toLowerCase();
+            
+            // Get the container for all FAQ items
+            const faqContainer = document.querySelector('.faq-container');
+            const faqItems = faqContainer.getElementsByClassName('faq-item');
+
+            // Loop through all the FAQ items
+            for (let i = 0; i < faqItems.length; i++) {
+                const item = faqItems[i];
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer p').textContent.toLowerCase();
+
+                // Check if the search query is in the question or answer
+                if (question.includes(filter) || answer.includes(filter)) {
+                    item.style.display = ""; // Show the item if it matches
+                } else {
+                    item.style.display = "none"; // Hide the item if it doesn't match
+                }
+            }
+        }
+
+        // --- Your existing JavaScript ---
         // FAQ Accordion Functionality
         function toggleFaq(element) {
             const faqItem = element.parentElement;
-            const faqAnswer = faqItem.querySelector('.faq-answer');
             const isActive = faqItem.classList.contains('active');
             
             // Close all other FAQ items
