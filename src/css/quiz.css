@@ -1,13 +1,14 @@
-/* Quiz Page Styles */
+/* === Base Quiz Page Styles === */
 
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
   background: linear-gradient(135deg, #e3f2fd, #f9f9fc);
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   margin: 0;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Quiz card */
@@ -16,10 +17,11 @@ body {
   max-width: 650px;
   background: #fff;
   border-radius: 16px;
-  overflow: hidden; /* for header bar */
+  overflow: hidden;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
   text-align: center;
   animation: fadeIn 0.6s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Gradient header */
@@ -38,6 +40,7 @@ body {
   font-size: 20px;
   margin: 25px 0 15px;
   color: #333;
+  transition: color 0.3s ease;
 }
 
 /* Options */
@@ -53,6 +56,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 10px;
   background: #fdfdfd;
+  color: #333;
   cursor: pointer;
   font-size: 16px;
   transition: all 0.25s ease;
@@ -96,6 +100,56 @@ body {
 
 /* Animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === ✅ DARK MODE FIX === */
+body.dark-mode {
+  background: #121212;
+  color: #f8f9fa;
+}
+
+body.dark-mode .quiz-box {
+  background: #1e1e1e;
+  box-shadow: 0 8px 22px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .quiz-box h1 {
+  background: linear-gradient(90deg, #0d6efd, #00b4d8);
+}
+
+body.dark-mode .quiz-box h2 {
+  color: #e0e0e0;
+}
+
+body.dark-mode #options button {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #f8f9fa;
+}
+
+body.dark-mode #options button:hover {
+  background: #0d6efd;
+  color: #ffffff;
+  border-color: #0d6efd;
+  box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+}
+
+body.dark-mode #next-btn {
+  background: #198754;
+}
+
+body.dark-mode #next-btn:hover {
+  background: #157347;
+}
+
+body.dark-mode #score {
+  color: #f1f1f1;
 }

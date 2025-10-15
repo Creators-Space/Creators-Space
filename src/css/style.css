@@ -1441,3 +1441,8 @@ body.dark .dropdown a {
 body.dark .dropdown a:hover {
     background-color: #3c3c3c !important;
 }
+
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}

@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/src/css/quiz.css">
 </head>
-<body>
+<body><div id="navbar"></div>
 <!-- Place this at the top or bottom of your quiz.html page -->
 <div style="text-align: center; margin: 20px;">
   <a href="/index.html" 
@@ -24,6 +24,7 @@
     <button id="next-btn">Next</button>
     <p id="score"></p>
   </div>
+ 
 
   <!-- ✅ Quiz Script -->
   <script>
@@ -221,6 +222,50 @@
     });
 
     loadQuestion();
+// Dynamically load the navbar
+// Check if we should load navbar (skip it for quiz page)
+const currentPage = window.location.pathname;
+
+// ✅ Only load navbar if we're NOT on quiz.html
+if (!currentPage.includes("quiz.html")) {
+  fetch("navbar.html")
+    .then(response => {
+      if (!response.ok) throw new Error("Navbar not found");
+      return response.text();
+    })
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+      initDarkModeToggle(); // Initialize after loading
+    })
+    .catch(err => console.warn("Navbar could not be loaded:", err.message));
+} else {
+  // ✅ On quiz page, don't fetch navbar — just initialize dark mode
+  initDarkModeToggle();
+}
+
+// 🔦 Dark Mode Logic
+function initDarkModeToggle() {
+  const toggle = document.getElementById("darkModeToggle");
+  const body = document.body;
+  const savedTheme = localStorage.getItem("theme");
+
+  // Apply saved theme
+  if (savedTheme === "dark") {
+    body.classList.add("dark-mode");
+    if (toggle) toggle.checked = true;
+  }
+
+  // Add event listener if toggle exists (e.g., on other pages)
+  if (toggle) {
+    toggle.addEventListener("change", () => {
+      const isDark = toggle.checked;
+      body.classList.toggle("dark-mode", isDark);
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+  }
+}
+
+
   </script>
 
 </body>
