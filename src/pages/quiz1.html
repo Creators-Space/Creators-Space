@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | Creators-Space</title>
+     <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/utils.css">
+  <link rel="stylesheet" href="/src/css/courses.css" />
+    <link rel="stylesheet" href="../css/projects.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/utils.css" />
+    <link rel="stylesheet" href="/src/css/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background: radial-gradient(
+  circle at center,
+  #ff69b4 0%, /* Hot Pink */
+  #da70d6 50%, /* Orchid */
+  #9370db 100% /* Medium Purple */
+);
+        }
+
+        .categories{
+            /* border:1px solid black; */
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+        }
+
+        .category{
+            /* border:1px solid red; */
+            width:60%;
+            height:60px;
+            text-align:center;
+            background-color: rgb(249, 246, 246);
+            margin-bottom: 20px;
+            border-radius:12px;
+            padding-top:10px;
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.1), -5px -5px 10px rgba(0,0,0,0.1);
+            /* animation:scaleup ease-in-out 3s; */
+        }
+
+        .category a{
+            font-size:24px;
+        }
+
+        .category:hover{
+            transform:scale(1.2);
+        }
+
+        @keyframes scaleup{
+            0%{
+                transform: scale(1);
+            }
+            100%{
+                transform:scale(1.5);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div style="text-align: center; margin: 20px;">
+  <a href="../../index.html" 
+     style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; border-radius: 6px; text-decoration: none; font-weight: bold;">
+    ← Back to Homepage
+  </a>
+</div>
+    <div id="navbar"></div>
+    <div class="categories">
+        <div class="category1 category"><p class="category-description"><a href="./quizcategory1.html">Web Development Fundamentals</a></p></div>
+        <div class="category2 category"><p class="category-description"><a href="./quizcategory2.html">Web Development Technologies</a></p></div>
+        <div class="category3 category"><p class="category-description"><a href="./quizcategory3.html">HTML</a></p></div>
+        <div class="category4 category"><p class="category-description"><a href="./quizcategory4.html">CSS</a></p></div>
+        <div class="category5 category"><p class="category-description"><a href="./quizcategory5.html">Javascript</a></p></div>
+        <div class="category6 category"><p class="category-description"><a href="./quizcategory6.html">DOM & Events</a></p></div>
+        <div class="category7 category"><p class="category-description"><a href="./quizcategory7.html">Machine Learning</a></p></div>
+    </div>
+
+</body>
+<!-- <script> -->
+<!-- </script> -->
+<!-- <script src="../js/navbar.js"></script> -->
+<script src="../js/scrollToTop.js"></script>
+</html>
