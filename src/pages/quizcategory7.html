@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz | Creators-Space</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/quiz.css">
+ <style>
+    /* Timer Styles */
+    #timer {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #ffe5e5;
+      border: 2px solid red;
+      color: #d60000;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    }
+
+    /* Popup Styles */
+    #popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      /* display: flex; */
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 30px 50px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .popup-content h2 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .popup-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .popup-content button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .popup-content button:hover {
+      background-color: #0056b3;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Quiz Layout */
+    .quiz-box {
+      max-width: 600px;
+      margin: 80px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .quiz-box button {
+      display: block;
+      width: 100%;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      transition: 0.3s;
+      font-size: 16px;
+    }
+
+    .quiz-box button:hover {
+      background-color: #f0f0f0;
+    }
+
+    #next-btn {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      width: auto;
+      padding: 10px 25px;
+      margin-top: 15px;
+      border-radius: 6px;
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+
+
+
+<!-- ✅ Timer -->
+<div id="timer">⏳ Time Left: 60s</div>
+
+<!-- Place this at the top or bottom of your quiz.html page -->
+<div style="text-align: center; margin: 20px;">
+  <a href="../../index.html" 
+     style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; border-radius: 6px; text-decoration: none; font-weight: bold;">
+    ← Back to Homepage
+  </a>
+</div>
+
+  <!-- ✅ Centered Quiz Box -->
+  <div class="quiz-box">
+    <h1>Interactive Quiz</h1>
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <button id="next-btn">Next</button>
+    <p id="score"></p>
+  </div>
+
+  <!-- ✅ Popup -->
+<div id="popup">
+  <div class="popup-content">
+    <h2>⏰ Time’s Up!</h2>
+    <p id="finalScoreText"></p>
+    <button id="exitBtn">Exit</button>
+  </div>
+</div>
+
+  <!-- ✅ Quiz Script -->
+  <script>
+     const questions = [
+      // Machine Learning 
+      { question: "Which of the following is a type of supervised learning?", options: ["K-Means Clustering", "Linear Regression", "PCA", "Apriori Algorithm"], answer: "Linear Regression" },
+      { question: "In unsupervised learning, the data is:", options: ["Labeled", "Unlabeled", "Partially labeled", "Both labeled and unlabeled"], answer: "Unlabeled" },
+      { question: "What is overfitting in machine learning?", options: ["Model performs poorly on training data", "Model performs poorly on unseen data", "Model performs well on unseen data", "Model ignores training data"], answer: "Model performs poorly on unseen data" },
+      { question: "Which algorithm is used for classification?", options: ["Decision Trees", "K-Means", "Apriori", "PCA"], answer: "Decision Trees" },
+      { question: "The main purpose of Principal Component Analysis (PCA) is:", options: ["Classification", "Regression", "Dimensionality reduction", "Clustering"], answer: "Dimensionality reduction" },
+      { question: "Which of the following is a loss function for regression?", options: ["Cross-Entropy", "Mean Squared Error", "Hinge Loss", "Gini Index"], answer: "Mean Squared Error" },
+      { question: "In logistic regression, the output is:", options: ["Continuous", "Probability", "Distance", "Category number"], answer: "Probability" },
+      { question: "Which of the following is not a kernel used in SVM?", options: ["Linear", "Polynomial", "Sigmoid", "K-Means"], answer: "K-Means" },
+      { question: "In K-Nearest Neighbors, the 'K' represents:", options: ["Number of features", "Number of nearest neighbors considered", "Number of classes", "Learning rate"], answer: "Number of nearest neighbors considered" },
+      { question: "What is the main purpose of regularization in ML models?", options: ["Reduce training time", "Reduce overfitting", "Increase the number of features", "Increase accuracy on training data"], answer: "Reduce overfitting" },
+      { question: "Which evaluation metric is used for imbalanced classification datasets?", options: ["Accuracy", "Precision, Recall, F1-score", "Mean Squared Error", "R-squared"], answer: "Precision, Recall, F1-score" },
+      { question: "Which of the following is a reinforcement learning algorithm?", options: ["Q-Learning", "Linear Regression", "K-Means", "Decision Tree"], answer: "Q-Learning" },
+      { question: "What is the learning rate in gradient descent?", options: ["Step size of each iteration", "Number of iterations", "Size of dataset", "Number of features"], answer: "Step size of each iteration" },
+      { question: "Which distance metric is commonly used in K-Means?", options: ["Manhattan Distance", "Euclidean Distance", "Hamming Distance", "Jaccard Similarity"], answer: "Euclidean Distance" },
+      { question: "In decision trees, Gini Index is used to:", options: ["Measure model accuracy", "Select the best feature to split", "Reduce dataset size", "Initialize weights"], answer: "Select the best feature to split" },
+      { question: "Random Forest is an example of:", options: ["Bagging Ensemble", "Boosting Ensemble", "Reinforcement Learning", "Unsupervised Learning"], answer: "Bagging Ensemble" },
+      { question: "Gradient Boosting combines:", options: ["Weak learners sequentially", "Weak learners independently", "Strong learners independently", "Clustering methods"], answer: "Weak learners sequentially" },
+      { question: "Which of the following is a deep learning framework?", options: ["TensorFlow", "NumPy", "Pandas", "Matplotlib"], answer: "TensorFlow" },
+      { question: "Recurrent Neural Networks (RNN) are mainly used for:", options: ["Image classification", "Time-series and sequential data", "Clustering", "Feature scaling"], answer: "Time-series and sequential data" },
+      { question: "Convolutional Neural Networks (CNN) are best suited for:", options: ["Sequential data", "Tabular data", "Image and video data", "Reinforcement tasks"], answer: "Image and video data" },
+      { question: "Dropout in neural networks is used to:", options: ["Reduce overfitting", "Reduce dataset size", "Increase neurons", "Improve convergence speed only"], answer: "Reduce overfitting" },
+      { question: "Which activation function is commonly used for binary classification?", options: ["ReLU", "Sigmoid", "Tanh", "Softmax"], answer: "Sigmoid" },
+      { question: "Softmax activation is used for:", options: ["Regression", "Multi-class classification", "Binary classification", "Clustering"], answer: "Multi-class classification" },
+      { question: "Which of the following is a distance-based clustering algorithm?", options: ["K-Means", "Decision Tree", "Naive Bayes", "SVM"], answer: "K-Means" },
+      { question: "In Naive Bayes, the assumption is:", options: ["Features are independent", "Features are dependent", "Labels are continuous", "Data is unlabeled"], answer: "Features are independent" },
+      { question: "Which of the following is a type of unsupervised learning?", options: ["Linear Regression", "K-Means", "Logistic Regression", "Random Forest"], answer: "K-Means" },
+      { question: "Which evaluation metric is suitable for regression problems?", options: ["Accuracy", "Mean Squared Error", "Precision", "F1-score"], answer: "Mean Squared Error" },
+      { question: "Cross-validation helps to:", options: ["Improve training accuracy", "Evaluate model performance on unseen data", "Increase number of features", "Scale features"], answer: "Evaluate model performance on unseen data" },
+      { question: "Bagging reduces:", options: ["Bias", "Variance", "Both bias and variance", "Neither"], answer: "Variance" },
+      { question: "Boosting reduces:", options: ["Bias", "Variance", "Both bias and variance", "Overfitting only"], answer: "Both bias and variance" },
+      { question: "What is the main purpose of feature scaling?", options: ["Reduce dataset size", "Standardize range of features", "Remove irrelevant features", "Increase training samples"], answer: "Standardize range of features" },
+      { question: "Standardization transforms data to have:", options: ["Mean 0 and standard deviation 1", "Values between 0 and 1", "Max value 1", "Mean 1 and SD 0"], answer: "Mean 0 and standard deviation 1" },
+      { question: "Min-Max scaling transforms data to:", options: ["Mean 0", "Range [0,1]", "Standard deviation 1", "Range [-1,1]"], answer: "Range [0,1]" },
+      { question: "Which of the following is a feature selection technique?", options: ["PCA", "Random Forest Feature Importance", "L1 Regularization", "All of the above"], answer: "All of the above" },
+      { question: "L1 Regularization is also known as:", options: ["Ridge", "Lasso", "Elastic Net", "Dropout"], answer: "Lasso" },
+      { question: "L2 Regularization is also known as:", options: ["Ridge", "Lasso", "Elastic Net", "Dropout"], answer: "Ridge" },
+      { question: "ROC curve is used to evaluate:", options: ["Regression", "Classification", "Clustering", "Reinforcement Learning"], answer: "Classification" },
+      { question: "Area under ROC curve (AUC) measures:", options: ["Overfitting", "Model discrimination ability", "Feature importance", "Model bias"], answer: "Model discrimination ability" },
+      { question: "Precision measures:", options: ["True positives / Predicted positives", "True positives / Actual positives", "True negatives / Predicted negatives", "True negatives / Actual negatives"], answer: "True positives / Predicted positives" },
+      { question: "Recall measures:", options: ["True positives / Predicted positives", "True positives / Actual positives", "True negatives / Predicted negatives", "True negatives / Actual negatives"], answer: "True positives / Actual positives" },
+      { question: "F1-score is:", options: ["Average of Precision and Recall", "Harmonic mean of Precision and Recall", "Product of Precision and Recall", "Difference between Precision and Recall"], answer: "Harmonic mean of Precision and Recall" },
+      { question: "Which of the following algorithms is used for dimensionality reduction?", options: ["PCA", "K-Means", "Decision Tree", "Logistic Regression"], answer: "PCA" },
+      { question: "Reinforcement learning uses:", options: ["Rewards and penalties", "Labeled data", "Clustering", "Regression metrics"], answer: "Rewards and penalties" },
+      { question: "In Q-Learning, Q stands for:", options: ["Quantity", "Quality of action", "Query", "Quickness"], answer: "Quality of action" },
+      { question: "Monte Carlo methods are used in:", options: ["Supervised learning", "Reinforcement learning", "Unsupervised learning", "Feature scaling"], answer: "Reinforcement learning" },
+      { question: "The elbow method is used for:", options: ["Feature selection", "Choosing number of clusters in K-Means", "Regularization", "Boosting"], answer: "Choosing number of clusters in K-Means" },
+      { question: "Silhouette score measures:", options: ["Feature importance", "Clustering quality", "Regression error", "Classification accuracy"], answer: "Clustering quality" },
+      { question: "Entropy in decision trees measures:", options: ["Feature correlation", "Impurity of a node", "Learning rate", "Feature scaling"], answer: "Impurity of a node" },
+      { question: "Information gain is:", options: ["Increase in entropy", "Decrease in entropy after a split", "Feature weight", "Learning rate"], answer: "Decrease in entropy after a split" },
+      { question: "Which of the following is NOT an ML paradigm?", options: ["Supervised learning", "Unsupervised learning", "Reinforcement learning", "Manual programming"], answer: "Manual programming" }
+    ];
+
+    let current = 0;
+    let score = 0;
+    let answered = false;
+    let timeLeft = 60;
+    let timerInterval;
+
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const scoreEl = document.getElementById("score");
+    const nextBtn = document.getElementById("next-btn");
+    const timerEl = document.getElementById("timer");
+    const popup = document.getElementById("popup");
+    const finalScoreText = document.getElementById("finalScoreText");
+    const exitBtn = document.getElementById("exitBtn");
+
+    function loadQuestion() {
+      answered = false;
+      let q = questions[current];
+      questionEl.textContent = q.question;
+      optionsEl.innerHTML = "";
+      q.options.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.textContent = opt;
+        btn.onclick = () => checkAnswer(opt, btn);
+        optionsEl.appendChild(btn);
+      });
+      nextBtn.style.display = "none";
+      scoreEl.textContent = `Score: ${score}`;
+    }
+
+    function checkAnswer(selected, btn) {
+      if (answered) return; // prevent multiple answers
+      answered = true;
+
+      if (selected === questions[current].answer) {
+        score++;
+        btn.style.background = "#28a745";
+        btn.style.color = "#fff";
+      } else {
+        btn.style.background = "#dc3545";
+        btn.style.color = "#fff";
+
+        // highlight correct answer
+        Array.from(optionsEl.children).forEach(b => {
+          if (b.textContent === questions[current].answer) {
+            b.style.background = "#28a745";
+            b.style.color = "#fff";
+          }
+        });
+      }
+      nextBtn.style.display = "inline-block";
+      scoreEl.textContent = `Score: ${score}`;
+    }
+
+      // Timer Function
+  function startTimer() {
+    timerInterval = setInterval(() => {
+      timeLeft--;
+      timerEl.textContent = `⏳ Time Left: ${timeLeft}s`;
+
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        endQuiz();
+      }
+    }, 1000);
+  }
+
+  // End Quiz
+  function endQuiz() {
+    clearInterval(timerInterval);
+    popup.style.display = "flex";
+    finalScoreText.textContent = `Your Score: ${score} / ${questions.length}`;
+  }
+
+  // Exit Button
+  exitBtn.addEventListener("click", () => {
+    window.location.href = "quiz1.html";
+  });
+
+    nextBtn.addEventListener("click", () => {
+      current++;
+      if (current < questions.length) {
+        loadQuestion();
+      } else {
+        questionEl.textContent = "🎉 Quiz Completed!";
+        optionsEl.innerHTML = "";
+        nextBtn.style.display = "none";
+        scoreEl.textContent = `Final Score: ${score} / ${questions.length}`;
+      }
+    });
+
+    loadQuestion();
+    startTimer();
+  </script>
+
+</body>
+</html>
