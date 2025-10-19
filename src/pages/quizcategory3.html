@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz | Creators-Space</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/quiz.css">
+    <style>
+    /* Timer Styles */
+    #timer {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #ffe5e5;
+      border: 2px solid red;
+      color: #d60000;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    }
+
+    /* Popup Styles */
+    #popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      /* display: flex; */
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 30px 50px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .popup-content h2 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .popup-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .popup-content button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .popup-content button:hover {
+      background-color: #0056b3;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Quiz Layout */
+    .quiz-box {
+      max-width: 600px;
+      margin: 80px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .quiz-box button {
+      display: block;
+      width: 100%;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      transition: 0.3s;
+      font-size: 16px;
+    }
+
+    .quiz-box button:hover {
+      background-color: #f0f0f0;
+    }
+
+    #next-btn {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      width: auto;
+      padding: 10px 25px;
+      margin-top: 15px;
+      border-radius: 6px;
+      display: none;
+    }
+
+  </style>
+  </head>
+</head>
+
+
+<body>
+
+
+
+<!-- ✅ Timer -->
+<div id="timer">⏳ Time Left: 60s</div>
+
+<!-- Place this at the top or bottom of your quiz.html page -->
+<div style="text-align: center; margin: 20px;">
+  <a href="../../index.html" 
+     style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; border-radius: 6px; text-decoration: none; font-weight: bold;">
+    ← Back to Homepage
+  </a>
+</div>
+
+  <!-- ✅ Centered Quiz Box -->
+  <div class="quiz-box">
+    <h1>Interactive Quiz</h1>
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <button id="next-btn">Next</button>
+    <p id="score"></p>
+  </div>
+
+
+    <!-- ✅ Popup -->
+<div id="popup">
+  <div class="popup-content">
+    <h2>⏰ Time’s Up!</h2>
+    <p id="finalScoreText"></p>
+    <button id="exitBtn">Exit</button>
+  </div>
+</div>
+
+  <!-- ✅ Quiz Script -->
+  <script>
+     const questions = [
+
+      // HTML
+      { question: "Which tag is used to create a hyperlink in HTML?", options: ["<a>", "<link>", "<href>", "<hyperlink>"], answer: "<a>" },
+      { question: "What does HTML stand for?", options: ["HyperText Machine Language", "HyperText and Markup Language", "HyperText Markup Language", "HighText Markup Language"], answer: "HyperText Markup Language" },
+      { question: "Which tag is used to define a table row?", options: ["<td>", "<tr>", "<th>", "<row>"], answer: "<tr>" },
+      { question: "What is the correct HTML element for inserting a line break?", options: ["<lb>", "<break>", "<br>", "<newline>"], answer: "<br>" },
+      { question: "Which attribute specifies an alternate text for an image?", options: ["title", "alt", "src", "caption"], answer: "alt" },
+      { question: "Which of the following is a semantic element in HTML5?", options: ["<div>", "<section>", "<span>", "<font>"], answer: "<section>" },
+      { question: "What is the purpose of the <head> tag?", options: ["To display main content", "To contain metadata and links", "To display header text", "To contain footer content"], answer: "To contain metadata and links" },
+      { question: "How can you make a numbered list in HTML?", options: ["<ul>", "<ol>", "<list>", "<li>"], answer: "<ol>" },
+      { question: "Which meta tag is used to make the website indexed on the browser?", options: ["description", "robots", "X-UA-Compatible","author"], answer: "robots" },
+      { question: "Which tag is used for the largest heading in HTML?", options: ["<head>", "<h6>", "<h1>", "<header>"], answer: "<h1>" },
+      { question: "Which tag is used to embed a video in HTML5?", options: ["<movie>", "<video>", "<embed>", "<media>"], answer: "<video>" },
+    ];
+
+    let current = 0;
+    let score = 0;
+    let answered = false;
+    let timeLeft = 10;
+    let timerInterval;
+
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const scoreEl = document.getElementById("score");
+    const nextBtn = document.getElementById("next-btn");
+     const timerEl = document.getElementById("timer");
+    const popup = document.getElementById("popup");
+    const finalScoreText = document.getElementById("finalScoreText");
+    const exitBtn = document.getElementById("exitBtn");
+
+    function loadQuestion() {
+      answered = false;
+      let q = questions[current];
+      questionEl.textContent = q.question;
+      optionsEl.innerHTML = "";
+      q.options.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.textContent = opt;
+        btn.onclick = () => checkAnswer(opt, btn);
+        optionsEl.appendChild(btn);
+      });
+      nextBtn.style.display = "none";
+      scoreEl.textContent = `Score: ${score}`;
+    }
+
+    function checkAnswer(selected, btn) {
+      if (answered) return; // prevent multiple answers
+      answered = true;
+
+      if (selected === questions[current].answer) {
+        score++;
+        btn.style.background = "#28a745";
+        btn.style.color = "#fff";
+      } else {
+        btn.style.background = "#dc3545";
+        btn.style.color = "#fff";
+
+        // highlight correct answer
+        Array.from(optionsEl.children).forEach(b => {
+          if (b.textContent === questions[current].answer) {
+            b.style.background = "#28a745";
+            b.style.color = "#fff";
+          }
+        });
+      }
+      nextBtn.style.display = "inline-block";
+      scoreEl.textContent = `Score: ${score}`;
+    }
+
+        // Timer Function
+  function startTimer() {
+    timerInterval = setInterval(() => {
+      timeLeft--;
+      timerEl.textContent = `⏳ Time Left: ${timeLeft}s`;
+
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        endQuiz();
+      }
+    }, 1000);
+  }
+
+  // End Quiz
+  function endQuiz() {
+    clearInterval(timerInterval);
+    popup.style.display = "flex";
+    finalScoreText.textContent = `Your Score: ${score} / ${questions.length}`;
+  }
+
+  // Exit Button
+  exitBtn.addEventListener("click", () => {
+    window.location.href = "quiz1.html";
+  });
+
+
+    nextBtn.addEventListener("click", () => {
+      current++;
+      if (current < questions.length) {
+        loadQuestion();
+      } else {
+        questionEl.textContent = "🎉 Quiz Completed!";
+        optionsEl.innerHTML = "";
+        nextBtn.style.display = "none";
+        scoreEl.textContent = `Final Score: ${score} / ${questions.length}`;
+      }
+    });
+
+    loadQuestion();
+    startTimer();
+  </script>
+
+</body>
+</html>
