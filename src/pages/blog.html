@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="/src/css/style.css" />
   <link rel="stylesheet" href="/src/css/utils.css">
   <link rel="stylesheet" href="/src/css/responsive.css" />
-  <link rel="stylesheet" href="/src/css/blog.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/src/css/blog.css" />
 </head>
 
 <body id="main-body" class="overflow-x-hidden">
@@ -100,19 +100,24 @@
     </div>
   </section>
 
-  <!-- Resource Sharing Hub -->
+    <!-- Resource Sharing Hub -->
 <section class="resource-hub">
   <h2>Resource Sharing Hub</h2>
-  
+  <p>Add and explore resources shared by creators.</p>
+
   <div class="resource-input">
-    <input type="text" id="resourceName" placeholder="Enter resource name or description">
-    <button id="addResourceBtn">Add</button>
+    <input type="text" id="resourceName" placeholder="Enter resource name or link" />
+    <button id="addResourceBtn">Add Resource</button>
   </div>
 
-  <input type="text" id="resourceSearch" placeholder="Search resources..." class="resource-search">
+  <div class="resource-search">
+    <input type="text" id="resourceSearch" placeholder="Search resources..." />
+    <i class="fas-search"></i>
+  </div>
 
   <div class="resources-container" id="resourcesContainer"></div>
 </section>
+
 
 
   <footer class="footer">
