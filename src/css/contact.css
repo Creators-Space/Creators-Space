@@ -3,16 +3,13 @@
 .contact-section {
   min-height: calc(100vh - 85px);
   padding: 2rem 1rem;
+  border:1px solid green;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
-.contact-section .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+.container{
+  border:1px solid black;
+  width:100rem;
 }
 
 .contact-header {
@@ -369,4 +366,206 @@ body.dark .form-group textarea::placeholder {
   .info-item i {
     margin-top: 0;
   }
+}
+
+
+/* Import a font similar to the one in the design (e.g., Poppins) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Updated colors based on the subtle purple/blue gradient in the background */
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --text-color-dark: #333333; /* Dark text for the opaque info items */
+    --text-color-light: #ffffff; /* White text for headers and main panel */
+    --glass-background: rgba(255, 255, 255, 0.15); /* Main panel background */
+    --info-item-background: #ffffff; /* Solid white background for info items */
+    --button-gradient: linear-gradient(90deg, #6c5ce7, #a29bfe); /* Updated button gradient */
+    --input-placeholder-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Background Gradient matching the image */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    /* Use a light background color for the edges if the gradient doesn't fill the screen */
+    background-attachment: fixed;
+}
+
+.contact-section {
+    width: 100%;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Contact Content - Flex container for the two panels */
+.contact-content {
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+}
+
+/* Base style for both glass panels - Reduced transparency for a lighter look */
+.contact-info,
+.contact-form-container {
+    flex: 1;
+    min-height: 500px;
+    padding: 40px;
+    border-radius: 20px;
+    color: var(--text-color-light);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Stronger white border */
+    /* Glassmorphism effect */
+    background: rgba(255, 255, 255, 0.2); /* Slightly more opaque glass */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+/* --- Left Panel: Contact Info (Let's Connect) --- */
+
+.contact-info h2 {
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.contact-info > p {
+    font-size: 1.1em;
+    font-weight: 300;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+/* New: Styling for the distinct white blocks for contact details */
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px 20px; /* Padding inside the white block */
+    border-radius: 10px;
+    background-color: var(--info-item-background); /* Solid white background */
+    color: var(--text-color-dark); /* Dark text inside the white block */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.info-item i {
+    /* Hide Font Awesome icon as the new design only shows text inside the box */
+    display: none;
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+/* --- Right Panel: Contact Form (Send us a message) --- */
+
+.contact-form-container h2 {
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 25px;
+}
+
+/* Styling for Input and Textarea to match the transparent look */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    /* Transparent or very light background for inputs */
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color-light);
+    font-size: 1em;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border for separation */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Input focus style */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Placeholder text color to match the design's soft white/transparent look */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--input-placeholder-color);
+    opacity: 1;
+    font-weight: 300;
+}
+
+/* Textarea specific styling */
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Submit Button with Gradient */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: var(--button-gradient); /* Gradient background */
+    color: var(--text-color-light);
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s, transform 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Hide unused elements */
+.contact-form label,
+.error-message,
+.spinner {
+    display: none !important;
+}
+
+/* Media Query for smaller screens (mobile view) */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .contact-info,
+    .contact-form-container {
+        min-height: auto;
+        padding: 30px;
+    }
 }
