@@ -203,12 +203,28 @@ a:active {
     max-width: 900px;
     border: 2px solid #ddd;
     border-radius: 15px;
-    background: #f9f9f9;
+    background: linear-gradient(
+      to bottom,
+      #ffb6c1 0%, /* Light Pink */
+      #e6e6fa 35%, /* Lavender Blush */
+      #b0e0e6 70%, /* Powder Blue */
+      #87ceeb 100% /* Sky Blue */
+    );
   }
 
   .resource-hub h2 {
     text-align: center;
     margin-bottom: 20px;
+    color:white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:28px;
+  }
+
+  .resource-hub p{
+    color: white;
+    font-size:20px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1),-2px -2px 5px rgba(0,0,0,0.1);;
   }
 
   .resource-input {
@@ -220,22 +236,33 @@ a:active {
   .resource-input input {
     flex: 1;
     padding: 10px;
-    border-radius: 5px;
+    color:grey;
+    border-radius: 10px;
     border: 1px solid #ccc;
   }
 
   .resource-input button {
     padding: 10px 15px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
+    background:linear-gradient(45deg,#9370DB,#9264e7);
     background: #9370db;
     color: white;
     border: none;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
   }
 
   .resource-input button:hover {
     background: #7a52c4;
+  }
+
+  .resource-search input{
+    height:30px;
+    width:15rem;
+    border-radius:10px;
+    outline:none;
+    border:none;
+    padding-left:10px;
   }
 
   .resources-container {
@@ -583,6 +610,7 @@ function initDarkModeToggle() {
 
   <div class="resource-search">
     <input type="text" id="resourceSearch" placeholder="Search resources..." />
+    <i class="fas-search"></i>
   </div>
 
   <div class="resources-container" id="resourcesContainer"></div>

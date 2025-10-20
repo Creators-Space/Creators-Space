@@ -382,3 +382,125 @@ body.dark .resource-search {
   color: #fff;
   border-color: #555;
 }
+
+
+/* Resource sharing hub styles modified */
+ .resource-hub {
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 900px;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    background: linear-gradient(
+      to bottom,
+      #ffb6c1 0%, /* Light Pink */
+      #e6e6fa 35%, /* Lavender Blush */
+      #b0e0e6 70%, /* Powder Blue */
+      #87ceeb 100% /* Sky Blue */
+    );
+  }
+
+  .resource-hub h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color:white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:28px;
+  }
+
+  .resource-hub p{
+    color: white;
+    font-size:20px;
+    margin-bottom:10px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1),-2px -2px 5px rgba(0,0,0,0.1);;
+  }
+
+  .resource-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .resource-input input {
+    flex: 1;
+    padding: 10px;
+    color:grey;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .resource-input button {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    background:linear-gradient(45deg,#9370DB,#9264e7);
+    background: #9370db;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+  }
+
+  .resource-input button:hover {
+    background: #7a52c4;
+  }
+
+  .resource-search input{
+    height:30px;
+    width:15rem;
+    border-radius:10px;
+    outline:none;
+    border:none;
+    padding-left:10px;
+  }
+
+  .resources-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .resource-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    width: calc(33% - 10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+  }
+
+  .resource-card .text-content {
+    flex: 1;
+    text-align: justify;
+    margin-bottom: 10px;
+  }
+
+  .resource-card button {
+    align-self: flex-end;
+    background: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background 0.3s ease;
+  }
+
+  .resource-card button:hover {
+    background: #c12c3b;
+  }
+
+  @media (max-width: 768px) {
+    .resource-card {
+      width: calc(50% - 10px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .resource-card {
+      width: 100%;
+    }
+  }
