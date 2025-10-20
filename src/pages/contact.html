@@ -17,14 +17,15 @@
   <link rel="stylesheet" href="/src/css/utils.css" />
     <link rel="stylesheet" href="/src/css/style.css" />
     <link rel="stylesheet" href="/src/css/responsive.css" />
-    <link rel="stylesheet" href="/src/css/contact.css" />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="/src/css/contact.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>
 
   <body id="main-body" class="overflow-x-hidden">
@@ -77,127 +78,90 @@ fetch('/navbar.html')
   .catch(err => console.error('Failed to load navbar:', err));
 </script>
 
-
-    <!-- Contact Us Section -->
-    <div class="contact-section">
-      <div class="container">
-        <div class="contact-header">
-          <h1>Contact Us</h1>
-          <p>
-            We'd love to hear from you. Send us a message and we'll respond as
-            soon as possible.
-          </p>
+<!-- Contact Us Section -->
+<!-- Contact Us Section -->
+<div class="contact-section">
+  <div class="container">
+    <div class="contact-content">
+      <div class="contact-info">
+        <h2>Let's Connect</h2>
+        <p>We'd love to collaborate with you!</p>
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Gwalior, Madhya Pradesh, India</p>
         </div>
-
-        <div class="contact-content">
-          <div class="contact-info">
-            <div class="info-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <div>
-                <h3>Address</h3>
-                <p>Gwalior, Madhya Pradesh, India</p>
-              </div>
-            </div>
-            <div class="info-item">
-              <i class="fas fa-envelope"></i>
-              <div>
-                <h3>Email</h3>
-                <p>contact@creators-space.com</p>
-              </div>
-            </div>
-            <div class="info-item">
-              <i class="fas fa-phone"></i>
-              <div>
-                <h3>Phone</h3>
-                <p>+91 XXXXX XXXXX</p>
-              </div>
-            </div>
-            <div class="info-item">
-              <i class="fas fa-clock"></i>
-              <div>
-                <h3>Business Hours</h3>
-                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-              </div>
-            </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <p>contact@creators-space.com</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <p>+91 XXXXX XXXXX</p>
+        </div>
+      </div>
+      <div class="contact-form-container">
+        <h2>Send us a message</h2>
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Full Name"
+              required
+              />
+            <div class="error-message" id="name-error"></div>
           </div>
-
-          <div class="contact-form-container">
-            <form id="contact-form" class="contact-form">
-              <div class="form-group">
-                <label for="name">Name <span class="required">*</span></label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Enter your full name"
-                  required
-                />
-                <div class="error-message" id="name-error"></div>
-              </div>
-
-              <div class="form-group">
-                <label for="email">Email <span class="required">*</span></label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Enter your email"
-                  required
-                />
-                <div class="error-message" id="email-error"></div>
-              </div>
-
-              <div class="form-group">
-                <label for="subject"
-                  >Subject <span class="required">*</span></label
-                >
-                <select id="subject" name="subject" required>
-                  <option value="">Select a subject</option>
-                  <option value="general">General Inquiry</option>
-                  <option value="courses">Courses</option>
-                  <option value="internship">Internship</option>
-                  <option value="services">Services</option>
-                  <option value="technical">Technical Support</option>
-                  <option value="partnership">Partnership</option>
-                  <option value="other">Other</option>
-                </select>
-                <div class="error-message" id="subject-error"></div>
-              </div>
-
-              <div class="form-group">
-                <label for="message"
-                  >Message <span class="required">*</span></label
-                >
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="6"
-                  required
-                  placeholder="Please provide details about your inquiry..."
-                ></textarea>
-                <div class="error-message" id="message-error"></div>
-              </div>
-
-              <button type="submit" class="submit-btn">
-                <span class="btn-text">Send Message</span>
-                <div class="spinner" id="spinner"></div>
-              </button>
-            </form>
-
-            <!-- Success Message -->
-            <div class="success-message" id="success-message">
-              <i class="fas fa-check-circle"></i>
-              <h3>Message Sent Successfully!</h3>
-              <p>
-                Thank you for contacting us. We'll get back to you within 24
-                hours.
-              </p>
-            </div>
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email Address"
+              required
+              />
+            <div class="error-message" id="email-error"></div>
           </div>
+          <div class="form-group" style="display: none;">
+            <label for="subject">Subject <span class="required">*</span></label>
+            <select id="subject" name="subject" required>
+              <option value="">Select a subject</option>
+              <option value="general">General Inquiry</option>
+              <option value="courses">Courses</option>
+              <option value="internship">Internship</option>
+              <option value="services">Services</option>
+              <option value="technical">Technical Support</option>
+              <option value="partnership">Partnership</option>
+              <option value="other">Other</option>
+            </select>
+            <div class="error-message" id="subject-error"></div>
+          </div>
+          <div class="form-group">
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              required
+              placeholder="Your Message"
+              ></textarea>
+            <div class="error-message" id="message-error"></div>
+          </div>
+          <button type="submit" class="submit-btn">
+            <span class="btn-text">Send Message</span>
+            <div class="spinner" id="spinner"></div>
+          </button>
+        </form>
+        <div class="success-message" id="success-message">
+          <i class="fas fa-check-circle"></i>
+          <h3>Message Sent Successfully!</h3>
+          <p>
+            Thank you for contacting us. We'll get back to you within 24 hours.
+          </p>
         </div>
       </div>
     </div>
-
+  </div>
+</div>
     <footer class="footer">
       <div class="social">
         <h1>
