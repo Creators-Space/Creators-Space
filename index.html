@@ -421,6 +421,17 @@ fetch("/navbar.html")
   window.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
       document.getElementById('loader-track').style.display = 'none';
+      
+      // Trigger header animation after loader disappears
+      const headerH1 = document.querySelector('.navbar h1');
+      if (headerH1) {
+        // Reset animation if it has already run
+        headerH1.style.animation = 'none';
+        // Trigger reflow
+        void headerH1.offsetWidth;
+        // Re-apply animation
+        headerH1.style.animation = 'textAppear 1.5s ease-out forwards';
+      }
     }, 1000); // 1 second delay
   });
 </script>
